@@ -20,6 +20,18 @@ namespace BookStore.API.Migrations
                 {
                     table.PrimaryKey("PK_Books", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "Description", "Title" },
+                values: new object[,]
+                {
+                    { 1, "Let's fight for our kingdom.", "Prince's Legacy" },
+                    { 2, "The Moon is it's greatest enemy.", "The Cursed Wolf" },
+                    { 3, "We all love it! Of course!", "C#" },
+                    { 4, "The Killer Curse!", "Avada Kedavra" },
+                    { 5, "Programming language, and animal.", "Python" }
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

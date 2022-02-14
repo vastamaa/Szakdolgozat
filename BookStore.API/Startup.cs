@@ -25,6 +25,7 @@ namespace BookStore.API
             services.AddDbContext<BookStoreContext>(options => options.UseMySQL(Configuration.GetConnectionString("BookStoreDatabase")));
             services.AddControllersWithViews().AddNewtonsoftJson();
             services.AddTransient<IBookRepository, BookRepository>();
+            services.AddAutoMapper(typeof(Startup));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

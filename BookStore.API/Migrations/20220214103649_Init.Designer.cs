@@ -2,14 +2,16 @@
 using BookStore.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookStore.API.Migrations
 {
     [DbContext(typeof(BookStoreContext))]
-    partial class BookStoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220214103649_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,12 +64,6 @@ namespace BookStore.API.Migrations
                             Id = 5,
                             Description = "Programming language, and animal.",
                             Title = "Python"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Tester.",
-                            Title = "Test"
                         });
                 });
 #pragma warning restore 612, 618

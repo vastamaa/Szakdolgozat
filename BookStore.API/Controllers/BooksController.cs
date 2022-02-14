@@ -17,6 +17,7 @@ namespace BookStore.API.Controllers
             _bookRepository = bookRepository;
         }
 
+        //GET: /api/books/
         [HttpGet("")]
         public async Task<IActionResult> GetAllBooks()
         {
@@ -24,6 +25,7 @@ namespace BookStore.API.Controllers
             return Ok(books);
         }
 
+        //GET: /api/books/id
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetBookById([FromRoute]int id)
         {
@@ -34,6 +36,7 @@ namespace BookStore.API.Controllers
             return Ok(book);
         }
 
+        //POST: /api/books/
         [HttpPost("")]
         public async Task<IActionResult> AddBook([FromBody] BookModel bookModel)
         {
@@ -42,6 +45,7 @@ namespace BookStore.API.Controllers
             return CreatedAtAction(nameof(GetBookById), new { id = id, controller = "books" }, id);
         }
 
+        //PUT: /api/books/id
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateBook([FromBody] BookModel bookModel, [FromRoute] int id)
         {
@@ -49,6 +53,7 @@ namespace BookStore.API.Controllers
             return Ok();
         }
 
+        //PATCH: /api/books/id
         [HttpPatch("{id}")]
         public async Task<IActionResult> UpdateBookPatch([FromBody] JsonPatchDocument bookModel, [FromRoute] int id)
         {
@@ -56,6 +61,7 @@ namespace BookStore.API.Controllers
             return Ok();
         }
 
+        //DELETE: /api/books/id
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBook([FromRoute] int id)
         {
