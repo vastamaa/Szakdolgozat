@@ -1,7 +1,9 @@
 using BookStore.API.Data;
+using BookStore.API.Models;
 using BookStore.API.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -23,8 +25,14 @@ namespace BookStore.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BookStoreContext>(options => options.UseMySQL(Configuration.GetConnectionString("BookStoreDatabase")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<BookStoreContext>()
+                .AddDefaultTokenProviders();
+
             services.AddControllersWithViews().AddNewtonsoftJson();
             services.AddTransient<IBookRepository, BookRepository>();
+            services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddAutoMapper(typeof(Startup));
 
             // In production, the React files will be served from this directory
