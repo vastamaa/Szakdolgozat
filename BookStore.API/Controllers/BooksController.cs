@@ -1,5 +1,6 @@
 ﻿using BookStore.API.Models;
 using BookStore.API.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace BookStore.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BooksController : ControllerBase
     {
         private readonly IBookRepository _bookRepository;
@@ -27,7 +29,7 @@ namespace BookStore.API.Controllers
 
         //GET: /api/books/id
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetBookById([FromRoute]int id)
+        public async Task<IActionResult> GetBookById([FromRoute] int id)
         {
             var book = await _bookRepository.GetBookByIdAsync(id);
 

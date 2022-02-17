@@ -1,6 +1,7 @@
 using BookStore.API.Data;
 using BookStore.API.Models;
 using BookStore.API.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -9,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace BookStore.API
 {
@@ -30,10 +33,38 @@ namespace BookStore.API
                 .AddEntityFrameworkStores<BookStoreContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(options => 
+                {
+                    options.SaveToken = true;
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidAudience = Configuration["JWT:ValidAudience"],
+                        ValidIssuer = Configuration["JWT:ValidIssuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
+                    };
+                });
+
             services.AddControllersWithViews().AddNewtonsoftJson();
             services.AddTransient<IBookRepository, BookRepository>();
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddAutoMapper(typeof(Startup));
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -61,6 +92,10 @@ namespace BookStore.API
             app.UseSpaStaticFiles();
 
             app.UseRouting();
+            app.UseCors();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

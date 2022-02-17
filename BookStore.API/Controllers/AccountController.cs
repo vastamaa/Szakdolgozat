@@ -15,7 +15,7 @@ namespace BookStore.API.Controllers
         {
             _accountRepository = accountRepository;
         }
-        
+
         [HttpPost("signup")]
         public async Task<IActionResult> SignUp([FromForm] SignUpModel signUpModel)
         {
@@ -26,6 +26,18 @@ namespace BookStore.API.Controllers
                 return Ok(result.Succeeded);
             }
             return Unauthorized();
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] SignInModel signInModel)
+        {
+            var result = await _accountRepository.LoginAsync(signInModel);
+
+            if (string.IsNullOrEmpty(result))
+            {
+                return Unauthorized();
+            }
+            return Ok(result);
         }
     }
 }
