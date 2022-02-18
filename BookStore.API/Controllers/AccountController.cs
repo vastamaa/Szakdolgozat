@@ -17,7 +17,7 @@ namespace BookStore.API.Controllers
         }
 
         [HttpPost("signup")]
-        public async Task<IActionResult> SignUp([FromForm] SignUpModel signUpModel)
+        public async Task<IActionResult> SignUp([FromBody] SignUpModel signUpModel)
         {
             var result = await _accountRepository.SignUpAsync(signUpModel);
 
