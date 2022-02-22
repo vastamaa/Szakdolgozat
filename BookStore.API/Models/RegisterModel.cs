@@ -2,7 +2,7 @@
 
 namespace BookStore.API.Models
 {
-    public class SignUpModel
+    public class RegisterModel
     {
         [Required(ErrorMessage = "A mező kitöltése kötelező!")]
         public string FirstName { get; set; }

@@ -16,10 +16,10 @@ namespace BookStore.API.Controllers
             _accountRepository = accountRepository;
         }
 
-        [HttpPost("signup")]
-        public async Task<IActionResult> SignUp([FromBody] SignUpModel signUpModel)
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] RegisterModel registerModel)
         {
-            var result = await _accountRepository.SignUpAsync(signUpModel);
+            var result = await _accountRepository.RegisterAsync(registerModel);
 
             if (result.Succeeded)
             {
@@ -29,13 +29,13 @@ namespace BookStore.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] SignInModel signInModel)
+        public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
         {
-            var result = await _accountRepository.LoginAsync(signInModel);
+            var result = await _accountRepository.LoginAsync(loginModel);
 
             if (string.IsNullOrEmpty(result))
             {
-                return Unauthorized();
+                return Unauthorized(new { message = "Username or password is incorrect!" });
             }
             return Ok(result);
         }
