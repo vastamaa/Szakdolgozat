@@ -12,7 +12,12 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
-
-.page-header {
-    padding: 10px 0px 50px 0px;
-}
+@font-face {
+  font-family: "UrbanistBold";
+  src: local("UrbanistBold"),
+   url("./fonts/Urbanist/Urbanist-Bold.ttf") format("truetype");
+  font-weight: bold;
+  }
+  .font-face-gm{
+    font-family: "UrbanistBold";
+  }
