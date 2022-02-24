@@ -33,7 +33,7 @@ namespace BookStore.API.Controllers
         {
             var result = await _accountRepository.LoginAsync(loginModel);
 
-            if (string.IsNullOrEmpty(result))
+            if (result is null)
             {
                 return Unauthorized(new { message = "Username or password is incorrect!" });
             }

@@ -68,18 +68,17 @@ export class Login extends Component {
     render() {
         return (
             <div>
-                <h1 className="page-header">Login:</h1>
-
+                <h1 className="mb-4 mt-4">Login:</h1>
                 <form action='api/account/login' onSubmit={handleFormSubmit}>
-                    <div className="form-group">
+                    <div className="form-group mb-4">
                         <label htmlFor="email">Email</label>
                         <input type="text" className="form-control" name="email" id="email" placeholder="Enter email address" />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group mb-4">
                         <label htmlFor="password">Password</label>
                         <input type="password" className="form-control" name="password" id="password" placeholder="Enter your password" />
                     </div>
-                    <button type="submit" id="btn" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-outline-danger my-2 my-sm-0">Submit</button>
                 </form>
             </div>
         );

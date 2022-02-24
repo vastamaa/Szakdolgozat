@@ -1,17 +1,19 @@
-.Container{
-    flex:1;
+.Container {
+    flex: 1;
     margin: 3px;
     height: 50vh;
-    position:relative;
-    cursor:pointer;
+    position: relative;
+    cursor: pointer;
 }
-.Image{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+
+.Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
-.Info{
-    position:absolute;
+
+.Info {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -19,56 +21,55 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 }
-.Title{
+
+.Title {
     color: white;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
-.Desc{
+
+.Desc {
     color: white;
-    padding:10px;
-    font-weight:500;
-    font-size:18px; 
-}
-.Buttonc{
-    border:none;
-
-    background-color:white;
-    color:rgb(199, 199, 199);
-
-
-   
+    padding: 10px;
+    font-weight: 500;
+    font-size: 18px;
 }
 
-.BigContainer{
-    display:flex;
-    flex-direction:row;
-    padding: 20; 
-    justify-content:space-between;
+.Buttonc {
+    border: none;
+    background-color: white;
+    color: rgb(199, 199, 199);
+}
+
+.BigContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 20;
+    justify-content: space-between;
 }
 /* [1] The container */
 .img-hover-zoom {
     height: 50vh; /* [1.1] Set it as per your need */
     overflow: hidden; /* [1.2] Hide the overflowing of child elements */
-  }
-  
-  /* [2] Transition property for smooth transformation of images */
-  .img-hover-zoom img {
-    transition: transform .5s ease;
-  }
-  
-  /* [3] Finally, transforming the image when container gets hovered */
-  .img-hover-zoom:hover img {
-    transform: scale(1.5);
-  }
+}
+
+    /* [2] Transition property for smooth transformation of images */
+    .img-hover-zoom img {
+        transition: transform .5s ease;
+    }
+
+    /* [3] Finally, transforming the image when container gets hovered */
+    .img-hover-zoom:hover img {
+        transform: scale(1.5);
+    }
 /* Quick-zoom Container */
 .img-hover-zoom--quick-zoom img {
-  transform-origin: 15 15;
-  transition: transform .6s, visibility .6s ease-in;
+    transform-origin: 15 15;
+    transition: transform .6s, visibility .6s ease-in;
 }
 
 /* The Transformation */
 .img-hover-zoom--quick-zoom:hover img {
-  transform: scale(2);
+    transform: scale(2);
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-export class FetchBooks extends Component {
-  static displayName = FetchBooks.name;
+export class Books extends Component {
+    static displayName = Books.name;
 
   constructor(props) {
     super(props);
@@ -38,7 +38,7 @@ export class FetchBooks extends Component {
   render() {
     let contents = this.state.loading
       ? <p><em>Loading...</em></p>
-      : FetchBooks.renderBooksTable(this.state.books);
+        : Books.renderBooksTable(this.state.books);
 
 
     return (

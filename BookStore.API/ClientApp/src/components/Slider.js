@@ -9,51 +9,48 @@ export class Slider extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { slideIndex: 0 ,loading: true};
-      }
-      handleClick = (direction) => {
-        if(direction==="left")
-        {
-            let counter=0;
-            counter=this.state.slideIndex-1;
-            if(this.state.slideIndex>0)
-            {
-                this.setState({slideIndex: counter ,loading: false });
+        this.state = { slideIndex: 0, loading: true };
+    }
+    handleClick = (direction) => {
+        if (direction === "left") {
+            let counter = 0;
+            counter = this.state.slideIndex - 1;
+            if (this.state.slideIndex > 0) {
+                this.setState({ slideIndex: counter, loading: false });
             }
-            else{
-                this.setState({slideIndex: 2 ,loading: false });
+            else {
+                this.setState({ slideIndex: 2, loading: false });
             }
         }
-        else{
-            let counterr=0;
-         
-            if(this.state.slideIndex<2)
-            {
-                counterr=this.state.slideIndex+1;
-                this.setState({slideIndex: counterr ,loading: false });
+        else {
+            let counterr = 0;
+
+            if (this.state.slideIndex < 2) {
+                counterr = this.state.slideIndex + 1;
+                this.setState({ slideIndex: counterr, loading: false });
             }
-            else{
-                this.setState({slideIndex: 0 ,loading: false });
+            else {
+                this.setState({ slideIndex: 0, loading: false });
             }
         }
-      }
-      
+    }
+
     render() {
-        const sliding = { 
-            transform:`translateX(${this.state.slideIndex*-100}vw)` 
+        const sliding = {
+            transform: `translateX(${this.state.slideIndex * -100}vw)`
         };
         return (
-            
+
             <div className='SliderContainer'>
-                <div className='Arrow' direction="left" style={{left:"10px"}} onClick={this.handleClick}>
+                <div className='Arrow' direction="left" style={{ left: "10px" }} onClick={this.handleClick}>
                     <AiOutlineLeft></AiOutlineLeft>
                 </div>
 
-                
-                    {sliderItems.map((item)=>(
-                        <div className='Wrapper' style={sliding}>
-                        <div className='Slide'  style={{backgroundColor:item.bg}}>
-                            
+
+                {sliderItems.map((item) => (
+                    <div className='Wrapper' style={sliding}>
+                        <div className='Slide' style={{ backgroundColor: item.bg }}>
+
                             <div className='ImageContainer' src={item.img}>
                                 <img className='Image' src={item.img}></img>
                             </div>
@@ -64,11 +61,11 @@ export class Slider extends Component {
                                 <button className='Button'>SHOW NOW</button>
                             </div>
                         </div>
-                        </div>
-                        ))}
+                    </div>
+                ))}
 
 
-                <div className='Arrow' direction="right" style={{right:"10px"}} onClick={this.handleClick}>
+                <div className='Arrow' direction="right" style={{ right: "10px" }} onClick={this.handleClick}>
                     <AiOutlineRight></AiOutlineRight>
                 </div>
             </div>
