@@ -58,6 +58,13 @@ namespace BookStore.API
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddAutoMapper(typeof(Startup));
 
+            services.AddSession(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.IdleTimeout = TimeSpan.FromHours(8);
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -96,6 +103,8 @@ namespace BookStore.API
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

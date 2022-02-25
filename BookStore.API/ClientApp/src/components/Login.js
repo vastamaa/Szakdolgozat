@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { createCookie } from './CookieHandler';
 import '../custom.css';
 
 /**
@@ -29,7 +30,7 @@ async function postFormDataAsJson({ url, formData }) {
         throw new Error(errorMessage);
     }
 
-    return response.body;
+    return await response.json();
 }
 
 /**
@@ -49,7 +50,9 @@ async function handleFormSubmit(event) {
         const formData = new FormData(form);
         const responseData = await postFormDataAsJson({ url, formData });
 
-        console.log(responseData);
+        createCookie("token", responseData.access_token);
+
+        console.log("Sikeres");
     } catch (error) {
         console.error(error);
     }
@@ -69,6 +72,7 @@ export class Login extends Component {
         return (
             <div>
                 <h1 className="mb-4 mt-4">Login:</h1>
+                <div id="error"></div>
                 <form action='api/account/login' onSubmit={handleFormSubmit}>
                     <div className="form-group mb-4">
                         <label htmlFor="email">Email</label>

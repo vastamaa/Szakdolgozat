@@ -29,7 +29,7 @@ async function postFormDataAsJson({ url, formData }) {
         throw new Error(errorMessage);
     }
 
-    return response;
+    return response.body;
 }
 
 /**
