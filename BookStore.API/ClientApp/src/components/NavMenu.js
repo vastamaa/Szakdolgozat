@@ -3,8 +3,10 @@ import { NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { IoSearchSharp } from "@react-icons/all-files/io5/IoSearchSharp";
 import { AiOutlineShoppingCart } from "@react-icons/all-files/ai/AiOutlineShoppingCart";
-
+import { readCookie } from "./CookieHandler";
+import { logOut } from "./Log";
 import './NavMenu.css';
+
 
 export class NavMenu extends Component {
     static displayName = NavMenu.name;
@@ -14,7 +16,8 @@ export class NavMenu extends Component {
 
         this.toggleNavbar = this.toggleNavbar.bind(this);
         this.state = {
-            collapsed: true
+            collapsed: true,
+            loggedIn: readCookie("tokenJWT")
         };
     }
 
@@ -27,6 +30,8 @@ export class NavMenu extends Component {
     render() {
         return (
             <header>
+                {/* Example -- 'null = falshy' {this.state.loggedIn ? console.log("be van jelentkezve") : console.log("nincs bejelentkezve") };*/}
+                
                 <div className='NavContainer NavWrapper'>
 
                     <div className='NavLeft'>
@@ -40,14 +45,16 @@ export class NavMenu extends Component {
                     <div className='NavCenter'>
                         <h1 className='NavLogo'>Litera</h1>
                     </div>
-
-                    <div className='NavRight'>
+                    {this.state.loggedIn ? <div className='NavRight'>
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/books" >Books</NavLink>
                         <AiOutlineShoppingCart size="30px "></AiOutlineShoppingCart>
+                        <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/login" >Udvozollek, xy</NavLink>
+                        <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/register" >Register</NavLink>
+                        <NavLink tag={Link} onClick={logOut} className='NavMenuItem text-dark' to="/">Logout</NavLink>
+                    </div> : <div className='NavRight'>
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/login" >Login</NavLink>
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/register" >Register</NavLink>
-                    </div>
-
+                    </div>}
                 </div>
 
                 {/* <Navbar className='navbar-expand-m navbar-toggleable-sm NavWrapper NavContainer'>

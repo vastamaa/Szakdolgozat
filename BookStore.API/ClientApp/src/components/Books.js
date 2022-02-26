@@ -38,7 +38,10 @@ export class Books extends Component {
 
     render() {
         let contents = this.state.loading
-            ? <p><em>Loading...</em></p>
+            ? 
+            <div className="d-inline-flex align-items-center">
+                <div className="spinner-border ml-auto " role="status" aria-hidden="true"></div>
+            </div>
             : Books.renderBooksTable(this.state.books);
 
 
@@ -56,7 +59,7 @@ export class Books extends Component {
             const response = await fetch('api/books',
                 {
                     headers: {
-                        'Authorization': `Bearer ${readCookie("token")}`,
+                        'Authorization': `Bearer ${readCookie("tokenJWT")}`,
                     }
                 });
             const data = await response.json();
