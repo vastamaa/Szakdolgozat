@@ -7,5 +7,8 @@ namespace BookStore.API.Repository.Interfaces
     public interface ITokenRepository
     {
         JwtSecurityToken GetToken(List<Claim> authClaims);
+        string GenerateRefreshToken();
+#nullable enable
+        ClaimsPrincipal? GetPrincipalFromExpiredToken(string? token);
     }
 }

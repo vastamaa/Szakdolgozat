@@ -1,4 +1,4 @@
-.login-container{
+.login-container {
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.login-border{
+.login-border {
     border: 3px solid rgb(221, 219, 219);
     border-radius: 5px;
     padding: 20px 35px 20px 35px;
@@ -15,42 +15,47 @@
     align-items: center;
     transition: all 250ms ease-in-out;
 }
-   
-.login-header{
+
+.login-header {
     font-size: 24px;
-    
 }
-.login-content{
+
+.login-content {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
 }
-.login-img-container{
-    width: 18em;
+
+.login-img-container {
+    width: 10em;
     margin: auto;
 }
-.login-img{
+
+.login-img {
     width: 100%;
     height: 100%;
-
 }
-.login-form{
+
+.login-form {
     margin-top: 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.login-form-group{
+
+.login-form-group {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: fit-content;
 }
-.login-label{
+
+.login-label {
     font-size: 20px;
     padding-left: 3px;
 }
-.login-input{
+
+.login-input {
     margin-top: 6px;
     min-width: 18em;
     height: 37px;
@@ -61,34 +66,36 @@
     border-radius: 4px;
     margin-bottom: 31px;
     transition: all 250ms ease-in-out;
-    
 }
-.login-input:focus{
+
+.login-input:focus {
     outline: none;
     box-shadow: 0px 0px 12px 0.8px rgb(170, 168, 172);
+}
 
+.login-footer {
+    margin-top: 1.5em;
 }
-.login-footer{
-    margin-top:1,5em;
-}
-.login-btn{
+
+.login-btn {
     font-size: 21px;
-    padding:5px 20px;
+    padding: 5px 20px;
     border: 0;
     background-color: rgb(175, 8, 8);
-    color:whitesmoke;
+    color: whitesmoke;
     border-radius: 3px;
     transition: all 250ms ease-in-out;
     cursor: pointer;
+}
 
+.login-btn:hover {
+    background-color: rgb(197, 103, 103);
 }
-.login-btn:hover{
-    background-color:rgb(197, 103, 103) ;
-}
-.login-btn:focus{
+
+.login-btn:focus {
     outline: none;
 }
 
-.login-border:hover{
+.login-border:hover {
     box-shadow: 0px 0px 12px 0.8px rgb(212, 212, 212);
 }

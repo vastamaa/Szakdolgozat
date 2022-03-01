@@ -1,6 +1,7 @@
 ﻿using BookStore.API.Models;
 using BookStore.API.Repository.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -14,12 +15,14 @@ namespace BookStore.API.Repository
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ITokenRepository _tokenRepository;
+        private readonly IConfiguration _configuration;
 
-        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenRepository tokenRepository)
+        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenRepository tokenRepository, IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenRepository = tokenRepository;
+            _configuration = configuration;
         }
 
         public async Task<IdentityResult> RegisterAsync(RegisterModel registerModel)
@@ -38,7 +41,7 @@ namespace BookStore.API.Repository
             return await _userManager.CreateAsync(user, registerModel.Password);
         }
 
-        public async Task<JwtSecurityToken> LoginAsync(LoginModel loginModel)
+        public async Task<List<TokenReturnedByRepoModel>> LoginAsync(LoginModel loginModel)
         {
             var user = await _userManager.FindByNameAsync(loginModel.UserName);
             var result = await _signInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, false, false);
@@ -58,7 +61,25 @@ namespace BookStore.API.Repository
                     authClaims.Add(new Claim(ClaimTypes.Role, userRole));
                 }
 
-                return _tokenRepository.GetToken(authClaims);
+                var token = _tokenRepository.GetToken(authClaims);
+                var refreshToken = _tokenRepository.GenerateRefreshToken();
+
+                _ = int.TryParse(_configuration["JWT:RefreshTokenValidityInDays"], out int refreshTokenValidityInDays);
+
+                user.RefreshToken = refreshToken;
+                user.RefreshTokenExpiryTime = DateTime.Now.AddDays(refreshTokenValidityInDays);
+
+                await _userManager.UpdateAsync(user);
+
+                return new List<TokenReturnedByRepoModel>()
+                {
+                    new TokenReturnedByRepoModel
+                    {
+                        Token = new JwtSecurityTokenHandler().WriteToken(token),
+                        RefreshToken = refreshToken,
+                        Expiration = token.ValidTo
+                    }
+                };
             }
             return null;
         }

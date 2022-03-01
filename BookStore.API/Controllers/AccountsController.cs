@@ -1,7 +1,6 @@
 ﻿using BookStore.API.Models;
 using BookStore.API.Repository;
 using Microsoft.AspNetCore.Mvc;
-using System.IdentityModel.Tokens.Jwt;
 using System.Threading.Tasks;
 
 namespace BookStore.API.Controllers
@@ -34,12 +33,13 @@ namespace BookStore.API.Controllers
         {
             var result = await _accountRepository.LoginAsync(loginModel);
 
-            if (result is null) return Unauthorized(new Response { Status = "Error", Message = "Login was unsuccessful! Please, try again later." });
+            if (result is null) return Unauthorized(new Response { Status = "Error", Message = "Login failed! The username or password is incorrect." });
 
             return Ok(new
             {
-                token = new JwtSecurityTokenHandler().WriteToken(result),
-                expiration = result.ValidTo
+                Token = result[0].Token,
+                RefreshToken = result[0].RefreshToken,
+                Expiration = result[0].Expiration
             });
         }
     }

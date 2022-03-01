@@ -8,5 +8,8 @@ namespace BookStore.API.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime DateOfJoining { get; set; }
+#nullable enable
+        public string? RefreshToken { get; set; }
+        public DateTime RefreshTokenExpiryTime { get; set; }
     }
 }
