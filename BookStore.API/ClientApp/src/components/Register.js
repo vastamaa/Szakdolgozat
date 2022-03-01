@@ -44,13 +44,14 @@ export class Register extends Component {
                         <div className='login-form-group'>
                             <label className='login-label' htmlFor='confirmPassword'>Confirm Password</label>
                             <input className='login-input' type="Password" name='confirmPassword' id="confirmPassword"placeholder='Password'></input>
-                        </div>
+                            </div>
+                            <div className='login-footer'>
+                                <button type='submit' className='login-btn'>Register</button>
+                            </div>
                     </form>
                     
                 </div>
-                <div className='login-footer'>
-                    <button type='submit' className='login-btn'>Login</button>
-                </div>
+            
                 </div>
             </div>
         );

@@ -28,11 +28,12 @@ export class Login extends Component {
                             <label className='login-label' htmlFor='Password'>Password</label>
                             <input className='login-input' type="Password" name='password' placeholder='Password'></input>
                         </div>
+                        <div className='login-footer'>
+                    <button type='submit' className='login-btn'>Login</button>
+                         </div>
                     </form>
                 </div>
-                <div className='login-footer'>
-                    <button type='submit' className='login-btn'>Register</button>
-                </div>
+ 
                 </div>
             </div>
           ///Kevés mező miatt csúszkál a login component
