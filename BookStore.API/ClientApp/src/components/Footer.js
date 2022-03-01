@@ -1,5 +1,5 @@
 import React from "react";
-import "./styleFooter";
+import "./styleFooter.css";
   
 const Footer = () => {
   return (
@@ -63,7 +63,7 @@ const Footer = () => {
             </FooterLink>
           </Column>
         </Row>
-      </Container>
+      </div>
     </div>
   );
 };

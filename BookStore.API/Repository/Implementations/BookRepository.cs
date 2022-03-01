@@ -10,10 +10,10 @@ namespace BookStore.API.Repository
 {
     public class BookRepository : IBookRepository
     {
-        private readonly BookStoreContext _context;
+        private readonly ApplicationDbContext _context;
         private readonly IMapper _applicationMapper;
 
-        public BookRepository(BookStoreContext context, IMapper applicationMapper)
+        public BookRepository(ApplicationDbContext context, IMapper applicationMapper)
         {
             _context = context;
             _applicationMapper = applicationMapper;
@@ -21,6 +21,7 @@ namespace BookStore.API.Repository
 
         public async Task<List<BookModel>> GetAllBooksAsync()
         {
+            //Régi megoldásom
             //var records = await _context.Books.Select(x => new BookModel()
             //{
             //    Id = x.Id,
@@ -36,6 +37,7 @@ namespace BookStore.API.Repository
 
         public async Task<BookModel> GetBookByIdAsync(int bookId)
         {
+            //Régi megoldásom
             //var record = await _context.Books.Where(x => x.Id == bookId).Select(x => new BookModel()
             //{
             //    Id = x.Id,

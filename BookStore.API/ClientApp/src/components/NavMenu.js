@@ -17,7 +17,7 @@ export class NavMenu extends Component {
         this.toggleNavbar = this.toggleNavbar.bind(this);
         this.state = {
             collapsed: true,
-            loggedIn: readCookie("tokenJWT")
+            loggedIn: readCookie("token")
         };
     }
 
@@ -31,7 +31,7 @@ export class NavMenu extends Component {
         return (
             <header className='stick-the-navbar'>
                 {/* Example -- 'null = falshy' {this.state.loggedIn ? console.log("be van jelentkezve") : console.log("nincs bejelentkezve") };*/}
-                
+
                 <div className='NavContainer NavWrapper'>
 
                     <div className='NavLeft'>
@@ -43,7 +43,7 @@ export class NavMenu extends Component {
                     </div>
 
                     <div className='NavCenter'>
-                       <NavLink tag={Link} to="/"> <h1 className='NavLogo text-dark'>Litera</h1></NavLink>
+                        <NavLink tag={Link} to="/"> <h1 className='NavLogo text-dark'>Litera</h1></NavLink>
                     </div>
                     {this.state.loggedIn ? <div className='NavRight'>
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/books" >Books</NavLink>
