@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { handleFormLoginSubmit } from './Log';
-import '../custom.css';
+import './styleLogin.css';
 
 
 export class Login extends Component {
@@ -12,21 +12,30 @@ export class Login extends Component {
 
     render() {
         return (
-            <div>
-                <h1 className="mb-4 mt-4">Login:</h1>
-
-                <form action='api/account/login' onSubmit={handleFormLoginSubmit}>
-                    <div className="form-group mb-4">
-                        <label htmlFor="userName">Username</label>
-                        <input type="text" className="form-control" name="userName" id="userName" placeholder="Enter Username" />
+            <div className='login-container'>
+            <div className='login-border'>
+                <div className='login-header'>Login</div>
+                <div className='login-content'> 
+                    <div className='login-img-container'>
+                        <img className='login-img' src="https://image.shutterstock.com/image-vector/user-login-authenticate-icon-human-600w-1365533969.jpg"></img>
                     </div>
-                    <div className="form-group mb-4">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" className="form-control" name="password" id="password" placeholder="Enter your password" />
-                    </div>
-                    <button type="submit" className="btn btn-outline-danger my-2 my-sm-0">Submit</button>
-                </form>
+                    <form className='login-form' action='api/account/login' onSubmit={handleFormLoginSubmit}>
+                        <div className='login-form-group'>
+                            <label className='login-label' htmlFor='username'>Username</label>
+                            <input className='login-input' type="text" name='userName' placeholder='Username'></input>
+                        </div>
+                        <div className='login-form-group'>
+                            <label className='login-label' htmlFor='Password'>Password</label>
+                            <input className='login-input' type="Password" name='password' placeholder='Password'></input>
+                        </div>
+                    </form>
+                </div>
+                <div className='login-footer'>
+                    <button type='submit' className='login-btn'>Register</button>
+                </div>
+                </div>
             </div>
+          ///Kevés mező miatt csúszkál a login component
         );
     }
 }

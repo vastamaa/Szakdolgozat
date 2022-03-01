@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { handleFormRegisterSubmit } from "./Log";
-import '../custom.css';
+import './styleLogin.css';
 
 
 export class Register extends Component {
@@ -12,38 +12,45 @@ export class Register extends Component {
 
     render() {
         return (
-            <div>
-                <div>
-                    <h1 className="mb-4 mt-4">Register:</h1>
-
-                    <form action='api/account/register' onSubmit={handleFormRegisterSubmit}>
-                        <div className="form-group mb-4">
-                            <label htmlFor="firstName">First Name</label>
-                            <input type="text" className="form-control" name="firstName" id="firstName" placeholder="Enter first name" />
+            <div className='login-container'>
+            <div className='login-border'>
+                <div className='login-header'>Register</div>
+                <div className='login-content'>
+                  
+                    <div className='login-img-container'>
+                        <img className='login-img' src="https://image.shutterstock.com/image-vector/user-login-authenticate-icon-human-600w-1365533969.jpg"></img>
+                    </div>
+                    <form className='login-form' action='api/account/register' onSubmit={handleFormRegisterSubmit}>
+                    <div className='login-form-group'>
+                            <label className='login-label' htmlFor='firstName'>First Name</label>
+                            <input className='login-input' type="text" name='firstName' placeholder='First Name' id="firstName"></input>
                         </div>
-                        <div className="form-group mb-4">
-                            <label htmlFor="lastName">Last Name</label>
-                            <input type="text" className="form-control" name="lastName" id="lastName" placeholder="Enter last name" />
+                        <div className='login-form-group'>
+                            <label className='login-label' htmlFor='lastName'>Last Name</label>
+                            <input className='login-input' type="text" name='lastName' placeholder='Last Name' id="lastName"></input>
                         </div>
-                        <div className="form-group mb-4">
-                            <label htmlFor="userName">Username</label>
-                            <input type="text" className="form-control" name="userName" id="userName" placeholder="Enter Username" />
+                        <div className='login-form-group'>
+                            <label className='login-label' htmlFor='username'>Username </label>
+                            <input className='login-input' type="text" name='userName' placeholder='Username' id="userName"></input>
                         </div>
-                        <div className="form-group mb-4">
-                            <label htmlFor="inputEmail1">Email address</label>
-                            <input type="email" className="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <div className='login-form-group'>
+                            <label className='login-label' htmlFor='Email'>Email</label>
+                            <input className='login-input' type="text" name='Email' placeholder='Email' id="email"></input>
                         </div>
-                        <div className="form-group mb-4">
-                            <label htmlFor="password">Password</label>
-                            <input type="password" className="form-control" name="password" id="password" placeholder="Password" />
+                        <div className='login-form-group'>
+                            <label className='login-label' htmlFor='password'>Password</label>
+                            <input className='login-input' type="Password" name='password' placeholder='Password' id="password"></input>
                         </div>
-                        <div className="form-group mb-4">
-                            <label htmlFor="confirmPassword">Confirm Password</label>
-                            <input type="password" className="form-control" name="confirmPassword" id="confirmPassword" placeholder="Password" />
+                        <div className='login-form-group'>
+                            <label className='login-label' htmlFor='confirmPassword'>Confirm Password</label>
+                            <input className='login-input' type="Password" name='confirmPassword' id="confirmPassword"placeholder='Password'></input>
                         </div>
-                        <button type="submit" className="btn btn-outline-danger my-2 my-sm-0">Submit</button>
                     </form>
+                    
+                </div>
+                <div className='login-footer'>
+                    <button type='submit' className='login-btn'>Login</button>
+                </div>
                 </div>
             </div>
         );

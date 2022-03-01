@@ -59,7 +59,7 @@ export class Books extends Component {
             const response = await fetch('api/books',
                 {
                     headers: {
-                        'Authorization': `Bearer ${readCookie("token")}`,
+                        'Authorization': `Bearer ${readCookie("tokenJWT")}`,
                     }
                 });
             const data = await response.json();

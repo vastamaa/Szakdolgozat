@@ -48,7 +48,7 @@ export async function handleFormLoginSubmit(event) {
         const formData = new FormData(form);
         const responseData = await postFormDataAsJson({ url, formData });
 
-        createCookie("token", responseData.token);
+        createCookie("tokenJWT", responseData.access_token);
 
         console.log("Sikeres!");
         window.location.replace("https://localhost:5001/");
@@ -76,6 +76,6 @@ export async function handleFormRegisterSubmit(event) {
 }
 
 export function logOut() {
-    eraseCookie("token")
+    eraseCookie("tokenJWT")
     window.location.replace("/");
 }

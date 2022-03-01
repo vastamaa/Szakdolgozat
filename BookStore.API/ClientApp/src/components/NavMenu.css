@@ -38,6 +38,8 @@ html {
 .Lang {
     font-size: 14px;
     cursor: pointer;
+    margin-left: 5px;
+    padding:10px;
 }
 
 .SearchContainer {
@@ -45,9 +47,10 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 25px;
     padding: 5px;
     height: 30px;
+    margin-left: 6.5%;
+    
 }
 
 .NavInput {
@@ -74,4 +77,11 @@ html {
     font-size: 14px;
     cursor: pointer;
     margin-left: 25px;
+}
+.stick-the-navbar{
+    position: sticky;
+    top: 0;
+    background-color: white;
+    box-shadow: 0 2px 1px -1px rgb(228, 228, 228);
+    z-index: 300;
 }

@@ -15,7 +15,7 @@ export default class App extends Component {
     render() {
         return (
             <div className='font-face-gm'>
-                <Layout>
+                <Layout className='stick-the-navbar'>
                     <Route exact path='/' component={Home} />
                     <Route path='/counter' component={Counter} />
                     <Route path='/books' component={Books} />
