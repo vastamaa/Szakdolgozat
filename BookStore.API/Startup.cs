@@ -1,6 +1,8 @@
 using BookStore.API.Data;
 using BookStore.API.Models;
 using BookStore.API.Repository;
+using BookStore.API.Repository.Implementations;
+using BookStore.API.Repository.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,10 +30,10 @@ namespace BookStore.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BookStoreContext>(options => options.UseMySQL(Configuration.GetConnectionString("BookStoreDatabase")));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("BookStoreDatabase")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<BookStoreContext>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
             services.AddAuthentication(options => 
@@ -42,12 +44,16 @@ namespace BookStore.API
 
             }).AddJwtBearer(o =>
             {
+                o.RequireHttpsMetadata = false;
+                o.SaveToken = true;
                 o.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    ValidateIssuerSigningKey = true,                  
+                    ValidateIssuerSigningKey = true,
                     ValidateLifetime = true,
-                    ValidateAudience = false,
-                    ValidateIssuer = false,
+                    ValidateAudience = true,
+                    ValidateIssuer = true,
+                    ValidIssuer = Configuration["JWT:ValidIssuer"],
+                    ValidAudience = Configuration["JWT:ValidAudience"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"])),
                     ClockSkew = TimeSpan.Zero
                 };
@@ -56,6 +62,7 @@ namespace BookStore.API
             services.AddControllersWithViews().AddNewtonsoftJson();
             services.AddTransient<IBookRepository, BookRepository>();
             services.AddTransient<IAccountRepository, AccountRepository>();
+            services.AddTransient<ITokenRepository, TokenRepository>();
             services.AddAutoMapper(typeof(Startup));
 
             services.AddSession(options =>

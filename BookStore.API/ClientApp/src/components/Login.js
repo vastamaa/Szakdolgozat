@@ -17,8 +17,8 @@ export class Login extends Component {
 
                 <form action='api/account/login' onSubmit={handleFormLoginSubmit}>
                     <div className="form-group mb-4">
-                        <label htmlFor="email">Email</label>
-                        <input type="text" className="form-control" name="email" id="email" placeholder="Enter email address" />
+                        <label htmlFor="userName">Username</label>
+                        <input type="text" className="form-control" name="userName" id="userName" placeholder="Enter Username" />
                     </div>
                     <div className="form-group mb-4">
                         <label htmlFor="password">Password</label>

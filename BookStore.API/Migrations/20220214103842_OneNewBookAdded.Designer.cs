@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookStore.API.Migrations
 {
-    [DbContext(typeof(BookStoreContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20220214103842_OneNewBookAdded")]
     partial class OneNewBookAdded
     {

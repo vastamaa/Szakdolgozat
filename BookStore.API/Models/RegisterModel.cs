@@ -10,6 +10,9 @@ namespace BookStore.API.Models
         [Required(ErrorMessage = "A mező kitöltése kötelező!")]
         public string LastName { get; set; }
 
+        [Required(ErrorMessage = "A mező kitöltése kötelező!")]
+        public string UserName { get; set; }
+
         [Required(ErrorMessage = "A mező kitöltése kötelező!"), EmailAddress]
         public string Email { get; set; }
 

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.API.Data
 {
-    public class BookStoreContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public BookStoreContext(DbContextOptions<BookStoreContext> options) : base(options) { }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

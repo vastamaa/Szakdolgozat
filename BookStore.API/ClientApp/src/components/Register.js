@@ -26,7 +26,11 @@ export class Register extends Component {
                             <input type="text" className="form-control" name="lastName" id="lastName" placeholder="Enter last name" />
                         </div>
                         <div className="form-group mb-4">
-                            <label htmlFor="exampleInputEmail1">Email address</label>
+                            <label htmlFor="userName">Username</label>
+                            <input type="text" className="form-control" name="userName" id="userName" placeholder="Enter Username" />
+                        </div>
+                        <div className="form-group mb-4">
+                            <label htmlFor="inputEmail1">Email address</label>
                             <input type="email" className="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                             <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
