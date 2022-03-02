@@ -28,8 +28,6 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    
 }
 
 .NavLeft {
@@ -42,7 +40,7 @@ html {
     font-size: 16px;
     cursor: pointer;
     margin-left: 5px;
-    padding:10px;
+    padding: 10px;
 }
 
 .SearchContainer {
@@ -52,9 +50,9 @@ html {
     padding: 5px;
     height: 30px;
     margin-left: 6.5%;
-    
 }
-.SearchButton{
+
+.SearchButton {
     margin-left: 10px;
 }
 
@@ -83,20 +81,23 @@ html {
     cursor: pointer;
     margin-left: 25px;
 }
-.stick-the-navbar{
+
+.stick-the-navbar {
     position: sticky;
     top: 0;
     background-color: white;
     box-shadow: 0 2px 1px -1px rgb(228, 228, 228);
     z-index: 300;
 }
-.bars{
+
+.bars {
     display: none;
     color: black;
 }
+
 @media screen and (max-width:790px) {
-    .bars{
-        display:block;
+    .bars {
+        display: block;
         position: absolute;
         top: 0;
         right: 0;
@@ -104,11 +105,12 @@ html {
         font-size: 1.8rem;
         cursor: pointer;
     }
-    .NavLeft{
-        display: none;
-    }
-    .NavRight{
+
+    .NavLeft {
         display: none;
     }
 
+    .NavRight {
+        display: none;
+    }
 }

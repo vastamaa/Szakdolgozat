@@ -18,8 +18,12 @@ export class NavMenu extends Component {
         this.toggleNavbar = this.toggleNavbar.bind(this);
         this.state = {
             collapsed: true,
-            loggedIn: readCookie("tokenJWT")
+            loggedIn: readCookie("token")
         };
+    }
+
+    componentDidMount() {
+        this.getUserName();
     }
 
     toggleNavbar() {
@@ -32,7 +36,7 @@ export class NavMenu extends Component {
         return (
             <header className='stick-the-navbar'>
                 {/* Example -- 'null = falshy' {this.state.loggedIn ? console.log("be van jelentkezve") : console.log("nincs bejelentkezve") };*/}
-                
+
                 <div className='NavContainer NavWrapper'>
                     <FaBars className='bars'></FaBars>
                     <div className='NavLeft'>
@@ -44,7 +48,7 @@ export class NavMenu extends Component {
                     </div>
 
                     <div className='NavCenter'>
-                       <NavLink tag={Link} to="/"> <h1 className='NavLogo text-dark'>Litera</h1></NavLink>
+                        <NavLink tag={Link} to="/"> <h1 className='NavLogo text-dark'>Litera</h1></NavLink>
                     </div>
                     {this.state.loggedIn ? <div className='NavRight'>
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/books" >Books</NavLink>
@@ -57,25 +61,18 @@ export class NavMenu extends Component {
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/register" >Register</NavLink>
                     </div>}
                 </div>
-
-                {/* <Navbar className='navbar-expand-m navbar-toggleable-sm NavWrapper NavContainer'>
-        <NavbarBrand className='NavCenter NavLogo' tag={Link} to="/">CoolWebshop</NavbarBrand>
-        <NavbarToggler onClick={this.toggleNavbar} className='mr-2'/>
-        <Collapse className='d-sm-inline-flex flex-sm-row-reverse' isOpen={!this.state.collapsed} navbar>
-          <ul className="navbar-nav flex-grow">
-              <NavItem>
-                  <NavLink tag={Link} className='NavMenuItem' to="/counter">Counter</NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink tag={Link} className='NavMenuItem' to="/fetch-data">Fetch</NavLink>
-              </NavItem>
-              <NavItem>
-                  <NavLink tag={Link} className='NavMenuItem' to="/fetch-books">Books</NavLink>
-              </NavItem>
-          </ul>
-        </Collapse>
-        </Navbar> */}
             </header>
         );
+    }
+
+    getUserName() {
+        if (this.state.loggedIn != null) {
+            var token = this.state.loggedIn;
+            var decodedJwt = atob(token[1]);
+            var firstData = decodedJwt.split(',');
+            var name = firstData[0].split(':');
+
+            console.log(name[2].slice(1, -1));
+        }
     }
 }

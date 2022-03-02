@@ -22,7 +22,8 @@ code {
 .font-face-gm {
     font-family: "UrbanistBold";
 }
-.stick-the-navbar{
+
+.stick-the-navbar {
     position: sticky;
     top: 0;
 }

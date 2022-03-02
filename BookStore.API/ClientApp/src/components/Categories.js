@@ -6,36 +6,36 @@ export class Categories extends Component {
     render() {
         return (
             <div>
-            <div className='BigContainer'>
-                {categories.map((item) => (
-                    <div className='Container img-hover-zoom img-hover-zoom--quick-zoom'>
+                <div className='BigContainer'>
+                    {categories.map((item) => (
+                        <div className='Container img-hover-zoom img-hover-zoom--quick-zoom'>
 
-                        <>
-                            <img className='Image' src={item.img}></img>
-                            <div className='Info'>
-                                <h1 className='Title' >{item.title}</h1>
-                                <p className='Desc'>{item.desc}</p>
+                            <>
+                                <img className='Image' src={item.img}></img>
+                                <div className='Info'>
+                                    <h1 className='Title' >{item.title}</h1>
+                                    <p className='Desc'>{item.desc}</p>
+                                </div>
+                            </>
+                        </div>
+                    ))
+                    }
+
+                </div>
+                {showmore.map((item) => (
+                    <>
+                        <div className='showmoreCategory'>
+                            <div className='showmore-img-hover-zoom showmore-img-hover-zoom--quick-zoom showmoreBorder'>
+
+
+                                <img className='showmoreImage' src={item.image} />
+                                <div className='showmoreInfo'>
+                                    <div className='showmoreText'>{item.text}</div>
+                                </div>
                             </div>
-                        </>
-                    </div>
-                ))
-                }
-
-            </div>
-            {showmore.map((item)=>(
-            <>
-            <div className='showmoreCategory'>
-            <div className='showmore-img-hover-zoom showmore-img-hover-zoom--quick-zoom showmoreBorder'>
-                
-                
-            <img className='showmoreImage' src={item.image}/>
-            <div className='showmoreInfo'>
-                <div className='showmoreText'>{item.text}</div>
-              </div>    
-            </div>
-            </div>
-            </>
-            ))}
+                        </div>
+                    </>
+                ))}
             </div>
         );
     }
