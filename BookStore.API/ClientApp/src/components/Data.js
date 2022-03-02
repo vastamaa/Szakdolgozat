@@ -28,21 +28,24 @@ export const categories = [
         id: 1,
         img: "https://images.pexels.com/photos/2494701/pexels-photo-2494701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         title: "ROMANCE",
-        textcolor: 'color:"white"',
         desc: 'For ...'
     },
     {
         id: 2,
         img: "https://images.pexels.com/photos/3185488/pexels-photo-3185488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         title: "HISTORY",
-        textcolor: 'color:"brown"',
         desc: 'For ...'
     },
     {
         id: 3,
         img: "https://images.pexels.com/photos/34223/mont-saint-michel-france-normandy-europe.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         title: "FANTASY",
-        textcolor: 'color:"purple"',
         desc: 'For a ...'
+    }
+]
+export const showmore =[
+    {
+        image:"https://images.pexels.com/photos/256467/pexels-photo-256467.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        text:"SHOW MORE"
     }
 ]

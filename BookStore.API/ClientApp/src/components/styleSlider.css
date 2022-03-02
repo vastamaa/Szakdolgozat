@@ -5,9 +5,11 @@
     position: relative;
     overflow: hidden;
     display: flex;
+    padding: 4px;
+
 }
 
-.Arrow {
+.SliderArrow {
     width: 50px;
     height: 50px;
     background-color: #c4c1c1;
@@ -24,10 +26,11 @@
     z-index: 50000;
 }
 
-.Wrapper {
+.SliderWrapper {
     height: 100%;
     display: flex;
     transition: all 1.2s ease;
+    
 }
 
 .Slide {
@@ -35,23 +38,28 @@
     height: 100vh;
     display: flex;
     align-items: center;
+
 }
 
-.ImageContainer {
+.SliderImageContainer {
     height: 100%;
     flex: 1;
+
 }
 
-.Image {
+.SliderImage {
     height: 80%;
+    width: 80%;
+    border-radius: 1px;
+    object-fit: cover;
 }
 
-.InfoContainer {
+.SliderInfoContainer {
     flex: 1;
     padding: 50px;
 }
 
-.Tittle {
+.SliderTitle {
     font-size: 50px;
 }
 
@@ -63,7 +71,7 @@
     color: black;
 }
 
-.Button {
+.SliderButton {
     padding: 10px;
     font-size: 20px;
     background-color: transparent;

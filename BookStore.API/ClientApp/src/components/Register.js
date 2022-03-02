@@ -20,7 +20,7 @@ export class Register extends Component {
                     <div className='login-img-container'>
                         <img className='login-img' src="https://image.shutterstock.com/image-vector/user-login-authenticate-icon-human-600w-1365533969.jpg"></img>
                     </div>
-                    <form className='login-form' action='api/account/register' onSubmit={handleFormRegisterSubmit}>
+                    <form className='login-form' action='api/accounts/register' onSubmit={handleFormRegisterSubmit}>
                     <div className='login-form-group'>
                             <label className='login-label' htmlFor='firstName'>First Name</label>
                             <input className='login-input' type="text" name='firstName' placeholder='First Name' id="firstName"></input>

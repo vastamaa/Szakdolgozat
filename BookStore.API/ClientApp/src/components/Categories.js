@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { categories } from './Data';
+import { categories, showmore } from './Data';
 import './styleCate.css';
 
 export class Categories extends Component {
     render() {
         return (
+            <div>
             <div className='BigContainer'>
                 {categories.map((item) => (
                     <div className='Container img-hover-zoom img-hover-zoom--quick-zoom'>
@@ -20,6 +21,21 @@ export class Categories extends Component {
                 ))
                 }
 
+            </div>
+            {showmore.map((item)=>(
+            <>
+            <div className='showmoreCategory'>
+            <div className='showmore-img-hover-zoom showmore-img-hover-zoom--quick-zoom showmoreBorder'>
+                
+                
+            <img className='showmoreImage' src={item.image}/>
+            <div className='showmoreInfo'>
+                <div className='showmoreText'>{item.text}</div>
+              </div>    
+            </div>
+            </div>
+            </>
+            ))}
             </div>
         );
     }

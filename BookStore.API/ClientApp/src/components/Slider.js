@@ -42,30 +42,30 @@ export class Slider extends Component {
         return (
 
             <div className='SliderContainer'>
-                <div className='Arrow' direction="left" style={{ left: "10px" }} onClick={this.handleClick}>
+                <div className='SliderArrow' direction="left" style={{ left: "10px" }} onClick={this.handleClick}>
                     <AiOutlineLeft></AiOutlineLeft>
                 </div>
 
 
                 {sliderItems.map((item) => (
-                    <div className='Wrapper' style={sliding}>
+                    <div className='SliderWrapper' style={sliding}>
                         <div className='Slide' style={{ backgroundColor: item.bg }}>
 
-                            <div className='ImageContainer' src={item.img}>
-                                <img className='Image' src={item.img}></img>
+                            <div className='SliderImageContainer' src={item.img}>
+                                <img className='SliderImage' src={item.img}></img>
                             </div>
 
-                            <div className='InfoContainer'>
-                                <h1 className='Tittle'>{item.title}</h1>
+                            <div className='SliderInfoContainer'>
+                                <h1 className='SliderTitle'>{item.title}</h1>
                                 <p className='SliderDesc'>{item.desc}</p>
-                                <button className='Button'>SHOW NOW</button>
+                                <button className='SliderButton'>SHOW NOW</button>
                             </div>
                         </div>
                     </div>
                 ))}
 
 
-                <div className='Arrow' direction="right" style={{ right: "10px" }} onClick={this.handleClick}>
+                <div className='SliderArrow' direction="right" style={{ right: "10px" }} onClick={this.handleClick}>
                     <AiOutlineRight></AiOutlineRight>
                 </div>
             </div>
