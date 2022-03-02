@@ -15,13 +15,15 @@ export default class App extends Component {
     render() {
         return (
             <div className='font-face-gm'>
-                <Layout className='stick-the-navbar'>
+               <Layout className='stick-the-navbar'> 
                     <Route exact path='/' component={Home} />
                     <Route path='/counter' component={Counter} />
                     <Route path='/books' component={Books} />
                     <Route path='/account/register' component={Register} />
                     <Route path='/account/login' component={Login} />
+                   
                 </Layout>
+
             </div>
         );
     }

@@ -1,6 +1,6 @@
 .Container {
     flex: 1;
-    margin: 3px;
+    margin: 1% 4px;
     height: 50vh;
     position: relative;
     cursor: pointer;

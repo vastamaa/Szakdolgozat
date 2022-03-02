@@ -1,4 +1,5 @@
 .SliderContainer {
+    margin-top: 0.5%;
     width: 100%;
     height: 80vh;
     position: relative;
@@ -9,7 +10,7 @@
 .Arrow {
     width: 50px;
     height: 50px;
-    background-color: #fff7f7;
+    background-color: #c4c1c1;
     border-radius: 50px;
     display: flex;
     align-items: center;
@@ -17,8 +18,6 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    /* left: ${props=> props.direction ==="left" && "10px"};
-    right: ${props=> props.direction ==="right" && "10px"}; */
     margin: auto;
     cursor: pointer;
     opacity: 0.5;
@@ -28,7 +27,6 @@
 .Wrapper {
     height: 100%;
     display: flex;
-    /* transform:translateX(${props=>props.slideIndex*-100}vw); */
     transition: all 1.2s ease;
 }
 

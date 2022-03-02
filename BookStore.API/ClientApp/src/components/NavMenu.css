@@ -5,12 +5,12 @@
 }
 
 html {
-    font-size: 14px;
+    font-size: 17px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 790px) {
     html {
-        font-size: 16px;
+        font-size: 19px;
     }
 }
 
@@ -20,6 +20,7 @@ html {
 
 .NavContainer {
     height: 60px;
+    background-color: #FFFF66;
 }
 
 .NavWrapper {
@@ -27,6 +28,8 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    
 }
 
 .NavLeft {
@@ -36,14 +39,13 @@ html {
 }
 
 .Lang {
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     margin-left: 5px;
     padding:10px;
 }
 
 .SearchContainer {
-    border: 0.5px solid lightgray;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,6 +53,9 @@ html {
     height: 30px;
     margin-left: 6.5%;
     
+}
+.SearchButton{
+    margin-left: 10px;
 }
 
 .NavInput {
@@ -74,7 +79,7 @@ html {
 }
 
 .NavMenuItem {
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     margin-left: 25px;
 }
@@ -84,4 +89,26 @@ html {
     background-color: white;
     box-shadow: 0 2px 1px -1px rgb(228, 228, 228);
     z-index: 300;
+}
+.bars{
+    display: none;
+    color: black;
+}
+@media screen and (max-width:790px) {
+    .bars{
+        display:block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%,75%);
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+    .NavLeft{
+        display: none;
+    }
+    .NavRight{
+        display: none;
+    }
+
 }

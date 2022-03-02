@@ -6,6 +6,7 @@ import { AiOutlineShoppingCart } from "@react-icons/all-files/ai/AiOutlineShoppi
 import { readCookie } from "./CookieHandler";
 import { logOut } from "./Log";
 import './NavMenu.css';
+import { FaBars } from "@react-icons/all-files/fa/FaBars";
 
 
 export class NavMenu extends Component {
@@ -17,7 +18,7 @@ export class NavMenu extends Component {
         this.toggleNavbar = this.toggleNavbar.bind(this);
         this.state = {
             collapsed: true,
-            loggedIn: readCookie("token")
+            loggedIn: readCookie("tokenJWT")
         };
     }
 
@@ -31,19 +32,19 @@ export class NavMenu extends Component {
         return (
             <header className='stick-the-navbar'>
                 {/* Example -- 'null = falshy' {this.state.loggedIn ? console.log("be van jelentkezve") : console.log("nincs bejelentkezve") };*/}
-
+                
                 <div className='NavContainer NavWrapper'>
-
+                    <FaBars className='bars'></FaBars>
                     <div className='NavLeft'>
                         <span className='Lang'>EN</span>
                         <div className='SearchContainer'>
                             <input className='NavInput'></input>
-                            <IoSearchSharp />
+                            <IoSearchSharp className='SearchButton' />
                         </div>
                     </div>
 
                     <div className='NavCenter'>
-                        <NavLink tag={Link} to="/"> <h1 className='NavLogo text-dark'>Litera</h1></NavLink>
+                       <NavLink tag={Link} to="/"> <h1 className='NavLogo text-dark'>Litera</h1></NavLink>
                     </div>
                     {this.state.loggedIn ? <div className='NavRight'>
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/books" >Books</NavLink>
