@@ -19,7 +19,7 @@ export class NavMenu extends Component {
         this.state = {
             collapsed: true,
             loggedIn: readCookie("token"),
-            userName:""
+            userName: ""
         };
     }
 
@@ -54,9 +54,15 @@ export class NavMenu extends Component {
                     {this.state.loggedIn ? <div className='NavRight'>
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/books" >Books</NavLink>
                         <AiOutlineShoppingCart size="30px "></AiOutlineShoppingCart>
-                        <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/login" >Welcome, {this.state.userName}</NavLink>
+                        {/*<NavLink tag={Link} className='NavMenuItem text-dark' to="/account/login" >Welcome, {this.state.userName}</NavLink>*/}
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/register" >Register</NavLink>
-                        <NavLink tag={Link} onClick={logOut} className='NavMenuItem text-dark' to="/">Logout</NavLink>
+                        <div className="dropdown">
+                            <span className="dropdown-toggle NavMenuItem text-dark" data-bs-toggle="dropdown">Welcome, {this.state.userName}</span>
+                            <div class="dropdown-menu">
+                                {/*                                <a href="#" className="dropdown-item">Action</a>*/}
+                                <NavLink tag={Link} onClick={logOut} className="dropdown-item NavMenuItem text-dark" to="/">Logout</NavLink>
+                            </div>
+                        </div>
                     </div> : <div className='NavRight'>
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/login" >Login</NavLink>
                         <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/register" >Register</NavLink>
@@ -73,8 +79,8 @@ export class NavMenu extends Component {
             var firstData = decodedJwt.split(',');
             var name = firstData[0].split(':');
             var final = name[2].slice(1, -1);
-        
-            this.setState({userName: final});
+
+            this.setState({ userName: final });
             // console.log(final);
         }
     }
@@ -97,7 +103,7 @@ export class NavMenu extends Component {
 //        const currentState=this.state.collapsed;
 //        this.setState({collapsed: !currentState});
 //      }
-    
+
 
 //     componentDidMount() {
 //         this.getUserName();
@@ -108,7 +114,7 @@ export class NavMenu extends Component {
 //     return (
 //         <header className='stick-the-navbar'>
 //         {/* Example -- 'null = falshy' {this.state.loggedIn ? console.log("be van jelentkezve") : console.log("nincs bejelentkezve") };*/}
-        
+
 //         <div className='NavContainer NavWrapper'>
 //             <FaBars className='bars' onClick={this.toggleBurgir}></FaBars>
 //             <div className='NavLeft'>
@@ -118,7 +124,7 @@ export class NavMenu extends Component {
 //                     <IoSearchSharp className='SearchButton' />
 //                 </div>
 //             </div>
-        
+
 //             <div className='NavCenter'>
 //                 <NavLink tag={Link} to="/"> <h1 className='NavLogo text-dark'>Litera</h1></NavLink>
 //             </div>
@@ -137,6 +143,6 @@ export class NavMenu extends Component {
 //         <AiOutlineLeft onClick={this.toggleBurgir}></AiOutlineLeft>
 //         </div>
 //         </header>
-        
+
 //     );
 // }
