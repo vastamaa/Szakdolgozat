@@ -76,6 +76,6 @@ export async function handleFormRegisterSubmit(event) {
 }
 
 export function logOut() {
-    eraseCookie("tokenJWT")
+    eraseCookie("token")
     window.location.replace("/");
 }

@@ -28,10 +28,20 @@ namespace BookStore.API.Controllers
         }
 
         //GET: /api/books/id
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetBookById([FromRoute] int id)
+        //[HttpGet("{id:int}")]
+        //public async Task<IActionResult> GetBookById([FromRoute] int id)
+        //{
+        //    var book = await _bookRepository.GetBookByIdAsync(id);
+
+        //    if (book is null) return NotFound();
+
+        //    return Ok(book);
+        //}
+
+        [HttpGet("{name}")]
+        public async Task<IActionResult> GetBookById([FromRoute] string name)
         {
-            var book = await _bookRepository.GetBookByIdAsync(id);
+            var book = await _bookRepository.GetBookByNameAsync(name);
 
             if (book is null) return NotFound();
 

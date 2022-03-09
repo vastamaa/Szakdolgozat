@@ -17,7 +17,7 @@ export class Login extends Component {
                     <div className='login-header'>Login:</div>
                     <div className='login-content'>
                         <div className='login-img-container'>
-                            <img className='login-img' src="https://image.shutterstock.com/image-vector/user-login-authenticate-icon-human-600w-1365533969.jpg"></img>
+                            <img className='login-img' src="https://pic.onlinewebfonts.com/svg/img_550783.png"></img>
                         </div>
                         <form className='login-form' action='api/accounts/login' onSubmit={handleFormLoginSubmit}>
                             <div className='login-form-group'>
