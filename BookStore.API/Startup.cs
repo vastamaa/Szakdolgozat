@@ -1,4 +1,5 @@
 using BookStore.API.Data;
+using BookStore.API.Helpers;
 using BookStore.API.Models;
 using BookStore.API.Repository;
 using BookStore.API.Repository.Implementations;
@@ -32,6 +33,9 @@ namespace BookStore.API
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("BookStoreDatabase")));
 
+            JwtConfig jwtConfig = new();
+            Configuration.GetSection(JwtConfig.Name).Bind(jwtConfig);
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
@@ -52,9 +56,9 @@ namespace BookStore.API
                     ValidateLifetime = true,
                     ValidateAudience = true,
                     ValidateIssuer = true,
-                    ValidAudience = Configuration["JWT:ValidAudience"],
-                    ValidIssuer = Configuration["JWT:ValidIssuer"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"])),
+                    ValidAudience = jwtConfig.ValidAudience,
+                    ValidIssuer = jwtConfig.ValidIssuer,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig.Secret)),
                     ClockSkew = TimeSpan.Zero
                 };
             });
@@ -63,6 +67,7 @@ namespace BookStore.API
             services.AddTransient<IBookRepository, BookRepository>();
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<ITokenRepository, TokenRepository>();
+            services.Configure<JwtConfig>(Configuration.GetSection(JwtConfig.Name));
             services.AddAutoMapper(typeof(Startup));
 
             services.AddSession(options =>

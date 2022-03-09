@@ -1,5 +1,6 @@
-﻿using BookStore.API.Repository.Interfaces;
-using Microsoft.Extensions.Configuration;
+﻿using BookStore.API.Helpers;
+using BookStore.API.Repository.Interfaces;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -12,20 +13,20 @@ namespace BookStore.API.Repository.Implementations
 {
     public class TokenRepository : ITokenRepository
     {
-        private readonly IConfiguration _configuration;
+        private readonly JwtConfig _jwtConfig;
 
-        public TokenRepository(IConfiguration configuration)
+        public TokenRepository(IOptions<JwtConfig> options)
         {
-            _configuration = configuration;
+            _jwtConfig = options.Value;
         }
 
         public JwtSecurityToken GetToken(List<Claim> authClaims)
         {
-            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtConfig.Secret));
 
             var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:ValidIssuer"],
-                audience: _configuration["JWT:ValidAudience"],
+                issuer: _jwtConfig.ValidIssuer,
+                audience: _jwtConfig.ValidAudience,
                 expires: DateTime.Now.AddHours(3),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
@@ -50,7 +51,7 @@ namespace BookStore.API.Repository.Implementations
                 ValidateAudience = false,
                 ValidateIssuer = false,
                 ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"])),
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtConfig.Secret)),
                 ValidateLifetime = false
             };
 

@@ -1,7 +1,8 @@
-﻿using BookStore.API.Models;
+﻿using BookStore.API.Helpers;
+using BookStore.API.Models;
 using BookStore.API.Repository.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -15,14 +16,14 @@ namespace BookStore.API.Repository
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ITokenRepository _tokenRepository;
-        private readonly IConfiguration _configuration;
+        private readonly JwtConfig _jwtConfig;
 
-        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenRepository tokenRepository, IConfiguration configuration)
+        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenRepository tokenRepository, IOptions<JwtConfig> options)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenRepository = tokenRepository;
-            _configuration = configuration;
+            _jwtConfig = options.Value;
         }
 
         public async Task<IdentityResult> RegisterAsync(RegisterModel registerModel)
@@ -64,7 +65,7 @@ namespace BookStore.API.Repository
                 var token = _tokenRepository.GetToken(authClaims);
                 var refreshToken = _tokenRepository.GenerateRefreshToken();
 
-                _ = int.TryParse(_configuration["JWT:RefreshTokenValidityInDays"], out int refreshTokenValidityInDays);
+                _ = int.TryParse(_jwtConfig.RefreshTokenValidityInDays, out int refreshTokenValidityInDays);
 
                 user.RefreshToken = refreshToken;
                 user.RefreshTokenExpiryTime = DateTime.Now.AddDays(refreshTokenValidityInDays);
