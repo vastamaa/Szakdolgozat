@@ -42,7 +42,7 @@ export class Slider extends Component {
         return (
 
             <div className='SliderContainer'>
-                <div className='SliderArrow' direction="left" style={{ left: "10px" }} onClick={this.handleClick}>
+                <div className='SliderArrow' direction="left" style={{ left: "10px", zIndex: 5 }} onClick={this.handleClick}>
                     <AiOutlineLeft></AiOutlineLeft>
                 </div>
 
@@ -65,7 +65,7 @@ export class Slider extends Component {
                 ))}
 
 
-                <div className='SliderArrow' direction="right" style={{ right: "10px" }} onClick={this.handleClick}>
+                <div className='SliderArrow' direction="right" style={{ right: "10px", zIndex: 5}} onClick={this.handleClick}>
                     <AiOutlineRight></AiOutlineRight>
                 </div>
             </div>
