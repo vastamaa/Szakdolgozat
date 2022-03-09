@@ -45,7 +45,7 @@ export const categories = [
 ]
 export const showmore = [
     {
-        image: "https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        image: "https://images.pexels.com/photos/768125/pexels-photo-768125.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         text: "SHOW MORE"
     }
 ]

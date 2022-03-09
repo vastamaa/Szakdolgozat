@@ -28,7 +28,7 @@ export class Categories extends Component {
                             <div className='showmore-img-hover-zoom showmore-img-hover-zoom--quick-zoom showmoreBorder'>
 
 
-                                <img className='showmoreImage' src={item.image} />
+                                <img className='showmoreImage'  style={{ backgroundImage: `url(${item.image})`  }} />
                                 <div className='showmoreInfo'>
                                     <div className='showmoreText'>{item.text}</div>
                                 </div>
