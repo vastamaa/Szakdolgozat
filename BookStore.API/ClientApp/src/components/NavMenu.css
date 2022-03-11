@@ -51,13 +51,33 @@ html {
     height: 30px;
     margin-left: 6.5%;
 }
+.SearchContainerBurgir {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    height: 30px;
+    margin-left: 13%;
+}
 
 .SearchButton {
     margin-left: 10px;
 }
+.SearchButtonBurgir {
+    margin-right:7%
+}
 
 .NavInput {
     border: none;
+    border: 1px solid #66666E;
+    border-radius: 2px;
+    width: 200px;
+}
+.NavInputBurgir {
+    border: 1px solid #66666E;
+    width: 120px;  
+    border-radius: 2px;
+    margin-left: 5%;
 }
 
 .NavCenter {
@@ -77,9 +97,10 @@ html {
 }
 
 .NavMenuItem {
+    padding:5px 17px 5px 17px ;
     font-size: 16px;
     cursor: pointer;
-    margin-left: 25px;
+    margin-left: 20px;
 }
 
 .stick-the-navbar {
@@ -94,12 +115,17 @@ html {
     display: none;
     color: black;
 }
+@media screen and (min-width:791) {
+    .burgirMenu{
+        display: none ;
+    }
+}
 
 @media screen and (max-width:790px) {
     .bars {
         display: block;
         position: absolute;
-        top: 0;
+        bottom: 60%;
         right: 0;
         transform: translate(-100%,75%);
         font-size: 1.8rem;
@@ -114,13 +140,28 @@ html {
         display: none;
     }
 }
+.burgerClose{
+    align-items: center;
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+}
+.burgirHead{
+    font-size: 20px;
+}
+.burgirDiv{
+    margin-top: -15%;
+    margin-top: -23%;
+    margin-left: 3%;
+}
 .burgirMenu{
     position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
-    background: white;
-    width: 300px;
+    background: #F3F6FB;
+    width: 250px;
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -128,14 +169,11 @@ html {
     justify-content: flex-start;
     list-style: none;
     padding: 20px;
-
-}
-
-.li {
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-.a{
-    font-weight: 600;
+    transition: all 1s ease;
+    border-style: none none none solid ;
+    border-color:#66666E ;
+    border-width: 5px;
+    border-spacing: 10px;
+    border-collapse: separate;
 
 }
