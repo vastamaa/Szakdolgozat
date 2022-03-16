@@ -23,8 +23,8 @@ namespace BookStore.API.Repository
 
         public async Task<List<Morebook>> GetAllBooksAsync()
         {
-            //Régi megoldásom
-            //var records = await _context.Books.Select(x => new BookModel()
+            //Régi megoldásaim
+            //var records = await _context.Books.Select(x => new Morebook()
             //{
             //    Id = x.Id,
             //    Title = x.Title,
@@ -33,7 +33,31 @@ namespace BookStore.API.Repository
             //).ToListAsync();
             //return records;
 
-            var record = await _context.Morebooks.ToListAsync();
+            //var record = await _context.Morebooks.ToListAsync();
+            //return _applicationMapper.Map<List<Morebook>>(record);
+
+            var record = await (from m in _context.Morebooks
+                                join a in _context.Authors on m.AuthId equals a.AuthId
+                                join p in _context.Publishers on m.PublisherId equals p.PublisherId
+                                join g in _context.Genres on m.GenreId equals g.GenreId
+                                join l in _context.Languages on m.LangId equals l.LangId
+                                select new Morebook
+                                {
+                                    Id = m.Id,
+                                    Title = m.Title,
+                                    AuthorName = a.AuthName,
+                                    GenreName = g.GenreName,
+                                    Pagenumber = m.Pagenumber,
+                                    LanguageName = l.LangName,
+                                    Isbn = m.Isbn,
+                                    Description = m.Description,
+                                    ImgLink = m.ImgLink,
+                                    PublisherName = p.PublisherName,
+                                    Price = m.Price,
+                                    PublishingYear = m.PublishingYear
+
+                                }).ToListAsync();
+
             return _applicationMapper.Map<List<Morebook>>(record);
         }
 
@@ -53,15 +77,39 @@ namespace BookStore.API.Repository
         //    return _applicationMapper.Map<BookModel>(book);
         //}
 
-        public async Task<BookModel> GetBookByNameAsync(string bookName)
+        public async Task<Morebook> GetBookByNameAsync(string bookName)
         {
-            var record = await _context.Books.Where(x => x.Title == bookName).Select(x => new BookModel()
-            {
-                Id = x.Id,
-                Title = x.Title,
-                Description = x.Description
-            }
-            ).FirstOrDefaultAsync();
+            //var record = await _context.Books.Where(x => x.Title == bookName).Select(x => new BookModel()
+            //{
+            //    Id = x.Id,
+            //    Title = x.Title,
+            //    Description = x.Description
+            //}
+            //).FirstOrDefaultAsync();
+            //return record;
+
+            var record = await (from m in _context.Morebooks
+                                join a in _context.Authors on m.AuthId equals a.AuthId
+                                join p in _context.Publishers on m.PublisherId equals p.PublisherId
+                                join g in _context.Genres on m.GenreId equals g.GenreId
+                                join l in _context.Languages on m.LangId equals l.LangId
+                                where m.Title == bookName
+                                select new Morebook
+                                {
+                                    Id = m.Id,
+                                    Title = m.Title,
+                                    AuthorName = a.AuthName,
+                                    GenreName = g.GenreName,
+                                    Pagenumber = m.Pagenumber,
+                                    LanguageName = l.LangName,
+                                    Isbn = m.Isbn,
+                                    Description = m.Description,
+                                    ImgLink = m.ImgLink,
+                                    PublisherName = p.PublisherName,
+                                    Price = m.Price,
+                                    PublishingYear = m.PublishingYear
+
+                                }).FirstOrDefaultAsync();
             return record;
         }
 

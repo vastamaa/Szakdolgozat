@@ -20,15 +20,31 @@ export class Books extends Component {
                     <tr>
                         <th>Id</th>
                         <th>Title</th>
+                        <th>Genre</th>
+                        <th>Page number</th>
+                        <th>Language</th>
+                        <th>ISBN</th>
                         <th>Description</th>
+                        <th>ImageLink</th>
+                        <th>Publisher</th>
+                        <th>Price</th>
+                        <th>Publishing Year</th>
                     </tr>
                 </thead>
                 <tbody>
                     {books.map(books =>
                         <tr key={books.id}>
                             <td>{books.id}</td>
-                            <td>{books.auth.authName}</td>
+                            <td>{books.title}</td>
+                            <td>{books.genreName}</td>
+                            <td>{books.pagenumber}</td>
+                            <td>{books.languageName}</td>
+                            <td>{books.isbn}</td>
                             <td>{books.description}</td>
+                            <td>{books.imgLink}</td>
+                            <td>{books.publisherName}</td>
+                            <td>{books.price}</td>
+                            <td>{books.publishingYear}</td>
                         </tr>
                     )}
                 </tbody>

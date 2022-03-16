@@ -17,6 +17,11 @@ namespace BookStore.API.Data.Database
         public int Price { get; set; }
         public int PublishingYear { get; set; }
 
+
+        public string GenreName { get; set; }
+        public string AuthorName { get; set; }
+        public string LanguageName { get; set; }
+        public string PublisherName { get; set; }
         public virtual Author Auth { get; set; }
         public virtual Genre Genre { get; set; }
         public virtual Language Lang { get; set; }

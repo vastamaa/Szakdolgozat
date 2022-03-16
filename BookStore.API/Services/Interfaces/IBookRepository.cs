@@ -9,7 +9,7 @@ namespace BookStore.API.Repository
     public interface IBookRepository
     {
         Task<List<Morebook>> GetAllBooksAsync();
-        Task<BookModel> GetBookByNameAsync(string bookName);
+        Task<Morebook> GetBookByNameAsync(string bookName);
         Task<int> AddBookAsync(BookModel bookModel);
         Task UpdateBookAsync(int bookId, BookModel bookModel);
         Task UpdateBookPatchAsync(int bookId, JsonPatchDocument bookModel);

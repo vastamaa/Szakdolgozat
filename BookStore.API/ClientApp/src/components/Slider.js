@@ -65,7 +65,7 @@ export class Slider extends Component {
                 ))}
 
 
-                <div className='SliderArrow' direction="right" style={{ right: "10px", zIndex: 5}} onClick={this.handleClick}>
+                <div className='SliderArrow' direction="right" style={{ right: "10px", zIndex: 5 }} onClick={this.handleClick}>
                     <AiOutlineRight></AiOutlineRight>
                 </div>
             </div>
