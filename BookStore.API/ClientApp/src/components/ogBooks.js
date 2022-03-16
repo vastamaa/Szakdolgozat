@@ -27,7 +27,7 @@ export class Books extends Component {
                     {books.map(books =>
                         <tr key={books.id}>
                             <td>{books.id}</td>
-                            <td>{books.auth.authName}</td>
+                            <td>{books.title}</td>
                             <td>{books.description}</td>
                         </tr>
                     )}
@@ -63,7 +63,6 @@ export class Books extends Component {
                     }
                 });
             const data = await response.json();
-            console.log(data);
             this.setState({ books: data, loading: false });
         } catch (e) {
             console.log("A lekerdezes nem sikerult: ", e)

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookStore.API.Data;
+using BookStore.API.Data.Database;
 using BookStore.API.Models;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.EntityFrameworkCore;
@@ -9,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace BookStore.API.Repository
 {
-    public class BookRepository : IBookRepository
+    public class BookServices : IBookRepository
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _applicationMapper;
 
-        public BookRepository(ApplicationDbContext context, IMapper applicationMapper)
+        public BookServices(ApplicationDbContext context, IMapper applicationMapper)
         {
             _context = context;
             _applicationMapper = applicationMapper;
         }
 
-        public async Task<List<BookModel>> GetAllBooksAsync()
+        public async Task<List<Morebook>> GetAllBooksAsync()
         {
             //Régi megoldásom
             //var records = await _context.Books.Select(x => new BookModel()
@@ -32,8 +33,8 @@ namespace BookStore.API.Repository
             //).ToListAsync();
             //return records;
 
-            var record = await _context.Books.ToListAsync();
-            return _applicationMapper.Map<List<BookModel>>(record);
+            var record = await _context.Morebooks.ToListAsync();
+            return _applicationMapper.Map<List<Morebook>>(record);
         }
 
         //public async Task<BookModel> GetBookByIdAsync(int bookId)

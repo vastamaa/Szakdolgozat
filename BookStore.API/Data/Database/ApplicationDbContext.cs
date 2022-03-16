@@ -1,4 +1,5 @@
-﻿using BookStore.API.Models;
+﻿using BookStore.API.Data.Database;
+using BookStore.API.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -43,5 +44,11 @@ namespace BookStore.API.Data
         }
 
         public DbSet<Book> Books { get; set; }
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
+        public DbSet<Morebook> Morebooks { get; set; }
+
     }
 }

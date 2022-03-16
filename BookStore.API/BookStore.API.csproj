@@ -31,13 +31,13 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="Data\Email\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="Data\Email\**" />
+    <EmbeddedResource Remove="Data\Email\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="Data\Email\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Data\Email\" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
