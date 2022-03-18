@@ -1,0 +1,17 @@
+.BookCardsContainer{
+    display: flex;
+    flex: 3;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.BookCard{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    width: 200px;
+    word-wrap:break-word;
+    background-color:#fff;
+    background-clip:border-box;
+    border:1px solid rgba(0,0,0,.125);
+    border-radius:.25rem}
