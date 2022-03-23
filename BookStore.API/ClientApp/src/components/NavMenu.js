@@ -34,8 +34,7 @@ export class NavMenu extends Component {
 
 
     componentDidMount() {
-        let data = getData();
-        console.log(data);
+        var data = getData();
         if (data != undefined) {
             let name = data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
             if (name != undefined) {

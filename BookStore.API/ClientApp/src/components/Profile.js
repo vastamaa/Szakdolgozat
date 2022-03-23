@@ -1,5 +1,5 @@
 ﻿import React, { Component } from "react";
-import { getData } from './TokenDecode';
+import { getData } from "./TokenDecode";
 
 export class Profile extends Component {
     static displayName = Profile.name;
@@ -8,17 +8,23 @@ export class Profile extends Component {
         super(props);
         this.state = {
             userName: "",
-            emailAddress: ""
+            emailAddress: "",
+            role: ""
         };
     }
 
-    componentdidmount() {
-        let data = getdata();
+    componentDidMount() {
+        var data = getData();
         if (data != undefined) {
             let name = data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
             let email = data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'];
-            console.log(email);
-            this.setstate({ userName: name, emailAddress: email });
+            if (name != undefined) {
+                this.setState({
+                    userName: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
+                    emailAddress: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'],
+                    role: data['aud']
+                });
+            }
         }
     }
 
@@ -30,9 +36,9 @@ export class Profile extends Component {
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
                 />
                 <div className="card">
-                    <h1>{ this.state.userName }</h1>
-                    <p className="title">CEO &amp; Founder, Example</p>
-                    <p>Harvard University</p>
+                    <h1>Name: { this.state.userName }</h1>
+                    <p className="title">Role: { this.state.role }</p>
+                    <p>Email address: { this.state.emailAddress }</p>
                     <a href="#">
                         <i className="fa fa-dribbble" />
                     </a>
@@ -50,6 +56,6 @@ export class Profile extends Component {
                     </p>
                 </div>
             </div>
-            );
+        );
     }
 }

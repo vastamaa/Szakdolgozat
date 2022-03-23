@@ -11,6 +11,4 @@ export function getData() {
 
         return JSON.parse(jsonPayload);
     }
-
-    
 }

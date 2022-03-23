@@ -70,6 +70,7 @@ export async function handleFormRegisterSubmit(event) {
         const responseData = await postFormDataAsJson({ url, formData });
 
         console.log(responseData);
+        window.location.replace("https://localhost:5001/");
     } catch (error) {
         console.error(error);
     }
