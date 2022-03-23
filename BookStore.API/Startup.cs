@@ -38,7 +38,17 @@ namespace BookStore.API
             JwtConfig jwtConfig = new();
             Configuration.GetSection(JwtConfig.Name).Bind(jwtConfig);
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(opt => 
+            {
+                opt.Password.RequiredLength = 6;
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireLowercase = true;
+                opt.Password.RequireUppercase = true;
+
+                opt.User.RequireUniqueEmail = true;
+
+                opt.SignIn.RequireConfirmedEmail = true;
+            })
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 

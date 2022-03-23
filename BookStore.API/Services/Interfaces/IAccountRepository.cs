@@ -7,7 +7,7 @@ namespace BookStore.API.Repository
 {
     public interface IAccountRepository
     {
-        Task<IdentityResult> RegisterAsync(RegisterModel registerModel);
+        Task<ConfirmEmailModel> RegisterAsync(RegisterModel registerModel);
         Task<List<TokenReturnedByRepoModel>> LoginAsync(LoginModel loginModel);
     }
 }
