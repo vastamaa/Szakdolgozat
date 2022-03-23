@@ -1,6 +1,7 @@
 ﻿using BookStore.API.Helpers;
 using BookStore.API.Models;
 using BookStore.API.Repository.Interfaces;
+using BookStore.API.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using System;
@@ -16,13 +17,15 @@ namespace BookStore.API.Repository
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ITokenRepository _tokenRepository;
+        private readonly IMailService _mailService;
         private readonly JwtConfig _jwtConfig;
 
-        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenRepository tokenRepository, IOptions<JwtConfig> options)
+        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenRepository tokenRepository, IOptions<JwtConfig> options, IMailService mailService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenRepository = tokenRepository;
+            _mailService = mailService;
             _jwtConfig = options.Value;
         }
 
@@ -39,7 +42,11 @@ namespace BookStore.API.Repository
                 DateOfJoining = DateTime.UtcNow
             };
 
+            await _mailService.SendEmailAsync(new MailStructure() { ToEmail = user.Email, Subject = "Teszt", Body = "Ez egy teszt email!" });
+
             return await _userManager.CreateAsync(user, registerModel.Password);
+
+            
         }
 
         public async Task<List<TokenReturnedByRepoModel>> LoginAsync(LoginModel loginModel)

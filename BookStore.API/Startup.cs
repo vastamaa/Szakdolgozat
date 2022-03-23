@@ -4,6 +4,8 @@ using BookStore.API.Models;
 using BookStore.API.Repository;
 using BookStore.API.Repository.Implementations;
 using BookStore.API.Repository.Interfaces;
+using BookStore.API.Services.Implementations;
+using BookStore.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -68,6 +70,9 @@ namespace BookStore.API
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<ITokenRepository, TokenServices>();
             services.Configure<JwtConfig>(Configuration.GetSection(JwtConfig.Name));
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddTransient<IMailService, MailService>();
+
             services.AddAutoMapper(typeof(Startup));
 
             services.AddSession(options =>
