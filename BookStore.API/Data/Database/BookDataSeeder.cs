@@ -15,42 +15,36 @@ namespace BookStore.API.Data
         public void Seed()
         {
             _modelbuilder.Entity<Book>().HasData(
-
                 new Book()
                 {
                     Id = 1,
                     Title = "Prince's Legacy",
                     Description = "Let's fight for our kingdom."
                 },
-
                 new Book()
                 {
                     Id = 2,
                     Title = "The Cursed Wolf",
                     Description = "The Moon is it's greatest enemy."
                 },
-
                 new Book()
                 {
                     Id = 3,
                     Title = "C#",
                     Description = "We all love it! Of course!"
                 },
-
                 new Book()
                 {
                     Id = 4,
                     Title = "Avada Kedavra",
                     Description = "The Killer Curse!"
                 },
-
                 new Book()
                 {
                     Id = 5,
                     Title = "Python",
                     Description = "Programming language, and animal."
                 },
-
                 new Book()
                 {
                     Id = 6,
@@ -59,20 +53,18 @@ namespace BookStore.API.Data
                 }
             );
 
+            //Table: Genre
             _modelbuilder.Entity<Genre>().HasData(
-
                 new Genre()
                 {
                     GenreId = 1,
                     GenreName = "Action"
                 },
-
                 new Genre()
                 {
                     GenreId = 2,
                     GenreName = "Horror"
                 },
-
                 new Genre()
                 {
                     GenreId = 3,
@@ -80,6 +72,7 @@ namespace BookStore.API.Data
                 }
             );
 
+            //Table: Publisher
             _modelbuilder.Entity<Publisher>().HasData(
 
                 new Publisher()
@@ -87,13 +80,11 @@ namespace BookStore.API.Data
                     PublisherId = 1,
                     PublisherName = "FromSoftware"
                 },
-
                 new Publisher()
                 {
                     PublisherId = 2,
                     PublisherName = "Valve"
                 },
-
                 new Publisher()
                 {
                     PublisherId = 3,
@@ -101,20 +92,18 @@ namespace BookStore.API.Data
                 }
             );
 
+            //Table: Language
             _modelbuilder.Entity<Language>().HasData(
-
                 new Language()
                 {
                     LangId = 1,
                     LangName = "Hungarian"
                 },
-
                 new Language()
                 {
                     LangId = 2,
                     LangName = "Slovak"
                 },
-
                 new Language()
                 {
                     LangId = 3,
@@ -122,20 +111,18 @@ namespace BookStore.API.Data
                 }
             );
 
+            //Table: Author
             _modelbuilder.Entity<Author>().HasData(
-
                 new Author()
                 {
                     AuthId = 1,
                     AuthName = "Gabe Newell"
                 },
-
                 new Author()
                 {
                     AuthId = 2,
                     AuthName = "Steve Jobs"
                 },
-
                 new Author()
                 {
                     AuthId = 3,
@@ -143,6 +130,7 @@ namespace BookStore.API.Data
                 }
             );
 
+            //Table: Books
             _modelbuilder.Entity<Morebook>().HasData(
                 new Morebook()
                 {

@@ -3,11 +3,11 @@ import { NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { IoSearchSharp } from "@react-icons/all-files/io5/IoSearchSharp";
 import { AiOutlineShoppingCart } from "@react-icons/all-files/ai/AiOutlineShoppingCart";
-import { readCookie } from "./CookieHandler";
 import { logOut } from "./Log";
 import './NavMenu.css';
 import { FaBars } from "@react-icons/all-files/fa/FaBars";
 import { AiOutlineLeft } from "@react-icons/all-files/ai/AiOutlineLeft";
+import { getData } from "./TokenDecode";
 
 
 export class NavMenu extends Component {
@@ -18,7 +18,8 @@ export class NavMenu extends Component {
         this.toggleBurgir = this.toggleBurgir.bind(this);
         this.state = {
             collapsed: false,
-            loggedIn: readCookie("token"),
+            loggedIn: false,
+            userName: ""
         };
 
     }
@@ -27,9 +28,20 @@ export class NavMenu extends Component {
         this.setState({ collapsed: !currentState });
     }
 
+    NavMenuLogOut() {
+        this.setState({ loggedIn: logOut() });
+    }
+
 
     componentDidMount() {
-        this.getUserName();
+        let data = getData();
+        console.log(data);
+        if (data != undefined) {
+            let name = data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
+            if (name != undefined) {
+                this.setState({ loggedIn: true, userName: name });
+            }
+        }
     }
 
     render() {
@@ -54,7 +66,7 @@ export class NavMenu extends Component {
                             <div className="dropdown-menu">
                                 {/*<a href="#" className="dropdown-item">Action</a>*/}
                                 <NavLink tag={Link} className="dropdown-item NavMenuItem text-dark" to="/account/profile-page">Profile page</NavLink>
-                                <NavLink tag={Link} onClick={logOut} className="dropdown-item NavMenuItem text-dark" to="/">Logout</NavLink>
+                                <NavLink tag={Link} onClick={this.NavMenuLogOut} className="dropdown-item NavMenuItem text-dark" to="/">Logout</NavLink>
                             </div>
                         </div>
                     </div> : <div className='NavRight'>
@@ -87,18 +99,5 @@ export class NavMenu extends Component {
                 </div>
             </header>
         );
-    }
-
-    getUserName() {
-        if (this.state.loggedIn != null) {
-            var token = this.state.loggedIn.split('.');
-            var decodedJwt = atob(token[1]);
-            var firstData = decodedJwt.split(',');
-            var name = firstData[0].split(':');
-            var final = name[2].slice(1, -1);
-
-            this.setState({ userName: final });
-            // console.log(final);
-        }
     }
 }

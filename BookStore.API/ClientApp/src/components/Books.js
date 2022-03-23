@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { readCookie } from './CookieHandler';
+import "./styleBookCards.css";
+
 
 export class Books extends Component {
     static displayName = Books.name;
@@ -12,78 +14,61 @@ export class Books extends Component {
     componentDidMount() {
         this.populateBooksData();
     }
-
     static renderBooksTable(books) {
-        return (
-            <table className='table table-striped' aria-labelledby="tabelLabel">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Title</th>
-                        <th>Genre</th>
-                        <th>Page number</th>
-                        <th>Language</th>
-                        <th>ISBN</th>
-                        <th>Description</th>
-                        <th>ImageLink</th>
-                        <th>Publisher</th>
-                        <th>Price</th>
-                        <th>Publishing Year</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {books.map(books =>
-                        <tr key={books.id}>
-                            <td>{books.id}</td>
-                            <td>{books.title}</td>
-                            <td>{books.genreName}</td>
-                            <td>{books.pagenumber}</td>
-                            <td>{books.languageName}</td>
-                            <td>{books.isbn}</td>
-                            <td>{books.description}</td>
-                            <td>{books.imgLink}</td>
-                            <td>{books.publisherName}</td>
-                            <td>{books.price}</td>
-                            <td>{books.publishingYear}</td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
-        );
-    }
+      return (
+        <div className='BookCardsContainer'>
+    
+        <>
+    {books.map((books) => ( 
+        <div className='BookCard' style={{width:"300px"}}>
+        <img className='card-img-top BookCardImg' src={books.imgLink} alt={books.imgLink}/>
+        <div className="card-body">
+          <h4 className="card-title BookCardTitle">{books.title}</h4>
+          <p className="BookCardGenre"> {books.genreName}</p>
+          <p className="BookCardPublish"> {books.publisherName}</p>
+          <p className="BookCardPrice">{books.price} Euro</p>
+          <div className='BookCardBtn'>
+            <button className='BookCardShow'>SHOW MORE</button>
+          </div>
+        </div>
+        
+      </div>
+    ))}
+      </>
+      </div>
+    );
+  }
 
     render() {
-        let contents = this.state.loading
-            ?
-            <div className="d-inline-flex align-items-center">
-                <div className="spinner-border ml-auto " role="status" aria-hidden="true"></div>
-            </div>
-            : Books.renderBooksTable(this.state.books);
+      let contents = this.state.loading
+      ?
+      <div className="d-inline-flex align-items-center">
+          <div className="spinner-border ml-auto " role="status" aria-hidden="true"></div>
+      </div>
+      : Books.renderBooksTable(this.state.books);
 
 
-        return (
-            <div>
-                <h1 id="tabelLabel" >All the books</h1>
-                <p>This component demonstrates fetching data from the server.</p>
-                {contents}
-            </div>
-        );
+  return (
+      <div>
+          <h1 id="tabelLabel" >All the books</h1>
+          {contents}
+      </div>
+  );
     }
-
     async populateBooksData() {
-        try {
-            const response = await fetch('api/books',
-                {
-                    headers: {
-                        'Authorization': `Bearer ${readCookie("token")}`,
-                    }
-                });
-            const data = await response.json();
-            console.log(data);
-            this.setState({ books: data, loading: false });
-        } catch (e) {
-            console.log("A lekerdezes nem sikerult: ", e)
-        }
+      try {
+          const response = await fetch('api/books',
+              {
+                  headers: {
+                      'Authorization': `Bearer ${readCookie("token")}`,
+                  }
+              });
+          const data = await response.json();
+          console.log(data);
+          this.setState({ books: data, loading: false });
+      } catch (e) {
+          console.log("A lekerdezes nem sikerult: ", e)
+      }
 
-    }
+  }
 }

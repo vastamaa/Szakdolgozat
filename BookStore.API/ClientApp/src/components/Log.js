@@ -78,4 +78,5 @@ export async function handleFormRegisterSubmit(event) {
 export function logOut() {
     eraseCookie("token")
     window.location.replace("/");
+    return false;
 }
