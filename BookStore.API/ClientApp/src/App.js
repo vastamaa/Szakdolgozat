@@ -6,6 +6,7 @@ import { Books } from './components/Books';
 import { Register } from './components/Register';
 import { Login } from './components/Login';
 import { BookCards } from './components/BookCards';
+import { Profile } from './components/Profile';
 import './custom.css'
 
 
@@ -20,7 +21,8 @@ export default class App extends Component {
                     <Route path='/books' component={Books} />
                     <Route path='/account/register' component={Register} />
                     <Route path='/account/login' component={Login} />
-                    <Route path='/bookcards' component={ BookCards } />
+                    <Route path='/bookcards' component={BookCards} />
+                    <Route path='/account/profile-page' component={Profile} />
                 </Layout>
 
             </div>

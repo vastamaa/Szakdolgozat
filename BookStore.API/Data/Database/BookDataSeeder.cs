@@ -142,6 +142,54 @@ namespace BookStore.API.Data
                     AuthName = "Hidetaka Miyazaki"
                 }
             );
+
+            _modelbuilder.Entity<Morebook>().HasData(
+                new Morebook()
+                {
+                    Id = 1,
+                    Title = "Elden ring",
+                    AuthId = 1,
+                    GenreId = 1,
+                    Pagenumber = 11,
+                    LangId = 1,
+                    Isbn = "1111-111-111",
+                    Description = "Bestest thing ever!",
+                    ImgLink = "https://www.gamer365.hu/~fs/article/00/18/iv/elden-ring.jpg",
+                    PublisherId = 1,
+                    Price = 600,
+                    PublishingYear = 2022
+                },
+                new Morebook()
+                {
+                    Id = 2,
+                    Title = "Titty lovers' club!",
+                    AuthId = 2,
+                    GenreId = 3,
+                    Pagenumber = 22,
+                    LangId = 2,
+                    Isbn = "2222-222-222",
+                    Description = "Second best thing ever!",
+                    ImgLink = "https://steamuserimages-a.akamaihd.net/ugc/779607575830347483/4B6B585BD8C2F4D2F93F360B60CA46B1B7E2A536/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                    PublisherId = 2,
+                    Price = 1200,
+                    PublishingYear = 2003
+                },
+                new Morebook()
+                {
+                    Id = 3,
+                    Title = "Kai Green",
+                    AuthId = 3,
+                    GenreId = 3,
+                    Pagenumber = 33,
+                    LangId = 3,
+                    Isbn = "3333-333-333",
+                    Description = "Strong one",
+                    ImgLink = "https://testepitek.hu/wp-content/uploads/2012/01/kai-greene.jpg",
+                    PublisherId = 3,
+                    Price = 500,
+                    PublishingYear = 2010
+                }
+            );
         }
     }
 }

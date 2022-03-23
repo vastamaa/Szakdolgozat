@@ -33,7 +33,7 @@ export class BookCards extends Component {
         </div>
         
       </div>
-    ))};
+    ))}
       </>
       </div>
     );

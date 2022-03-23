@@ -41,10 +41,6 @@ export class NavMenu extends Component {
                     <FaBars className='bars' onClick={this.toggleBurgir}></FaBars>
                     <div className='NavLeft'>
                         <span className='Lang'>EN</span>
-                        <div className='SearchContainer'>
-                            <input className='NavInput'></input>
-                            <IoSearchSharp className='SearchButton' />
-                        </div>
                     </div>
 
                     <div className='NavCenter'>
@@ -57,6 +53,7 @@ export class NavMenu extends Component {
                             <span className="dropdown-toggle NavMenuItem text-dark" data-bs-toggle="dropdown">Welcome, {this.state.userName}</span>
                             <div className="dropdown-menu">
                                 {/*<a href="#" className="dropdown-item">Action</a>*/}
+                                <NavLink tag={Link} className="dropdown-item NavMenuItem text-dark" to="/account/profile-page">Profile page</NavLink>
                                 <NavLink tag={Link} onClick={logOut} className="dropdown-item NavMenuItem text-dark" to="/">Logout</NavLink>
                             </div>
                         </div>

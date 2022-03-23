@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStore.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220316183200_SeedFillUp")]
-    partial class SeedFillUp
+    [Migration("20220323090523_seed")]
+    partial class seed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -229,6 +229,53 @@ namespace BookStore.API.Migrations
                     b.HasIndex("PublisherId");
 
                     b.ToTable("Morebooks");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthId = 1,
+                            Description = "Bestest thing ever!",
+                            GenreId = 1,
+                            ImgLink = "https://www.gamer365.hu/~fs/article/00/18/iv/elden-ring.jpg",
+                            Isbn = "1111-111-111",
+                            LangId = 1,
+                            Pagenumber = 11,
+                            Price = 600,
+                            PublisherId = 1,
+                            PublishingYear = 2022,
+                            Title = "Elden ring"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AuthId = 2,
+                            Description = "Second best thing ever!",
+                            GenreId = 3,
+                            ImgLink = "https://steamuserimages-a.akamaihd.net/ugc/779607575830347483/4B6B585BD8C2F4D2F93F360B60CA46B1B7E2A536/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true",
+                            Isbn = "2222-222-222",
+                            LangId = 2,
+                            Pagenumber = 22,
+                            Price = 1200,
+                            PublisherId = 2,
+                            PublishingYear = 2003,
+                            Title = "Titty lovers' club!"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AuthId = 3,
+                            Description = "Strong one",
+                            GenreId = 3,
+                            ImgLink = "https://testepitek.hu/wp-content/uploads/2012/01/kai-greene.jpg",
+                            Isbn = "3333-333-333",
+                            LangId = 3,
+                            Pagenumber = 33,
+                            Price = 500,
+                            PublisherId = 3,
+                            PublishingYear = 2010,
+                            Title = "Kai Green"
+                        });
                 });
 
             modelBuilder.Entity("BookStore.API.Data.Database.Publisher", b =>

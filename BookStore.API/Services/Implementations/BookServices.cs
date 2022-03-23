@@ -12,10 +12,10 @@ namespace BookStore.API.Repository
 {
     public class BookServices : IBookRepository
     {
-        private readonly ApplicationDbContext _context;
+        private readonly AppDbContext _context;
         private readonly IMapper _applicationMapper;
 
-        public BookServices(ApplicationDbContext context, IMapper applicationMapper)
+        public BookServices(AppDbContext context, IMapper applicationMapper)
         {
             _context = context;
             _applicationMapper = applicationMapper;
