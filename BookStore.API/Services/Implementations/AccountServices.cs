@@ -1,7 +1,6 @@
 ﻿using BookStore.API.Helpers;
 using BookStore.API.Models;
 using BookStore.API.Repository.Interfaces;
-using BookStore.API.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using System;

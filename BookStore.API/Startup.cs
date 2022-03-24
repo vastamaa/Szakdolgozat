@@ -38,7 +38,7 @@ namespace BookStore.API
             JwtConfig jwtConfig = new();
             Configuration.GetSection(JwtConfig.Name).Bind(jwtConfig);
 
-            services.AddIdentity<ApplicationUser, IdentityRole>(opt => 
+            services.AddIdentity<ApplicationUser, IdentityRole>(opt =>
             {
                 opt.Password.RequiredLength = 6;
                 opt.Password.RequireDigit = true;

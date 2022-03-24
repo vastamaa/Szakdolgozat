@@ -22,6 +22,8 @@ namespace BookStore.API.Controllers
         {
             var user = await _userManager.FindByEmailAsync(email);
 
+            var decodedToken = HttpUtility.UrlDecode(emailTokenHtmlVersion);
+
             if (user == null)
             {
                 return NotFound(new Response { Status = "Error", Message = "An error occurred while processing your request!" });
@@ -29,7 +31,7 @@ namespace BookStore.API.Controllers
 
             //Invalid email confirmation token -- NEEDS FIXING!!!
 
-            var result = await _userManager.ConfirmEmailAsync(user, emailTokenHtmlVersion);
+            var result = await _userManager.ConfirmEmailAsync(user, decodedToken);
             return Ok(result);
         }
     }

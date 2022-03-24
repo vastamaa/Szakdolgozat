@@ -44,7 +44,7 @@ namespace BookStore.API.Controllers
                     nameof(EmailsController.ConfirmEmail),
                     controller,
                     new { emailTokenHtmlVersion, email = registerModel.Email },
-                    Request.Scheme);
+                    protocol: Request.Scheme);
 
                 await _mailService.SendEmailAsync(new MailStructure() { ToEmail = registerModel.Email, Subject = "Confirmation email link", Body = confirmationLink });
 
