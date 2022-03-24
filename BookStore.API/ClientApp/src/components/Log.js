@@ -1,4 +1,6 @@
 ﻿import { createCookie, eraseCookie } from './CookieHandler';
+import { Login } from './Login';
+import ReactDOM from 'react-dom'
 
 /**
  * Helper function for POSTing data as JSON with fetch.
@@ -42,7 +44,7 @@ export async function handleFormLoginSubmit(event) {
 
     const form = event.currentTarget;
     const url = form.action;
-
+    const err="err";
     try {
         const formData = new FormData(form);
         const responseData = await postFormDataAsJson({ url, formData });
@@ -52,6 +54,8 @@ export async function handleFormLoginSubmit(event) {
         console.log("Sikeres!");
         window.location.replace("https://localhost:5001/");
     } catch (error) {
+        Array.from(document.getElementById("loginfail").classList.remove(Array.from(document.getElementById("loginfail").classList)));
+        Array.from(document.getElementById("loginfail").classList.add(err));
         console.error(error);
     }
 }
