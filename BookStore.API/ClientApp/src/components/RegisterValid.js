@@ -43,7 +43,7 @@ export function LastNameChange() {
 export function usernNameChange() {
     const fn =document.getElementById("userName").value;
     const fne =document.getElementById("usernameerr");
-    if(fn.length>5){
+    if(fn.length>=4){
         fne.classList.remove(fne.classList);
         fne.classList.add("valid")
     }

@@ -20,13 +20,10 @@ export class Books extends Component {
     
         <>
     {books.map((books) => ( 
-        <div className='BookCard' style={{width:"300px"}}>
+        <div className='BookCard' style={{width:"300px", height:"600px"}}>
         <img className='card-img-top BookCardImg' src={books.imgLink} alt={books.imgLink}/>
-        <div className="card-body">
+        <div className="BookCardBody">
           <h4 className="card-title BookCardTitle">{books.title}</h4>
-          <p className="BookCardGenre"> {books.genreName}</p>
-          <p className="BookCardPublish"> {books.publisherName}</p>
-          <p className="BookCardPrice">{books.price} Euro</p>
           <div className='BookCardBtn'>
             <button className='BookCardShow'>SHOW MORE</button>
           </div>
