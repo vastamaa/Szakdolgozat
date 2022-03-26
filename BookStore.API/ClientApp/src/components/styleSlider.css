@@ -40,17 +40,21 @@
 
 .SliderImageContainer {
     height: 100%;
+    width: 480px;
     flex: 1;
 }
 
 .SliderImage {
     height: 80%;
-    width: 80%;
+    width: 500px;
     border-radius: 1px;
     object-fit: cover;
 }
 
 .SliderInfoContainer {
+    position: absolute;
+    margin-left: 520px;
+    margin-bottom: 50px;
     flex: 1;
     padding: 50px;
 }
@@ -60,7 +64,7 @@
 }
 
 .SliderDesc {
-    margin: 50px 0px;
+    margin: 40px 0px;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 3px;

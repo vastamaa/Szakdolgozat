@@ -64,8 +64,8 @@ export class NavMenu extends Component {
                             <span className="dropdown-toggle NavMenuItem text-dark" data-bs-toggle="dropdown">Welcome, {this.state.userName}</span>
                             <div className="dropdown-menu">
                                 {/*<a href="#" className="dropdown-item">Action</a>*/}
-                                <NavLink tag={Link} className="dropdown-item NavMenuItem text-dark" to="/account/profile-page">Profile page</NavLink>
-                                <NavLink tag={Link} onClick={this.NavMenuLogOut} className="dropdown-item NavMenuItem text-dark" to="/">Logout</NavLink>
+                                <NavLink tag={Link} id="dropmenuitem" className="dropdown-item NavMenuItem text-dark" to="/account/profile-page">Profile page</NavLink>
+                                <NavLink tag={Link} id="dropmenuitem" onClick={this.NavMenuLogOut} className="dropdown-item NavMenuItem text-dark" to="/">Logout</NavLink>
                             </div>
                         </div>
                     </div> : <div className='NavRight'>
@@ -79,10 +79,6 @@ export class NavMenu extends Component {
                     </div>
                     {this.state.loggedIn ? <div className='burgirDiv'>
                         <NavLink tag={Link} className='NavMenuItem text-dark burgirHead' to="/">Home</NavLink>
-                        <div className='SearchContainerBurgir burgirList '>
-                            <input className='NavInputBurgir'></input>
-                            <IoSearchSharp className='SearchButtonBurgir' />
-                        </div>
                         <NavLink tag={Link} className='NavMenuItem text-dark ' to="/books" >Books</NavLink>
                         <NavLink tag={Link} onClick={logOut} className='NavMenuItem text-dark' to="/">Logout</NavLink>
                     </div> : <div className='burgirDiv'>

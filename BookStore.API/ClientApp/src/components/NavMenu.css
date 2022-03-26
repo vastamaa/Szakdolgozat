@@ -51,38 +51,6 @@ html {
     height: 30px;
     margin-left: 6.5%;
 }
-
-.SearchContainerBurgir {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    height: 30px;
-    margin-left: 13%;
-}
-
-.SearchButton {
-    margin-left: 10px;
-}
-
-.SearchButtonBurgir {
-    margin-right: 7%
-}
-
-.NavInput {
-    border: none;
-    border: 1px solid #66666E;
-    border-radius: 2px;
-    width: 200px;
-}
-
-.NavInputBurgir {
-    border: 1px solid #66666E;
-    width: 120px;
-    border-radius: 2px;
-    margin-left: 5%;
-}
-
 .NavCenter {
     flex: 1;
     text-align: center;
@@ -119,7 +87,7 @@ html {
     color: black;
 }
 
-@media screen and (min-width:791) {
+@media screen and (min-width:791px) {
     .burgirMenu {
         display: none;
     }
@@ -183,4 +151,7 @@ html {
     border-width: 5px;
     border-spacing: 10px;
     border-collapse: separate;
+}
+#dropmenuitem{
+    width: 150px;
 }

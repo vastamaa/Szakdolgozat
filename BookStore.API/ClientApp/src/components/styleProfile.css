@@ -1,0 +1,101 @@
+.ProfileContainer{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.150);
+    border-radius: 0.25rem;
+    height: 65vh;
+    width: 100%;
+
+}
+.Profile{
+    background-image: linear-gradient(to right, rgba(255,250,130), rgba(254,220,112),rgba(255,163,114));
+    padding: 20px;
+    height: 43vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}   
+.ProfileRight{
+    align-self:flex-end;
+    margin-top: -220px;
+    width: 200px;
+    height: 200px;
+    margin-right: 7%;
+}
+.ProfileImg{
+    position: absolute;
+    width: 220px;
+    height: 220px;
+
+}
+
+@media screen and (max-width:795px) {
+    #imagedel{
+        display: none;
+    }
+}
+.ProfileLeft{
+    align-self:flex-start;
+}
+.ProfileHead{
+    font-size: xx-large;
+    margin-top:10%;
+    margin-left: 45%;
+    width: 100%;
+}
+.ProfileHead span{
+    padding-left: 10px;
+}
+.ProfileBody{
+    font-size: 20px;
+    margin-top:12%;
+    margin-left: 45%;
+    width: 100%;
+}
+.ProfileBody span{
+    padding-left: 10px;
+}
+.PasswordChange{
+    border-radius: 30px;
+    background-color: #f3f6fb;
+    border: 1px transparent solid;
+    position: absolute;
+    padding: 6px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 0;
+    margin-top: 38.5vh;
+}
+#PasswordText{
+    margin-left: 29px;
+    z-index: 0;
+    position: absolute;
+    margin-top: 47vh;
+    font-size: 20px;
+    opacity: 0;
+    transition: opacity 0.4 ease-in-out;
+}
+#PasswordText.fade{
+    opacity: 1;
+}
+.PassWordChangeForm{
+    margin-bottom: 10px;
+}
+#oldpw{
+    width: 52%;
+    margin-left: 10px
+}
+#changepw{
+    width: 50%;
+    margin-left: 10px
+}
+#pwchangesubmit{
+    margin-left:25% ;
+}
