@@ -15,15 +15,16 @@ export class Books extends Component {
         this.populateBooksData();
     }
     static renderBooksTable(books) {
+
       return (
-        <div className='BookCardsContainer'>
+        <div className='BookCardsContainerGrid'>
     
         <>
     {books.map((books) => ( 
-        <div className='BookCard' style={{width:"300px", height:"600px"}}>
+        <div className='BookCard' style={{width:"400px", height:"600px"}} >
         <img className='card-img-top BookCardImg' src={books.imgLink} alt={books.imgLink}/>
         <div className="BookCardBody">
-          <h4 className="card-title BookCardTitle">{books.title}</h4>
+          <h4 className="card-title BookCardTitle NormalText" id="title">{books.title}</h4>
           <div className='BookCardBtn'>
             <button className='BookCardShow'>SHOW MORE</button>
           </div>
@@ -43,11 +44,25 @@ export class Books extends Component {
           <div className="spinner-border ml-auto " role="status" aria-hidden="true"></div>
       </div>
       : Books.renderBooksTable(this.state.books);
+      function TextLenghtResize() {
+        var input=document.getElementById("title");
+        var inputlenght=input.innerHTML.length;
+        var inputclass=input.classList;
+        console.log(inputlenght);
+        if (inputlenght<=54) {
+          inputclass.remove("NormalText")
+          inputclass.add("SmallerText")
+        }
+        else{
+          inputclass.remove("SmallerText")
+          inputclass.add("NormalText")
+        }
 
+      }
 
   return (
-      <div>
-          <h1 id="tabelLabel" >All the books</h1>
+      <div onLoad={TextLenghtResize}>
+          <h1 id="tabelLabel"  >All the books</h1>
           {contents}
       </div>
   );
