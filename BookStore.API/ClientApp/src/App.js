@@ -8,7 +8,6 @@ import { Login } from './components/Login';
 import { Profile } from './components/Profile';
 import './custom.css'
 
-
 export default class App extends Component {
     static displayName = App.name;
 
@@ -22,7 +21,6 @@ export default class App extends Component {
                     <Route path='/account/login' component={Login} />
                     <Route path='/account/profile-page' component={Profile} />
                 </Layout>
-
             </div>
         );
     }

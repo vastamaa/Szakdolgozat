@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { readCookie } from './CookieHandler';
 import "./styleBookCards.css";
+import Button from '@material-ui/core/Button';
 
 
 export class Books extends Component {
@@ -27,6 +28,22 @@ export class Books extends Component {
           <h4 className="card-title BookCardTitle NormalText" id="title">{books.title}</h4>
           <div className='BookCardBtn'>
             <button className='BookCardShow'>SHOW MORE</button>
+            {/* <Button onClick={handleOpen}>Open modal</Button>
+            <Modal
+              open={open}
+              onClose={handleClose}
+              aria-labelledby="modal-modal-title"
+              aria-describedby="modal-modal-description"
+            >
+              <Box sx={style}>
+                <Typography id="modal-modal-title" variant="h6" component="h2">
+                  Text in a modal
+                </Typography>
+                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                  Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+                </Typography>
+              </Box>
+            </Modal> */}
           </div>
         </div>
         
@@ -44,24 +61,9 @@ export class Books extends Component {
           <div className="spinner-border ml-auto " role="status" aria-hidden="true"></div>
       </div>
       : Books.renderBooksTable(this.state.books);
-      function TextLenghtResize() {
-        var input=document.getElementById("title");
-        var inputlenght=input.innerHTML.length;
-        var inputclass=input.classList;
-        console.log(inputlenght);
-        if (inputlenght<=54) {
-          inputclass.remove("NormalText")
-          inputclass.add("SmallerText")
-        }
-        else{
-          inputclass.remove("SmallerText")
-          inputclass.add("NormalText")
-        }
-
-      }
-
+      
   return (
-      <div onLoad={TextLenghtResize}>
+      <div >
           <h1 id="tabelLabel"  >All the books</h1>
           {contents}
       </div>
