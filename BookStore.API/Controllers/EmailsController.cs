@@ -26,10 +26,8 @@ namespace BookStore.API.Controllers
 
             if (user == null)
             {
-                return NotFound(new Response { Status = "Error", Message = "An error occurred while processing your request!" });
+                return NotFound(new ResponseModel { Status = "Error", Message = "An error occurred while processing your request!" });
             }
-
-            //Invalid email confirmation token -- NEEDS FIXING!!!
 
             var result = await _userManager.ConfirmEmailAsync(user, decodedToken);
             return Ok(result);

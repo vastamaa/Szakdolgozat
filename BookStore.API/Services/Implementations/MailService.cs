@@ -10,12 +10,12 @@ namespace BookStore.API.Services.Implementations
 {
     public class MailService : IMailService
     {
-        private readonly MailSettings _mailSettings;
-        public MailService(IOptions<MailSettings> mailSettings)
+        private readonly MailSettingsModel _mailSettings;
+        public MailService(IOptions<MailSettingsModel> mailSettings)
         {
             _mailSettings = mailSettings.Value;
         }
-        public async Task SendEmailAsync(MailStructure mailRequest)
+        public async Task SendEmailAsync(MailStructureModel mailRequest)
         {
             var email = new MimeMessage();
             email.From.Add(new MailboxAddress(_mailSettings.DisplayName));

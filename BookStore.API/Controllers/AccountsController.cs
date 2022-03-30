@@ -29,7 +29,7 @@ namespace BookStore.API.Controllers
         {
             var result = await _accountService.RegisterAsync(registerModel);
 
-            if (result is null) return Unauthorized(new Response { Status = "Error", Message = "User already exists!" });
+            if (result is null) return Unauthorized(new ResponseModel { Status = "Error", Message = "User already exists!" });
 
             if (result.result.Succeeded)
             {
@@ -46,12 +46,12 @@ namespace BookStore.API.Controllers
                     new { emailTokenHtmlVersion, email = registerModel.Email },
                     protocol: Request.Scheme);
 
-                await _mailService.SendEmailAsync(new MailStructure() { ToEmail = registerModel.Email, Subject = "Confirmation email link", Body = confirmationLink });
+                await _mailService.SendEmailAsync(new MailStructureModel() { ToEmail = registerModel.Email, Subject = "Confirmation email link", Body = confirmationLink });
 
-                return Ok(new Response { Status = "Success", Message = "User created successfully!" });
+                return Ok(new ResponseModel { Status = "Success", Message = "User created successfully!" });
             }
 
-            return Unauthorized(new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+            return Unauthorized(new ResponseModel { Status = "Error", Message = "User creation failed! Please check user details and try again." });
         }
 
         [HttpPost("login")]
@@ -59,7 +59,7 @@ namespace BookStore.API.Controllers
         {
             var result = await _accountService.LoginAsync(loginModel);
 
-            if (result is null) return Unauthorized(new Response { Status = "Error", Message = "Login failed! The username or password is incorrect." });
+            if (result is null) return Unauthorized(new ResponseModel { Status = "Error", Message = "Login failed! The username or password is incorrect." });
 
             return Ok(new
             {
@@ -76,11 +76,11 @@ namespace BookStore.API.Controllers
             Console.WriteLine(result.Result);
             if (result.Result is not null)
             {
-                await _mailService.SendEmailAsync(new MailStructure() { ToEmail = passwordResetModel.Email, Subject = "Your new password", Body = $"Your new password is: {result.Result}" });
-                return Ok(new Response { Status = "Success", Message = "Password reset has been successful!" });
+                await _mailService.SendEmailAsync(new MailStructureModel() { ToEmail = passwordResetModel.Email, Subject = "Your new password", Body = $"Your new password is: {result.Result}" });
+                return Ok(new ResponseModel { Status = "Success", Message = "Password reset has been successful!" });
             } 
 
-            return BadRequest(new Response { Status = "Error", Message = "Password reset has failed! Please try again later." });
+            return BadRequest(new ResponseModel { Status = "Error", Message = "Password reset has failed! Please try again later." });
         }
     }
 }

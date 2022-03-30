@@ -80,7 +80,7 @@ namespace BookStore.API
             services.AddTransient<IAccountService, AccountRepository>();
             services.AddTransient<ITokenService, TokenServices>();
             services.Configure<JwtConfig>(Configuration.GetSection(JwtConfig.Name));
-            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.Configure<MailSettingsModel>(Configuration.GetSection("MailSettings"));
             services.AddTransient<IMailService, MailService>();
 
             services.AddAutoMapper(typeof(Startup));

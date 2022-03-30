@@ -45,7 +45,7 @@ namespace BookStore.API.Repository
             return new ConfirmEmailModel() { emailToken = token, result = result };
         }
 
-        public async Task<List<TokenReturnedByRepoModel>> LoginAsync(LoginModel loginModel)
+        public async Task<List<TokenServiceModel>> LoginAsync(LoginModel loginModel)
         {
             var user = await _userManager.FindByNameAsync(loginModel.UserName);
             var result = await _signInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, false, false);
@@ -76,9 +76,9 @@ namespace BookStore.API.Repository
 
                 await _userManager.UpdateAsync(user);
 
-                return new List<TokenReturnedByRepoModel>()
+                return new List<TokenServiceModel>()
                 {
-                    new TokenReturnedByRepoModel
+                    new TokenServiceModel
                     {
                         Token = new JwtSecurityTokenHandler().WriteToken(token),
                         RefreshToken = refreshToken,

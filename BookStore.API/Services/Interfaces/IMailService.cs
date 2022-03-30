@@ -5,6 +5,6 @@ namespace BookStore.API.Services.Interfaces
 {
     public interface IMailService
     {
-        Task SendEmailAsync(MailStructure mailRequest);
+        Task SendEmailAsync(MailStructureModel mailRequest);
     }
 }

@@ -25,7 +25,7 @@ namespace BookStore.API.Controllers
 
         [HttpPost]
         [Route("refresh-token")]
-        public async Task<IActionResult> RefreshToken(TokenModel tokenModel)
+        public async Task<IActionResult> RefreshToken(TokenStructureModel tokenModel)
         {
             if (tokenModel is null) return BadRequest("Invalid client request!");
 

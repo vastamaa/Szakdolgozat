@@ -1,6 +1,6 @@
 ﻿namespace BookStore.API.Models
 {
-    public class MailSettings
+    public class MailSettingsModel
     {
         public string Mail { get; set; }
         public string DisplayName { get; set; }

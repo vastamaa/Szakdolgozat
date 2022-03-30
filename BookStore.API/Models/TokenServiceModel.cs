@@ -2,7 +2,7 @@
 
 namespace BookStore.API.Models
 {
-    public class TokenReturnedByRepoModel
+    public class TokenServiceModel
     {
         public string Token { get; set; }
         public string RefreshToken { get; set; }

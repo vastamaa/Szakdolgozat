@@ -1,6 +1,6 @@
 ﻿namespace BookStore.API.Models
 {
-    public class MailStructure
+    public class MailStructureModel
     {
         public string ToEmail { get; set; }
         public string Subject { get; set; }
