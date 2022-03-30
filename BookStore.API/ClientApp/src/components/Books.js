@@ -20,45 +20,6 @@ export class Books extends Component {
         this.populateBooksData();
     }
     static renderBooksTable(books) {
-<<<<<<< Updated upstream
-
-        return (
-            <div className='BookCardsContainerGrid'>
-
-                <>
-                    {books.map((books) => (
-                        <div className='BookCard' style={{ width: "400px", height: "600px" }} >
-                            <img className='card-img-top BookCardImg' src={books.imgLink} alt={books.imgLink} />
-                            <div className="BookCardBody">
-                                <h4 className="card-title BookCardTitle NormalText" id="title">{books.title}</h4>
-                                <div className='BookCardBtn'>
-                                    <button className='BookCardShow'>SHOW MORE</button>
-                                    {/* <Button onClick={handleOpen}>Open modal</Button>
-            <Modal
-              open={open}
-              onClose={handleClose}
-              aria-labelledby="modal-modal-title"
-              aria-describedby="modal-modal-description"
-            >
-              <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  Text in a modal
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                  Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                </Typography>
-              </Box>
-            </Modal> */}
-                                </div>
-                            </div>
-
-                        </div>
-                    ))}
-                </>
-            </div>
-        );
-    }
-=======
       function on() {
        let a=document.getElementById("modal").classList;
        a.remove(a)
@@ -75,7 +36,7 @@ export class Books extends Component {
         <div className="BookCardBody">
           <h4 className="card-title BookCardTitle NormalText" id="title">{books.title}</h4>
           <div className='BookCardBtn'>
-          <button class>SHOW MORE</button>
+          <button className='BookCardShow'>SHOW MORE</button>
           <ModalExample imglink={books.imgLink}/>
           </div>
         </div>
@@ -86,8 +47,6 @@ export class Books extends Component {
       </div>
     );
   }
->>>>>>> Stashed changes
-
     render() {
         let contents = this.state.loading
             ?

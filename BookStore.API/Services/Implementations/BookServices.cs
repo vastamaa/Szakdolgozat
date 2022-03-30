@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.API.Repository
 {
-    public class BookServices : IBookRepository
+    public class BookServices : IBookServices
     {
         private readonly AppDbContext _context;
         private readonly IMapper _applicationMapper;

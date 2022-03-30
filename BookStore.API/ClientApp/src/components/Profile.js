@@ -56,11 +56,11 @@ export class Profile extends Component {
                         <button className="PasswordChange"  onClick={Fadeform}>PasswordChange</button>
                         <form id="PasswordText" className="" onSubmit={PasswordChange}>
                             <div className="PassWordChangeForm">
-                                <label for="changepw" >New Password:</label>
+                                <label htmlFor="changepw" >New Password:</label>
                                 <input type='text' id="changepw"></input><br/> 
                             </div>
                             <div className="PassWordChangeForm">
-                                <label for="changepw" >Old Password:</label>
+                            <label htmlFor="changepw" >Old Password:</label>
                                 <input type='text' id="oldpw"></input>
                             </div>
                             <div>

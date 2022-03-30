@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.API.Repository
 {
-    public interface IBookRepository
+    public interface IBookServices
     {
         Task<List<Morebook>> GetAllBooksAsync();
         Task<Morebook> GetBookByNameAsync(string bookName);

@@ -12,18 +12,18 @@ namespace BookStore.API.Controllers
     [Authorize]
     public class BooksController : ControllerBase
     {
-        private readonly IBookRepository _bookRepository;
+        private readonly IBookServices _bookServices;
 
-        public BooksController(IBookRepository bookRepository)
+        public BooksController(IBookServices bookServices)
         {
-            _bookRepository = bookRepository;
+            _bookServices = bookServices;
         }
 
         //GET: /api/books/
         [HttpGet("")]
         public async Task<IActionResult> GetAllBooks()
         {
-            var books = await _bookRepository.GetAllBooksAsync();
+            var books = await _bookServices.GetAllBooksAsync();
             return Ok(books);
         }
 
@@ -41,7 +41,7 @@ namespace BookStore.API.Controllers
         [HttpGet("{name}")]
         public async Task<IActionResult> GetBookById([FromRoute] string name)
         {
-            var book = await _bookRepository.GetBookByNameAsync(name);
+            var book = await _bookServices.GetBookByNameAsync(name);
 
             if (book is null) return NotFound();
 
@@ -52,7 +52,7 @@ namespace BookStore.API.Controllers
         [HttpPost("")]
         public async Task<IActionResult> AddBook([FromBody] BookModel bookModel)
         {
-            var id = await _bookRepository.AddBookAsync(bookModel);
+            var id = await _bookServices.AddBookAsync(bookModel);
 
             return CreatedAtAction(nameof(GetBookById), new { id = id, controller = "books" }, id);
         }
@@ -61,7 +61,7 @@ namespace BookStore.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateBook([FromBody] BookModel bookModel, [FromRoute] int id)
         {
-            await _bookRepository.UpdateBookAsync(id, bookModel);
+            await _bookServices.UpdateBookAsync(id, bookModel);
             return Ok();
         }
 
@@ -69,7 +69,7 @@ namespace BookStore.API.Controllers
         [HttpPatch("{id:int}")]
         public async Task<IActionResult> UpdateBookPatch([FromBody] JsonPatchDocument bookModel, [FromRoute] int id)
         {
-            await _bookRepository.UpdateBookPatchAsync(id, bookModel);
+            await _bookServices.UpdateBookPatchAsync(id, bookModel);
             return Ok();
         }
 
@@ -77,7 +77,7 @@ namespace BookStore.API.Controllers
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteBook([FromRoute] int id)
         {
-            await _bookRepository.DeleteBookAsync(id);
+            await _bookServices.DeleteBookAsync(id);
             return Ok();
         }
     }
