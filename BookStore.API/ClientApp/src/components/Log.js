@@ -13,7 +13,7 @@ import ReactDOM from 'react-dom'
 async function postFormDataAsJson({ url, formData }) {
     const plainFormData = Object.fromEntries(formData.entries());
     const formDataJsonString = JSON.stringify(plainFormData);
-/*    console.log(formDataJsonString);*/
+    /*    console.log(formDataJsonString);*/
     const fetchOptions = {
         method: "POST",
         headers: {
@@ -45,7 +45,7 @@ export async function handleFormLoginSubmit(event) {
 
     const form = event.currentTarget;
     const url = form.action;
-    const err="err";
+    const err = "err";
     try {
         const formData = new FormData(form);
         const responseData = await postFormDataAsJson({ url, formData });

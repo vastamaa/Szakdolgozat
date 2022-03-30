@@ -6,7 +6,7 @@ export class ForgotPassword extends Component {
 
         async function handlePasswordResetSubmit() {
 
-            let password = document.getElementById('email').value;
+            let email = document.getElementById('email').value;
 
             try {
                 const response = await fetch('api/accounts/reset-password',
@@ -16,7 +16,7 @@ export class ForgotPassword extends Component {
                             'Content-Type': 'application/json',
                             'Accept': 'application/json'
                         },
-                        body: JSON.stringify({ "email": password })
+                        body: JSON.stringify({ "email": email })
                     });
                 const data = await response.json();
                 console.log(data);

@@ -76,21 +76,21 @@ namespace BookStore.API
             });
 
             services.AddControllersWithViews().AddNewtonsoftJson();
-            services.AddTransient<IBookServices, BookServices>();
-            services.AddTransient<IAccountService, AccountRepository>();
-            services.AddTransient<ITokenService, TokenServices>();
+            services.AddTransient<IBookService, BookService>();
+            services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<ITokenService, TokenService>();
             services.Configure<JwtConfig>(Configuration.GetSection(JwtConfig.Name));
             services.Configure<MailSettingsModel>(Configuration.GetSection("MailSettings"));
             services.AddTransient<IMailService, MailService>();
 
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddSession(options =>
-            {
-                options.Cookie.HttpOnly = true;
-                options.IdleTimeout = TimeSpan.FromHours(8);
-                options.Cookie.IsEssential = true;
-            });
+            //services.AddSession(options =>
+            //{
+            //    options.Cookie.HttpOnly = true;
+            //    options.IdleTimeout = TimeSpan.FromHours(8);
+            //    options.Cookie.IsEssential = true;
+            //});
 
             services.AddCors(options =>
             {

@@ -11,11 +11,11 @@ using System.Text;
 
 namespace BookStore.API.Repository.Implementations
 {
-    public class TokenServices : ITokenService
+    public class TokenService : ITokenService
     {
         private readonly JwtConfig _jwtConfig;
 
-        public TokenServices(IOptions<JwtConfig> options)
+        public TokenService(IOptions<JwtConfig> options)
         {
             _jwtConfig = options.Value;
         }

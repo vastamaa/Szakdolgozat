@@ -78,7 +78,7 @@ namespace BookStore.API.Controllers
             {
                 await _mailService.SendEmailAsync(new MailStructureModel() { ToEmail = passwordResetModel.Email, Subject = "Your new password", Body = $"Your new password is: {result.Result}" });
                 return Ok(new ResponseModel { Status = "Success", Message = "Password reset has been successful!" });
-            } 
+            }
 
             return BadRequest(new ResponseModel { Status = "Error", Message = "Password reset has failed! Please try again later." });
         }

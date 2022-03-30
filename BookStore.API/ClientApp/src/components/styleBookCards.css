@@ -1,34 +1,33 @@
-.BookCardsContainerGrid{
-    display:  grid;
+.BookCardsContainerGrid {
+    display: grid;
     border-collapse: collapse;
     min-width: 100%;
-    grid-template-columns: 
-    minmax(200px, 600px)
-    minmax(200px, 600px)
-    minmax(200px, 600px);
-
+    grid-template-columns: minmax(200px, 600px) minmax(200px, 600px) minmax(200px, 600px);
 }
-.BookCard{
+
+.BookCard {
     height: 20%;
     flex: 1 0 30%;
-    display:flex;
+    display: flex;
     margin: 1% 4px 4px 4px;
-    flex-direction:column;
-    background-clip:border-box;
-    border:1px solid rgb(0, 0, 0);
-    border-radius:.25rem;
+    flex-direction: column;
+    background-clip: border-box;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: .25rem;
     background-image: linear-gradient(to right, rgba(255,250,130), rgba(254,220,112));
     clear: both;
     justify-content: center;
 }
-.BookCardTitle{
+
+.BookCardTitle {
     height: 50px;
-    font-size:25px ;
+    font-size: 25px;
     padding-top: 20px;
-   text-align: center;
+    text-align: center;
 }
-.BookCardShow{
-    position:absolute;
+
+.BookCardShow {
+    position: absolute;
     margin-top: 110px;
     padding: 5px;
     font-size: 17px;
@@ -38,37 +37,43 @@
     background-color: white;
     cursor: pointer;
     transition: all 250ms ease-in-out
-    
 }
-.BookCardShow:hover {
-    background-color: rgb(197, 103, 103);
+
+    .BookCardShow:hover {
+        background-color: rgb(197, 103, 103);
+    }
+
+    .BookCardShow:focus {
+        outline: none;
+    }
+
+.BookCardBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.BookCardShow:focus {
-    outline: none;
-}
-.BookCardBtn{
-    display: flex;  
-    justify-content: center;  
-    align-items: center;   
-}
-.BookCardImg{
+
+.BookCardImg {
     padding-top: 10px;
     align-self: center;
     max-width: 100%;
     height: 70%;
     width: 80%;
 }
-.BookCardBody{
+
+.BookCardBody {
     flex: auto;
     justify-content: center;
     align-items: center;
     padding: 1rem 1rem;
-    position:relative;
+    position: relative;
     align-items: center;
 }
-.ShowModal{
+
+.ShowModal {
     visibility: visible;
 }
-.NotShowModal{
+
+.NotShowModal {
     visibility: hidden;
 }

@@ -12,14 +12,14 @@ using System.Threading.Tasks;
 
 namespace BookStore.API.Repository
 {
-    public class AccountRepository : IAccountService
+    public class AccountService : IAccountService
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly ITokenService _tokenRepository;
         private readonly JwtConfig _jwtConfig;
 
-        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenService tokenRepository, IOptions<JwtConfig> options)
+        public AccountService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenService tokenRepository, IOptions<JwtConfig> options)
         {
             _userManager = userManager;
             _signInManager = signInManager;

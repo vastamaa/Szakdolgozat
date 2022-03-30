@@ -12,9 +12,9 @@ namespace BookStore.API.Controllers
     [Authorize]
     public class BooksController : ControllerBase
     {
-        private readonly IBookServices _bookServices;
+        private readonly IBookService _bookServices;
 
-        public BooksController(IBookServices bookServices)
+        public BooksController(IBookService bookServices)
         {
             _bookServices = bookServices;
         }

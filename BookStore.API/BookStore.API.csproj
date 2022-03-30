@@ -49,11 +49,6 @@
     <None Remove="ClientApp\src\img\tuskevar.jpg" />
     <None Remove="ClientApp\src\img\vuk.jpg" />
     <None Remove="ClientApp\src\img\zarka.jpg" />
-    <None Remove="Services\Interfaces\IBookServicecs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Services\Interfaces\IBookServicecs" />
   </ItemGroup>
 
   <ItemGroup>
