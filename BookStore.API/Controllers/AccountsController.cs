@@ -14,10 +14,10 @@ namespace BookStore.API.Controllers
     public class AccountsController : ControllerBase
     {
         private readonly IAccountService _accountService;
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUserModel> _userManager;
         private readonly IMailService _mailService;
 
-        public AccountsController(IAccountService accountService, UserManager<ApplicationUser> userManager, IMailService mailService)
+        public AccountsController(IAccountService accountService, UserManager<ApplicationUserModel> userManager, IMailService mailService)
         {
             _accountService = accountService;
             _userManager = userManager;
@@ -81,6 +81,16 @@ namespace BookStore.API.Controllers
             }
 
             return BadRequest(new ResponseModel { Status = "Error", Message = "Password reset has failed! Please try again later." });
+        }
+
+        [HttpPost("change-password")]
+        public async Task<IActionResult> ChangePassword([FromBody] PasswordChangeModel passwordChangeModel)
+        {
+            var result = await _accountService.ChangePasswordAsync(passwordChangeModel.Password, passwordChangeModel.Email);
+
+            if (result.Succeeded) return Ok(new ResponseModel { Status = "Success", Message = "Password change has been successful!" });
+
+            return BadRequest(new ResponseModel { Status = "Error", Message = "Password change has failed! Please try again later." });
         }
     }
 }

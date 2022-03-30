@@ -64,13 +64,13 @@ export class NavMenu extends Component {
                             <span className="dropdown-toggle NavMenuItem text-dark" data-bs-toggle="dropdown">Welcome, {this.state.userName}</span>
                             <div className="dropdown-menu">
                                 {/*<a href="#" className="dropdown-item">Action</a>*/}
-                                <NavLink tag={Link} id="dropmenuitem" className="dropdown-item NavMenuItem text-dark" to="/account/profile-page">Profile page</NavLink>
+                                <NavLink tag={Link} id="dropmenuitem" className="dropdown-item NavMenuItem text-dark" to="/accounts/profile-page">Profile page</NavLink>
                                 <NavLink tag={Link} id="dropmenuitem" onClick={this.NavMenuLogOut} className="dropdown-item NavMenuItem text-dark" to="/">Logout</NavLink>
                             </div>
                         </div>
                     </div> : <div className='NavRight'>
-                        <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/login" >Login</NavLink>
-                        <NavLink tag={Link} className='NavMenuItem text-dark' to="/account/register" >Register</NavLink>
+                        <NavLink tag={Link} className='NavMenuItem text-dark' to="/accounts/login" >Login</NavLink>
+                        <NavLink tag={Link} className='NavMenuItem text-dark' to="/accounts/register" >Register</NavLink>
                     </div>}
                 </div>
                 <div className='burgirMenu' style={{ transform: this.state.collapsed ? 'translateX(0)' : 'translateX(100%)' }} >
@@ -87,8 +87,8 @@ export class NavMenu extends Component {
                             <input className='NavInputBurgir'></input>
                             <IoSearchSharp className='SearchButtonBurgir' />
                         </div>
-                        <NavLink tag={Link} className='NavMenuItem text-dark burgirList' to="/account/login" >Login</NavLink>
-                        <NavLink tag={Link} className='NavMenuItem text-dark burgirList' to="/account/register" >Register</NavLink>
+                        <NavLink tag={Link} className='NavMenuItem text-dark burgirList' to="/accounts/login" >Login</NavLink>
+                        <NavLink tag={Link} className='NavMenuItem text-dark burgirList' to="/accounts/register" >Register</NavLink>
 
                     </div>}
                 </div>

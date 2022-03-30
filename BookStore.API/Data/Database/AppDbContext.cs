@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.API.Data
 {
-    public class AppDbContext : IdentityDbContext<ApplicationUser>
+    public class AppDbContext : IdentityDbContext<ApplicationUserModel>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -19,9 +19,9 @@ namespace BookStore.API.Data
 
         public void MaxKeyLengthSetter(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ApplicationUser>(entity => entity.Property(m => m.Id).HasMaxLength(85));
-            modelBuilder.Entity<ApplicationUser>(entity => entity.Property(m => m.NormalizedEmail).HasMaxLength(85));
-            modelBuilder.Entity<ApplicationUser>(entity => entity.Property(m => m.NormalizedUserName).HasMaxLength(85));
+            modelBuilder.Entity<ApplicationUserModel>(entity => entity.Property(m => m.Id).HasMaxLength(85));
+            modelBuilder.Entity<ApplicationUserModel>(entity => entity.Property(m => m.NormalizedEmail).HasMaxLength(85));
+            modelBuilder.Entity<ApplicationUserModel>(entity => entity.Property(m => m.NormalizedUserName).HasMaxLength(85));
 
             modelBuilder.Entity<IdentityRole>(entity => entity.Property(m => m.Id).HasMaxLength(85));
             modelBuilder.Entity<IdentityRole>(entity => entity.Property(m => m.NormalizedName).HasMaxLength(85));

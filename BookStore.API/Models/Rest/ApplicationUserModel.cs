@@ -3,7 +3,7 @@ using System;
 
 namespace BookStore.API.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUserModel : IdentityUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

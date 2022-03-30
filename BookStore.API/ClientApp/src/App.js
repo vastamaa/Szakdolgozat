@@ -19,10 +19,10 @@ export default class App extends Component {
                 <Layout className='stick-the-navbar'>
                     <Route exact path='/' component={Home} />
                     <Route path='/books' component={Books} />
-                    <Route path='/account/register' component={Register} />
-                    <Route path='/account/login' component={Login} />
-                    <Route path='/account/profile-page' component={Profile} />
-                    <Route path='/forgot-password' component={ForgotPassword} />
+                    <Route path='/accounts/register' component={Register} />
+                    <Route path='/accounts/login' component={Login} />
+                    <Route path='/accounts/profile-page' component={Profile} />
+                    <Route path='/accounts/forgot-password' component={ForgotPassword} />
                 </Layout>
             </div>
         );

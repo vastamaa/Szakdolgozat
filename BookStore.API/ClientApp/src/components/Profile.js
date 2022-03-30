@@ -33,7 +33,8 @@ export class Profile extends Component {
 
         async function handlePasswordChangeSubmit() {
 
-            let password = document.getElementById('email').value;
+            let password = document.getElementById('newPassword').value;
+            let email = this.emailAddress;
 
             try {
                 const response = await fetch('api/accounts/change-password',
@@ -43,14 +44,13 @@ export class Profile extends Component {
                             'Content-Type': 'application/json',
                             'Accept': 'application/json'
                         },
-                        body: JSON.stringify({ "email": password })
+                        body: JSON.stringify({ "password": password, "email": email })
                     });
                 const data = await response.json();
                 console.log(data);
             } catch (e) {
                 console.log("A lekerdezes nem sikerult: ", e)
             }
-            window.location.replace("https://localhost:5001/");
         }
 
         function Fadeform() {
@@ -77,16 +77,12 @@ export class Profile extends Component {
                     <button className="PasswordChange" onClick={Fadeform}>Password change</button>
                     <form id="PasswordText" className="" onSubmit={handlePasswordChangeSubmit}>
                         <div className="PassWordChangeForm">
-                            <label htmlFor="changepw" >Old password:</label>
-                            <input type='password' id="oldPassword"></input><br />
-                        </div>
-                        <div className="PassWordChangeForm">
                             <label htmlFor="changepw" >New password:</label>
                             <input type='password' id="newPassword"></input>
                         </div>
                         <div className="PassWordChangeForm">
                             <label htmlFor="changepw" >New password again:</label>
-                            <input type='password' id="newPassword"></input><br />
+                            <input type='password' id="newPasswordAgain"></input><br />
                         </div>
                         <div>
                             <button type="submit" id="passwordSubmit">Change my password!</button>

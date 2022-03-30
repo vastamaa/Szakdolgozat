@@ -10,9 +10,9 @@ namespace BookStore.API.Controllers
     [ApiController]
     public class EmailsController : ControllerBase
     {
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUserModel> _userManager;
 
-        public EmailsController(UserManager<ApplicationUser> userManager)
+        public EmailsController(UserManager<ApplicationUserModel> userManager)
         {
             _userManager = userManager;
         }

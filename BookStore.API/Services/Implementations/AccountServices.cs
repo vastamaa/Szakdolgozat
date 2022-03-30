@@ -14,12 +14,12 @@ namespace BookStore.API.Repository
 {
     public class AccountService : IAccountService
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUserModel> _userManager;
+        private readonly SignInManager<ApplicationUserModel> _signInManager;
         private readonly ITokenService _tokenRepository;
         private readonly JwtConfig _jwtConfig;
 
-        public AccountService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenService tokenRepository, IOptions<JwtConfig> options)
+        public AccountService(UserManager<ApplicationUserModel> userManager, SignInManager<ApplicationUserModel> signInManager, ITokenService tokenRepository, IOptions<JwtConfig> options)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -31,7 +31,7 @@ namespace BookStore.API.Repository
         {
             if (await _userManager.FindByNameAsync(registerModel.UserName) is not null) return null;
 
-            var user = new ApplicationUser()
+            var user = new ApplicationUserModel()
             {
                 FirstName = registerModel.FirstName,
                 LastName = registerModel.LastName,
@@ -103,7 +103,19 @@ namespace BookStore.API.Repository
             return null;
         }
 
-        public string CreatePassword(int length)
+        public async Task<IdentityResult> ChangePasswordAsync(string password, string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+
+            if (user is not null)
+            {
+                string token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                return await _userManager.ResetPasswordAsync(user, token, password);
+            }
+            return null;
+        }
+
+        private string CreatePassword(int length)
         {
             const string lowerCase = "abcedfghijklmnopqrstuvwxyz";
             const string upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
