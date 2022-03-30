@@ -77,8 +77,8 @@ namespace BookStore.API
 
             services.AddControllersWithViews().AddNewtonsoftJson();
             services.AddTransient<IBookRepository, BookServices>();
-            services.AddTransient<IAccountRepository, AccountRepository>();
-            services.AddTransient<ITokenRepository, TokenServices>();
+            services.AddTransient<IAccountService, AccountRepository>();
+            services.AddTransient<ITokenService, TokenServices>();
             services.Configure<JwtConfig>(Configuration.GetSection(JwtConfig.Name));
             services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
             services.AddTransient<IMailService, MailService>();

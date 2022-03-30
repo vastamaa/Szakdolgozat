@@ -13,13 +13,13 @@ namespace BookStore.API.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
-        private readonly IAccountRepository _accountRepository;
+        private readonly IAccountService _accountService;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IMailService _mailService;
 
-        public AccountsController(IAccountRepository accountRepository, UserManager<ApplicationUser> userManager, IMailService mailService)
+        public AccountsController(IAccountService accountService, UserManager<ApplicationUser> userManager, IMailService mailService)
         {
-            _accountRepository = accountRepository;
+            _accountService = accountService;
             _userManager = userManager;
             _mailService = mailService;
         }
@@ -27,7 +27,7 @@ namespace BookStore.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterModel registerModel)
         {
-            var result = await _accountRepository.RegisterAsync(registerModel);
+            var result = await _accountService.RegisterAsync(registerModel);
 
             if (result is null) return Unauthorized(new Response { Status = "Error", Message = "User already exists!" });
 
@@ -57,7 +57,7 @@ namespace BookStore.API.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
         {
-            var result = await _accountRepository.LoginAsync(loginModel);
+            var result = await _accountService.LoginAsync(loginModel);
 
             if (result is null) return Unauthorized(new Response { Status = "Error", Message = "Login failed! The username or password is incorrect." });
 
@@ -67,6 +67,20 @@ namespace BookStore.API.Controllers
                 RefreshToken = result[0].RefreshToken,
                 Expiration = result[0].Expiration
             });
+        }
+
+        [HttpPost("reset-password")]
+        public async Task<IActionResult> ResetPassword([FromBody] PasswordResetModel passwordResetModel)
+        {
+            var result = _accountService.ResetPasswordAsync(passwordResetModel.Email);
+            Console.WriteLine(result.Result);
+            if (result.Result is not null)
+            {
+                await _mailService.SendEmailAsync(new MailStructure() { ToEmail = passwordResetModel.Email, Subject = "Your new password", Body = $"Your new password is: {result.Result}" });
+                return Ok(new Response { Status = "Success", Message = "Password reset has been successful!" });
+            } 
+
+            return BadRequest(new Response { Status = "Error", Message = "Password reset has failed! Please try again later." });
         }
     }
 }

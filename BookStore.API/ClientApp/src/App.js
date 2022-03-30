@@ -6,6 +6,7 @@ import { Books } from './components/Books';
 import { Register } from './components/Register';
 import { Login } from './components/Login';
 import { Profile } from './components/Profile';
+import { ForgotPassword } from './components/ForgotPassword';
 import './custom.css'
 
 export default class App extends Component {
@@ -20,6 +21,7 @@ export default class App extends Component {
                     <Route path='/account/register' component={Register} />
                     <Route path='/account/login' component={Login} />
                     <Route path='/account/profile-page' component={Profile} />
+                    <Route path='/forgot-password' component={ForgotPassword} />
                 </Layout>
             </div>
         );

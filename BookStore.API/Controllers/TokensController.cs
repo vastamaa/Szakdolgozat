@@ -14,10 +14,10 @@ namespace BookStore.API.Controllers
     [ApiController]
     public class TokensController : ControllerBase
     {
-        private readonly ITokenRepository _tokenRepository;
+        private readonly ITokenService _tokenRepository;
         private readonly UserManager<ApplicationUser> _userManager;
 
-        public TokensController(ITokenRepository tokenRepository, UserManager<ApplicationUser> userManager)
+        public TokensController(ITokenService tokenRepository, UserManager<ApplicationUser> userManager)
         {
             _tokenRepository = tokenRepository;
             _userManager = userManager;

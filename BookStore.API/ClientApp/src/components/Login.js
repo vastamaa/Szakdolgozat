@@ -12,20 +12,20 @@ export class Login extends Component {
 
     render() {
         function Loginerror() {
-            const pw =document.getElementById("password").value;
-            const pm=document.getElementById("userName").value;
-            const pe=document.getElementById("loginsubmit");
+            const pw = document.getElementById("password").value;
+            const pm = document.getElementById("userName").value;
+            const pe = document.getElementById("loginsubmit");
 
 
-            if(pw==""||pm==""){
+            if (pw == "" || pm == "") {
 
                 pe.classList.remove(pe.classList);
                 pe.classList.add("error");
 
-              } else {
+            } else {
                 pe.classList.remove(pe.classList);
                 pe.classList.add("valid")
-              }
+            }
         }
         return (
             <div className='login-container'>
@@ -44,9 +44,9 @@ export class Login extends Component {
                                 <label className='login-label' htmlFor='password'>Password</label>
                                 <input className='login-input' type="Password" name='password' placeholder='Enter your password' id='password' onInvalid={Loginerror} required></input>
                             </div>
-                            <a className='login-label' href='#'>Forgot password</a>
+                            <a className='login-label' href='/forgot-password'>Forgot password</a>
                             <div className='login-footer'>
-                            <p className='none' id='loginsubmit'>Please fill the form</p>
+                                <p className='none' id='loginsubmit'>Please fill the form</p>
                                 <button type='submit' className='login-btn'>Submit</button>
                                 <p className='none' id="loginfail">Login Failed</p>
                             </div>

@@ -11,7 +11,7 @@ using System.Text;
 
 namespace BookStore.API.Repository.Implementations
 {
-    public class TokenServices : ITokenRepository
+    public class TokenServices : ITokenService
     {
         private readonly JwtConfig _jwtConfig;
 

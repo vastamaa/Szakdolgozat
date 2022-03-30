@@ -13,6 +13,7 @@ import ReactDOM from 'react-dom'
 async function postFormDataAsJson({ url, formData }) {
     const plainFormData = Object.fromEntries(formData.entries());
     const formDataJsonString = JSON.stringify(plainFormData);
+/*    console.log(formDataJsonString);*/
     const fetchOptions = {
         method: "POST",
         headers: {
@@ -77,6 +78,10 @@ export async function handleFormRegisterSubmit(event) {
     } catch (error) {
         console.error(error);
     }
+}
+
+export function handleResetPasswordSubmit() {
+
 }
 
 export function logOut() {

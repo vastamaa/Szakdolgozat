@@ -7,18 +7,19 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace BookStore.API.Repository
 {
-    public class AccountRepository : IAccountRepository
+    public class AccountRepository : IAccountService
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly ITokenRepository _tokenRepository;
+        private readonly ITokenService _tokenRepository;
         private readonly JwtConfig _jwtConfig;
 
-        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenRepository tokenRepository, IOptions<JwtConfig> options)
+        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ITokenService tokenRepository, IOptions<JwtConfig> options)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -86,6 +87,39 @@ namespace BookStore.API.Repository
                 };
             }
             return null;
+        }
+
+        public async Task<string> ResetPasswordAsync(string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+
+            if (user is not null)
+            {
+                var password = CreatePassword(2);
+                string token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                await _userManager.ResetPasswordAsync(user, token, password);
+                return password;
+            }
+            return null;
+        }
+
+        public string CreatePassword(int length)
+        {
+            const string lowerCase = "abcedfghijklmnopqrstuvwxyz";
+            const string upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string numbers = "0123456789";
+            const string nonAlphaChars = "!+-.$&#|/?";
+
+            StringBuilder res = new StringBuilder();
+            Random rnd = new Random();
+            while (0 < length--)
+            {
+                res.Append(lowerCase[rnd.Next(lowerCase.Length)]);
+                res.Append(numbers[rnd.Next(numbers.Length)]);
+                res.Append(upperCase[rnd.Next(upperCase.Length)]);
+                res.Append(nonAlphaChars[rnd.Next(nonAlphaChars.Length)]);
+            }
+            return res.ToString();
         }
     }
 }
