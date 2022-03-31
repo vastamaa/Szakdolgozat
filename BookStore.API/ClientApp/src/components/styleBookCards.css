@@ -6,7 +6,6 @@
 }
 
 .BookCard {
-    height: 20%;
     flex: 1 0 30%;
     display: flex;
     margin: 1% 4px 4px 4px;
@@ -27,6 +26,7 @@
 }
 
 .BookCardShow {
+    color: black;
     position: absolute;
     margin-top: 110px;
     padding: 5px;
@@ -34,17 +34,21 @@
     background-color: transparent;
     cursor: pointer;
     z-index: 0;
-    background-color: white;
+    background-color: #F3F6FB;
     cursor: pointer;
     transition: all 250ms ease-in-out
 }
 
     .BookCardShow:hover {
-        background-color: rgb(197, 103, 103);
+        background-color: #AF0808;
     }
 
     .BookCardShow:focus {
-        outline: none;
+        color: black;
+        background-color: #F3F6FB;
+        outline: none !important;
+        outline-offset: none !important;
+        box-shadow: none;
     }
 
 .BookCardBtn {
@@ -69,11 +73,11 @@
     position: relative;
     align-items: center;
 }
-
-.ShowModal {
-    visibility: visible;
+.modal-header{
+    background-color: yellow !important;
+    align-self: center;
+    width: 100%;
 }
-
-.NotShowModal {
-    visibility: hidden;
-}
+.modal-header .close {
+    display:none;
+  }

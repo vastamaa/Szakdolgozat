@@ -31,14 +31,11 @@ export class Books extends Component {
 
                 <>
                     {books.map((books) => (
-                        <div className='BookCard' style={{ width: "400px", height: "600px" }} >
+                        <div className='BookCard' style={{ minWidth: "95%", height: "600px" }} >
                             <img className='card-img-top BookCardImg' src={books.imgLink} alt={books.imgLink} />
                             <div className="BookCardBody">
                                 <h4 className="card-title BookCardTitle NormalText" id="title">{books.title}</h4>
-                                <div className='BookCardBtn'>
-                                    <button className='BookCardShow'>SHOW MORE</button>
-                                    <ModalExample imglink={books.imgLink} />
-                                </div>
+                                    <ModalExample imgLink={books.imgLink} authorName={books.authorName} desc={books.description} genre={books.genreName} isbn={books.isbn} lang={books.languageName} pages={books.pagenumber} price={books.price} publisher={books.publisherName} publishingYear={books.publishingYear} title={books.title}/>
                             </div>
 
                         </div>

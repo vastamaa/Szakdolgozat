@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Books } from './Books';
+import "./styleBookCards.css";
 
 export class ModalExample extends Component {
     constructor(props) {
@@ -20,16 +21,16 @@ export class ModalExample extends Component {
 
     render() {
         return (
-            <div>
+            <div className='BookCardBtn'>
 
-                <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
-                    <ModalBody>
-                        <img src={this.props.imglink}></img>
+                <Button className='BookCardShow' onClick={this.toggle}>SHOW MORE</Button>
+                <Modal isOpen={this.state.modal} toggle={this.toggle} className="BookCardModal">
+                    <ModalHeader className='ModalTitle' toggle={this.toggle}>{this.props.title}</ModalHeader>
+                    <ModalBody className='ModalBody'>
+                        <img className='ModalImage' src={this.props.imgLink}></img>
                     </ModalBody>
-                    <ModalFooter>
-                        <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+                    <ModalFooter className=''>
+                        <Button color="primary" onClick={this.toggle}>Buy</Button>{' '}
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
@@ -37,3 +38,14 @@ export class ModalExample extends Component {
         );
     }
 }
+// imgLink
+// authorName
+// desc
+// genre
+// isbn
+// lang
+// pages
+// price
+// publisher
+//publishingYear
+// title
