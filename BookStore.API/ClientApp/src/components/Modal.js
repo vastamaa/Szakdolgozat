@@ -39,12 +39,13 @@ export class ModalExample extends Component {
                         </div>
                         <hr/>
                         <div>
-                        <p style={{float:'right'}}>{this.props.desc}</p>
-
+                            <p className='ModalDesc'>Description</p>
+                            <p className='Desc'>{this.props.desc}</p>
                         </div>
                     </ModalBody>
-                    <ModalFooter className=''>
-                        <p className='Price'>{this.props.price} Ft</p>
+                    <ModalFooter>
+                        
+                        <p className='Price'><span className='PriceText'>Price:</span>  {this.props.price} Ft</p>
                         <Button color="primary" onClick={this.toggle}>Buy</Button>{' '}
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>

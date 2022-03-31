@@ -90,10 +90,28 @@
     float:right ; 
     display:inline;
     width: 420px;
+    
 }
 
 .ModalTextSpacing{
     display: block;
     margin-bottom: 1px;
-    font-size: 22px;
+    font-size: 21px;
+    font-weight:350;
+}
+.ModalDesc{
+    text-align: center;
+    font-size: 21px;
+    font-weight:450;
+}
+.Desc{
+    font-weight:350;
+    color: black;
+}
+.Price{
+    font-size: 24px;
+    font-weight: 480;
+}
+.PriceText{
+    font-weight: 500;
 }
