@@ -13,7 +13,7 @@ export class ModalExample extends Component {
         this.toggle = this.toggle.bind(this);
     }
 
-    toggle() {
+   toggle() {
         this.setState({
             modal: !this.state.modal
         });
@@ -24,12 +24,27 @@ export class ModalExample extends Component {
             <div className='BookCardBtn'>
 
                 <Button className='BookCardShow' onClick={this.toggle}>SHOW MORE</Button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className="BookCardModal">
+                <Modal isOpen={this.state.modal} toggle={this.toggle} className="BookCardModal" size="lg">
                     <ModalHeader className='ModalTitle' toggle={this.toggle}>{this.props.title}</ModalHeader>
-                    <ModalBody className='ModalBody'>
-                        <img className='ModalImage' src={this.props.imgLink}></img>
+                    <ModalBody>
+                        <div>
+                        <img  className='ModalCardImg' src={this.props.imgLink}></img>
+                        <p className='ModalRight '> <span className='ModalTextSpacing'>Author: {this.props.authorName}</span><br/>  
+                        <span className='ModalTextSpacing'>Genre: {this.props.genre}</span><br/>
+                        <span className='ModalTextSpacing'>Language: {this.props.lang}</span><br/>
+                        <span className='ModalTextSpacing'>Pages: {this.props.pages}</span><br/>
+                        <span className='ModalTextSpacing'>ISBN: {this.props.isbn}</span><br/>
+                        <span className='ModalTextSpacing'>Publisher: {this.props.publisher}</span><br/>
+                        <span className='ModalTextSpacing'>Publishing Year: {this.props.publishingYear}</span></p>
+                        </div>
+                        <hr/>
+                        <div>
+                        <p style={{float:'right'}}>{this.props.desc}</p>
+
+                        </div>
                     </ModalBody>
                     <ModalFooter className=''>
+                        <p className='Price'>{this.props.price} Ft</p>
                         <Button color="primary" onClick={this.toggle}>Buy</Button>{' '}
                         <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
@@ -38,14 +53,6 @@ export class ModalExample extends Component {
         );
     }
 }
-// imgLink
-// authorName
-// desc
-// genre
-// isbn
-// lang
-// pages
-// price
+
 // publisher
 //publishingYear
-// title

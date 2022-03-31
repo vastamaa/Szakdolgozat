@@ -74,10 +74,26 @@
     align-items: center;
 }
 .modal-header{
-    background-color: yellow !important;
-    align-self: center;
-    width: 100%;
+    background-color: #ffff66 !important;
+    justify-content: center;
 }
 .modal-header .close {
     display:none;
+
   }
+.ModalCardImg{
+  width: 40%;
+
+}
+.ModalRight{
+    color: black;
+    float:right ; 
+    display:inline;
+    width: 420px;
+}
+
+.ModalTextSpacing{
+    display: block;
+    margin-bottom: 1px;
+    font-size: 22px;
+}
