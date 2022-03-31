@@ -46,8 +46,8 @@ export class ModalExample extends Component {
                     <ModalFooter>
                         
                         <p className='Price'><span className='PriceText'>Price:</span>  {this.props.price} Ft</p>
-                        <Button color="primary" onClick={this.toggle}>Buy</Button>{' '}
-                        <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                        <Button className='BuyButton' onClick={this.toggle}>Buy</Button>{' '}
+                        <Button className='CancelButton' onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
             </div>

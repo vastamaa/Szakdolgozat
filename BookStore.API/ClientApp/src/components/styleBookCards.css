@@ -8,7 +8,7 @@
 .BookCard {
     flex: 1 0 30%;
     display: flex;
-    margin: 1% 4px 4px 4px;
+    margin: 2.5% 10px 10px 10px;
     flex-direction: column;
     background-clip: border-box;
     border: 1px solid rgb(0, 0, 0);
@@ -26,7 +26,7 @@
 }
 
 .BookCardShow {
-    color: black;
+    color: #F3F6FB;
     position: absolute;
     margin-top: 110px;
     padding: 5px;
@@ -34,18 +34,18 @@
     background-color: transparent;
     cursor: pointer;
     z-index: 0;
-    background-color: #F3F6FB;
+    background-color: #AF0808;
     cursor: pointer;
     transition: all 250ms ease-in-out
 }
 
     .BookCardShow:hover {
-        background-color: #AF0808;
+        background-color:  rgb(197, 103, 103);
     }
 
     .BookCardShow:focus {
-        color: black;
-        background-color: #F3F6FB;
+        color: #F3F6FB;
+        background-color: #AF0808;
         outline: none !important;
         outline-offset: none !important;
         box-shadow: none;
@@ -114,4 +114,21 @@
 }
 .PriceText{
     font-weight: 500;
+}
+.CancelButton{
+    transition: all 250ms ease-in-out;
+    background-color: #66666E;
+}
+.BuyButton{
+    transition: all 250ms ease-in-out;
+    background-color: #AF0808;
+}
+.BuyButton:hover {
+    background-color: rgb(197, 103, 103);
+}
+.CancelButton:hover {
+    background-color: #7f7f8a;
+}
+.hr{
+    margin-bottom: -20px;
 }
