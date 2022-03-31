@@ -7,11 +7,33 @@ export class Profile extends Component {
 
     constructor(props) {
         super(props);
+        this.handlePasswordChangeSubmit = this.handlePasswordChangeSubmit.bind(this);
         this.state = {
             userName: "",
             emailAddress: "",
             role: ""
         };
+    }
+
+    async handlePasswordChangeSubmit(event) {
+        event.preventDefault();
+        let password = document.getElementById('newPassword').value;
+
+        try {
+            const response = await fetch('api/accounts/change-password',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ "password": password, "email": this.state.emailAddress })
+                });
+            const data = await response.json();
+            console.log(data);
+        } catch (e) {
+            console.log("A lekerdezes nem sikerult: ", e)
+        }
     }
 
     componentDidMount() {
@@ -30,28 +52,6 @@ export class Profile extends Component {
     }
 
     render() {
-
-        async function handlePasswordChangeSubmit() {
-
-            let password = document.getElementById('newPassword').value;
-            let email = this.emailAddress;
-
-            try {
-                const response = await fetch('api/accounts/change-password',
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify({ "password": password, "email": email })
-                    });
-                const data = await response.json();
-                console.log(data);
-            } catch (e) {
-                console.log("A lekerdezes nem sikerult: ", e)
-            }
-        }
 
         function Fadeform() {
             let formshow = document.getElementById("PasswordText")
@@ -75,7 +75,7 @@ export class Profile extends Component {
                         <img className='ProfileImg' id="imagedel" src="https://pic.onlinewebfonts.com/svg/img_550783.png"></img>
                     </div>
                     <button className="PasswordChange" onClick={Fadeform}>Password change</button>
-                    <form id="PasswordText" className="" onSubmit={handlePasswordChangeSubmit}>
+                    <form id="PasswordText" className="" onSubmit={this.handlePasswordChangeSubmit}>
                         <div className="PassWordChangeForm">
                             <label htmlFor="changepw" >New password:</label>
                             <input type='password' id="newPassword"></input>
