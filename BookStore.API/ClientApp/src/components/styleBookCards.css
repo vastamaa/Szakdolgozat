@@ -132,3 +132,6 @@
 .hr{
     margin-bottom: -20px;
 }
+.BaseSize{
+    min-height: 500px;
+}

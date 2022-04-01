@@ -44,7 +44,7 @@ export class Login extends Component {
                                 <label className='login-label' htmlFor='password'>Password</label>
                                 <input className='login-input' type="Password" name='password' placeholder='Enter your password' id='password' onInvalid={Loginerror} required></input>
                             </div>
-                            <a className='login-label' href='/accounts/forgot-password'>Forgot password</a>
+                            <a className='ForgorPassword' href='/accounts/forgot-password'>Forgot password</a>
                             <div className='login-footer'>
                                 <p className='none' id='loginsubmit'>Please fill the form</p>
                                 <button type='submit' className='login-btn'>Submit</button>

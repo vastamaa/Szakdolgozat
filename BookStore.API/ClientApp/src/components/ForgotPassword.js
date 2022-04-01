@@ -27,7 +27,7 @@ export class ForgotPassword extends Component {
         }
 
         return (
-            <div>
+            <div className='BaseSize'>
                 <h1>Forgot Password</h1>
                 <hr />
                 <label className='login-label' htmlFor='forgotPassword'>Enter your email address:</label><br />

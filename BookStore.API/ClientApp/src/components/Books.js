@@ -54,7 +54,7 @@ export class Books extends Component {
             : Books.renderBooksTable(this.state.books);
 
         return (
-            <div >
+            <div className='BaseSize'>
                 <h1 id="tabelLabel"  >All the books</h1>
                 {contents}
             </div>

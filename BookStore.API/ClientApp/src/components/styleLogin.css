@@ -116,3 +116,29 @@
 .none {
     display: none;
 }
+.ForgorPassword{
+    text-decoration: none;
+    color: #af0808;
+    font-size: 17px ;
+    display: inline-block;
+    position: relative;
+}
+.ForgorPassword::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:#af0808;
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+}
+.ForgorPassword:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+.ForgorPassword:hover{
+    color: #b15454;
+}
