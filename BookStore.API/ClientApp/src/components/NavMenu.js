@@ -55,7 +55,7 @@ export class NavMenu extends Component {
                     </div>
 
                     <div className='NavCenter'>
-                        <NavLink tag={Link} to="/"> <h1 className='NavLogo text-dark'>Litera</h1></NavLink>
+                        <NavLink tag={Link} to="/"> <h1 className='NavLogo HoverUnderLine'>Litera</h1></NavLink>
                     </div>
                     {this.state.loggedIn ? <div className='NavRight'>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/books" >Books</NavLink>
@@ -75,7 +75,7 @@ export class NavMenu extends Component {
                 </div>
                 <div className='burgirMenu' style={{ transform: this.state.collapsed ? 'translateX(0)' : 'translateX(100%)' }} >
                     <div className='burgerClose' onClick={this.toggleBurgir}>
-                        <AiOutlineLeft  ></AiOutlineLeft>
+                        <AiOutlineLeft ></AiOutlineLeft>
                     </div>
                     {this.state.loggedIn ? <div className='burgirDiv'>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine burgirHead' to="/">Home</NavLink>
