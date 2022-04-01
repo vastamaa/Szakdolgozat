@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ScrollToTop } from './ScrollToTop';
 import "./styleFooter.css";
 
 export class Footer extends Component {
