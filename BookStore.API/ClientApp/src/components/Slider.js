@@ -58,7 +58,6 @@ export class Slider extends Component {
                             <div className='SliderInfoContainer'>
                                 <h1 className='SliderTitle'>{item.title}</h1>
                                 <p className='SliderDesc'>{item.desc}</p>
-                                <button className='SliderButton'>SHOW NOW</button>
                             </div>
                         </div>
                     </div>

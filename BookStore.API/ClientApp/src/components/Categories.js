@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import { categories, showmore } from './Data';
+import { categories,categories2, showmore } from './Data';
 import './styleCate.css';
 
 export class Categories extends Component {
     render() {
+        function ShowMore() {
+            let showmore=document.getElementById('showmorecategory');
+            let tiles=document.getElementById('secondLine');
+            showmore.classList.add("showmorebye");
+            tiles.classList.add("secondLineHello")
+        }
         return (
             <div>
                 <div className='BigContainer'>
@@ -14,7 +20,21 @@ export class Categories extends Component {
                                 <img className='Image' src={item.img}></img>
                                 <div className='Info'>
                                     <h1 className='Title' >{item.title}</h1>
-                                    <p className='Desc'>{item.desc}</p>
+                                </div>
+                            </>
+                        </div>
+                    ))
+                    }
+
+                </div>
+                <div className='BigContainer secondlinehide' id='secondLine' >
+                    {categories2.map((item) => (
+                        <div className='Container img-hover-zoom img-hover-zoom--quick-zoom' id="secondLinePad" >
+
+                            <>
+                                <img className='Image' src={item.img}></img>
+                                <div className='Info'>
+                                    <h1 className='Title' >{item.title}</h1>
                                 </div>
                             </>
                         </div>
@@ -24,7 +44,7 @@ export class Categories extends Component {
                 </div>
                 {showmore.map((item) => (
                     <>
-                        <div className='showmoreCategory'>
+                        <div className='showmoreCategory ' id="showmorecategory" onClick={ShowMore}>
                             <div className='showmore-img-hover-zoom showmore-img-hover-zoom--quick-zoom showmoreBorder'>
 
 

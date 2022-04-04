@@ -23,26 +23,43 @@ export const sliderItems = [
     }
 ]
 
-export const categories = [
+export const categories2 = [
     {
         id: 1,
-        img: "https://images.pexels.com/photos/2494701/pexels-photo-2494701.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        title: "ROMANCE",
-        desc: 'For ...'
+        img: "https://images.pexels.com/photos/235922/pexels-photo-235922.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        title: "LIFESTYLE",
     },
     {
         id: 2,
         img: "https://images.pexels.com/photos/3185488/pexels-photo-3185488.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
         title: "HISTORY",
-        desc: 'For ...'
     },
     {
         id: 3,
-        img: "https://images.pexels.com/photos/34223/mont-saint-michel-france-normandy-europe.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        title: "FANTASY",
-        desc: 'For a ...'
+        img: "https://images.pexels.com/photos/3535383/pexels-photo-3535383.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        title: "GASTRONOMY",
     }
 ]
+export const categories = [
+    {
+        id: 1,
+        img: "https://images.pexels.com/photos/6654177/pexels-photo-6654177.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        title: "COMIC",
+    },
+    {
+        id: 2,
+        img: "https://media.istockphoto.com/photos/sad-man-alone-walking-along-the-alley-in-night-foggy-park-front-view-picture-id1204289635?k=20&m=1204289635&s=612x612&w=0&h=nv_fem_plfx6R5cTBzRbeEA95njPjnbRXYSsImewVjQ=",
+        title: "THRILLER",
+    },
+    {
+        id: 3,
+        img: "https://images.pexels.com/photos/4170629/pexels-photo-4170629.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        title: "LITERATURE",
+
+    }
+]
+
+
 export const showmore = [
     {
         image: "https://images.pexels.com/photos/768125/pexels-photo-768125.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",

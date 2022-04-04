@@ -47,7 +47,7 @@ export class Register extends Component {
                             <div className='login-form-group'>
 
                                 <label className='login-label' htmlFor='password'>Password</label>
-                                <input className='login-input' type="Password" name='password' id='password' onChange={PasswordChange} onInvalid={PasswordChange} placeholder='Enter your password' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" required id="password"></input>
+                                <input className='login-input' type="Password" name='password' id='password' onChange={PasswordChange} onInvalid={PasswordChange} placeholder='Enter your password' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" required></input>
                                 <p className='none' id='passworderr'>Must contain atleast 5 charachters  <br></br> 1 Capital, 1 Special Character</p>
                             </div>
                             <div className='login-form-group'>

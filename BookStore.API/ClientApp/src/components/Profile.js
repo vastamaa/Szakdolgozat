@@ -1,5 +1,7 @@
 ﻿import React, { Component } from "react";
 import { getData } from "./TokenDecode";
+import { PasswordChange ,PasswordMatchChange} from './RegisterValid';
+
 import "./styleProfile.css"
 
 export class Profile extends Component {
@@ -17,7 +19,7 @@ export class Profile extends Component {
 
     async handlePasswordChangeSubmit(event) {
         event.preventDefault();
-        let password = document.getElementById('newPassword').value;
+        let password = document.getElementById('password').value;
 
         try {
             const response = await fetch('api/accounts/change-password',
@@ -77,15 +79,17 @@ export class Profile extends Component {
                     <button className="PasswordChange" onClick={Fadeform}>Password change</button>
                     <form id="PasswordText" className="" onSubmit={this.handlePasswordChangeSubmit}>
                         <div className="PassWordChangeForm">
-                            <label htmlFor="changepw" >New password:</label>
-                            <input type='password' id="newPassword"></input>
+                            <label className='changepw-label' htmlFor="changepw" >New password:</label>
+                            <input className='changepw-input' type='password' id="password" onChange={PasswordChange} onInvalid={PasswordChange}  required></input>
+                            <label htmlFor="changepw" className='none' id='passworderr' >&#09;Bad Formating</label>
                         </div>
                         <div className="PassWordChangeForm">
-                            <label htmlFor="changepw" >New password again:</label>
-                            <input type='password' id="newPasswordAgain"></input><br />
+                            <label className='changepw-label' htmlFor="changepw"  >New password again:</label>
+                            <input className='changepw-input' type='password' id="confirmPassword" onInvalid={PasswordMatchChange} onChange={PasswordMatchChange} required></input>
+                            <label htmlFor="changepw" className='none' id='passwordmerr' >&#09;Doesn't Match</label><br />
                         </div>
                         <div>
-                            <button type="submit" id="passwordSubmit">Change my password!</button>
+                            <button type="submit" className="login-btn" id="passwordSubmit">Change my password!</button>
                         </div>
                     </form>
                 </div>
