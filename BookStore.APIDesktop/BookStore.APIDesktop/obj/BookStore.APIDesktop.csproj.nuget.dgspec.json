@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tanulo\\source\\repos\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj": {}
+    "F:\\Documents\\GitHub\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tanulo\\source\\repos\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj": {
+    "F:\\Documents\\GitHub\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tanulo\\source\\repos\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj",
+        "projectUniqueName": "F:\\Documents\\GitHub\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj",
         "projectName": "BookStore.APIDesktop",
-        "projectPath": "C:\\Users\\Tanulo\\source\\repos\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj",
-        "packagesPath": "C:\\Users\\Tanulo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tanulo\\source\\repos\\BookStore.APIDesktop\\BookStore.APIDesktop\\obj\\",
+        "projectPath": "F:\\Documents\\GitHub\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj",
+        "packagesPath": "C:\\Users\\vszto\\.nuget\\packages\\",
+        "outputPath": "F:\\Documents\\GitHub\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tanulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vszto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

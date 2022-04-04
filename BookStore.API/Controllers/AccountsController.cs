@@ -69,6 +69,21 @@ namespace BookStore.API.Controllers
             });
         }
 
+        [HttpPost("admin-login")]
+        public async Task<IActionResult> AdminLogin([FromBody] LoginModel loginModel)
+        {
+            var result = await _accountService.AdminLoginAsync(loginModel);
+
+            if (result is null) return Unauthorized(new ResponseModel { Status = "Error", Message = "Login failed! You are unauthorized to enter." });
+
+            return Ok(new
+            {
+                Token = result[0].Token,
+                RefreshToken = result[0].RefreshToken,
+                Expiration = result[0].Expiration
+            });
+        }
+
         [HttpPost("reset-password")]
         public async Task<IActionResult> ResetPassword([FromBody] PasswordResetModel passwordResetModel)
         {

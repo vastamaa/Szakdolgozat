@@ -86,6 +86,51 @@ namespace BookStore.API.Repository
             return null;
         }
 
+        public async Task<List<TokenServiceModel>> AdminLoginAsync(LoginModel loginModel)
+        {
+            var user = await _userManager.FindByNameAsync(loginModel.UserName);
+            var role = await _userManager.GetRolesAsync(user);
+
+            if (role.Contains("Admin"))
+            {
+                var result = await _signInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, false, false);
+
+                if (user is not null && result.Succeeded)
+                {
+                    var authClaims = new List<Claim>
+                    {
+                        new Claim(ClaimTypes.Name, user.UserName),
+                        new Claim(ClaimTypes.Email, user.Email),
+                        new Claim(ClaimTypes.GivenName, user.FirstName),
+                        new Claim(ClaimTypes.Surname, user.LastName),
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    };
+
+                    var token = _tokenRepository.GetToken(authClaims);
+                    var refreshToken = _tokenRepository.GenerateRefreshToken();
+
+                    _ = int.TryParse(_jwtConfig.RefreshTokenValidityInDays, out int refreshTokenValidityInDays);
+
+                    user.RefreshToken = refreshToken;
+                    user.RefreshTokenExpiryTime = DateTime.Now.AddDays(refreshTokenValidityInDays);
+
+                    await _userManager.UpdateAsync(user);
+
+                    return new List<TokenServiceModel>()
+                    {
+                        new TokenServiceModel
+                        {
+                            Token = new JwtSecurityTokenHandler().WriteToken(token),
+                            RefreshToken = refreshToken,
+                            Expiration = token.ValidTo
+                        }
+                    };
+                }
+                return null;
+            }
+            return null;
+        }
+
         public async Task<string> ResetPasswordAsync(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);

@@ -15,6 +15,6 @@
         <Label x:Name="lblPassword" Content="Password:
                " HorizontalAlignment="Left" Margin="198,244,0,0" VerticalAlignment="Top" Width="66"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="313,298,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <Label x:Name="lblTest" Content="Test" HorizontalAlignment="Left" Margin="301,111,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblTest" Content="Test" HorizontalAlignment="Left" Margin="280,323,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
