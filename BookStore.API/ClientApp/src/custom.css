@@ -21,6 +21,8 @@ code {
 
 .font-face-gm {
     font-family: "UrbanistBold";
+    height: auto;
+    max-width: 100%;
 }
 
 .stick-the-navbar {
@@ -28,3 +30,6 @@ code {
     top: 0;
 }
 /*  */
+#root {
+    min-width: 100%;
+}

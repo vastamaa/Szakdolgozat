@@ -37,7 +37,7 @@ export class Register extends Component {
                             <div className='login-form-group'>
                                 <label className='login-label' htmlFor='userName'>Username</label>
                                 <input className='login-input' type="text" name='userName' placeholder='Enter your username' onInvalid={usernNameChange} id="userName" onChange={usernNameChange} required></input>
-                                <p className='none' id='usernameerr'>Must contain atleast 6 charachters</p>
+                                <p className='none' id='usernameerr'>Must contain atleast 6 characters</p>
                             </div>
                             <div className='login-form-group'>
                                 <label className='login-label' htmlFor='email'>Email</label>

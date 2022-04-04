@@ -21,6 +21,7 @@ html {
 .NavContainer {
     height: 60px;
     background-color: #FFFF66;
+    width:100%;
 }
 
 .NavWrapper {

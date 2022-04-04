@@ -58,13 +58,10 @@ namespace BookStore.API.Repository
                 {
                     new Claim(ClaimTypes.Name, user.UserName),
                     new Claim(ClaimTypes.Email, user.Email),
+                    new Claim(ClaimTypes.GivenName, user.FirstName),
+                    new Claim(ClaimTypes.Surname, user.LastName),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 };
-
-                foreach (var userRole in userRoles)
-                {
-                    authClaims.Add(new Claim(ClaimTypes.Role, userRole));
-                }
 
                 var token = _tokenRepository.GetToken(authClaims);
                 var refreshToken = _tokenRepository.GenerateRefreshToken();

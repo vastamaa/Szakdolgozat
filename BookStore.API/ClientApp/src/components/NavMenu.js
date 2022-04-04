@@ -79,6 +79,7 @@ export class NavMenu extends Component {
                     </div>
                     {this.state.loggedIn ? <div className='burgirDiv'>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine burgirHead' to="/">Home</NavLink>
+                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine ' to="/accounts/profile-page" >Profile</NavLink><br/>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine ' to="/books" >Books</NavLink><br/>
                         <NavLink tag={Link} onClick={logOut} className='NavMenuItem HoverUnderLine' to="/">Logout</NavLink>
                     </div> : <div className='burgirDiv'>
