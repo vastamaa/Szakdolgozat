@@ -1,3 +1,28 @@
+@media screen and (max-width:1420px){
+    .Container {
+        height: 35vh !important;
+    }
+    .Title {
+        font-size:32px ;
+    }
+}
+@media screen and (max-width:980px){
+    .Container {
+        height: 23vh !important;
+    }
+    .Title {
+        font-size:22px ;
+    }
+}
+@media screen and (max-width:590px){
+    .Container {
+        height: 18vh !important;
+    }
+    .Title {
+        font-size:18px ;
+    }
+}
+
 .Container {
     flex: 1;
     margin: 1% 4px 4px 4px;
@@ -28,13 +53,6 @@
     color: #F3F6FB;
     margin-bottom: 20px;
     text-shadow: -1px -1px 0 #66666E, 1px -1px 0 #66666E, -1px 1px 0 #66666E, 1px 1px 0 #66666E;
-}
-
-.Desc {
-    color: whitesmoke;
-    padding: 10px;
-    font-weight: 500;
-    font-size: 18px;
 }
 
 .Buttonc {

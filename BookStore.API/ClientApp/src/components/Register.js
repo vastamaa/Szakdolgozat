@@ -26,7 +26,7 @@ export class Register extends Component {
                         <form className='login-form' action='api/accounts/register' onSubmit={handleFormRegisterSubmit} id='form' >
                             <div className='login-form-group'>
                                 <label className='login-label' htmlFor='firstName'>First Name</label>
-                                <input className='login-input' type="text" name='firstName' placeholder='Enter your first name' onInvalid={FirstNameChange} id="firstName" onChange={FirstNameChange} required ></input>
+                                <input className='login-input' type="text" name='firstName' placeholder='Enter your first name' onInvalid={FirstNameChange} id="firstName" onBlur={FirstNameChange} required ></input>
                                 <p className='none' id='firstnameerr'>Must contain atleast 3 charachters</p>
                             </div>
                             <div className='login-form-group'>

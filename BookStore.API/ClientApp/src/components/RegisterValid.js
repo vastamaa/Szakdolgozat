@@ -15,7 +15,6 @@ export function PasswordChange() {
 
 export function FirstNameChange() {
     const fn = document.getElementById("firstName").value;
-    console.log(fn)
     const fne = document.getElementById("firstnameerr");
     if (fn.length > 2) {
         fne.classList.remove(fne.classList);
@@ -25,7 +24,7 @@ export function FirstNameChange() {
         fne.classList.remove(fne.classList);
         fne.classList.add("error");
     }
-}
+} 
 
 export function LastNameChange() {
     const fn = document.getElementById("lastName").value;

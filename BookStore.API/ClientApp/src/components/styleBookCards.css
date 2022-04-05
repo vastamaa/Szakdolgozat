@@ -1,3 +1,67 @@
+@media screen and (max-width:1400px){
+    .BookCard{
+        width: 300px !important;
+    }
+}
+@media screen and (max-width:980px){
+    .BookCard{
+        height: 400px !important;
+        width: 150px !important;
+    }
+    .BookCardTitle {
+        font-size: 15px !important;
+        padding-top: 10px !important;
+    }
+    .BookCardShow {
+        margin-top: 30px !important;
+        padding: 3px !important;
+        font-size: 12px !important;
+    }
+
+}
+@media screen and (max-width:760px){
+    .BookCardsContainerGrid {
+        grid-template-columns: minmax(100px, 300px) minmax(100px, 300px) minmax(100px, 300px) !important;
+    }
+    .BookCard{
+        height: 250px !important;
+        width: 150px !important;
+    }
+    .BookCardTitle {
+        font-size: 10px !important;
+        padding-top: 5px !important;
+    }
+    .BookCardShow {
+        margin-top: -10px !important;
+        padding: 1.5px !important;
+        font-size: 10px !important;
+    }
+    .BookCardImg {
+        width: 75% !important;
+    }
+}
+@media screen and (max-width:510px){
+    .BookCardsContainerGrid {
+        grid-template-columns: minmax(75px, 200px) minmax(75px, 200px) minmax(75px, 200px) !important;
+    }
+    .BookCard{
+        height: 215px !important;
+        width: 90px !important;
+    }
+    .BookCardTitle {
+        font-size: 9px !important;
+        padding-top: 0  !important;
+    }
+    .BookCardShow {
+        margin-top: -20px !important;
+        padding: 1.5px !important;
+        font-size: 9px !important;
+        z-index: 10;
+    }
+    .BookCardImg {
+        width: 80% !important;
+    }
+}
 .BookCardsContainerGrid {
     display: grid;
     border-collapse: collapse;
@@ -6,6 +70,7 @@
 }
 
 .BookCard {
+    width: 8vh;
     flex: 1 0 30%;
     display: flex;
     margin: 2.5% 10px 10px 10px;

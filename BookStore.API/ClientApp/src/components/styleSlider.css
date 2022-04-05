@@ -25,14 +25,14 @@
         width: 250px !important;
     }
     .SliderInfoContainer {
-        margin-left: 22vh !important;
+        margin-left: 30vh !important;
         margin-bottom: 55vh !important;
         width: 300px !important;
     }
 }
-@media screen and (max-width:550px){
+@media screen and (max-width:590px){
     .SliderContainer{
-        height:40vh !important;
+        height:35vh !important;
     }
     .SliderImageContainer {
         width: 200px !important;
@@ -41,9 +41,15 @@
         width: 250px !important;
     }
     .SliderInfoContainer {
-        margin-left: 22vh !important;
+        margin-left: 30vh !important;
         margin-bottom: 55vh !important;
         width: 300px !important;
+    }
+    .SliderTitle{
+        font-size: 25px !important;
+    }
+    .SliderDesc{
+        font-size: 15px !important;
     }
 }
 @media screen and (max-width:420px){
@@ -51,15 +57,21 @@
         height:40vh !important;
     }
     .SliderImageContainer {
-        width: 200px !important;
+        width: 100px !important;
     }
     .SliderImage {
-        width: 250px !important;
+        width: 170px !important;
     }
     .SliderInfoContainer {
         margin-left: 22vh !important;
         margin-bottom: 55vh !important;
-        width: 300px !important;
+        width: 200px !important;
+    }
+    .SliderTitle{
+        font-size: 25px !important;
+    }
+    .SliderDesc{
+        font-size: 15px !important;
     }
 }
 
