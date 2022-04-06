@@ -1,0 +1,13 @@
+.CartContainer{
+    margin-top: 2.5%;
+    width: 100%;
+    padding: 4px;
+}
+.Cart{
+    border: 1px grey solid;
+    border-radius: 20px;
+    width: 100%;
+    min-height: 80vh;
+    display: grid;
+    align-items: center;
+}

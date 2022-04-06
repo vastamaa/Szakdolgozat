@@ -54,6 +54,3 @@ export class ModalExample extends Component {
         );
     }
 }
-
-// publisher
-//publishingYear

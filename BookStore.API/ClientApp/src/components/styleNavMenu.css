@@ -192,3 +192,7 @@ html {
     z-index: -1;
     width: 10% !important;
 }
+#cartbutton{
+    margin: 0 !important;
+    margin-right: -5% !important;
+}

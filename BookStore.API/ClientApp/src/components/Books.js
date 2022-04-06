@@ -35,7 +35,7 @@ export class Books extends Component {
                             <hr className='hr' />
                             <div className="BookCardBody">
                                 <h4 className="card-title BookCardTitle NormalText" id="title">{books.title}</h4>
-                                <ModalExample imgLink={books.imgLink} authorName={books.authorName} desc={books.description} genre={books.genreName} isbn={books.isbn} lang={books.languageName} pages={books.pagenumber} price={books.price} publisher={books.publisherName} publishingYear={books.publishingYear} title={books.title} />
+                                <ModalExample imgLink={books.imgLink} authorName={books.authorNames} desc={books.description} genre={books.genreName} isbn={books.isbn} lang={books.languageName} pages={books.pageNumber} price={books.price} publisher={books.publisherName} publishingYear={books.publisherYear} title={books.title} />
                             </div>
 
                         </div>

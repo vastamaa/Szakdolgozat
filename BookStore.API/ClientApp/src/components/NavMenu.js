@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { IoSearchSharp } from "@react-icons/all-files/io5/IoSearchSharp";
 import { AiOutlineShoppingCart } from "@react-icons/all-files/ai/AiOutlineShoppingCart";
 import { logOut } from "./Log";
-import './NavMenu.css';
+import './styleNavMenu.css';
 import { FaBars } from "@react-icons/all-files/fa/FaBars";
 import { AiOutlineLeft } from "@react-icons/all-files/ai/AiOutlineLeft";
 import { getData } from "./TokenDecode";
@@ -59,7 +59,7 @@ export class NavMenu extends Component {
                     </div>
                     {this.state.loggedIn ? <div className='NavRight'>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/books" >Books</NavLink>
-                        <AiOutlineShoppingCart className='HoverUnderLine' size="30px "></AiOutlineShoppingCart>
+                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine' id='cartbutton' to="/cart"><AiOutlineShoppingCart  size="25px "></AiOutlineShoppingCart></NavLink>
                         <div className="dropdown">
                             <span className="dropdown-toggle NavMenuItem text-dark " data-bs-toggle="dropdown">Welcome, {this.state.userName}</span>
                             <div className="dropdown-menu dropdownthingy">

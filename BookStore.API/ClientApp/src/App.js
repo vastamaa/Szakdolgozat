@@ -7,6 +7,7 @@ import { Register } from './components/Register';
 import { Login } from './components/Login';
 import { Profile } from './components/Profile';
 import { ForgotPassword } from './components/ForgotPassword';
+import { Cart } from './components/Cart';
 import './custom.css'
 
 
@@ -23,6 +24,7 @@ export default class App extends Component {
                     <Route path='/accounts/login' component={Login} />
                     <Route path='/accounts/profile-page' component={Profile} />
                     <Route path='/accounts/forgot-password' component={ForgotPassword} />
+                    <Route path='/cart' component={Cart}/>
                 </Layout>
             </div>
         );
