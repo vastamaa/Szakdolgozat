@@ -48,8 +48,8 @@ export const categories = [
     },
     {
         id: 2,
-        img: "https://media.istockphoto.com/photos/sad-man-alone-walking-along-the-alley-in-night-foggy-park-front-view-picture-id1204289635?k=20&m=1204289635&s=612x612&w=0&h=nv_fem_plfx6R5cTBzRbeEA95njPjnbRXYSsImewVjQ=",
-        title: "THRILLER",
+        img: "https://images.pexels.com/photos/1853354/pexels-photo-1853354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        title: "CHILDREN'S FICTION",
     },
     {
         id: 3,

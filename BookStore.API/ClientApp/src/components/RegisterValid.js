@@ -24,7 +24,7 @@ export function FirstNameChange() {
         fne.classList.remove(fne.classList);
         fne.classList.add("error");
     }
-} 
+}
 
 export function LastNameChange() {
     const fn = document.getElementById("lastName").value;

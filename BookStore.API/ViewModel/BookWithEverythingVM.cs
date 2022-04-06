@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace TestAPI.ViewModels
+﻿namespace TestAPI.ViewModels
 {
     public class BookWithEverythingVM
     {
@@ -15,6 +13,6 @@ namespace TestAPI.ViewModels
         public string PublisherName { get; set; }
         public string LanguageName { get; set; }
         public string GenreName { get; set; }
-        public List<string> AuthorNames { get; set; }
+        public string AuthorName { get; set; }
     }
 }

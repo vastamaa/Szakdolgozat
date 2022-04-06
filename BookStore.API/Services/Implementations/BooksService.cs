@@ -32,7 +32,7 @@ namespace TestAPI.Services.Implementations
                 PublisherName = book.Publisher.Name,
                 GenreName = book.Book_Authors.Select(n => n.Genre.Name).FirstOrDefault(),
                 LanguageName = book.Book_Authors.Select(n => n.Language.Name).FirstOrDefault(),
-                AuthorNames = book.Book_Authors.Select(n => n.Author.Name).ToList()
+                AuthorName = book.Book_Authors.Select(n => n.Author.Name).FirstOrDefault()
             }).ToListAsync();
 
             return _books;
@@ -52,7 +52,7 @@ namespace TestAPI.Services.Implementations
                 PublisherName = book.Publisher.Name,
                 GenreName = book.Book_Authors.Select(n => n.Genre.Name).FirstOrDefault(),
                 LanguageName = book.Book_Authors.Select(n => n.Language.Name).FirstOrDefault(),
-                AuthorNames = book.Book_Authors.Select(n => n.Author.Name).ToList()
+                AuthorName = book.Book_Authors.Select(n => n.Author.Name).FirstOrDefault()
             }).ToListAsync();
 
             return _bookWithAuthors;

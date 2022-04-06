@@ -55,7 +55,7 @@ export class Books extends Component {
 
         return (
             <div className='BaseSize'>
-                <h1 id="tabelLabel"  >All the books</h1>
+                <h1 id="tabelLabel">All the books</h1>
                 {contents}
             </div>
         );
@@ -69,10 +69,10 @@ export class Books extends Component {
             url = `api/books/${splitUrl[4]}`;
         }
         else {
-            url = `api/books`
+            url = `api/books`;
         }
-        
-        console.log(url);
+
+        /*console.log(url);*/
 
         try {
             const response = await fetch(url,
@@ -85,7 +85,7 @@ export class Books extends Component {
             console.log(data);
             this.setState({ books: data, loading: false });
         } catch (e) {
-            console.log("A lekerdezes nem sikerult: ", e)
+            console.log(`A lekerdezes nem sikerult: ${e}`)
         }
 
     }

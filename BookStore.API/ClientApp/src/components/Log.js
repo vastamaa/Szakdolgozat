@@ -13,7 +13,7 @@ import ReactDOM from 'react-dom'
 async function postFormDataAsJson({ url, formData }) {
     const plainFormData = Object.fromEntries(formData.entries());
     const formDataJsonString = JSON.stringify(plainFormData);
-    /*    console.log(formDataJsonString);*/
+
     const fetchOptions = {
         method: "POST",
         headers: {
@@ -54,9 +54,11 @@ export async function handleFormLoginSubmit(event) {
 
         console.log("Sikeres!");
         window.location.replace("https://localhost:5001/");
+
     } catch (error) {
         Array.from(document.getElementById("loginfail").classList.remove(Array.from(document.getElementById("loginfail").classList)));
         Array.from(document.getElementById("loginfail").classList.add(err));
+
         console.error(error);
     }
 }
@@ -75,6 +77,7 @@ export async function handleFormRegisterSubmit(event) {
 
         console.log(responseData);
         window.location.replace("https://localhost:5001/");
+
     } catch (error) {
         console.error(error);
     }

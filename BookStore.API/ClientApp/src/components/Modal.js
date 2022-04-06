@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { textChangeRangeIsUnchanged } from 'typescript';
-import { Books } from './Books';
-import { createCookie,readCookie } from './CookieHandler';
+import { createCookie, readCookie } from './CookieHandler';
 import "./styleBookCards.css";
 
 export class ModalExample extends Component {
@@ -14,14 +12,14 @@ export class ModalExample extends Component {
         this.toggle = this.toggle.bind(this);
     }
 
-   toggle() {
+    toggle() {
         this.setState({
             modal: !this.state.modal
         });
     }
-    createJson(){
-        var myObject = JSON.parse(`{"title":${this.props.title},"price":${this.props.price}}`); 
-        createCookie("book",myObject)
+    createJson() {
+        var myObject = JSON.parse(`{"title":${this.props.title},"price":${this.props.price}}`);
+        createCookie("book", myObject)
     }
 
     render() {
@@ -33,26 +31,26 @@ export class ModalExample extends Component {
                     <ModalHeader className='ModalTitle' toggle={this.toggle}>{this.props.title}</ModalHeader>
                     <ModalBody>
                         <div>
-                        <img  className='ModalCardImg' src={this.props.imgLink}></img>
-                        <p className='ModalRight '> <span className='ModalTextSpacing'>Author: {this.props.authorName}</span><br/>  
-                        <span className='ModalTextSpacing'>Genre: {this.props.genre}</span><br/>
-                        <span className='ModalTextSpacing'>Language: {this.props.lang}</span><br/>
-                        <span className='ModalTextSpacing'>Pages: {this.props.pages}</span><br/>
-                        <span className='ModalTextSpacing'>ISBN: {this.props.isbn}</span><br/>
-                        <span className='ModalTextSpacing'>Publisher: {this.props.publisher}</span><br/>
-                        <span className='ModalTextSpacing'>Publishing Year: {this.props.publishingYear}</span></p>
+                            <img className='ModalCardImg' src={this.props.imgLink}></img>
+                            <p className='ModalRight '> <span className='ModalTextSpacing'>Author: {this.props.authorName}</span><br />
+                                <span className='ModalTextSpacing'>Genre: {this.props.genre}</span><br />
+                                <span className='ModalTextSpacing'>Language: {this.props.lang}</span><br />
+                                <span className='ModalTextSpacing'>Pages: {this.props.pages}</span><br />
+                                <span className='ModalTextSpacing'>ISBN: {this.props.isbn}</span><br />
+                                <span className='ModalTextSpacing'>Publisher: {this.props.publisher}</span><br />
+                                <span className='ModalTextSpacing'>Publishing Year: {this.props.publishingYear}</span></p>
                         </div>
-                        <hr/>
+                        <hr />
                         <div>
                             <p className='ModalDesc'>Description</p>
                             <p className='Desc'>{this.props.desc}</p>
                         </div>
                     </ModalBody>
                     <ModalFooter>
-                        
+
                         <p className='Price'><span className='PriceText'>Price:</span>  {this.props.price} Ft</p>
-                        <button className='BuyButton' id='buybutton' onClick={()=> this.createJson}>Buy</button>{' '}
-                        <Button className='CancelButton' onClick={()=>console.log(readCookie("book"))}>Cancel</Button>
+                        <button className='BuyButton' id='buybutton' onClick={() => this.createJson}>Buy</button>{' '}
+                        <Button className='CancelButton' onClick={() => console.log(readCookie("book"))}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
             </div>

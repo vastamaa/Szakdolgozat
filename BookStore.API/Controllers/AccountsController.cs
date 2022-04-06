@@ -1,4 +1,5 @@
 ﻿using BookStore.API.Models;
+using BookStore.API.Models.User;
 using BookStore.API.Repository;
 using BookStore.API.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -106,6 +107,16 @@ namespace BookStore.API.Controllers
             if (result.Succeeded) return Ok(new ResponseModel { Status = "Success", Message = "Password change has been successful!" });
 
             return BadRequest(new ResponseModel { Status = "Error", Message = "Password change has failed! Please try again later." });
+        }
+
+        [HttpPost("change-username")]
+        public async Task<IActionResult> ChangeUserName([FromBody] UserNameChangeModel userNameChangeModel)
+        {
+            var result = await _accountService.ChangePasswordAsync(userNameChangeModel.UserName, userNameChangeModel.Email);
+
+            if (result.Succeeded) return Ok(new ResponseModel { Status = "Success", Message = "Username change has been successful!" });
+
+            return BadRequest(new ResponseModel { Status = "Error", Message = "Username change has failed! Please try again later." });
         }
     }
 }

@@ -6,8 +6,8 @@ import './styleCate.css';
 export class Categories extends Component {
     render() {
         function ShowMore() {
-            let showmore=document.getElementById('showmorecategory');
-            let tiles=document.getElementById('secondLine');
+            let showmore = document.getElementById('showmorecategory');
+            let tiles = document.getElementById('secondLine');
             showmore.classList.add("showmorebye");
             tiles.classList.add("secondLineHello")
         }
@@ -15,7 +15,7 @@ export class Categories extends Component {
             <div>
                 <div className='BigContainer'>
                     {categories.map((item) => (
-                        <div onClick={() => window.location.replace("https://localhost:5001/books/" + item.title)} className='Container img-hover-zoom img-hover-zoom--quick-zoom'>
+                        <div onClick={() => window.location.replace("https://localhost:5001/books/" + item.title.toLowerCase())} className='Container img-hover-zoom img-hover-zoom--quick-zoom'>
 
                             <>
                                 <img className='Image' src={item.img}></img>

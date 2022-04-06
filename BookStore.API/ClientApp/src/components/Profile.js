@@ -1,6 +1,6 @@
 ﻿import React, { Component } from "react";
 import { getData } from "./TokenDecode";
-import { PasswordChange , PasswordMatchChange , usernNameChange } from './RegisterValid';
+import { PasswordChange, PasswordMatchChange, usernNameChange } from './RegisterValid';
 
 import "./styleProfile.css"
 
@@ -13,8 +13,8 @@ export class Profile extends Component {
         this.state = {
             userName: "",
             emailAddress: "",
-            FirstName:"",
-            LastName:""
+            FirstName: "",
+            LastName: ""
         };
     }
 
@@ -35,7 +35,28 @@ export class Profile extends Component {
             const data = await response.json();
             console.log(data);
         } catch (e) {
-            alert("Can't Request:"+e)
+            alert("Can't Request:" + e)
+        }
+    }
+
+    async handleUserNameChangeSubmit(event) {
+        event.preventDefault();
+        let userName = document.getElementById('password').value;
+
+        try {
+            const response = await fetch('api/accounts/change-username',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ "username": userName, "email": this.state.emailAddress })
+                });
+            const data = await response.json();
+            console.log(data);
+        } catch (e) {
+            alert("Can't Request:" + e)
         }
     }
 
@@ -86,10 +107,10 @@ export class Profile extends Component {
                         <img className='ProfileImg' id="imagedel" src="https://pic.onlinewebfonts.com/svg/img_550783.png"></img>
                     </div>
                     <button className="PasswordChange" onClick={FadePw}>Password change</button>
-                    <form id="PasswordText" className="" onSubmit={this.handlePasswordChangeSubmit}>
+                    <form id="PasswordText" className="" onSubmit={() => this.handlePasswordChangeSubmit()}>
                         <div className="PassWordChangeForm">
                             <label className='change-label' htmlFor="password" >New password:</label>
-                            <input className='change-input' type='password' id="password" onChange={PasswordChange} onInvalid={PasswordChange}  required></input>
+                            <input className='change-input' type='password' id="password" onChange={PasswordChange} onInvalid={PasswordChange} required></input>
                             <label htmlFor="password" className='none' id='passworderr' >&#09;Bad Formating</label>
                         </div>
                         <div className="PassWordChangeForm">
@@ -103,16 +124,16 @@ export class Profile extends Component {
                     </form>
 
                     <button className="UsernameChange" onClick={FadeUser}>Username change</button>
-                    <form id="UsernameText" className="" /*onSubmit={}*/>
+                    <form id="UsernameText" className="" onSubmit={() => this.handleUserNameChangeSubmit()}>
                         <div className="UsernameChangeForm">
-                        <label className='change-label' htmlFor='userName'>Username</label>
-                        <input className='change-input' type="text" name='userName' placeholder='Enter your username' onInvalid={usernNameChange} id="userName" onChange={usernNameChange} required></input>
-                        <label htmlFor="userName" className='none' id='usernameerr' >&#09;Must contain atleast 6 characters</label>
+                            <label className='change-label' htmlFor='userName'>Username</label>
+                            <input className='change-input' type="text" name='userName' placeholder='Enter your username' onInvalid={usernNameChange} id="userName" onChange={usernNameChange} required></input>
+                            <label htmlFor="userName" className='none' id='usernameerr' >&#09;Must contain atleast 6 characters</label>
                         </div>
                         <div>
                             <button type="submit" className="login-btn" id="userSubmit">Change my Username!</button>
                         </div>
-                    </form> 
+                    </form>
                 </div>
             </div>
         );

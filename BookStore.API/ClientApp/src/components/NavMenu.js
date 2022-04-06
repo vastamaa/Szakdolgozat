@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { IoSearchSharp } from "@react-icons/all-files/io5/IoSearchSharp";
 import { AiOutlineShoppingCart } from "@react-icons/all-files/ai/AiOutlineShoppingCart";
 import { logOut } from "./Log";
 import './styleNavMenu.css';
@@ -58,8 +57,8 @@ export class NavMenu extends Component {
                         <NavLink tag={Link} to="/"> <h1 className='NavLogo HoverUnderLine'>Litera</h1></NavLink>
                     </div>
                     {this.state.loggedIn ? <div className='NavRight'>
-                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/books" >Books</NavLink>
-                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine' id='cartbutton' to="/cart"><AiOutlineShoppingCart  size="25px "></AiOutlineShoppingCart></NavLink>
+                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/books">Books</NavLink>
+                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine' id='cartbutton' to="/cart"><AiOutlineShoppingCart size="25px "></AiOutlineShoppingCart></NavLink>
                         <div className="dropdown">
                             <span className="dropdown-toggle NavMenuItem text-dark " data-bs-toggle="dropdown">Welcome, {this.state.userName}</span>
                             <div className="dropdown-menu dropdownthingy">
@@ -69,6 +68,7 @@ export class NavMenu extends Component {
                             </div>
                         </div>
                     </div> : <div className='NavRight'>
+                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/books" >Books</NavLink>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/accounts/login" >Login</NavLink>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/accounts/register" >Register</NavLink>
                     </div>}
@@ -79,8 +79,8 @@ export class NavMenu extends Component {
                     </div>
                     {this.state.loggedIn ? <div className='burgirDiv'>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine burgirHead' to="/">Home</NavLink>
-                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine ' to="/accounts/profile-page" >Profile</NavLink><br/>
-                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine ' to="/books" >Books</NavLink><br/>
+                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine ' to="/accounts/profile-page" >Profile</NavLink><br />
+                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine ' to="/books" >Books</NavLink><br />
                         <NavLink tag={Link} onClick={logOut} className='NavMenuItem HoverUnderLine' to="/">Logout</NavLink>
                     </div> : <div className='burgirDiv'>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine burgirHead' to="/">Home</NavLink>

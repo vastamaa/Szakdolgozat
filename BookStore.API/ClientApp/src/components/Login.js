@@ -38,7 +38,7 @@ export class Login extends Component {
                         <form className='login-form' action='api/accounts/login' onSubmit={handleFormLoginSubmit}>
                             <div className='login-form-group'>
                                 <label className='login-label' htmlFor='userName'>Username</label>
-                                <input className='login-input' type="text" name='userName' placeholder='Enter your userName' id='userName' onInvalid={Loginerror} required></input>
+                                <input className='login-input' type="text" name='userName' placeholder='Enter your username' id='userName' onInvalid={Loginerror} required></input>
                             </div>
                             <div className='login-form-group'>
                                 <label className='login-label' htmlFor='password'>Password</label>
