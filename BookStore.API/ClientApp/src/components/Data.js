@@ -44,7 +44,7 @@ export const categories = [
     {
         id: 1,
         img: "https://images.pexels.com/photos/6654177/pexels-photo-6654177.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-        title: "COMIC",
+        title: "COMICS",
     },
     {
         id: 2,

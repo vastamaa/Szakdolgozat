@@ -38,7 +38,7 @@ namespace TestAPI.Services.Implementations
             return _books;
         }
 
-        public async Task<BookWithEverythingVM> GetBookByGenreAsync(string genreName)
+        public async Task<List<BookWithEverythingVM>> GetBooksByGenreAsync(string genreName)
         {
             var _bookWithAuthors = await _context.Books.Where(b => b.Book_Authors.Select(n => n.Genre.Name).FirstOrDefault() == genreName).Select(book => new BookWithEverythingVM()
             {
@@ -53,7 +53,7 @@ namespace TestAPI.Services.Implementations
                 GenreName = book.Book_Authors.Select(n => n.Genre.Name).FirstOrDefault(),
                 LanguageName = book.Book_Authors.Select(n => n.Language.Name).FirstOrDefault(),
                 AuthorNames = book.Book_Authors.Select(n => n.Author.Name).ToList()
-            }).FirstOrDefaultAsync();
+            }).ToListAsync();
 
             return _bookWithAuthors;
         }

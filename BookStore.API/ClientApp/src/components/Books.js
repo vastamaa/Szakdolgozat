@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { readCookie } from './CookieHandler';
 import "./styleBookCards.css";
-import { Button, Modal } from 'react-bootstrap';
 import { ModalExample } from './Modal';
 
 export class Books extends Component {
@@ -33,10 +32,10 @@ export class Books extends Component {
                     {books.map((books) => (
                         <div className='BookCard' style={{ minWidth: "95%", height: "600px" }} >
                             <img className='card-img-top BookCardImg' src={books.imgLink} alt={books.imgLink} />
-                            <hr className='hr'/>
+                            <hr className='hr' />
                             <div className="BookCardBody">
                                 <h4 className="card-title BookCardTitle NormalText" id="title">{books.title}</h4>
-                                    <ModalExample imgLink={books.imgLink} authorName={books.authorName} desc={books.description} genre={books.genreName} isbn={books.isbn} lang={books.languageName} pages={books.pagenumber} price={books.price} publisher={books.publisherName} publishingYear={books.publishingYear} title={books.title}/>
+                                <ModalExample imgLink={books.imgLink} authorName={books.authorName} desc={books.description} genre={books.genreName} isbn={books.isbn} lang={books.languageName} pages={books.pagenumber} price={books.price} publisher={books.publisherName} publishingYear={books.publishingYear} title={books.title} />
                             </div>
 
                         </div>
@@ -61,8 +60,21 @@ export class Books extends Component {
         );
     }
     async populateBooksData() {
+
+        var splitUrl = window.location.href.split('/');
+        var url;
+
+        if (splitUrl.length == 5) {
+            url = `api/books/${splitUrl[4]}`;
+        }
+        else {
+            url = `api/books`
+        }
+        
+        console.log(url);
+
         try {
-            const response = await fetch('api/books',
+            const response = await fetch(url,
                 {
                     headers: {
                         'Authorization': `Bearer ${readCookie("token")}`,

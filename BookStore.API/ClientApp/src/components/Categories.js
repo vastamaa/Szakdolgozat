@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { categories,categories2, showmore } from './Data';
+import { categories, categories2, showmore } from './Data';
+import { Books } from './Books';
 import './styleCate.css';
 
 export class Categories extends Component {
@@ -14,7 +15,7 @@ export class Categories extends Component {
             <div>
                 <div className='BigContainer'>
                     {categories.map((item) => (
-                        <div className='Container img-hover-zoom img-hover-zoom--quick-zoom'>
+                        <div onClick={() => window.location.replace("https://localhost:5001/books/" + item.title)} className='Container img-hover-zoom img-hover-zoom--quick-zoom'>
 
                             <>
                                 <img className='Image' src={item.img}></img>
@@ -29,7 +30,7 @@ export class Categories extends Component {
                 </div>
                 <div className='BigContainer secondlinehide' id='secondLine' >
                     {categories2.map((item) => (
-                        <div className='Container img-hover-zoom img-hover-zoom--quick-zoom' id="secondLinePad" >
+                        <div onClick={() => window.location.replace("https://localhost:5001/books/" + item.title.toLowerCase())} className='Container img-hover-zoom img-hover-zoom--quick-zoom' id="secondLinePad" >
 
                             <>
                                 <img className='Image' src={item.img}></img>

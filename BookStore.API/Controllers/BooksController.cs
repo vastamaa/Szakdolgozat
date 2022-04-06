@@ -16,16 +16,18 @@ namespace TestAPI.Controllers
             _booksService = bookService;
         }
 
+        //GET: /api/books
         [HttpGet("")]
         public async Task<IActionResult> GetAllBooks()
         {
             return Ok(await _booksService.GetAllBooksAsync());
         }
 
+        //GET: /api/books/genre
         [HttpGet("{genre}")]
-        public async Task<IActionResult> GetBookByGenre([FromQuery] string genre)
+        public async Task<IActionResult> GetBookByGenre([FromRoute] string genre)
         {
-            var result = await _booksService.GetBookByGenreAsync(genre);
+            var result = await _booksService.GetBooksByGenreAsync(genre);
 
             if (result is not null)
             {
@@ -34,6 +36,7 @@ namespace TestAPI.Controllers
             return BadRequest();
         }
 
+        //POST: /api/books
         [HttpPost("")]
         public async Task<IActionResult> AddBook([FromBody] BookVM book)
         {
@@ -46,6 +49,7 @@ namespace TestAPI.Controllers
 
             return Ok();
         }
+
 
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateBookById(int id, [FromBody] BookVM book)
