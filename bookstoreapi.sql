@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Ápr 06. 08:36
+-- Létrehozás ideje: 2022. Ápr 06. 08:55
 -- Kiszolgáló verziója: 10.4.20-MariaDB
 -- PHP verzió: 7.3.29
 
@@ -47,6 +47,14 @@ CREATE TABLE `aspnetroles` (
   `ConcurrencyStamp` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- A tábla adatainak kiíratása `aspnetroles`
+--
+
+INSERT INTO `aspnetroles` (`Id`, `Name`, `NormalizedName`, `ConcurrencyStamp`) VALUES
+('1b4197aa-e86d-4b91-be80-8b29d5a80f05', 'User', 'User', '2'),
+('368ffde5-dfae-4095-9ab9-9da3811b6a85', 'Admin', 'Admin', '1');
+
 -- --------------------------------------------------------
 
 --
@@ -84,6 +92,13 @@ CREATE TABLE `aspnetuserroles` (
   `RoleId` varchar(85) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- A tábla adatainak kiíratása `aspnetuserroles`
+--
+
+INSERT INTO `aspnetuserroles` (`UserId`, `RoleId`) VALUES
+('b7820293-275e-429c-8a46-ad7dd17f51c9', '368ffde5-dfae-4095-9ab9-9da3811b6a85');
+
 -- --------------------------------------------------------
 
 --
@@ -112,6 +127,13 @@ CREATE TABLE `aspnetusers` (
   `LockoutEnabled` tinyint(1) NOT NULL,
   `AccessFailedCount` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- A tábla adatainak kiíratása `aspnetusers`
+--
+
+INSERT INTO `aspnetusers` (`Id`, `FirstName`, `LastName`, `DateOfJoining`, `RefreshToken`, `RefreshTokenExpiryTime`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`) VALUES
+('b7820293-275e-429c-8a46-ad7dd17f51c9', 'Admin', 'Admin', '2022-03-25 14:28:07', 'KigjDqNeeir4tLE6PKTX9r5+HrH8cKcyi6pvou1ZNppGmcOd/w+Xd1h4EyICPuHKkj2Y8kpetJRNFg8M9wFWsw==', '2022-04-07 08:42:29', 'Admin', 'ADMIN', 'manope5041@moonran.com', 'MANOPE5041@MOONRAN.COM', 1, 'AQAAAAEAACcQAAAAEAFy3e8pe3B9GbJuckeurjbGgYKhu3kS5BSpo6V2sLN5Hta+KLoLbC7AC3YRhgYyuA==', '32ZY4AGQN7ICXT6LRGQZ3UCEEKB3ZUUB', '2d904951-658b-47a3-bf79-4d317bccd836', NULL, 0, 0, NULL, 1, 0);
 
 -- --------------------------------------------------------
 
