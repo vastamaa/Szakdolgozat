@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { textChangeRangeIsUnchanged } from 'typescript';
 import { Books } from './Books';
+import { createCookie,readCookie } from './CookieHandler';
 import "./styleBookCards.css";
 
 export class ModalExample extends Component {
@@ -9,7 +11,6 @@ export class ModalExample extends Component {
         this.state = {
             modal: false
         };
-
         this.toggle = this.toggle.bind(this);
     }
 
@@ -17,6 +18,10 @@ export class ModalExample extends Component {
         this.setState({
             modal: !this.state.modal
         });
+    }
+    createJson(){
+        var myObject = JSON.parse(`{"title":${this.props.title},"price":${this.props.price}}`); 
+        createCookie("book",myObject)
     }
 
     render() {
@@ -46,8 +51,8 @@ export class ModalExample extends Component {
                     <ModalFooter>
                         
                         <p className='Price'><span className='PriceText'>Price:</span>  {this.props.price} Ft</p>
-                        <Button className='BuyButton' onClick={this.toggle}>Buy</Button>{' '}
-                        <Button className='CancelButton' onClick={this.toggle}>Cancel</Button>
+                        <button className='BuyButton' id='buybutton' onClick={()=> this.createJson}>Buy</button>{' '}
+                        <Button className='CancelButton' onClick={()=>console.log(readCookie("book"))}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
             </div>
