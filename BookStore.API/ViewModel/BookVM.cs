@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 
-namespace TestAPI.Models
+namespace TestAPI.ViewModels
 {
-    public class Book
+    public class BookVM
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string ISBN { get; set; }
@@ -13,10 +12,7 @@ namespace TestAPI.Models
         public int Price { get; set; }
         public int PublishingYear { get; set; }
 
-        //Navigation Properties
         public int PublisherId { get; set; }
-        public Publisher Publisher { get; set; }
-
-        public List<Book_Author> Book_Authors { get; set; }
+        public List<int> AuthorIds { get; set; }
     }
 }

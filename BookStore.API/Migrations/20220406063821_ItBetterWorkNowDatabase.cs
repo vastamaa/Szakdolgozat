@@ -4,7 +4,7 @@ using System;
 
 namespace BookStore.API.Migrations
 {
-    public partial class init : Migration
+    public partial class ItBetterWorkNowDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -56,66 +56,52 @@ namespace BookStore.API.Migrations
                 name: "Authors",
                 columns: table => new
                 {
-                    AuthId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    AuthName = table.Column<string>(type: "text", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Authors", x => x.AuthId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Books",
-                columns: table => new
-                {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(type: "text", nullable: true),
-                    Description = table.Column<string>(type: "text", nullable: true)
+                    Name = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Books", x => x.Id);
+                    table.PrimaryKey("PK_Authors", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Genres",
                 columns: table => new
                 {
-                    GenreId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    GenreName = table.Column<string>(type: "text", nullable: true)
+                    Name = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Genres", x => x.GenreId);
+                    table.PrimaryKey("PK_Genres", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Languages",
                 columns: table => new
                 {
-                    LangId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    LangName = table.Column<string>(type: "text", nullable: true)
+                    Name = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Languages", x => x.LangId);
+                    table.PrimaryKey("PK_Languages", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Publishers",
                 columns: table => new
                 {
-                    PublisherId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    PublisherName = table.Column<string>(type: "text", nullable: true)
+                    Name = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Publishers", x => x.PublisherId);
+                    table.PrimaryKey("PK_Publishers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -225,63 +211,69 @@ namespace BookStore.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Morebooks",
+                name: "Books",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     Title = table.Column<string>(type: "text", nullable: true),
-                    AuthId = table.Column<int>(type: "int", nullable: false),
-                    GenreId = table.Column<int>(type: "int", nullable: false),
-                    Pagenumber = table.Column<int>(type: "int", nullable: false),
-                    LangId = table.Column<int>(type: "int", nullable: false),
-                    Isbn = table.Column<string>(type: "text", nullable: true),
                     Description = table.Column<string>(type: "text", nullable: true),
+                    ISBN = table.Column<string>(type: "text", nullable: true),
                     ImgLink = table.Column<string>(type: "text", nullable: true),
-                    PublisherId = table.Column<int>(type: "int", nullable: false),
+                    PageNumber = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
-                    PublishingYear = table.Column<int>(type: "int", nullable: false)
+                    PublishingYear = table.Column<int>(type: "int", nullable: false),
+                    PublisherId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Morebooks", x => x.Id);
+                    table.PrimaryKey("PK_Books", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Morebooks_Authors_AuthId",
-                        column: x => x.AuthId,
-                        principalTable: "Authors",
-                        principalColumn: "AuthId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Morebooks_Genres_GenreId",
-                        column: x => x.GenreId,
-                        principalTable: "Genres",
-                        principalColumn: "GenreId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Morebooks_Languages_LangId",
-                        column: x => x.LangId,
-                        principalTable: "Languages",
-                        principalColumn: "LangId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Morebooks_Publishers_PublisherId",
+                        name: "FK_Books_Publishers_PublisherId",
                         column: x => x.PublisherId,
                         principalTable: "Publishers",
-                        principalColumn: "PublisherId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Books",
-                columns: new[] { "Id", "Description", "Title" },
-                values: new object[,]
+            migrationBuilder.CreateTable(
+                name: "Book_Author",
+                columns: table => new
                 {
-                    { 1, "Let's fight for our kingdom.", "Prince's Legacy" },
-                    { 2, "The Moon is it's greatest enemy.", "The Cursed Wolf" },
-                    { 3, "We all love it! Of course!", "C#" },
-                    { 4, "The Killer Curse!", "Avada Kedavra" },
-                    { 5, "Programming language, and animal.", "Python" },
-                    { 6, "Tester.", "Test" }
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    BookId = table.Column<int>(type: "int", nullable: false),
+                    AuthorId = table.Column<int>(type: "int", nullable: false),
+                    GenreId = table.Column<int>(type: "int", nullable: false),
+                    LanguageId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Book_Author", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Book_Author_Authors_AuthorId",
+                        column: x => x.AuthorId,
+                        principalTable: "Authors",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Book_Author_Books_BookId",
+                        column: x => x.BookId,
+                        principalTable: "Books",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Book_Author_Genres_GenreId",
+                        column: x => x.GenreId,
+                        principalTable: "Genres",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Book_Author_Languages_LanguageId",
+                        column: x => x.LanguageId,
+                        principalTable: "Languages",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -322,23 +314,28 @@ namespace BookStore.API.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Morebooks_AuthId",
-                table: "Morebooks",
-                column: "AuthId");
+                name: "IX_Book_Author_AuthorId",
+                table: "Book_Author",
+                column: "AuthorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Morebooks_GenreId",
-                table: "Morebooks",
+                name: "IX_Book_Author_BookId",
+                table: "Book_Author",
+                column: "BookId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Book_Author_GenreId",
+                table: "Book_Author",
                 column: "GenreId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Morebooks_LangId",
-                table: "Morebooks",
-                column: "LangId");
+                name: "IX_Book_Author_LanguageId",
+                table: "Book_Author",
+                column: "LanguageId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Morebooks_PublisherId",
-                table: "Morebooks",
+                name: "IX_Books_PublisherId",
+                table: "Books",
                 column: "PublisherId");
         }
 
@@ -360,10 +357,7 @@ namespace BookStore.API.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Books");
-
-            migrationBuilder.DropTable(
-                name: "Morebooks");
+                name: "Book_Author");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -373,6 +367,9 @@ namespace BookStore.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Authors");
+
+            migrationBuilder.DropTable(
+                name: "Books");
 
             migrationBuilder.DropTable(
                 name: "Genres");

@@ -1,21 +1,13 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
-#nullable disable
-
-namespace BookStore.API.Data.Database
+namespace TestAPI.Models
 {
-    public partial class Language
+    public class Language
     {
-        public Language()
-        {
-            Morebooks = new HashSet<Morebook>();
-        }
+        public int Id { get; set; }
+        public string Name { get; set; }
 
-        [Key]
-        public int LangId { get; set; }
-        public string LangName { get; set; }
-
-        public virtual ICollection<Morebook> Morebooks { get; set; }
+        //Navigation Properties
+        public List<Book_Author> Book_Authors { get; set; }
     }
 }

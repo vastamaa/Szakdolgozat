@@ -1,83 +1,69 @@
-﻿using BookStore.API.Models;
-using BookStore.API.Repository;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.JsonPatch;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using TestAPI.Services.Implementations;
+using TestAPI.ViewModels;
 
-namespace BookStore.API.Controllers
+namespace TestAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class BooksController : ControllerBase
     {
-        private readonly IBookService _bookServices;
+        private readonly IBooksService _booksService;
 
-        public BooksController(IBookService bookServices)
+        public BooksController(IBooksService bookService)
         {
-            _bookServices = bookServices;
+            _booksService = bookService;
         }
 
-        //GET: /api/books/
         [HttpGet("")]
         public async Task<IActionResult> GetAllBooks()
         {
-            var books = await _bookServices.GetAllBooksAsync();
-            return Ok(books);
+            return Ok(await _booksService.GetAllBooksAsync());
         }
 
-        //GET: /api/books/id
-        //[HttpGet("{id:int}")]
-        //public async Task<IActionResult> GetBookById([FromRoute] int id)
-        //{
-        //    var book = await _bookRepository.GetBookByIdAsync(id);
-
-        //    if (book is null) return NotFound();
-
-        //    return Ok(book);
-        //}
-
-        [HttpGet("{name}")]
-        public async Task<IActionResult> GetBookById([FromRoute] string name)
+        [HttpGet("{genre}")]
+        public async Task<IActionResult> GetBookByGenre([FromQuery] string genre)
         {
-            var book = await _bookServices.GetBookByNameAsync(name);
+            var result = await _booksService.GetBookByGenreAsync(genre);
 
-            if (book is null) return NotFound();
-
-            return Ok(book);
+            if (result is not null)
+            {
+                return Ok(result);
+            }
+            return BadRequest();
         }
 
-        //POST: /api/books/
         [HttpPost("")]
-        public async Task<IActionResult> AddBook([FromBody] BookModel bookModel)
+        public async Task<IActionResult> AddBook([FromBody] BookVM book)
         {
-            var id = await _bookServices.AddBookAsync(bookModel);
+            var result = await _booksService.AddBookWithAuthorsAsync(book);
 
-            return CreatedAtAction(nameof(GetBookById), new { id = id, controller = "books" }, id);
-        }
+            if (result == 0)
+            {
+                return BadRequest();
+            }
 
-        //PUT: /api/books/id
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBook([FromBody] BookModel bookModel, [FromRoute] int id)
-        {
-            await _bookServices.UpdateBookAsync(id, bookModel);
             return Ok();
         }
 
-        //PATCH: /api/books/id
-        [HttpPatch("{id:int}")]
-        public async Task<IActionResult> UpdateBookPatch([FromBody] JsonPatchDocument bookModel, [FromRoute] int id)
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateBookById(int id, [FromBody] BookVM book)
         {
-            await _bookServices.UpdateBookPatchAsync(id, bookModel);
-            return Ok();
+            var result = await _booksService.UpdateBookAsync(id, book);
+
+            if (result is null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(result);
         }
 
-        //DELETE: /api/books/id
         [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteBook([FromRoute] int id)
+        public async Task<IActionResult> DeleteBookById(int id)
         {
-            await _bookServices.DeleteBookAsync(id);
+            await _booksService.DeleteBookAsync(id);
             return Ok();
         }
     }

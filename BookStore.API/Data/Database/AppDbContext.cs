@@ -1,8 +1,8 @@
-﻿using BookStore.API.Data.Database;
-using BookStore.API.Models;
+﻿using BookStore.API.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TestAPI.Models;
 
 namespace BookStore.API.Data
 {
@@ -13,8 +13,27 @@ namespace BookStore.API.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            new BookDataSeeder(modelBuilder).Seed();
             MaxKeyLengthSetter(modelBuilder);
+
+            modelBuilder.Entity<Book_Author>()
+                .HasOne(b => b.Book)
+                .WithMany(ba => ba.Book_Authors)
+                .HasForeignKey(bi => bi.BookId);
+
+            modelBuilder.Entity<Book_Author>()
+                .HasOne(g => g.Genre)
+                .WithMany(ba => ba.Book_Authors)
+                .HasForeignKey(gi => gi.GenreId);
+
+            modelBuilder.Entity<Book_Author>()
+                .HasOne(l => l.Language)
+                .WithMany(ba => ba.Book_Authors)
+                .HasForeignKey(li => li.LanguageId);
+
+            modelBuilder.Entity<Book_Author>()
+                .HasOne(a => a.Author)
+                .WithMany(ba => ba.Book_Authors)
+                .HasForeignKey(li => li.AuthorId);
         }
 
         public void MaxKeyLengthSetter(ModelBuilder modelBuilder)
@@ -42,13 +61,10 @@ namespace BookStore.API.Data
             modelBuilder.Entity<IdentityRoleClaim<string>>(entity => entity.Property(m => m.Id).HasMaxLength(85));
             modelBuilder.Entity<IdentityRoleClaim<string>>(entity => entity.Property(m => m.RoleId).HasMaxLength(85));
         }
-
         public DbSet<Book> Books { get; set; }
-        public DbSet<Author> Authors { get; set; }
-        public DbSet<Genre> Genres { get; set; }
-        public DbSet<Language> Languages { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
-        public DbSet<Morebook> Morebooks { get; set; }
-
+        public DbSet<Author> Authors { get; set; }
+        public DbSet<Language> Languages { get; set; }
+        public DbSet<Genre> Genres { get; set; }
     }
 }

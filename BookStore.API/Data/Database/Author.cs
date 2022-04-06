@@ -1,21 +1,15 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
-#nullable disable
-
-namespace BookStore.API.Data.Database
+namespace TestAPI.Models
 {
-    public partial class Author
+    public class Author
     {
-        public Author()
-        {
-            Morebooks = new HashSet<Morebook>();
-        }
+        public int Id { get; set; }
+        public string Name { get; set; }
 
-        [Key]
-        public int AuthId { get; set; }
-        public string AuthName { get; set; }
-
-        public virtual ICollection<Morebook> Morebooks { get; set; }
+        //Navigation Properties
+        [JsonIgnore]
+        public List<Book_Author> Book_Authors { get; set; }
     }
 }

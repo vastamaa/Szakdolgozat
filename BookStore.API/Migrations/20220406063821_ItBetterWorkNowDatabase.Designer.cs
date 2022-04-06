@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookStore.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220316183200_SeedFillUp")]
-    partial class SeedFillUp
+    [Migration("20220406063821_ItBetterWorkNowDatabase")]
+    partial class ItBetterWorkNowDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,250 +19,7 @@ namespace BookStore.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.14");
 
-            modelBuilder.Entity("BookStore.API.Data.Book", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Books");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Let's fight for our kingdom.",
-                            Title = "Prince's Legacy"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "The Moon is it's greatest enemy.",
-                            Title = "The Cursed Wolf"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "We all love it! Of course!",
-                            Title = "C#"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "The Killer Curse!",
-                            Title = "Avada Kedavra"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "Programming language, and animal.",
-                            Title = "Python"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Tester.",
-                            Title = "Test"
-                        });
-                });
-
-            modelBuilder.Entity("BookStore.API.Data.Database.Author", b =>
-                {
-                    b.Property<int>("AuthId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("AuthName")
-                        .HasColumnType("text");
-
-                    b.HasKey("AuthId");
-
-                    b.ToTable("Authors");
-
-                    b.HasData(
-                        new
-                        {
-                            AuthId = 1,
-                            AuthName = "Gabe Newell"
-                        },
-                        new
-                        {
-                            AuthId = 2,
-                            AuthName = "Steve Jobs"
-                        },
-                        new
-                        {
-                            AuthId = 3,
-                            AuthName = "Hidetaka Miyazaki"
-                        });
-                });
-
-            modelBuilder.Entity("BookStore.API.Data.Database.Genre", b =>
-                {
-                    b.Property<int>("GenreId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("GenreName")
-                        .HasColumnType("text");
-
-                    b.HasKey("GenreId");
-
-                    b.ToTable("Genres");
-
-                    b.HasData(
-                        new
-                        {
-                            GenreId = 1,
-                            GenreName = "Action"
-                        },
-                        new
-                        {
-                            GenreId = 2,
-                            GenreName = "Horror"
-                        },
-                        new
-                        {
-                            GenreId = 3,
-                            GenreName = "Fantasy"
-                        });
-                });
-
-            modelBuilder.Entity("BookStore.API.Data.Database.Language", b =>
-                {
-                    b.Property<int>("LangId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("LangName")
-                        .HasColumnType("text");
-
-                    b.HasKey("LangId");
-
-                    b.ToTable("Languages");
-
-                    b.HasData(
-                        new
-                        {
-                            LangId = 1,
-                            LangName = "Hungarian"
-                        },
-                        new
-                        {
-                            LangId = 2,
-                            LangName = "Slovak"
-                        },
-                        new
-                        {
-                            LangId = 3,
-                            LangName = "Romanian"
-                        });
-                });
-
-            modelBuilder.Entity("BookStore.API.Data.Database.Morebook", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("AuthId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("AuthorName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
-
-                    b.Property<int>("GenreId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("GenreName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("ImgLink")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Isbn")
-                        .HasColumnType("text");
-
-                    b.Property<int>("LangId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("LanguageName")
-                        .HasColumnType("text");
-
-                    b.Property<int>("Pagenumber")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PublisherId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PublisherName")
-                        .HasColumnType("text");
-
-                    b.Property<int>("PublishingYear")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AuthId");
-
-                    b.HasIndex("GenreId");
-
-                    b.HasIndex("LangId");
-
-                    b.HasIndex("PublisherId");
-
-                    b.ToTable("Morebooks");
-                });
-
-            modelBuilder.Entity("BookStore.API.Data.Database.Publisher", b =>
-                {
-                    b.Property<int>("PublisherId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("PublisherName")
-                        .HasColumnType("text");
-
-                    b.HasKey("PublisherId");
-
-                    b.ToTable("Publishers");
-
-                    b.HasData(
-                        new
-                        {
-                            PublisherId = 1,
-                            PublisherName = "FromSoftware"
-                        },
-                        new
-                        {
-                            PublisherId = 2,
-                            PublisherName = "Valve"
-                        },
-                        new
-                        {
-                            PublisherId = 3,
-                            PublisherName = "Ubisoft"
-                        });
-                });
-
-            modelBuilder.Entity("BookStore.API.Models.ApplicationUser", b =>
+            modelBuilder.Entity("BookStore.API.Models.ApplicationUserModel", b =>
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(85)
@@ -483,39 +240,128 @@ namespace BookStore.API.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("BookStore.API.Data.Database.Morebook", b =>
+            modelBuilder.Entity("TestAPI.Models.Author", b =>
                 {
-                    b.HasOne("BookStore.API.Data.Database.Author", "Auth")
-                        .WithMany("Morebooks")
-                        .HasForeignKey("AuthId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.HasOne("BookStore.API.Data.Database.Genre", "Genre")
-                        .WithMany("Morebooks")
-                        .HasForeignKey("GenreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
 
-                    b.HasOne("BookStore.API.Data.Database.Language", "Lang")
-                        .WithMany("Morebooks")
-                        .HasForeignKey("LangId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasKey("Id");
 
-                    b.HasOne("BookStore.API.Data.Database.Publisher", "Publisher")
-                        .WithMany("Morebooks")
-                        .HasForeignKey("PublisherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.ToTable("Authors");
+                });
 
-                    b.Navigation("Auth");
+            modelBuilder.Entity("TestAPI.Models.Book", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Navigation("Genre");
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
 
-                    b.Navigation("Lang");
+                    b.Property<string>("ISBN")
+                        .HasColumnType("text");
 
-                    b.Navigation("Publisher");
+                    b.Property<string>("ImgLink")
+                        .HasColumnType("text");
+
+                    b.Property<int>("PageNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PublisherId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PublishingYear")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PublisherId");
+
+                    b.ToTable("Books");
+                });
+
+            modelBuilder.Entity("TestAPI.Models.Book_Author", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LanguageId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("GenreId");
+
+                    b.HasIndex("LanguageId");
+
+                    b.ToTable("Book_Author");
+                });
+
+            modelBuilder.Entity("TestAPI.Models.Genre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres");
+                });
+
+            modelBuilder.Entity("TestAPI.Models.Language", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages");
+                });
+
+            modelBuilder.Entity("TestAPI.Models.Publisher", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Publishers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -529,7 +375,7 @@ namespace BookStore.API.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("BookStore.API.Models.ApplicationUser", null)
+                    b.HasOne("BookStore.API.Models.ApplicationUserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -538,7 +384,7 @@ namespace BookStore.API.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("BookStore.API.Models.ApplicationUser", null)
+                    b.HasOne("BookStore.API.Models.ApplicationUserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -553,7 +399,7 @@ namespace BookStore.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BookStore.API.Models.ApplicationUser", null)
+                    b.HasOne("BookStore.API.Models.ApplicationUserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -562,31 +408,82 @@ namespace BookStore.API.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("BookStore.API.Models.ApplicationUser", null)
+                    b.HasOne("BookStore.API.Models.ApplicationUserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("BookStore.API.Data.Database.Author", b =>
+            modelBuilder.Entity("TestAPI.Models.Book", b =>
                 {
-                    b.Navigation("Morebooks");
+                    b.HasOne("TestAPI.Models.Publisher", "Publisher")
+                        .WithMany("Books")
+                        .HasForeignKey("PublisherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Publisher");
                 });
 
-            modelBuilder.Entity("BookStore.API.Data.Database.Genre", b =>
+            modelBuilder.Entity("TestAPI.Models.Book_Author", b =>
                 {
-                    b.Navigation("Morebooks");
+                    b.HasOne("TestAPI.Models.Author", "Author")
+                        .WithMany("Book_Authors")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TestAPI.Models.Book", "Book")
+                        .WithMany("Book_Authors")
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TestAPI.Models.Genre", "Genre")
+                        .WithMany("Book_Authors")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TestAPI.Models.Language", "Language")
+                        .WithMany("Book_Authors")
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Author");
+
+                    b.Navigation("Book");
+
+                    b.Navigation("Genre");
+
+                    b.Navigation("Language");
                 });
 
-            modelBuilder.Entity("BookStore.API.Data.Database.Language", b =>
+            modelBuilder.Entity("TestAPI.Models.Author", b =>
                 {
-                    b.Navigation("Morebooks");
+                    b.Navigation("Book_Authors");
                 });
 
-            modelBuilder.Entity("BookStore.API.Data.Database.Publisher", b =>
+            modelBuilder.Entity("TestAPI.Models.Book", b =>
                 {
-                    b.Navigation("Morebooks");
+                    b.Navigation("Book_Authors");
+                });
+
+            modelBuilder.Entity("TestAPI.Models.Genre", b =>
+                {
+                    b.Navigation("Book_Authors");
+                });
+
+            modelBuilder.Entity("TestAPI.Models.Language", b =>
+                {
+                    b.Navigation("Book_Authors");
+                });
+
+            modelBuilder.Entity("TestAPI.Models.Publisher", b =>
+                {
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

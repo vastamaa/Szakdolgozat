@@ -18,6 +18,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
+using TestAPI.Services.Implementations;
 
 namespace BookStore.API
 {
@@ -76,12 +77,18 @@ namespace BookStore.API
             });
 
             services.AddControllersWithViews().AddNewtonsoftJson();
-            services.AddTransient<IBookService, BookService>();
+
+            services.AddTransient<IBooksService, BooksService>();
+            services.AddTransient<IPublishersService, PublishersService>();
+            services.AddTransient<IAuthorsService, AuthorsService>();
+            services.AddTransient<IGenresService, GenresService>();
+            services.AddTransient<ILanguagesService, LanguagesService>();
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<ITokenService, TokenService>();
+            services.AddTransient<IMailService, MailService>();
+
             services.Configure<JwtConfig>(Configuration.GetSection(JwtConfig.Name));
             services.Configure<MailSettingsModel>(Configuration.GetSection("MailSettings"));
-            services.AddTransient<IMailService, MailService>();
 
             services.AddAutoMapper(typeof(Startup));
 
