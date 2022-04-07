@@ -48,19 +48,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vszto\\.nuget\\packages\\": {}
+    "C:\\Users\\Tanulo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Documents\\GitHub\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj",
+      "projectUniqueName": "C:\\Users\\Tanulo\\Desktop\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj",
       "projectName": "BookStore.APIDesktop",
-      "projectPath": "F:\\Documents\\GitHub\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj",
-      "packagesPath": "C:\\Users\\vszto\\.nuget\\packages\\",
-      "outputPath": "F:\\Documents\\GitHub\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\obj\\",
+      "projectPath": "C:\\Users\\Tanulo\\Desktop\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\BookStore.APIDesktop.csproj",
+      "packagesPath": "C:\\Users\\Tanulo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Tanulo\\Desktop\\Szakdolgozat\\BookStore.APIDesktop\\BookStore.APIDesktop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\vszto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Tanulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -109,7 +109,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

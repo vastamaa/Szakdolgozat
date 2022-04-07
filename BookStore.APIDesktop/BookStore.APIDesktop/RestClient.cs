@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using TestAPI.ViewModels;
 
 namespace BookStore.APIDesktop
 {
@@ -33,7 +34,7 @@ namespace BookStore.APIDesktop
             }
         }
 
-        public static async Task<List<Books>> GetAsync(string url, string token)
+        public static async Task<List<BookWithEverythingVM>> GetAsync(string url, string token)
         {
             using (var client = new HttpClient())
             {
@@ -42,7 +43,7 @@ namespace BookStore.APIDesktop
                 var httpResponse = await client.GetStringAsync(url);
                 System.Console.WriteLine(httpResponse);
 
-                return JsonConvert.DeserializeObject<List<Books>>(httpResponse);
+                return JsonConvert.DeserializeObject<List<BookWithEverythingVM>>(httpResponse);
             }
         }
     }

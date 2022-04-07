@@ -72,7 +72,7 @@ export class Books extends Component {
             url = `api/books`;
         }
 
-        /*console.log(url);*/
+        console.log(splitUrl);
 
         try {
             const response = await fetch(url,

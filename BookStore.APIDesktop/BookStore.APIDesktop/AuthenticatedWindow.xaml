@@ -7,5 +7,5 @@
         mc:Ignorable="d"
         WindowStartupLocation = "CenterScreen"
         Title="AuthenticatedWindow" Height="450" Width="800">
-    <DataGrid x:Name="dgBooks" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+    <DataGrid x:Name="dgBooks" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="40,40,153,170" RenderTransformOrigin="0.502,0.53"/>
 </Window>
