@@ -157,17 +157,6 @@ namespace BookStore.API.Repository
             return null;
         }
 
-        public async Task<IdentityResult> ChangeUserNameAsync(string userName, string email)
-        {
-            var user = await _userManager.FindByEmailAsync(email);
-
-            if (user is not null)
-            {
-                return await _userManager.SetUserNameAsync(user, userName);
-            }
-            return null;
-        }
-
         private string CreatePassword(int length)
         {
             const string lowerCase = "abcedfghijklmnopqrstuvwxyz";

@@ -35,10 +35,7 @@ export class NavMenu extends Component {
     componentDidMount() {
         var data = getData();
         if (data != undefined) {
-            let name = data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
-            if (name != undefined) {
-                this.setState({ loggedIn: true, userName: name });
-            }
+            this.setState({ loggedIn: true, userName: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'] });
         }
     }
 
@@ -57,7 +54,7 @@ export class NavMenu extends Component {
                         <NavLink tag={Link} to="/"> <h1 className='NavLogo HoverUnderLine'>Litera</h1></NavLink>
                     </div>
                     {this.state.loggedIn ? <div className='NavRight'>
-                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/books">Books</NavLink>
+                        <NavLink tag={Link} onClick={() => window.location.replace("https://localhost:5001/books")} className='NavMenuItem HoverUnderLine' to="/books">Books</NavLink>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine' id='cartbutton' to="/cart"><AiOutlineShoppingCart size="25px "></AiOutlineShoppingCart></NavLink>
                         <div className="dropdown">
                             <span className="dropdown-toggle NavMenuItem text-dark " data-bs-toggle="dropdown">Welcome, {this.state.userName}</span>
@@ -68,7 +65,7 @@ export class NavMenu extends Component {
                             </div>
                         </div>
                     </div> : <div className='NavRight'>
-                        <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/books" >Books</NavLink>
+                        <NavLink tag={Link} onClick={() => window.location.replace("https://localhost:5001/books")} className='NavMenuItem HoverUnderLine' to="/books" >Books</NavLink>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/accounts/login" >Login</NavLink>
                         <NavLink tag={Link} className='NavMenuItem HoverUnderLine' to="/accounts/register" >Register</NavLink>
                     </div>}

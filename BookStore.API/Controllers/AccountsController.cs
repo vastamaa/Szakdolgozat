@@ -108,15 +108,5 @@ namespace BookStore.API.Controllers
 
             return BadRequest(new ResponseModel { Status = "Error", Message = "Password change has failed! Please try again later." });
         }
-
-        [HttpPost("change-username")]
-        public async Task<IActionResult> ChangeUserName([FromBody] UserNameChangeModel userNameChangeModel)
-        {
-            var result = await _accountService.ChangePasswordAsync(userNameChangeModel.UserName, userNameChangeModel.Email);
-
-            if (result.Succeeded) return Ok(new ResponseModel { Status = "Success", Message = "Username change has been successful!" });
-
-            return BadRequest(new ResponseModel { Status = "Error", Message = "Username change has failed! Please try again later." });
-        }
     }
 }

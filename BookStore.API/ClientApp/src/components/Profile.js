@@ -39,42 +39,17 @@ export class Profile extends Component {
         }
     }
 
-    async handleUserNameChangeSubmit(event) {
-        event.preventDefault();
-        let userName = document.getElementById('password').value;
-
-        try {
-            const response = await fetch('api/accounts/change-username',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify({ "username": userName, "email": this.state.emailAddress })
-                });
-            const data = await response.json();
-            console.log(data);
-        } catch (e) {
-            alert("Can't Request:" + e)
-        }
-    }
-
 
     componentDidMount() {
         var data = getData();
         console.log(data)
         if (data != undefined) {
-            let name = data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'];
-            let email = data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'];
-            if (name != undefined) {
-                this.setState({
-                    userName: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
-                    emailAddress: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'],
-                    FirstName: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'],
-                    LastName: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname']
-                });
-            }
+            this.setState({
+                userName: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
+                emailAddress: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'],
+                FirstName: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'],
+                LastName: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname']
+            });
         }
     }
 
@@ -107,7 +82,7 @@ export class Profile extends Component {
                         <img className='ProfileImg' id="imagedel" src="https://pic.onlinewebfonts.com/svg/img_550783.png"></img>
                     </div>
                     <button className="PasswordChange" onClick={FadePw}>Password change</button>
-                    <form id="PasswordText" className="" onSubmit={() => this.handlePasswordChangeSubmit()}>
+                    <form id="PasswordText" onSubmit={() => this.handlePasswordChangeSubmit()}>
                         <div className="PassWordChangeForm">
                             <label className='change-label' htmlFor="password" >New password:</label>
                             <input className='change-input' type='password' id="password" onChange={PasswordChange} onInvalid={PasswordChange} required></input>
@@ -124,7 +99,7 @@ export class Profile extends Component {
                     </form>
 
                     <button className="UsernameChange" onClick={FadeUser}>Username change</button>
-                    <form id="UsernameText" className="" onSubmit={() => this.handleUserNameChangeSubmit()}>
+                    <form id="UsernameText">
                         <div className="UsernameChangeForm">
                             <label className='change-label' htmlFor='userName'>Username</label>
                             <input className='change-input' type="text" name='userName' placeholder='Enter your username' onInvalid={usernNameChange} id="userName" onChange={usernNameChange} required></input>
