@@ -48,11 +48,11 @@ export class Slider extends Component {
 
 
                 {sliderItems.map((item) => (
-                    <div className='SliderWrapper' style={sliding}>
+                    <div className='SliderWrapper' key={item.id} style={sliding}>
                         <div className='Slide' style={{ backgroundColor: item.bg }}>
 
                             <div className='SliderImageContainer' src={item.img}>
-                                <img className='SliderImage' src={item.img}></img>
+                                <img  className='SliderImage' src={item.img}></img>
                             </div>
 
                             <div className='SliderInfoContainer'>

@@ -13,12 +13,12 @@ export class Categories extends Component {
         }
         return (
             <div>
-                <div className='BigContainer'>
+                <div className='BigContainer' >
                     {categories.map((item) => (
-                        <div onClick={() => window.location.replace("https://localhost:5001/books/" + item.title.toLowerCase())} className='Container img-hover-zoom img-hover-zoom--quick-zoom'>
+                        <div key={item.id} onClick={() => window.location.replace("https://localhost:5001/books/" + item.title.toLowerCase())} className='Container img-hover-zoom img-hover-zoom--quick-zoom'>
 
                             <>
-                                <img className='Image' src={item.img}></img>
+                                <img key={item.id} className='Image' src={item.img}></img>
                                 <div className='Info'>
                                     <h1 className='Title' >{item.title}</h1>
                                 </div>
@@ -30,7 +30,7 @@ export class Categories extends Component {
                 </div>
                 <div className='BigContainer secondlinehide' id='secondLine' >
                     {categories2.map((item) => (
-                        <div onClick={() => window.location.replace("https://localhost:5001/books/" + item.title.toLowerCase())} className='Container img-hover-zoom img-hover-zoom--quick-zoom' id="secondLinePad" >
+                        <div key={item.id} onClick={() => window.location.replace("https://localhost:5001/books/" + item.title.toLowerCase())} className='Container img-hover-zoom img-hover-zoom--quick-zoom' id="secondLinePad" >
 
                             <>
                                 <img className='Image' src={item.img}></img>
@@ -43,9 +43,10 @@ export class Categories extends Component {
                     }
 
                 </div>
-                {showmore.map((item) => (
-                    <>
-                        <div className='showmoreCategory ' id="showmorecategory" onClick={ShowMore}>
+                {showmore.map((item)  => (
+                   
+                        <div  key={item.id} className='showmoreCategory ' id="showmorecategory" onClick={ShowMore}>
+                             <>
                             <div className='showmore-img-hover-zoom showmore-img-hover-zoom--quick-zoom showmoreBorder'>
 
 
@@ -54,8 +55,8 @@ export class Categories extends Component {
                                     <div className='showmoreText'>{item.text}</div>
                                 </div>
                             </div>
+                            </>
                         </div>
-                    </>
                 ))}
             </div>
         );

@@ -31,7 +31,7 @@ export class Books extends Component {
 
                 <>
                     {books.map((books) => (
-                        <div className='BookCard' style={{ minWidth: "95%", height: "600px" }} >
+                        <div key={books.isbn} className='BookCard' style={{ minWidth: "95%", height: "600px" }} >
                             <img className='card-img-top BookCardImg' src={books.imgLink} alt={books.imgLink} />
                             <hr className='hr' />
                             <div className="BookCardBody">
@@ -72,7 +72,6 @@ export class Books extends Component {
             url = `api/books`;
         }
 
-        console.log(splitUrl);
 
         try {
             const response = await fetch(url,
@@ -82,7 +81,6 @@ export class Books extends Component {
                     }
                 });
             const data = await response.json();
-            console.log(data);
             this.setState({ books: data, loading: false });
         } catch (e) {
             console.log(`A lekerdezes nem sikerult: ${e}`)

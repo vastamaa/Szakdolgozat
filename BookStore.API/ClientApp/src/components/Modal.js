@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Cart } from './Cart';
 import { createCookie, readCookie } from './CookieHandler';
 import "./styleBookCards.css";
 
@@ -17,13 +18,23 @@ export class ModalExample extends Component {
             modal: !this.state.modal
         });
     }
-    createJson() {
-        var myObject = JSON.parse(`{"title":${this.props.title},"price":${this.props.price}}`);
-        createCookie("book", myObject)
+    coockie() {
+        if(readCookie("token")==null)
+        {
+            window.location.replace("https://localhost:5001/accounts/login");
+        }
+        else{
+            localStorage.setItem(this.props.isbn, JSON.stringify({
+                title:this.props.title,
+                price:this.props.price,
+                img: this.props.imgLink
+            }))
+        }
     }
 
     render() {
         return (
+            
             <div className='BookCardBtn'>
 
                 <Button className='BookCardShow' onClick={this.toggle}>SHOW MORE</Button>
@@ -49,9 +60,10 @@ export class ModalExample extends Component {
                     <ModalFooter>
 
                         <p className='Price'><span className='PriceText'>Price:</span>  {this.props.price} Ft</p>
-                        <button className='BuyButton' id='buybutton' onClick={() => this.createJson}>Buy</button>{' '}
-                        <Button className='CancelButton' onClick={() => console.log(readCookie("book"))}>Cancel</Button>
+                        <button className='BuyButton' id='buybutton' onClick={()=>this.coockie()}>Buy</button>{' '}
+                        <Button className='CancelButton' onClick={() => console.log(readCookie('titles'))}>Cancel</Button>
                     </ModalFooter>
+
                 </Modal>
             </div>
         );
