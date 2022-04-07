@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2022. Ápr 06. 19:58
--- Kiszolgáló verziója: 10.4.19-MariaDB
--- PHP verzió: 8.0.7
+-- Létrehozás ideje: 2022. Ápr 07. 12:42
+-- Kiszolgáló verziója: 10.4.20-MariaDB
+-- PHP verzió: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -133,7 +133,7 @@ CREATE TABLE `aspnetusers` (
 --
 
 INSERT INTO `aspnetusers` (`Id`, `FirstName`, `LastName`, `DateOfJoining`, `RefreshToken`, `RefreshTokenExpiryTime`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`) VALUES
-('b7820293-275e-429c-8a46-ad7dd17f51c9', 'Admin', 'Admin', '2022-03-25 14:28:07', 'ssasmFO+TnqYhAsxn8DZv0c3+ZEmFyxe7vib3YMdjLiE1wbzmRHjsqLvokkyOhRYX1Q+etVcJGReaKicVpaM8g==', '2022-04-07 17:58:45', 'Admin', 'ADMIN', 'manope5041@moonran.com', 'MANOPE5041@MOONRAN.COM', 1, 'AQAAAAEAACcQAAAAEAFy3e8pe3B9GbJuckeurjbGgYKhu3kS5BSpo6V2sLN5Hta+KLoLbC7AC3YRhgYyuA==', '32ZY4AGQN7ICXT6LRGQZ3UCEEKB3ZUUB', 'f366defd-54bf-435a-81d7-363decca2e3b', NULL, 0, 0, NULL, 1, 0);
+('b7820293-275e-429c-8a46-ad7dd17f51c9', 'Admin', 'Admin', '2022-03-25 14:28:07', 'f2lLprp7OxBTM5aBRfKa3jiczE22+bd55jb/owQQmZ+Ol8v9maUg6sCSQ7sWoKxUvydXyFQjxg/nMBG/7mss/A==', '2022-04-08 12:29:21', 'Admin', 'ADMIN', 'manope5041@moonran.com', 'MANOPE5041@MOONRAN.COM', 1, 'AQAAAAEAACcQAAAAEAFy3e8pe3B9GbJuckeurjbGgYKhu3kS5BSpo6V2sLN5Hta+KLoLbC7AC3YRhgYyuA==', '32ZY4AGQN7ICXT6LRGQZ3UCEEKB3ZUUB', '2cdcedb4-7bf2-466f-ab8f-5a91c6bfbaec', NULL, 0, 0, NULL, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -218,7 +218,19 @@ INSERT INTO `authors` (`Id`, `Name`) VALUES
 (52, 'Grandpierre K. Endre'),
 (53, 'Nógrádi György'),
 (54, 'Arthur Brand'),
-(55, 'Kollai István');
+(55, 'Kollai István'),
+(56, 'Samin Nosrat'),
+(57, 'Tóthné Libor Mária'),
+(58, 'Wichmann Anna'),
+(59, 'Rézi néni'),
+(60, 'Tanja Dusy'),
+(61, 'Radvánszky Béla'),
+(62, 'Gaál Bence'),
+(63, 'Karen Edwards'),
+(64, 'Dirk Wallenburg'),
+(65, 'Bud Spencer'),
+(66, 'Gáspár Bea'),
+(67, 'Vida József');
 
 -- --------------------------------------------------------
 
@@ -311,7 +323,19 @@ INSERT INTO `books` (`Id`, `Title`, `Description`, `ISBN`, `ImgLink`, `PageNumbe
 (65, 'A magyarok Istenének elrablása', 'Borzasztó tájékozatlanság és tudatlanság uralkodik nemzeti múltunk minden kérdésében. Hazugságok, titkok átláthatatlan leple fedi előlünk igaz történelmünket. Magyarok titkos története című sorozatunk előző, Királygyilkosságok című kötetében a titkok halmaza között egy roppant különös eseményről számolunk be, Willermus apát cseléről, aki egy templomi falrésen át kileste Salamon király titkos tanácskozását a későbbi Géza (Magnus) király meggyilkolásának kiterveléséről s a résen át, lelkesedve, nekünk is bepillantást engedett a történelem felszíne mögött folyó titkos eseményekbe: \"Willermus vagy Vilmos apát, miután látta, hogy Salamon király bizalmas követeivel tanácskozásra állt össze, elrejtőzött valami kis zugolyban (talán a gyóntató fülkében), ahonnan mindent jól láthatott és hallhatott. A fülke résén át bekukucskált a templomban zajló tanácskozásba és az Ő révén, általa, mintegy az Ő szemén át, mi is bepillanthatunk történelmünk egy olyan titkos eseményébe, amelyet gondosan el akartak rejteni minden fül és minden emberi szem elől\" (I. m. 73.) Grandpierre K. Endre jelen munkája egy titkos rést nyit olvasóinak arra a rejtelmes, szemünk elől tökéletesen elfedett nemzeti tragédia hátborzongató háttértényezőire, amelyben a magyarság a X-XI században átesett.', '9789637707216', 'https://s01.static.libri.hu/cover/3e/5/8379238_4.jpg', 246, 3500, 2022, 37),
 (66, 'Talleyrand', 'Charles-Maurice de Talleyrand-Périgord (1754-1838) a világtörténelem egyik lesikeresebb, ugyanakkor legellentmondásosabb politikusa; Franciaország külügyminisztere, miniszterelnöke. Az arisztokrata családból származó ifjú gyermekkora óta rokkantsággal küzdött, így számára csak az egyházi pálya maradt. Ugyanakkor imádta a nőket, és nagy összegekben kártyázott. Hatalomra juttatta, majd elárulta a Bourbonokat, a forradalmat, Napóleont és újra a Bourbonokat. Pénzért fontos információkat adott át Franciaországról a hatalomra törő uralkodóknak, ugyanakkor többször is, például a bécsi kongresszuson, majd tizenöt évvel később londoni követként, megmentette Franciaországot. Kiemelkedő intelligenciájú, hazájáért küzdő politikus, vagy mindenre kapható korrupt vezető? Lehet-e valaki a kettő egyszerre? Ezekre a kérdésekre keres választ a könyv.', '9789635446544', 'https://s06.static.libri.hu/cover/9c/0/8197286_5.jpg', 239, 3800, 2022, 12),
 (67, 'Hitler lovai', 'Arthur Brandet, a holland műkincsnyomozót találkára hívja a műkereskedelem világának egyik legveszedelmesebb figurája, hogy a segítségét kérje egy szobor felkutatásához és eredetiségének megállapításához. A válasz egyben a második világháború egyik nagy rejtélyéről is fellebbentené a fátylat: arról, hogy mi is történt valójában Hitler kedvenc szobrával, a \"Lépkedő lovak\"-kal, amely Berlin bombázásakor tűnt el.\r\nBrand a szobor nyomába ered: texasi olajmágnásnak álcázva magát lemerül a máig létező náci alvilágba, ahol újfasiszták és volt KGB-ügynökök hozzák a szabályokat, és eurómilliókért cserélnek gazdát a Harmadik Birodalom relikviái. A nyomozás egyre kockázatosabbá válik, amikor Brand csapdát állít, hogy elkapja a bűnözőket, akik a feketepiacon próbálják eladni a két bronzlovat. De kikre is vadászik valójában? És célt ér-e, mielőtt leleplezik valódi kilétét? A Hitler lovai egy John Le Carré-regényhez méltóan szövevényes kaland, a történelem egyik legkülönlegesebb műkincsrablásának krónikája.', '9789635041688', 'https://s03.static.libri.hu/cover/40/7/6409434_5.jpg', 270, 3599, 2021, 38),
-(68, 'Szlovákia királyt választ', '\"Legyen merszünk kimondani, hogy a magyar történelem a mi közös történelmünk. Hogy a magyar királyok a mi közös királyaink voltak\" - mondta a szlovák miniszterelnök a trianoni békeszerződés századik évfordulóján. \"Ne féljünk felvállalni azt, amire joggal lehetünk büszkék. Egy birodalom részei voltunk, amelyet olyan jelentős uralkodók vezettek, mint Szent István, Károly Róbert, Corvin Mátyás vagy Mária Terézia. Ők a mi királyaink is voltak...\" - ez pedig a szlovák házelnöktől hangzott el Szlovákia függetlenné válásának tizedik évfordulóján.\r\nA magyar olvasó számára talán szokatlan hangok ezek, azonban a mai szlovák közéletben nem ritka, hogy a Magyar Királyság történelmére a szlovák múlt részeként hivatkoznak. Nem volt ez mindig így: ezekre az évszázadokra sokáig őseik \"ezeréves rabságaként\" tekintett a szlovákok jelentős része. Mára a múltról alkotott szlovák kép megváltozott, színesebb lett, több hang érvényesül benne, sokfajta gondolat fér el egymás mellett. Ez a könyv arra tesz kísérletet, hogy e hangokat tolmácsolja a magyar olvasók felé. Bizonyára lesz köztük, ami a magyar fül számára idegennek, ellenségesnek hat, de olyan is, ami szimpátiát kelt.\r\nMindeközben a magyar olvasók előtt olyan kultúrtörténeti érdekességek is feltárulnak a Magyar Királyságról, amelyek nem általánosan ismertek: például, hogy középkori hegyi rablók korabeli szlovák nyelven írtak zsarolólevelet Bártfának; hogy Mátyás egyik magyar katonája írta az első összefüggő szlovák nyelvemléket vagy hogy szlovákul is születtek a törökellenes harcokról írt históriás énekek.\r\nE könyvből tehát nemcsak a \"szlovákok titkairól\", de saját történelméről is sok újdonságot tudhat meg a magyar olvasó.', '9789634545996', 'https://s03.static.libri.hu/cover/8e/2/8199374_5.jpg', 256, 4500, 2021, 39);
+(68, 'Szlovákia királyt választ', '\"Legyen merszünk kimondani, hogy a magyar történelem a mi közös történelmünk. Hogy a magyar királyok a mi közös királyaink voltak\" - mondta a szlovák miniszterelnök a trianoni békeszerződés századik évfordulóján. \"Ne féljünk felvállalni azt, amire joggal lehetünk büszkék. Egy birodalom részei voltunk, amelyet olyan jelentős uralkodók vezettek, mint Szent István, Károly Róbert, Corvin Mátyás vagy Mária Terézia. Ők a mi királyaink is voltak...\" - ez pedig a szlovák házelnöktől hangzott el Szlovákia függetlenné válásának tizedik évfordulóján.\r\nA magyar olvasó számára talán szokatlan hangok ezek, azonban a mai szlovák közéletben nem ritka, hogy a Magyar Királyság történelmére a szlovák múlt részeként hivatkoznak. Nem volt ez mindig így: ezekre az évszázadokra sokáig őseik \"ezeréves rabságaként\" tekintett a szlovákok jelentős része. Mára a múltról alkotott szlovák kép megváltozott, színesebb lett, több hang érvényesül benne, sokfajta gondolat fér el egymás mellett. Ez a könyv arra tesz kísérletet, hogy e hangokat tolmácsolja a magyar olvasók felé. Bizonyára lesz köztük, ami a magyar fül számára idegennek, ellenségesnek hat, de olyan is, ami szimpátiát kelt.\r\nMindeközben a magyar olvasók előtt olyan kultúrtörténeti érdekességek is feltárulnak a Magyar Királyságról, amelyek nem általánosan ismertek: például, hogy középkori hegyi rablók korabeli szlovák nyelven írtak zsarolólevelet Bártfának; hogy Mátyás egyik magyar katonája írta az első összefüggő szlovák nyelvemléket vagy hogy szlovákul is születtek a törökellenes harcokról írt históriás énekek.\r\nE könyvből tehát nemcsak a \"szlovákok titkairól\", de saját történelméről is sok újdonságot tudhat meg a magyar olvasó.', '9789634545996', 'https://s03.static.libri.hu/cover/8e/2/8199374_5.jpg', 256, 4500, 2021, 39),
+(69, 'Só, zsír, sav, hő - A jó főzés négy eleme', 'Samin Nosrat másodéves egyetemistaként került kapcsolatba a főzéssel, amikor Kalifornia egyik emblematikus éttermében, a Chez Panisse-ban kezdett dolgozni, ahol a ranglétra összes fokát végigjárva séf lett. Azóta a főzés a szenvedélye, akármerre járt a világban, Japántól Mexikóig, Olaszországtól Amerikáig az ízek titkát kutatta, és azt tapasztalta, hogy az ételt négy elem tesz tökéletessé vagy tesz tönkre: a só, a zsír, a sav vagy a hő.\r\nA só, ami felerősíti az ízeket, a zsír, ami ízt ad és állagot képez, a sav, ami egyensúlyba hozza az ízeket, és a hő, ami végső soron meghatározza az ételek állagát.\r\nSamin Nosrat könyvének első fele olyan, mint egy profi főzőtanfolyam, a második részében található több mint 100 recept elkészítésével pedig kipróbálhatjuk a tanultakat.\r\n\r\nSamin Nosrat amerikai séf és gasztronómiai író - egyesek szerint \"a következő Julia Child\" - 2000 óta foglalkozik hivatásszerűen főzéssel. 2017-ben megjelent Só, zsír, sav, hő című első könyvét, melyen 14 évig dolgozott, számos díjjal jutalmazták, a The Times Az év szakácskönyvének választotta. A belőle készült négyrészes sorozat a Netflixen látható.\r\n\r\n\"Számomra az egyetlen ember, aki megfejtette a gasztronómiai mátrixot, Samin Nosrat. Egy igazi, sallangmentes gasztrozseni. Ha egyetlenegy gasztrosorozatot nézel a Netflixen, legyen ez. Ha egyetlen szakácskönyved van otthon, legyen ez, és ígérem, megtanulsz főzni!\"\r\nWossala Rozina étteremtulajdonos, gasztronómus', '9789633558966', 'https://s05.static.libri.hu/cover/61/1/4922257_5.jpg', 469, 11990, 2022, 40),
+(70, 'Limara Péksége - Házi Pékek Alapkönyve', 'Kenyér = liszt, só, élesztő, víz + Limara\r\n\r\nLibor Marcsi és a blogja, a Limara Péksége megkerülhetetlen, ha jól bevált, megsüthető, finom kelttészta-recepteket keresünk. A konyhában ő a legjobb barátnőnk.\r\nNaponta tízezernél többen keressük fel a blogját, így megsaccolni sem lehet, hányan készülődünk úgy a sütéshez a nagyvilágban, hogy az ő oldala van nyitva a laptopunkon, kinyomtatott vagy kézzel lefirkált receptjei hevernek a konyhaasztalon. Aztán büszkén terelünk mindenkit a forró tepsihez, hadd csodálják meg a végeredményt, Marcsinak pedig mosolyogva írunk egy kedves üzenetet, hogy beszámoljunk a sikerről. Ő mutatta meg nekünk a kenyérsütés varázsát. Ő inspirált nőket, férfiakat, amatőröket, sütésben jártasakat, hogy fedezzék fel és leljék örömüket a házi kenyér készítésében. És most végre itt a várva várt szakácskönyve! A kezdőket lépésről lépésre megtanítja kelt tésztát sütni, a gyakorlottaknak összegyűjtötte a legkedveltebb recepteket, míg a kísérletező kedvűeknek új finomságokat talált ki.\r\n\r\nLegyél hát te is házi pék!\r\n\r\nTarts Limarával ezen a kenyérillatú úton!', '9789630899345', 'https://s05.static.libri.hu/cover/d4/7/3298919_5.jpg', 188, 6000, 2022, 41),
+(71, 'Együnk több zöldséget!', 'Kihagyhatatlan receptek a fenntarthatóbb bolygóért és a család egészségért!\r\nAz online tér gasztronómiai csatornáin nagy népszerűségnek örvendő Wichmann Anna - Annuskám - 50 bevált receptje\r\n- mindenevőknek, akik az egyhangú köretek vagy nehéz egytálételek szűk köréből kitörve szeretnének változatosabban, tudatosabban, egészségesebben enni;\r\n- azoknak, akik szívesebben fogyasztanának több zöldséget, de az ízekről, a házias kosztról, az ismerős fogásokról nem kívánnak lemondani.\r\n\r\nA könnyen beszerezhető, szezonális és változatos alapanyagokból készülő levesek, egytálételek, tészták, töltött és rakott finomságok a megszokottnál több zöldséggel és hüvelyessel, de 100%-os ízélménnyel a család minden tagját meggyőzik majd.\r\nHúsmentes vega és húsos ételek rengeteg rosttal, színesen és sütemények okosan - több fehérjével, de kevesebb szénhidráttal és mesés ízekkel!', '9789632886862', 'https://s03.static.libri.hu/cover/68/c/8568057_5.jpg', 132, 4990, 2022, 42),
+(72, 'Igazi magyar konyha - Szegedi szakácskönyv', 'Rézi néni szakácskönyve a legismertebb szakácskönyvek közé tartozik. A számtalan kiadást megért szakácskönyvből dédszüleink konyhaművészetével ismerkedhetünk meg. A könyv először 1876-ban jelent meg és szerzője Dolecskó Terézia volt, aki igazi művésze volt a konyha tudományának. Rézi néni könyvét Tömörkény István is méltatta.', '9786156385185', 'https://s03.static.libri.hu/cover/d4/3/8526156_5.jpg', 504, 4990, 2022, 43),
+(73, 'Főzőiskola Potter-rajongóknak - Egyszerű és bűbájos finomságok', 'Üdvözlünk a mágia világában! A Potter-rajongók kedvenc szakácskönyve! Több mint 60 varázslatos recept, amelyeket minden varázslótanoncnak muszáj kipróbálni. Mindegy, hogy nagyszabású házibuliról, születésnapi ünnepségről vagy egyszerű filmes estéről van szó, ezek a finomságok minden Potter-rajongónak ízleni fognak! Huss és pöcc! Számtalan konyhai tipp és varázsige segítségével könnyedén mozgásba lendíthetjük a főzőkanalat, és sok új konyhai ismeretet szerezhetünk - és garantáltan nem robbanunk fel közben! A Roxfort világa a konyhában! Mrs. Weasley húsgombóca, Petunia néni lazaca, Paddington burger, a Florean Fortescue Fagylaltszalon nyalánkságai, üstben készült édességek, és még sok minden más!', '9789635822980', 'https://s04.static.libri.hu/cover/54/8/8483783_5.jpg', 144, 4990, 2022, 14),
+(74, 'Régi magyar szakácskönyvek', 'Radványi és sajókazai báró Radvánszky Béla (Sajókaza, 1849. március 1. - Budapest, 1906. május 2.) művelődés- és irodalomtörténész, politikus, császári és királyi kamarás, valóságos belső titkos tanácsos, koronaőr, a Magyar Tudományos Akadémia tiszteletbeli tagja, a Magyar Heraldikai és Genealógiai Társaság elnöke.\r\nBáró Radvánszky Béla, mint művelődéstörténész sok érdekességet gyűjtött össze és dolgozott fel műveiben. Jelen munkája a \"Régi magyar szakácskönyvek\" címet viseli. A szerző az alábbi szavakkal méltatja művét: \"Nemzetünk benső élete ismeretének egy fontos részét képezi a régi magyar konyha állapota. Méltán érdekelhet bennünket, hogy őseink hogyan étkeztek, mit ettek, miként főzték az ételeket, mennyire volt nálunk kifejlődve az elmúlt századok szakácsművészete, minő múltra támaszkodott az e század első felében még híres magyar konyha.\"', '9786156385116', 'https://s03.static.libri.hu/cover/5d/c/8396193_5.jpg', 414, 3300, 2022, 43),
+(75, 'Fine Restaurants 2021 - The Budapest Business Journal\'s Restaurant Review 2021', 'A Fine Restaurants 2021 kiadvány a prémium kategóriájú éttermeket mutatja be, melyek ideálisak egy kellemes reggeli, ebéd, vacsora vagy akár üzleti találkozó lebonyolítására. Letisztult layout, gyönyörű képek, és praktikus kódrendszer segíti az olvasót a tökéletes helyszín kiválasztásában, legyen szó akár budapesti, akár vidéki éttermekről.\r\n\r\nFeltérképeztük a friss gasztronómiai termékek piacát, a Michelin-csillagos helyeket, és az újonnan nyílt éttermeket, amiket feltétlenül érdemes kipróbálni.', '2050000084072', 'https://s03.static.libri.hu/cover/6a/1/8273210_5.jpg', 162, 5990, 2021, 44),
+(76, 'Bolygóbarát konyha', 'A könyv elgondolkoztat arról, hogy miként lehet vásárolni és főzni környezetbarát módon. Megtanít felismerni, hogy mely élelmiszereket használjuk és melyeket inkább kerüljük. A könyvben 30 nagyszerű receptet is találhatunk, amelyeket Ön is megszeret, nem csak a bolygónk. A receptek mellett a kiadvány számos tippet és tanácsot is ad, hogy hogyan érhetünk el ezekkel az apró lépésekkel nagy változásokat.\r\n\r\nA könyvben 30 környezetbarát szemléletű receptet talál, amelyeket Ön is és a bolygónk is megszeret. Mindemellett számos tippet és tanácsot ad, hogy milyen apró lépéseket tehetünk a jelentős változások érdekében.\r\n\r\nNagyon jól tudjuk, hogy étkezési és vásárlási stílusunk jelentős megváltoztatása nélkül a természet továbbra is szenvedni fog. De néha nehéz eldönteni, hogy mely élelmiszerek valóban környezetbarátok. Ez a könyv világos és egyértelmű tényekkel segíti a tudatos változtatást. Megtudhatja, hogy mely környezetünket terhelő termékeket kerülje, milyen élelmiszereket vásároljon és hogyan főzhet belőlük otthon ízletes ételeket.\r\n\r\nA könyv bemutatja az élelmiszerek előállításának különböző módszereit is, kiemelve azokat a nyersanyagokat, amelyek termesztése kevesebb természeti erőforrást igényel. Bár nincs egyetlen helyes \"fenntartható élelmiszer\" sem, a célunk az, hogy bemutassuk a bolygóbarát táplálkozás alapelveit, és feltárjuk azokat a folyamatokat, amelyek az élelmiszertermelés során általában rejtetten zajlanak. A könyv emellett foglalkozik a saját élelmiszer termesztés módszereivel is.\r\n\r\nEz a tudás segíthet abban, hogy fogyasztóként jobb döntéseket hozzunk a Földünk érdekében. Bár a legtöbb élelmiszer nem 100%-ban fenntartható, bizonyos élelmiszerek gyártása kímélőbb a bolygónk számára. Ha ezeket az összetevőket beépítjük étrendünkbe és körültekintőbben választjuk meg az élelmiszereket, segíthetünk megőrizni a Földet az utánunk jövő generációk számára.', '9789635050826', 'https://s03.static.libri.hu/cover/3e/8/7996516_5.jpg', 128, 3490, 2021, 45),
+(77, 'The Culinary Chronicle - Best of Hungary', 'This 9th publication of the Culinary Chronicle series is built around the unique culinary diversity in Hungary. Besides top-class restaurants in and outside Budapest, the metropolis along the Danube, this publication also provides an insight on selected wine regions, the unique Hungaricum Palinka, and Herend a porcelain manufactory that creates excellent hand painted porcelain.', '2000000009186', 'https://s04.static.libri.hu/cover/15/a/7995041_5.jpg', 363, 34990, 2021, 46),
+(78, 'Eszem, tehát vagyok - Étel- és Életreceptek', 'Ebben a rendkívüli könyvben a híres filmsztár és sikerszerző humoros fűszerezéssel ötvözi a gondolkodás művészetét a főzés művészetével. Egyik legnagyobb szenvedélye, az evés, számára a létezés középpontja. Véleményét tizenkét tekintélyes gondolkodó előtt védi meg, akik álmában látogatják meg.\r\nHumorral és iróniával teli káprázatos szellemi párbajt vív olyan neves filozófusokkal, mint Szókratész, Konfuciusz vagy Immanuel Kant. Ha pedig cserben hagyják a szavak, akkor ínycsiklandó olasz ételkülönlegességeket készít vendégeinek, a tészta- és halételektől a jellegzetes nápolyi süteményekig, mire jóllakottan és elégedetten kiegyeznek.\r\nBud Spencer különleges könyve arra ösztönöz, hogy együtt nevessünk és főzzünk vele, miközben folyamatosan elhiteti velünk, hogy teli hassal minden könnyebb.', '9789635720965', 'https://s05.static.libri.hu/cover/6c/e/7935831_5.jpg', 366, 3999, 2021, 47),
+(79, 'Bea konyhája 3.', 'Gáspár Bea újabb receptválogatásából egy nagycsalád mindennapjai sejlenek fel: van benne ételleírás és sztori dőzsöléshez, vendéglátásra és hétköznapokra, múltidéző és frissen tanult fogások, persze mindez a konyhából szemlélve, megélve és leírva. Az első nagy fejezetben hagyományos ételek Bea módra megcsavart receptjeit találjuk, például a lekvárral bolondított mákos tésztát, a töltött aranygaluskát, vagy a klasszikus menzás fogások megújított változatait, mint a rántott párizsit krémes krumplifőzelékkel, vagy a krumplis lasagnét. A könyv második részében modern ételek receptjei sorakoznak. A mai konyhatechnológia sztárja, a konfitálás vagy a csirketerrine mellett remekül megférnek a háziasszonyokat segítő tippek is. Bea receptjeinek olvasása és elkészítése mindenkit rádöbbent, hogy az olyan különleges alapanyagok is, mint a kapribogyó, a batáta vagy a ricotta, néhány ügyes trükkel megszelídíthetők, és a család kedvenceivé tehetők. A receptek bevezetőiben gasztrotörténeti csemegékkel is szolgál a szerző, sőt megcsillantja humorát is, amint a hizlaló sportszeletről vagy a repülő madártejről ír. A kötetben kezdő és haladó konyhatündérek egyaránt találnak fakanalukra valót.', '9786155417818', 'https://s05.static.libri.hu/cover/b7/0/7912292_5.jpg', 141, 5990, 2021, 48),
+(80, 'Főzni menő - #kisszakácsbiblia', 'Ha valaki azt mondja, hogy nincsenek szuperképességek, nem járt még a konyhában. Vasárnapi ebéd anyuékkal, Xbox maraton a tesókkal, pizsiparty a csajokkal, szülinap vagy filmnézés a haverokkal? A finom ételek a világ minden táján összehozzák az embereket, legyenek kicsik vagy nagyok, ehhez pedig nincs szükséged másra, mint egy kis gyakorlásra. Ebben a könyvben megtalálsz mindent, amire szükséged lehet, ha te akarsz lenni a család vagy a társaság hőse, aki az asztalhoz ülteti a többieket, a dolgod csak annyi, hogy megmutasd:\r\nfőzni menő, legyél akár mesterszakács, haladó, vagy kezdő. Hogy a könyv igazán menő legyen, a benne található fotók mindegyike mobiltelefonnal készült.', '9786155417726', 'https://s03.static.libri.hu/cover/36/c/7911895_5.jpg', 408, 5990, 2021, 48);
 
 -- --------------------------------------------------------
 
@@ -399,7 +423,19 @@ INSERT INTO `book_author` (`Id`, `BookId`, `AuthorId`, `GenreId`, `LanguageId`) 
 (65, 65, 52, 2, 1),
 (66, 66, 53, 2, 1),
 (67, 67, 54, 2, 1),
-(68, 68, 55, 2, 1);
+(68, 68, 55, 2, 1),
+(69, 69, 56, 4, 1),
+(70, 70, 57, 4, 1),
+(71, 71, 58, 4, 1),
+(72, 72, 59, 4, 1),
+(73, 73, 60, 4, 1),
+(74, 74, 61, 4, 1),
+(75, 75, 62, 4, 3),
+(76, 76, 63, 4, 1),
+(77, 77, 64, 4, 3),
+(78, 78, 65, 4, 1),
+(79, 79, 66, 4, 1),
+(80, 80, 67, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -498,7 +534,16 @@ INSERT INTO `publishers` (`Id`, `Name`) VALUES
 (36, 'Marysol könyvkiadó'),
 (37, 'Titokfejtő Könyvkiadó'),
 (38, 'Európa Könyvkiadó Kft.'),
-(39, 'Akadémiai Kiadó Zrt.');
+(39, 'Akadémiai Kiadó Zrt.'),
+(40, 'Park Könyvkiadó Kft.'),
+(41, 'Csipet kiadó'),
+(42, 'Harmat Kiadói Alapítvány'),
+(43, 'Nemzeti Örökség'),
+(44, 'Business Publishing Services Kft.'),
+(45, 'Lingea Kft.'),
+(46, 'Optart AG'),
+(47, 'Open Books'),
+(48, 'Boook Kiadó Kft.');
 
 -- --------------------------------------------------------
 
@@ -638,19 +683,19 @@ ALTER TABLE `aspnetuserclaims`
 -- AUTO_INCREMENT a táblához `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT a táblához `books`
 --
 ALTER TABLE `books`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT a táblához `book_author`
 --
 ALTER TABLE `book_author`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT a táblához `genres`
@@ -668,7 +713,7 @@ ALTER TABLE `languages`
 -- AUTO_INCREMENT a táblához `publishers`
 --
 ALTER TABLE `publishers`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- Megkötések a kiírt táblákhoz
