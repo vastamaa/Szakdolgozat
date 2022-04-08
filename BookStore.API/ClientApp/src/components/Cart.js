@@ -14,15 +14,20 @@ export class Cart extends Component {
             }
             return(
                 <div>
-                    
                      {values.map((values)=>(
-                         <>
-                         <p className=''>{JSON.parse(values).title}</p>
-                         <p className=''>{JSON.parse(values).price}</p>
-                         <img className='' src={JSON.parse(values).img}></img>
+                         <>                
+                         <div className='CartItemsContainer'>
+                         <div className='CartImgContainer'>
+                            <img className='CartImg' src={JSON.parse(values).img}></img>
+                         </div>
+                         <div className='CartInfo CartGrid'>
+                         <p className=' CartTitle grid-item'>{JSON.parse(values).title}</p>
+                         <p className=' CartPrice grid-item'>{JSON.parse(values).price}</p>
+                         
+                         </div>
+                         </div>
                          </>
                      ))}
-
                 </div>
             )
 
@@ -32,8 +37,13 @@ export class Cart extends Component {
         return (
             <div className='BaseSize'>
                 <div className='CartContainer'>
-                    <div className='Cart'>
-                    {this.loadcart()}
+                    <div className='Cart CartGrid'>
+                        <div className='grid-item'>
+                            {this.loadcart()}
+                        </div>
+                        <div className='grid-item'>
+                            Price
+                        </div>
                     </div>
                 </div>
             </div>

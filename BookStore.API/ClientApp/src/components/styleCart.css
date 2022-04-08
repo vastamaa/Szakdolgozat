@@ -8,6 +8,50 @@
     border-radius: 20px;
     width: 100%;
     min-height: 80vh;
-    display: grid;
     align-items: center;
+    padding: 20px;
+}
+.CartGrid{
+    display: grid;
+    grid-template-columns: 60% auto;
+    gap: 10px;
+    background-color: #2196F3;
+}
+.CartItemsContainer{
+    display: flex;
+    margin-bottom: 40px;
+    border-bottom: 1px solid black;
+}
+.grid-item{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+.CartImg{
+    text-align: center;
+    padding-top: 10px;
+    max-width: 90%;
+}
+.CartImgContainer{
+    height: 20vh;
+    width: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #dbe4ed;
+}
+.CartInfo{
+    height: 20vh;
+    width: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid #dbe4ed;
+    
+}
+.CartTitle{
+
+}
+.CartPrice{
 }
