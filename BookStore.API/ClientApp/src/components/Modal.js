@@ -27,7 +27,8 @@ export class ModalExample extends Component {
             localStorage.setItem(this.props.isbn, JSON.stringify({
                 title:this.props.title,
                 price:this.props.price,
-                img: this.props.imgLink
+                img: this.props.imgLink,
+                isbn: this.props.isbn
             }))
         }
     }

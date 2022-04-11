@@ -54,4 +54,23 @@
 
 }
 .CartPrice{
+
+}
+.Amount{
+    display: flex;
+    margin-top: 6%;
+    height: 100px;
+    width: 110px;
+    font-size: 15px !important ;
+    justify-content: center;
+}
+.Amountinput{
+    height: 4vh;
+    width: 3vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+}
+.CartAmountButton{
+    height: 4vh;
+    width:3vh;
 }
