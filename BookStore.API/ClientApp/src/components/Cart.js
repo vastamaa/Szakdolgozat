@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import './styleCart.css';
-import { MinusAmount,PlusAmount } from './CartFunctions';
-import { JsxEmit } from 'typescript';
 
 export class Cart extends Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = {
+            sum: 0
+        };
+    }
     componentDidMount() {
         this.loadcart();
+                var values = [],
+                keys = Object.keys(localStorage),
+                i = keys.length;
+            while ( i-- ) {
+                values.push( localStorage.getItem(keys[i]) );
+            }
+         const sumall = values.map(item => JSON.parse(item).price).reduce((prev, curr) => prev + curr, 0);
+         this.setState({sum:sumall})
     }
     loadcart(){
         var values = [],
@@ -13,6 +26,22 @@ export class Cart extends Component {
                 i = keys.length;
             while ( i-- ) {
                 values.push( localStorage.getItem(keys[i]) );
+            }
+            function MinusAmount (isbn){
+                var a=document.getElementById('amount').value
+                if(a==1){
+                    localStorage.removeItem(isbn)
+                    window.location.reload(false);
+                }
+                else
+                {
+                    document.getElementById('amount').value=a-1;
+                }
+            }
+            function PlusAmount(){
+                var a=document.getElementById('amount').value
+                a++;
+                document.getElementById('amount').value=a
             }
             return(
                 <div>
@@ -26,17 +55,20 @@ export class Cart extends Component {
                          <div className='CartInfo CartGrid'>
                         <p className='CartPrice grid-item' id='isbn'>{JSON.parse(values).isbn}</p>
                          <p className=' CartTitle grid-item'>{JSON.parse(values).title}</p>
-                         <p className=' CartPrice grid-item'>{JSON.parse(values).price}</p>
+                         <p className=' CartPrice grid-item' onLoad={()=>Price(JSON.parse(values).price)}>{JSON.parse(values).price}</p>
 
                          </div>
                          <div className='Amount'>
-                             <button className='CartAmountButton' onClick={MinusAmount}>-</button>
+                             <button className='CartAmountButton' onClick={()=>MinusAmount(JSON.parse(values).isbn)}>-</button>
                              <input className='Amountinput' value={1} id='amount' ></input>
-                             <button className='CartAmountButton' onClick={PlusAmount} >+</button>
+                             <button className='CartAmountButton' onClick={PlusAmount}  >+</button>
                          </div>
                          </>
                          </div>
                      ))}
+                    <div className='grid-item Summary' >
+                         {this.state.sum}
+                   </div>
                 </div>
             )
 
@@ -46,12 +78,9 @@ export class Cart extends Component {
         return (
             <div className='BaseSize'>
                 <div className='CartContainer'>
-                    <div className='Cart CartGrid'>
+                    <div className='Cart '>
                         <div className='grid-item'>
                             {this.loadcart()}
-                        </div>
-                        <div className='grid-item Summary'>
-                            Price
                         </div>
                     </div>
                 </div>
