@@ -5,6 +5,7 @@
 }
 .Cart{
     border: 1px grey solid;
+    background-color: #f3f6fb;
     border-radius: 20px;
     width: 100%;
     min-height: 80vh;
@@ -15,62 +16,56 @@
     display: grid;
     grid-template-columns: 60% auto;
     gap: 10px;
-    background-color: #2196F3;
 }
 .CartItemsContainer{
     display: flex;
     margin-bottom: 40px;
-    border-bottom: 1px solid black;
+    background-image: linear-gradient(to right, rgba(255,250,130), rgba(254,220,112));
+    padding:5px;
+    border: 1px solid #66666E;
 }
 .grid-item{
-    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+    padding: 10px 0;
+    font-size: 25px;
 }
 .CartImg{
     text-align: center;
-    padding-top: 10px;
     max-width: 90%;
+
 }
 .CartImgContainer{
+    margin-left: -0.5%;
     height: 20vh;
-    width: 15vh;
+    width: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #dbe4ed;
 }
 .CartInfo{
     height: 20vh;
-    width: 70vh;
+    padding-top: 20px;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    border: 3px solid #dbe4ed;
-    
+    justify-content: space-around;
+}
+.CartAuth{
+    margin-left:-20%;
+    font-size: 20px;
+}
+.CartGenre{
+    font-style:italic;
+    font-size: 22px;
 }
 .CartTitle{
-
+    margin-left:-30%;
+    font-size: 23px;
 }
 .CartPrice{
-
+    font-size: 23px;
+    font-weight: 600;
 }
-.Amount{
-    display: flex;
-    margin-top: 6%;
-    height: 100px;
-    width: 110px;
-    font-size: 15px !important ;
-    justify-content: center;
-}
-.Amountinput{
-    height: 4vh;
-    width: 3vh;
-    margin-left: 1vh;
-    margin-right: 1vh;
-}
-.CartAmountButton{
-    height: 4vh;
-    width:3vh;
+.DeleteButtonCart{
+    
 }

@@ -28,7 +28,14 @@ export class ModalExample extends Component {
                 title:this.props.title,
                 price:this.props.price,
                 img: this.props.imgLink,
-                isbn: this.props.isbn
+                isbn: this.props.isbn,
+                genre: this.props.genre,
+                author:this.props.authorName,
+                lang:this.props.lang,
+                publisher:this.props.publisher,
+                year:this.props.publishingYear,
+                desc:this.props.desc
+
             }))
         }
     }
@@ -62,7 +69,7 @@ export class ModalExample extends Component {
 
                         <p className='Price'><span className='PriceText'>Price:</span>  {this.props.price} Ft</p>
                         <button className='BuyButton' id='buybutton' onClick={()=>this.coockie()}>Buy</button>{' '}
-                        <Button className='CancelButton' onClick={() => console.log(readCookie('titles'))}>Cancel</Button>
+                        <Button className='CancelButton' onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
 
                 </Modal>
