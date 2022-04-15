@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace TestAPI.ViewModels
+﻿namespace TestAPI.ViewModels
 {
     public class BookVM
     {
@@ -13,6 +11,5 @@ namespace TestAPI.ViewModels
         public int PublishingYear { get; set; }
 
         public int PublisherId { get; set; }
-        public List<int> AuthorIds { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookStore.API.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TestAPI.Services.Implementations;
 using TestAPI.ViewModels;
@@ -16,29 +17,29 @@ namespace TestAPI.Controllers
             _languagesService = languagesService;
         }
 
-        [HttpGet("get-all-fucking-language")]
+        [HttpGet("")]
         public async Task<IActionResult> GetAllLanguages()
         {
             return Ok(await _languagesService.GetAllLanguagesAsync());
         }
 
-        [HttpGet("get-a-fucking-language/{id:int}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetLanguageById(int id) { return Ok(await _languagesService.GetLanguageByIdAsync(id)); }
 
-        [HttpPost("add-language")]
+        [HttpPost("")]
         public async Task<IActionResult> AddLanguage([FromBody] LanguageVM language)
         {
             var result = await _languagesService.AddLanguageAsync(language);
 
             if (result == 0)
             {
-                return BadRequest();
+                return BadRequest(new ResponseModel { Status = "Error!", Message = "The database already contains a language with this name!" });
             }
 
-            return Ok();
+            return Ok(new ResponseModel { Status = "Success!", Message = "The language has been successfully added to the database!" });
         }
 
-        [HttpPut("update-language-by-id/{id:int}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateLanguageById(int id, [FromBody] LanguageVM language)
         {
             var result = await _languagesService.UpdateLanguageAsync(id, language);
@@ -51,11 +52,17 @@ namespace TestAPI.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("delete-language-by-id/{id:int}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteLanguageById(int id)
         {
-            await _languagesService.DeleteLanguageAsync(id);
-            return Ok();
+            var result = await _languagesService.DeleteLanguageAsync(id);
+
+            if (result > 0)
+            {
+                return Ok(new ResponseModel { Status = "Success!", Message = "The language has been successfully deleted from the database!" });
+            }
+
+            return BadRequest(new ResponseModel { Status = "Error!", Message = "The language has not been deleted from the database!" });
         }
     }
 }

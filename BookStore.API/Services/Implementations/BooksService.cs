@@ -22,6 +22,7 @@ namespace TestAPI.Services.Implementations
         {
             var _books = await _context.Books.Select(book => new BookWithEverythingVM()
             {
+                Id = book.Id,
                 Title = book.Title,
                 Description = book.Description,
                 ISBN = book.ISBN,
@@ -42,6 +43,7 @@ namespace TestAPI.Services.Implementations
         {
             var _bookWithAuthors = await _context.Books.Where(b => b.Book_Authors.Select(n => n.Genre.Name).FirstOrDefault() == genreName).Select(book => new BookWithEverythingVM()
             {
+                Id = book.Id,
                 Title = book.Title,
                 Description = book.Description,
                 ISBN = book.ISBN,

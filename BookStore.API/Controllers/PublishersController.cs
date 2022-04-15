@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookStore.API.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TestAPI.Services.Implementations;
 using TestAPI.ViewModels;
@@ -16,29 +17,29 @@ namespace TestAPI.Controllers
             _publishersService = publishersService;
         }
 
-        [HttpGet("get-all-fucking-publishers")]
+        [HttpGet("")]
         public async Task<IActionResult> GetAllPublishers()
         {
             return Ok(await _publishersService.GetAllPublishersAsync());
         }
 
-        [HttpGet("get-a-fucking-publisher/{id:int}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetPublisherById(int id) { return Ok(await _publishersService.GetPublisherByIdAsync(id)); }
 
-        [HttpPost("add-publisher")]
+        [HttpPost("")]
         public async Task<IActionResult> AddPublisher([FromBody] PublisherVM publisher)
         {
             var result = await _publishersService.AddPublisherAsync(publisher);
 
             if (result == 0)
             {
-                return BadRequest();
+                return BadRequest(new ResponseModel { Status = "Error!", Message = "The database already contains a publisher with this name!" });
             }
 
-            return Ok();
+            return Ok(new ResponseModel { Status = "Success!", Message = "The publisher has been successfully added to the database!" });
         }
 
-        [HttpPut("update-publisher-by-id/{id:int}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdatePublisherById(int id, [FromBody] PublisherVM publisher)
         {
             var result = await _publishersService.UpdatePublisherAsync(id, publisher);
@@ -51,11 +52,17 @@ namespace TestAPI.Controllers
             return Ok(result);
         }
 
-        [HttpDelete("delete-publisher-by-id/{id:int}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeletePublisherById(int id)
         {
-            await _publishersService.DeletePublisherAsync(id);
-            return Ok();
+            var result = await _publishersService.DeletePublisherAsync(id);
+
+            if (result > 0)
+            {
+                return Ok(new ResponseModel { Status = "Success!", Message = "The publisher has been successfully deleted from the database!" });
+            }
+
+            return BadRequest(new ResponseModel { Status = "Error!", Message = "The publisher has not been deleted from the database!" });
         }
     }
 }

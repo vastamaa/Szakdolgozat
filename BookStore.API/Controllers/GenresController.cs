@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BookStore.API.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TestAPI.Services.Implementations;
 using TestAPI.ViewModels;
@@ -16,46 +17,52 @@ namespace TestAPI.Controllers
             _genresService = genresService;
         }
 
-        [HttpGet("get-all-fucking-genres")]
+        [HttpGet("")]
         public async Task<IActionResult> GetAllStudents()
         {
             return Ok(await _genresService.GetAllGenresAsync());
         }
 
-        [HttpGet("get-a-fuckig-genre/{id:int}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetGenresById(int id) { return Ok(await _genresService.GetGenreByIdAsync(id)); }
 
-        [HttpPost("add-genre")]
-        public async Task<IActionResult> AddBook([FromBody] GenreVM genre)
+        [HttpPost("")]
+        public async Task<IActionResult> AddGenre([FromBody] GenreVM genre)
         {
             var result = await _genresService.AddGenreAsync(genre);
 
             if (result == 0)
             {
-                return BadRequest();
+                return BadRequest(new ResponseModel { Status = "Error!", Message = "The database already contains this type of genre!" });
             }
 
-            return Ok();
+            return Ok(new ResponseModel { Status = "Success!", Message = "The genre has been successfully added to the database!" });
         }
 
-        [HttpPut("update-genre-by-id/{id:int}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateGenreById(int id, [FromBody] GenreVM genre)
         {
             var result = await _genresService.UpdateGenreAsync(id, genre);
 
             if (result is null)
             {
-                return BadRequest();
+                return BadRequest(new ResponseModel { Status = "Error!", Message = "The genre has not been updated!" });
             }
 
-            return Ok(result);
+            return Ok(new ResponseModel { Status = "Success!", Message = "The genre has been successfully updated!" });
         }
 
-        [HttpDelete("delete-genre-by-id/{id:int}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteGenreById(int id)
         {
-            await _genresService.DeleteGenreAsync(id);
-            return Ok();
+            var result = await _genresService.DeleteGenreAsync(id);
+
+            if (result > 0)
+            {
+                return Ok(new ResponseModel { Status = "Success!", Message = "The genre has been successfully deleted from the database!" });
+            }
+
+            return BadRequest(new ResponseModel { Status = "Error!", Message = "The genre has not been deleted from the database!" });
         }
     }
 }

@@ -23,13 +23,19 @@ namespace TestAPI.Services.Implementations
 
         public async Task<int> AddLanguageAsync(LanguageVM language)
         {
-            var _language = new Language()
-            {
-                Name = language.Name
-            };
+            var result = await _context.Languages.Where(l => l.Name == language.Name).FirstOrDefaultAsync();
 
-            await _context.Languages.AddAsync(_language);
-            return await _context.SaveChangesAsync();
+            if (result is null)
+            {
+                var _language = new Language()
+                {
+                    Name = language.Name
+                };
+
+                await _context.Languages.AddAsync(_language);
+                return await _context.SaveChangesAsync();
+            }
+            return 0;
         }
 
         public async Task<Language> UpdateLanguageAsync(int languageId, LanguageVM language)
@@ -46,7 +52,7 @@ namespace TestAPI.Services.Implementations
             return _language;
         }
 
-        public async Task DeleteLanguageAsync(int languageId)
+        public async Task<int> DeleteLanguageAsync(int languageId)
         {
             var language = await _context.Languages.FirstOrDefaultAsync(l => l.Id == languageId);
 
@@ -54,7 +60,9 @@ namespace TestAPI.Services.Implementations
             {
                 _context.Languages.Remove(language);
                 await _context.SaveChangesAsync();
+                return 1;
             }
+            return 0;
         }
     }
 }

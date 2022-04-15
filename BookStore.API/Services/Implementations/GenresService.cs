@@ -23,13 +23,19 @@ namespace TestAPI.Services.Implementations
 
         public async Task<int> AddGenreAsync(GenreVM genre)
         {
-            var _genre = new Genre()
-            {
-                Name = genre.Name
-            };
+            var result = await _context.Genres.Where(g => g.Name == genre.Name).FirstOrDefaultAsync();
 
-            await _context.Genres.AddAsync(_genre);
-            return await _context.SaveChangesAsync();
+            if (result is null)
+            {
+                var _genre = new Genre()
+                {
+                    Name = genre.Name
+                };
+
+                await _context.Genres.AddAsync(_genre);
+                return await _context.SaveChangesAsync();
+            }
+            return 0;
         }
 
         public async Task<Genre> UpdateGenreAsync(int genreId, GenreVM genre)
@@ -46,7 +52,7 @@ namespace TestAPI.Services.Implementations
             return _genre;
         }
 
-        public async Task DeleteGenreAsync(int genreId)
+        public async Task<int> DeleteGenreAsync(int genreId)
         {
             var genre = await _context.Genres.FirstOrDefaultAsync(b => b.Id == genreId);
 
@@ -54,7 +60,9 @@ namespace TestAPI.Services.Implementations
             {
                 _context.Genres.Remove(genre);
                 await _context.SaveChangesAsync();
+                return 1;
             }
+            return 0;
         }
     }
 }

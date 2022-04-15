@@ -23,13 +23,19 @@ namespace TestAPI.Services.Implementations
 
         public async Task<int> AddPublisherAsync(PublisherVM publisher)
         {
-            var _publisher = new Publisher()
-            {
-                Name = publisher.Name
-            };
+            var result = await _context.Publishers.Where(p => p.Name == publisher.Name).FirstOrDefaultAsync();
 
-            await _context.Publishers.AddAsync(_publisher);
-            return await _context.SaveChangesAsync();
+            if (result is null)
+            {
+                var _publisher = new Publisher()
+                {
+                    Name = publisher.Name
+                };
+
+                await _context.Publishers.AddAsync(_publisher);
+                return await _context.SaveChangesAsync();
+            }
+            return 0;
         }
 
         public async Task<Publisher> UpdatePublisherAsync(int publisherId, PublisherVM publisher)
@@ -46,7 +52,7 @@ namespace TestAPI.Services.Implementations
             return _publisher;
         }
 
-        public async Task DeletePublisherAsync(int publisherId)
+        public async Task<int> DeletePublisherAsync(int publisherId)
         {
             var publisher = await _context.Publishers.FirstOrDefaultAsync(p => p.Id == publisherId);
 
@@ -54,7 +60,9 @@ namespace TestAPI.Services.Implementations
             {
                 _context.Publishers.Remove(publisher);
                 await _context.SaveChangesAsync();
+                return 1;
             }
+            return 0;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace TestAPI.Services.Implementations
     public interface ILanguagesService
     {
         Task<int> AddLanguageAsync(LanguageVM language);
-        Task DeleteLanguageAsync(int languageId);
+        Task<int> DeleteLanguageAsync(int languageId);
         Task<IEnumerable<Language>> GetAllLanguagesAsync();
         Task<Language> GetLanguageByIdAsync(int languageId);
         Task<Language> UpdateLanguageAsync(int languageId, LanguageVM language);

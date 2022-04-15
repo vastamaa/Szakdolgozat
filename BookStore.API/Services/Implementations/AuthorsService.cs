@@ -23,13 +23,19 @@ namespace TestAPI.Services.Implementations
 
         public async Task<int> AddAuthorAsync(AuthorVM author)
         {
-            var _author = new Author()
-            {
-                Name = author.Name
-            };
+            var result = await _context.Authors.Where(a => a.Name == author.Name).FirstOrDefaultAsync();
 
-            await _context.Authors.AddAsync(_author);
-            return await _context.SaveChangesAsync();
+            if (result is null)
+            {
+                var _author = new Author()
+                {
+                    Name = author.Name
+                };
+
+                await _context.Authors.AddAsync(_author);
+                return await _context.SaveChangesAsync();
+            }
+            return 0;
         }
 
         public async Task<Author> UpdateAuthorAsync(int authorId, AuthorVM author)
@@ -46,7 +52,7 @@ namespace TestAPI.Services.Implementations
             return _author;
         }
 
-        public async Task DeleteAuthorAsync(int authorId)
+        public async Task<int> DeleteAuthorAsync(int authorId)
         {
             var author = await _context.Authors.FirstOrDefaultAsync(a => a.Id == authorId);
 
@@ -54,7 +60,9 @@ namespace TestAPI.Services.Implementations
             {
                 _context.Authors.Remove(author);
                 await _context.SaveChangesAsync();
+                return 1;
             }
+            return 0;
         }
     }
 }

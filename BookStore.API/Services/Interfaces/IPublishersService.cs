@@ -8,7 +8,7 @@ namespace TestAPI.Services.Implementations
     public interface IPublishersService
     {
         Task<int> AddPublisherAsync(PublisherVM publisher);
-        Task DeletePublisherAsync(int publisherId);
+        Task<int> DeletePublisherAsync(int publisherId);
         Task<IEnumerable<Publisher>> GetAllPublishersAsync();
         Task<Publisher> GetPublisherByIdAsync(int publisherId);
         Task<Publisher> UpdatePublisherAsync(int publisherId, PublisherVM publisher);

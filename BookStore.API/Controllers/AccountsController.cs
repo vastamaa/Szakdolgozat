@@ -1,5 +1,4 @@
 ﻿using BookStore.API.Models;
-using BookStore.API.Models.User;
 using BookStore.API.Repository;
 using BookStore.API.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
