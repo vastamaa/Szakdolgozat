@@ -11,6 +11,7 @@
     min-height: 80vh;
     align-items: center;
     padding: 20px;
+    position: relative;
 }
 .CartGrid{
     display: grid;
@@ -67,5 +68,49 @@
     font-weight: 600;
 }
 .DeleteButtonCart{
+    font-size: 18px;
+    padding: 5px 15px;
+    border: 0;
+    background-color: #af0808;
+    color: ghostwhite;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+    margin-top:-15px;
+}
+    .DeleteButtonCart:hover {
+        background-color: rgb(197, 103, 103);
+    }
+
+    .DeleteButtonCart:focus {
+        outline: none;
+    }
+.SummaryButton{
+    font-size: 21px;
+    padding: 5px 20px;
+    margin-left: 3%;
+    border: 0;
+    background-color: #af0808;
+    color: ghostwhite;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+    .SummaryButton:hover {
+        background-color: rgb(197, 103, 103);
+    }
+
+    .SummaryButton:focus {
+        outline: none;
+    }
+
+.Summary{
+    margin-top: 50px;
+    width: 50vh;
+    margin-left: 60%;
+    position: absolute;
+    bottom: .5%;
+}
+.Cancel{
     
 }

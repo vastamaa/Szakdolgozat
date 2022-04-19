@@ -35,7 +35,6 @@ export class ModalExample extends Component {
                 publisher:this.props.publisher,
                 year:this.props.publishingYear,
                 desc:this.props.desc
-
             }))
         }
     }
