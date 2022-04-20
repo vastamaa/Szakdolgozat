@@ -63,9 +63,9 @@ namespace BookStore.API.Controllers
 
             return Ok(new
             {
-                Token = result[0].Token,
-                RefreshToken = result[0].RefreshToken,
-                Expiration = result[0].Expiration
+                result[0].Token,
+                result[0].RefreshToken,
+                result[0].Expiration
             });
         }
 
@@ -78,9 +78,9 @@ namespace BookStore.API.Controllers
 
             return Ok(new
             {
-                Token = result[0].Token,
-                RefreshToken = result[0].RefreshToken,
-                Expiration = result[0].Expiration
+                result[0].Token,
+                result[0].RefreshToken,
+                result[0].Expiration
             });
         }
 

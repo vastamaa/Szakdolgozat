@@ -1,7 +1,7 @@
 ﻿using BookStore.API.DTOs;
+using BookStore.API.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using BookStore.API.Models;
 
 namespace BookStore.API.Services.Implementations
 {

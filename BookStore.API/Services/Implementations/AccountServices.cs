@@ -157,15 +157,15 @@ namespace BookStore.API.Repository
             return null;
         }
 
-        private string CreatePassword(int length)
+        private static string CreatePassword(int length)
         {
             const string lowerCase = "abcedfghijklmnopqrstuvwxyz";
             const string upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             const string numbers = "0123456789";
             const string nonAlphaChars = "!+-.$&#|/?";
 
-            StringBuilder res = new StringBuilder();
-            Random rnd = new Random();
+            StringBuilder res = new();
+            Random rnd = new();
             while (0 < length--)
             {
                 res.Append(lowerCase[rnd.Next(lowerCase.Length)]);

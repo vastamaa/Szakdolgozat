@@ -65,5 +65,6 @@ namespace BookStore.API.Data
         public DbSet<Author> Authors { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<Book_Author> Book_Authors { get; set; }
     }
 }

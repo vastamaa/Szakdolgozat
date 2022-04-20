@@ -12,10 +12,7 @@ namespace BookStore.API.Services.Implementations
     {
         private readonly AppDbContext _context;
 
-        public LanguagesService(AppDbContext context)
-        {
-            _context = context;
-        }
+        public LanguagesService(AppDbContext context) => _context = context;
 
         public async Task<IEnumerable<Language>> GetAllLanguagesAsync() => await _context.Languages.ToListAsync();
 

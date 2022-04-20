@@ -4,32 +4,26 @@ using BookStore.API.Services.Implementations;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace TestAPI.Controllers
+namespace BookStore.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class GenresController : ControllerBase
+    public class Books_AuthorsController : ControllerBase
     {
-        private readonly IGenresService _genresService;
+        private readonly IBook_AuthorService _book_AuthorsService;
 
-        public GenresController(IGenresService genresService)
-        {
-            _genresService = genresService;
-        }
+        public Books_AuthorsController(IBook_AuthorService book_AuthorsService) => _book_AuthorsService = book_AuthorsService;
 
         [HttpGet("")]
-        public async Task<IActionResult> GetAllStudents()
-        {
-            return Ok(await _genresService.GetAllGenresAsync());
-        }
+        public async Task<IActionResult> GetAllData() => Ok(await _book_AuthorsService.GetAllDataAsync());
 
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetGenresById(int id) { return Ok(await _genresService.GetGenreByIdAsync(id)); }
+        public async Task<IActionResult> GetDataById(int id) => Ok(await _book_AuthorsService.GetDataByIdAsync(id));
 
         [HttpPost("")]
-        public async Task<IActionResult> AddGenre([FromBody] GenreDto genre)
+        public async Task<IActionResult> AddData([FromBody] Book_AuthorDto data)
         {
-            var result = await _genresService.AddGenreAsync(genre);
+            var result = await _book_AuthorsService.AddDataAsync(data);
 
             if (result == 0)
             {
@@ -40,9 +34,9 @@ namespace TestAPI.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateGenreById(int id, [FromBody] GenreDto genre)
+        public async Task<IActionResult> UpdateDataById(int id, [FromBody] Book_AuthorDto data)
         {
-            var result = await _genresService.UpdateGenreAsync(id, genre);
+            var result = await _book_AuthorsService.UpdateDataAsync(id, data);
 
             if (result is null)
             {
@@ -53,9 +47,9 @@ namespace TestAPI.Controllers
         }
 
         [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteGenreById(int id)
+        public async Task<IActionResult> DeleteDataById(int id)
         {
-            var result = await _genresService.DeleteGenreAsync(id);
+            var result = await _book_AuthorsService.DeleteDataAsync(id);
 
             if (result > 0)
             {

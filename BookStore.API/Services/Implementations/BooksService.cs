@@ -12,11 +12,9 @@ namespace BookStore.API.Services.Implementations
     {
         private readonly AppDbContext _context;
 
-        public BooksService(AppDbContext context)
-        {
-            _context = context;
-            _context.ChangeTracker.LazyLoadingEnabled = false;
-        }
+        public BooksService(AppDbContext context) => _context = context;
+
+        //_context.ChangeTracker.LazyLoadingEnabled = false;
 
         public async Task<IEnumerable<BookWithEverythingDto>> GetAllBooksAsync()
         {

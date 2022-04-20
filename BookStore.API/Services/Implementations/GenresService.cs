@@ -12,10 +12,7 @@ namespace BookStore.API.Services.Implementations
     {
         private readonly AppDbContext _context;
 
-        public GenresService(AppDbContext context)
-        {
-            _context = context;
-        }
+        public GenresService(AppDbContext context) => _context = context;
 
         public async Task<IEnumerable<Genre>> GetAllGenresAsync() => await _context.Genres.ToListAsync();
 

@@ -12,10 +12,7 @@ namespace BookStore.API.Services.Implementations
     {
         private readonly AppDbContext _context;
 
-        public AuthorsService(AppDbContext context)
-        {
-            _context = context;
-        }
+        public AuthorsService(AppDbContext context) => _context = context;
 
         public async Task<IEnumerable<Author>> GetAllAuthorsAsync() => await _context.Authors.ToListAsync();
 

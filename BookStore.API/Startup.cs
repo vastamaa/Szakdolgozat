@@ -23,10 +23,7 @@ namespace BookStore.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        public Startup(IConfiguration configuration) => Configuration = configuration;
 
         public IConfiguration Configuration { get; }
 
@@ -83,6 +80,7 @@ namespace BookStore.API
             services.AddTransient<IGenresService, GenresService>();
             services.AddTransient<ILanguagesService, LanguagesService>();
             services.AddTransient<IAccountService, AccountService>();
+            services.AddTransient<IBook_AuthorService, Book_AuthorService>();
             services.AddTransient<ITokenService, TokenService>();
             services.AddTransient<IMailService, MailService>();
 
@@ -116,10 +114,8 @@ namespace BookStore.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
+
             else
             {
                 app.UseExceptionHandler("/Error");
@@ -150,10 +146,7 @@ namespace BookStore.API
             {
                 spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseReactDevelopmentServer(npmScript: "start");
-                }
+                if (env.IsDevelopment()) spa.UseReactDevelopmentServer(npmScript: "start");
             });
         }
     }

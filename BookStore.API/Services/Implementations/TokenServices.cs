@@ -15,10 +15,7 @@ namespace BookStore.API.Repository.Implementations
     {
         private readonly JwtConfig _jwtConfig;
 
-        public TokenService(IOptions<JwtConfig> options)
-        {
-            _jwtConfig = options.Value;
-        }
+        public TokenService(IOptions<JwtConfig> options) => _jwtConfig = options.Value;
 
         public JwtSecurityToken GetToken(List<Claim> authClaims)
         {

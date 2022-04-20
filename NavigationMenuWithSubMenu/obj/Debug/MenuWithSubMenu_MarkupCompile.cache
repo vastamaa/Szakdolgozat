@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\
+F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\
 MenuWithSubMenu
 none
 false
 DEBUG;TRACE
-C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\App.xaml
-29-438369675
+F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\App.xaml
+29348949130
 
-46724528405
-14-999010257
+461220148999
+14-622456121
 CustomControl\MenuWithSubMenuControl.xaml;Login.xaml;MainWindow.xaml;Pages\AddAuthor.xaml;Pages\AddGenre.xaml;Pages\AddLanguage.xaml;Pages\AddPublisher.xaml;Pages\AddUser.xaml;Pages\AuthorManagement.xaml;Pages\Dashboard.xaml;Pages\DeleteAuthor.xaml;Pages\DeleteGenre.xaml;Pages\DeleteLanguage.xaml;Pages\DeletePublisher.xaml;Pages\DeleteUser.xaml;Pages\AddBook.xaml;Pages\BookManagement.xaml;Pages\EditAuthor.xaml;Pages\EditGenre.xaml;Pages\EditLanguage.xaml;Pages\EditPublisher.xaml;Pages\EditUser.xaml;Pages\EditBook.xaml;Pages\GenreManagement.xaml;Pages\LanguageManagement.xaml;Pages\PublisherManagement.xaml;Pages\UserManagement.xaml;Pages\DeleteBook.xaml;Pages\Settings.xaml;
 
 False
