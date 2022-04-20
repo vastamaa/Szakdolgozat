@@ -227,7 +227,6 @@ F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddAu
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddGenre.g.cs
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddLanguage.g.cs
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddPublisher.g.cs
-F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddUser.g.cs
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AuthorManagement.g.cs
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\Dashboard.g.cs
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\DeleteAuthor.g.cs
@@ -248,7 +247,6 @@ F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\Langu
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\PublisherManagement.g.cs
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\UserManagement.g.cs
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\DeleteBook.g.cs
-F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\Settings.g.cs
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\App.g.cs
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\GeneratedInternalTypeHelper.g.cs
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu_MarkupCompile.cache
@@ -260,7 +258,6 @@ F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddAu
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddGenre.baml
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddLanguage.baml
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddPublisher.baml
-F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddUser.baml
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AuthorManagement.baml
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\Dashboard.baml
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\DeleteAuthor.baml
@@ -281,7 +278,6 @@ F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\Langu
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\PublisherManagement.baml
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\UserManagement.baml
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\DeleteBook.baml
-F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\Settings.baml
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.g.resources
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.Properties.Resources.resources
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.csproj.GenerateResource.cache
@@ -289,3 +285,11 @@ F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSub
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.csproj.CopyComplete
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.exe
 F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.pdb
+F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\DataManagement.g.cs
+F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\DataManagement.baml
+F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddData.g.cs
+F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\DeleteData.g.cs
+F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\EditData.g.cs
+F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\AddData.baml
+F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\DeleteData.baml
+F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Pages\EditData.baml

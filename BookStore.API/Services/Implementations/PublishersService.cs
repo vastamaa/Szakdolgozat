@@ -41,12 +41,18 @@ namespace BookStore.API.Services.Implementations
         public async Task<Publisher> UpdatePublisherAsync(int publisherId, PublisherDto publisher)
         {
             var _publisher = await _context.Publishers.FirstOrDefaultAsync(p => p.Id == publisherId);
+            var contains = await _context.Publishers.FirstOrDefaultAsync(p => p.Name == publisher.Name);
 
-            if (_publisher is not null)
+            if (contains is null)
             {
-                _publisher.Name = publisher.Name;
+                if (_publisher is not null)
+                {
+                    _publisher.Name = publisher.Name;
 
-                await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
+                }
+
+                return null;
             }
 
             return _publisher;

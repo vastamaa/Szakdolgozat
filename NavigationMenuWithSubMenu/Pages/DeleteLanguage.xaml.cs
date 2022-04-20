@@ -10,10 +10,7 @@ namespace MenuWithSubMenu.Pages
     /// </summary>
     public partial class DeleteLanguage : Page
     {
-        public DeleteLanguage()
-        {
-            InitializeComponent();
-        }
+        public DeleteLanguage() => InitializeComponent();
 
         private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {

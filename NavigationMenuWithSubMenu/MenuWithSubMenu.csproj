@@ -61,6 +61,7 @@
     <Compile Include="DTOs\AuthorDto.cs" />
     <Compile Include="DTOs\BookDto.cs" />
     <Compile Include="DTOs\BookWithEverythingDto.cs" />
+    <Compile Include="DTOs\Book_AuthorDto.cs" />
     <Compile Include="DTOs\GenreDto.cs" />
     <Compile Include="DTOs\LanguageDto.cs" />
     <Compile Include="DTOs\PublisherDto.cs" />
@@ -74,6 +75,9 @@
     <Compile Include="Pages\AddAuthor.xaml.cs">
       <DependentUpon>AddAuthor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddData.xaml.cs">
+      <DependentUpon>AddData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddGenre.xaml.cs">
       <DependentUpon>AddGenre.xaml</DependentUpon>
     </Compile>
@@ -86,8 +90,14 @@
     <Compile Include="Pages\AuthorManagement.xaml.cs">
       <DependentUpon>AuthorManagement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\DataManagement.xaml.cs">
+      <DependentUpon>DataManagement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DeleteAuthor.xaml.cs">
       <DependentUpon>DeleteAuthor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DeleteData.xaml.cs">
+      <DependentUpon>DeleteData.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\DeleteGenre.xaml.cs">
       <DependentUpon>DeleteGenre.xaml</DependentUpon>
@@ -103,6 +113,9 @@
     </Compile>
     <Compile Include="Pages\EditAuthor.xaml.cs">
       <DependentUpon>EditAuthor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditData.xaml.cs">
+      <DependentUpon>EditData.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EditGenre.xaml.cs">
       <DependentUpon>EditGenre.xaml</DependentUpon>
@@ -152,6 +165,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddGenre.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,10 +181,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\AddUser.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\AuthorManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,7 +189,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Pages\DataManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DeleteAuthor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\DeleteData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,6 +226,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\EditAuthor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditData.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -248,15 +273,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\Settings.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\AddUser.xaml.cs">
-      <DependentUpon>AddUser.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
@@ -277,9 +295,6 @@
     </Compile>
     <Compile Include="Pages\DeleteBook.xaml.cs">
       <DependentUpon>DeleteBook.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Settings.xaml.cs">
-      <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

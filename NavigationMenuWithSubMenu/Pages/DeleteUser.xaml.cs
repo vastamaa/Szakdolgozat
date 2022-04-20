@@ -10,10 +10,7 @@ namespace MenuWithSubMenu.Pages
     /// </summary>
     public partial class DeleteUser : Page
     {
-        public DeleteUser()
-        {
-            InitializeComponent();
-        }
+        public DeleteUser() => InitializeComponent();
 
         private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {

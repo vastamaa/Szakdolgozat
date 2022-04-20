@@ -10,10 +10,7 @@ namespace MenuWithSubMenu.Pages
     /// </summary>
     public partial class AddAuthor : Page
     {
-        public AddAuthor()
-        {
-            InitializeComponent();
-        }
+        public AddAuthor() => InitializeComponent();
 
         private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {

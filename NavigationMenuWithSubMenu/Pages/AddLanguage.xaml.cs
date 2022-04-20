@@ -10,10 +10,7 @@ namespace MenuWithSubMenu.Pages
     /// </summary>
     public partial class AddLanguage : Page
     {
-        public AddLanguage()
-        {
-            InitializeComponent();
-        }
+        public AddLanguage() => InitializeComponent();
 
         private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {

@@ -38,12 +38,18 @@ namespace BookStore.API.Services.Implementations
         public async Task<Genre> UpdateGenreAsync(int genreId, GenreDto genre)
         {
             var _genre = await _context.Genres.FirstOrDefaultAsync(b => b.Id == genreId);
+            var contains = await _context.Publishers.FirstOrDefaultAsync(b => b.Name == genre.Name);
 
-            if (_genre is not null)
+            if (contains is null)
             {
-                _genre.Name = genre.Name;
 
-                await _context.SaveChangesAsync();
+                if (_genre is not null)
+                {
+                    _genre.Name = genre.Name;
+
+                    await _context.SaveChangesAsync();
+                }
+                return null;
             }
 
             return _genre;

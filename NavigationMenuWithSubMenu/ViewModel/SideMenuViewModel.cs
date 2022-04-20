@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace MenuWithSubMenu
 {
@@ -24,7 +23,6 @@ namespace MenuWithSubMenu
                     
                     //SubMenu Button
                     , SubMenuList=new List<SubMenuItemsData>{
-                    new SubMenuItemsData(){ SubMenuText="Add user" },
                     new SubMenuItemsData(){ SubMenuText="Edit user" },
                     new SubMenuItemsData(){ SubMenuText="Delete user" }}
                     },
@@ -74,8 +72,14 @@ namespace MenuWithSubMenu
                     new SubMenuItemsData(){ SubMenuText="Edit publisher" },
                     new SubMenuItemsData(){ SubMenuText="Delete publisher" }}},
 
-                    //MainMenu without SubMenu Button
-                    new MenuItemsData(){ MenuText="Settings", SubMenuList=null}
+                    //MainMenu Button
+                    new MenuItemsData(){ MenuText="Data management"
+
+                    //SubMenu Button
+                    , SubMenuList=new List<SubMenuItemsData>{
+                    new SubMenuItemsData(){ SubMenuText="Add data" },
+                    new SubMenuItemsData(){ SubMenuText="Edit data" },
+                    new SubMenuItemsData(){ SubMenuText="Delete data" }}},
                 };
             }
         }

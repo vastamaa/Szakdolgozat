@@ -1,16 +1,18 @@
-﻿
+﻿F:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\GeneratedInternalTypeHelper.g.cs
 
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\CustomControl\MenuWithSubMenuControl.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Login.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\MainWindow.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\AddAuthor.xaml;;
+FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\AddData.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\AddGenre.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\AddLanguage.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\AddPublisher.xaml;;
-FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\AddUser.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\AuthorManagement.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\Dashboard.xaml;;
+FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\DataManagement.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\DeleteAuthor.xaml;;
+FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\DeleteData.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\DeleteGenre.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\DeleteLanguage.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\DeletePublisher.xaml;;
@@ -18,6 +20,7 @@ FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\DeleteUser.xam
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\AddBook.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\BookManagement.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\EditAuthor.xaml;;
+FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\EditData.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\EditGenre.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\EditLanguage.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\EditPublisher.xaml;;
@@ -28,5 +31,4 @@ FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\LanguageManage
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\PublisherManagement.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\UserManagement.xaml;;
 FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\DeleteBook.xaml;;
-FF:\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\Pages\Settings.xaml;;
 

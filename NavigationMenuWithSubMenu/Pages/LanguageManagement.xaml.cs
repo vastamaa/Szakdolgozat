@@ -15,8 +15,6 @@ namespace MenuWithSubMenu.Pages
             GetData();
         }
         private async void GetData()
-        {
-            DataGrid.ItemsSource = await RestClient.MyGetAsync<IEnumerable<LanguageDto>>("api/languages");
-        }
+        => DataGrid.ItemsSource = await RestClient.MyGetAsync<IEnumerable<LanguageDto>>("api/languages");
     }
 }

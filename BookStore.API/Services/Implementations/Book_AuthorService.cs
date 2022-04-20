@@ -14,9 +14,9 @@ namespace BookStore.API.Services.Implementations
 
         public Book_AuthorService(AppDbContext context) => _context = context;
 
-        public async Task<IEnumerable<Book_Author>> GetAllDataAsync() => await _context.Book_Authors.ToListAsync();
+        public async Task<IEnumerable<Book_Author>> GetAllDataAsync() => await _context.Book_Author.ToListAsync();
 
-        public async Task<Book_Author> GetDataByIdAsync(int id) => await _context.Book_Authors.Where(d => d.Id == id).Select(data => new Book_Author()
+        public async Task<Book_Author> GetDataByIdAsync(int id) => await _context.Book_Author.Where(d => d.Id == id).Select(data => new Book_Author()
         {
             Id = data.Id,
             BookId = data.BookId,
@@ -35,13 +35,13 @@ namespace BookStore.API.Services.Implementations
                 LanguageId = books_AuthorsDto.LanguageId
             };
 
-            await _context.Book_Authors.AddAsync(_data);
+            await _context.Book_Author.AddAsync(_data);
             return await _context.SaveChangesAsync();
         }
 
         public async Task<Book_Author> UpdateDataAsync(int id, Book_AuthorDto book_AuthorDto)
         {
-            var _data = await _context.Book_Authors.FirstOrDefaultAsync(d => d.Id == id);
+            var _data = await _context.Book_Author.FirstOrDefaultAsync(d => d.Id == id);
 
             if (_data is not null)
             {
@@ -56,11 +56,11 @@ namespace BookStore.API.Services.Implementations
 
         public async Task<int> DeleteDataAsync(int id)
         {
-            var data = await _context.Book_Authors.FirstOrDefaultAsync(l => l.Id == id);
+            var data = await _context.Book_Author.FirstOrDefaultAsync(l => l.Id == id);
 
             if (data is not null)
             {
-                _context.Book_Authors.Remove(data);
+                _context.Book_Author.Remove(data);
                 await _context.SaveChangesAsync();
                 return 1;
             }

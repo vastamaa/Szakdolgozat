@@ -7,9 +7,6 @@ namespace MenuWithSubMenu.Pages
     /// </summary>
     public partial class EditUser : Page
     {
-        public EditUser()
-        {
-            InitializeComponent();
-        }
+        public EditUser() => InitializeComponent();
     }
 }

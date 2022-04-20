@@ -1,18 +1,19 @@
 ﻿using MenuWithSubMenu.Models;
 using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace MenuWithSubMenu.Pages
 {
     /// <summary>
-    /// Interaction logic for DeleteGenre.xaml
+    /// Interaction logic for DeleteData.xaml
     /// </summary>
-    public partial class DeleteGenre : Page
+    public partial class DeleteData : Page
     {
-        public DeleteGenre() => InitializeComponent();
+        public DeleteData() => InitializeComponent();
 
-        private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -23,7 +24,7 @@ namespace MenuWithSubMenu.Pages
                 }
                 else
                 {
-                    var result = await RestClient.MyDeleteAsync<ResponseModel>($"api/genres/{tb.Text}");
+                    var result = await RestClient.MyDeleteAsync<ResponseModel>($"api/books_authors/{tb.Text}");
 
                     if (result.Status.Contains("Error!"))
                     {

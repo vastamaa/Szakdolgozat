@@ -11,10 +11,7 @@ namespace MenuWithSubMenu.Pages
     /// </summary>
     public partial class DeletePublisher : Page
     {
-        public DeletePublisher()
-        {
-            InitializeComponent();
-        }
+        public DeletePublisher() => InitializeComponent();
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {

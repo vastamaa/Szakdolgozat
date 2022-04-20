@@ -7,9 +7,6 @@ namespace MenuWithSubMenu.Pages
     /// </summary>
     public partial class AddBook : Page
     {
-        public AddBook()
-        {
-            InitializeComponent();
-        }
+        public AddBook() => InitializeComponent();
     }
 }

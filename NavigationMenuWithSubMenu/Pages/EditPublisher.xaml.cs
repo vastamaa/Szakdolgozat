@@ -11,10 +11,7 @@ namespace MenuWithSubMenu.Pages
     /// </summary>
     public partial class EditPublisher : Page
     {
-        public EditPublisher()
-        {
-            InitializeComponent();
-        }
+        public EditPublisher() => InitializeComponent();
 
         private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {

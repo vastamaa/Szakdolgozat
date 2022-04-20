@@ -12,10 +12,7 @@ namespace MenuWithSubMenu.Pages
     /// </summary>
     public partial class AddPublisher : Page
     {
-        public AddPublisher()
-        {
-            InitializeComponent();
-        }
+        public AddPublisher() => InitializeComponent();
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {

@@ -14,9 +14,6 @@ namespace MenuWithSubMenu.Pages
             InitializeComponent();
             GetData();
         }
-        private async void GetData()
-        {
-            DataGrid.ItemsSource = await RestClient.MyGetAsync<IEnumerable<GenreDto>>("api/genres");
-        }
+        private async void GetData() => DataGrid.ItemsSource = await RestClient.MyGetAsync<IEnumerable<GenreDto>>("api/genres");
     }
 }

@@ -16,8 +16,6 @@ namespace MenuWithSubMenu.Pages
         }
 
         private async void GetData()
-        {
-            DataGrid.ItemsSource = await RestClient.MyGetAsync<IEnumerable<PublisherDto>>("api/publishers");
-        }
+        => DataGrid.ItemsSource = await RestClient.MyGetAsync<IEnumerable<PublisherDto>>("api/publishers");
     }
 }

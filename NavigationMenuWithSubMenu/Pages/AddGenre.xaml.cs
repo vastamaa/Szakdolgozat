@@ -11,10 +11,7 @@ namespace MenuWithSubMenu.Pages
     /// </summary>
     public partial class AddGenre : Page
     {
-        public AddGenre()
-        {
-            InitializeComponent();
-        }
+        public AddGenre() => InitializeComponent();
 
         private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
