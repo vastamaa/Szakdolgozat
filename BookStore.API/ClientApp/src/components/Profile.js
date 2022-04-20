@@ -33,7 +33,6 @@ export class Profile extends Component {
                     body: JSON.stringify({ "password": password, "email": this.state.emailAddress })
                 });
             const data = await response.json();
-            console.log(data);
         } catch (e) {
             alert("Can't Request:" + e)
         }
@@ -42,7 +41,6 @@ export class Profile extends Component {
 
     componentDidMount() {
         var data = getData();
-        console.log(data)
         if (data != undefined) {
             this.setState({
                 userName: data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
@@ -55,16 +53,8 @@ export class Profile extends Component {
 
     render() {
         function FadePw() {
-            let formshow = document.getElementById("UsernameText")
             let formshowpw = document.getElementById("PasswordText")
             formshowpw.classList.toggle('fade');
-            formshow.classList.remove('fade');
-        }
-        function FadeUser() {
-            let formshow = document.getElementById("UsernameText")
-            let formshowpw = document.getElementById("PasswordText")
-            formshowpw.classList.remove('fade');
-            formshow.classList.toggle('fade');
         }
         return (
             <div className="ProfileContainer">
@@ -95,18 +85,6 @@ export class Profile extends Component {
                         </div>
                         <div>
                             <button type="submit" className="login-btn" id="passwordSubmit">Change my password!</button>
-                        </div>
-                    </form>
-
-                    <button className="UsernameChange" onClick={FadeUser}>Username change</button>
-                    <form id="UsernameText">
-                        <div className="UsernameChangeForm">
-                            <label className='change-label' htmlFor='userName'>Username</label>
-                            <input className='change-input' type="text" name='userName' placeholder='Enter your username' onInvalid={usernNameChange} id="userName" onChange={usernNameChange} required></input>
-                            <label htmlFor="userName" className='none' id='usernameerr' >&#09;Must contain atleast 6 characters</label>
-                        </div>
-                        <div>
-                            <button type="submit" className="login-btn" id="userSubmit">Change my Username!</button>
                         </div>
                     </form>
                 </div>

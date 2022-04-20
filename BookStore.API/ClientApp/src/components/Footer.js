@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { ScrollToTop } from './ScrollToTop';
 import "./styleFooter.css";
 
 export class Footer extends Component {
@@ -8,23 +7,21 @@ export class Footer extends Component {
             <div className="Footer-Box">
                 <div className="Footer-Container">
                     <div className="Footer-Row">
-                        <div className="Footer-Column">
-                            <p className="Footer-Heading">About Us</p>
-                            <a className="Footer-Link" href="#">Aim</a>
-                            <a className="Footer-Link" href="#">Vision</a>
-                            <a className="Footer-Link" href="#">Testimonials</a>
+                    <div className="Footer-Column">
+                            <p className="Footer-Heading">Partners</p>
+                            <a className="Footer-Link" href="#">Stackoverflow</a>
+                            <a className="Footer-Link" href="#">Indian guys from Youtube</a>
+                            <a className="Footer-Link" href="#">Random Strangers On the internet</a>
                         </div>
                         <div className="Footer-Column">
-                            <p className="Footer-Heading">Services</p>
-                            <a className="Footer-Link" href="#">Writing</a>
-                            <a className="Footer-Link" href="#">Shipping</a>
-                            <a className="Footer-Link" href="#">Transactions</a>
+                            <p className="Footer-Heading">Rights</p>
+                            <p>All rights are reserved by local community members</p>
                         </div>
                         <div className="Footer-Column">
                             <p className="Footer-Heading">Contact Us</p>
-                            <a className="Footer-Link" href="#">Name</a>
-                            <a className="Footer-Link" href="#">Name1</a>
-                            <a className="Footer-Link" href="#">Name2</a>
+                            <a className="Footer-Link" href="#">Vaskó-Szedlár Tamás</a>
+                            <a className="Footer-Link" href="#">Almási Milán</a>
+                            <a className="Footer-Link" href="#">Váradi Nikoletta Brigitta</a>
                         </div>
                     </div>
                 </div>

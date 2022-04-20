@@ -83,7 +83,6 @@ export class Books extends Component {
             const data = await response.json();
             this.setState({ books: data, loading: false });
         } catch (e) {
-            console.log(`A lekerdezes nem sikerult: ${e}`)
         }
 
     }
