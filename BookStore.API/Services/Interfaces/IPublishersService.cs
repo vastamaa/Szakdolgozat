@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using BookStore.API.DTOs;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using TestAPI.Models;
-using TestAPI.ViewModels;
+using BookStore.API.Models;
 
-namespace TestAPI.Services.Implementations
+namespace BookStore.API.Services.Implementations
 {
     public interface IPublishersService
     {
-        Task<int> AddPublisherAsync(PublisherVM publisher);
+        Task<int> AddPublisherAsync(PublisherDto publisher);
         Task<int> DeletePublisherAsync(int publisherId);
         Task<IEnumerable<Publisher>> GetAllPublishersAsync();
         Task<Publisher> GetPublisherByIdAsync(int publisherId);
-        Task<Publisher> UpdatePublisherAsync(int publisherId, PublisherVM publisher);
+        Task<Publisher> UpdatePublisherAsync(int publisherId, PublisherDto publisher);
     }
 }

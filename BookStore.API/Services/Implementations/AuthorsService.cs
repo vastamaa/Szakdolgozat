@@ -1,12 +1,12 @@
 ﻿using BookStore.API.Data;
+using BookStore.API.DTOs;
+using BookStore.API.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TestAPI.Models;
-using TestAPI.ViewModels;
 
-namespace TestAPI.Services.Implementations
+namespace BookStore.API.Services.Implementations
 {
     public class AuthorsService : IAuthorsService
     {
@@ -21,7 +21,7 @@ namespace TestAPI.Services.Implementations
 
         public async Task<Author> GetAuthorByIdAsync(int authorId) => await _context.Authors.Where(a => a.Id == authorId).FirstOrDefaultAsync();
 
-        public async Task<int> AddAuthorAsync(AuthorVM author)
+        public async Task<int> AddAuthorAsync(AuthorDto author)
         {
             var result = await _context.Authors.Where(a => a.Name == author.Name).FirstOrDefaultAsync();
 
@@ -38,7 +38,7 @@ namespace TestAPI.Services.Implementations
             return 0;
         }
 
-        public async Task<Author> UpdateAuthorAsync(int authorId, AuthorVM author)
+        public async Task<Author> UpdateAuthorAsync(int authorId, AuthorDto author)
         {
             var _author = await _context.Authors.FirstOrDefaultAsync(a => a.Id == authorId);
 

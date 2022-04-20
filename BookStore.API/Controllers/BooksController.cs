@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using TestAPI.Services.Implementations;
-using TestAPI.ViewModels;
+using BookStore.API.Services.Implementations;
+using BookStore.API.DTOs;
 
 namespace TestAPI.Controllers
 {
@@ -38,7 +38,7 @@ namespace TestAPI.Controllers
 
         //POST: /api/books
         [HttpPost("")]
-        public async Task<IActionResult> AddBook([FromBody] BookVM book)
+        public async Task<IActionResult> AddBook([FromBody] BookDto book)
         {
             var result = await _booksService.AddBookWithAuthorsAsync(book);
 
@@ -52,7 +52,7 @@ namespace TestAPI.Controllers
 
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateBookById(int id, [FromBody] BookVM book)
+        public async Task<IActionResult> UpdateBookById(int id, [FromBody] BookDto book)
         {
             var result = await _booksService.UpdateBookAsync(id, book);
 

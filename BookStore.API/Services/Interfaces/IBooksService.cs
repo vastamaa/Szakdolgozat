@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using BookStore.API.DTOs;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using TestAPI.Models;
-using TestAPI.ViewModels;
+using BookStore.API.Models;
 
-namespace TestAPI.Services.Implementations
+namespace BookStore.API.Services.Implementations
 {
     public interface IBooksService
     {
-        Task<IEnumerable<BookWithEverythingVM>> GetAllBooksAsync();
-        Task<List<BookWithEverythingVM>> GetBooksByGenreAsync(string genreName);
-        Task<int> AddBookWithAuthorsAsync(BookVM book);
-        Task<Book> UpdateBookAsync(int bookId, BookVM book);
+        Task<IEnumerable<BookWithEverythingDto>> GetAllBooksAsync();
+        Task<List<BookWithEverythingDto>> GetBooksByGenreAsync(string genreName);
+        Task<int> AddBookWithAuthorsAsync(BookDto book);
+        Task<Book> UpdateBookAsync(int bookId, BookDto book);
         Task DeleteBookAsync(int bookId);
     }
 }

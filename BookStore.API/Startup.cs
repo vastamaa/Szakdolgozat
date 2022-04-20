@@ -18,7 +18,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Text;
-using TestAPI.Services.Implementations;
 
 namespace BookStore.API
 {

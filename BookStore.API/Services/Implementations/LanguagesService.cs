@@ -1,12 +1,12 @@
 ﻿using BookStore.API.Data;
+using BookStore.API.DTOs;
+using BookStore.API.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TestAPI.Models;
-using TestAPI.ViewModels;
 
-namespace TestAPI.Services.Implementations
+namespace BookStore.API.Services.Implementations
 {
     public class LanguagesService : ILanguagesService
     {
@@ -21,7 +21,7 @@ namespace TestAPI.Services.Implementations
 
         public async Task<Language> GetLanguageByIdAsync(int languageId) => await _context.Languages.Where(l => l.Id == languageId).FirstOrDefaultAsync();
 
-        public async Task<int> AddLanguageAsync(LanguageVM language)
+        public async Task<int> AddLanguageAsync(LanguageDto language)
         {
             var result = await _context.Languages.Where(l => l.Name == language.Name).FirstOrDefaultAsync();
 
@@ -38,7 +38,7 @@ namespace TestAPI.Services.Implementations
             return 0;
         }
 
-        public async Task<Language> UpdateLanguageAsync(int languageId, LanguageVM language)
+        public async Task<Language> UpdateLanguageAsync(int languageId, LanguageDto language)
         {
             var _language = await _context.Languages.FirstOrDefaultAsync(l => l.Id == languageId);
 

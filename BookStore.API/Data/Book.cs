@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TestAPI.Models
+namespace BookStore.API.Models
 {
     public class Book
     {

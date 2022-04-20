@@ -1,8 +1,8 @@
-﻿using BookStore.API.Models;
+﻿using BookStore.API.DTOs;
+using BookStore.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using TestAPI.Services.Implementations;
-using TestAPI.ViewModels;
+using BookStore.API.Services.Implementations;
 
 namespace TestAPI.Controllers
 {
@@ -27,7 +27,7 @@ namespace TestAPI.Controllers
         public async Task<IActionResult> GetPublisherById(int id) { return Ok(await _publishersService.GetPublisherByIdAsync(id)); }
 
         [HttpPost("")]
-        public async Task<IActionResult> AddPublisher([FromBody] PublisherVM publisher)
+        public async Task<IActionResult> AddPublisher([FromBody] PublisherDto publisher)
         {
             var result = await _publishersService.AddPublisherAsync(publisher);
 
@@ -40,7 +40,7 @@ namespace TestAPI.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdatePublisherById(int id, [FromBody] PublisherVM publisher)
+        public async Task<IActionResult> UpdatePublisherById(int id, [FromBody] PublisherDto publisher)
         {
             var result = await _publishersService.UpdatePublisherAsync(id, publisher);
 

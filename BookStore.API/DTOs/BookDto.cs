@@ -1,6 +1,6 @@
-﻿namespace TestAPI.ViewModels
+﻿namespace BookStore.API.DTOs
 {
-    public class BookVM
+    public class BookDto
     {
         public string Title { get; set; }
         public string Description { get; set; }

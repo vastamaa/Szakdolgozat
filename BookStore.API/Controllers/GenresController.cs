@@ -1,8 +1,8 @@
-﻿using BookStore.API.Models;
+﻿using BookStore.API.DTOs;
+using BookStore.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using TestAPI.Services.Implementations;
-using TestAPI.ViewModels;
+using BookStore.API.Services.Implementations;
 
 namespace TestAPI.Controllers
 {
@@ -27,7 +27,7 @@ namespace TestAPI.Controllers
         public async Task<IActionResult> GetGenresById(int id) { return Ok(await _genresService.GetGenreByIdAsync(id)); }
 
         [HttpPost("")]
-        public async Task<IActionResult> AddGenre([FromBody] GenreVM genre)
+        public async Task<IActionResult> AddGenre([FromBody] GenreDto genre)
         {
             var result = await _genresService.AddGenreAsync(genre);
 
@@ -40,7 +40,7 @@ namespace TestAPI.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateGenreById(int id, [FromBody] GenreVM genre)
+        public async Task<IActionResult> UpdateGenreById(int id, [FromBody] GenreDto genre)
         {
             var result = await _genresService.UpdateGenreAsync(id, genre);
 

@@ -1,12 +1,12 @@
 ﻿using BookStore.API.Data;
+using BookStore.API.DTOs;
+using BookStore.API.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TestAPI.Models;
-using TestAPI.ViewModels;
 
-namespace TestAPI.Services.Implementations
+namespace BookStore.API.Services.Implementations
 {
     public class BooksService : IBooksService
     {
@@ -18,9 +18,9 @@ namespace TestAPI.Services.Implementations
             _context.ChangeTracker.LazyLoadingEnabled = false;
         }
 
-        public async Task<IEnumerable<BookWithEverythingVM>> GetAllBooksAsync()
+        public async Task<IEnumerable<BookWithEverythingDto>> GetAllBooksAsync()
         {
-            var _books = await _context.Books.Select(book => new BookWithEverythingVM()
+            var _books = await _context.Books.Select(book => new BookWithEverythingDto()
             {
                 Id = book.Id,
                 Title = book.Title,
@@ -39,9 +39,9 @@ namespace TestAPI.Services.Implementations
             return _books;
         }
 
-        public async Task<List<BookWithEverythingVM>> GetBooksByGenreAsync(string genreName)
+        public async Task<List<BookWithEverythingDto>> GetBooksByGenreAsync(string genreName)
         {
-            var _bookWithAuthors = await _context.Books.Where(b => b.Book_Authors.Select(n => n.Genre.Name).FirstOrDefault() == genreName).Select(book => new BookWithEverythingVM()
+            var _bookWithAuthors = await _context.Books.Where(b => b.Book_Authors.Select(n => n.Genre.Name).FirstOrDefault() == genreName).Select(book => new BookWithEverythingDto()
             {
                 Id = book.Id,
                 Title = book.Title,
@@ -60,7 +60,7 @@ namespace TestAPI.Services.Implementations
             return _bookWithAuthors;
         }
 
-        public async Task<int> AddBookWithAuthorsAsync(BookVM book)
+        public async Task<int> AddBookWithAuthorsAsync(BookDto book)
         {
             var _book = new Book()
             {
@@ -78,7 +78,7 @@ namespace TestAPI.Services.Implementations
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<Book> UpdateBookAsync(int bookId, BookVM book)
+        public async Task<Book> UpdateBookAsync(int bookId, BookDto book)
         {
             var _book = await _context.Books.FirstOrDefaultAsync(b => b.Id == bookId);
 

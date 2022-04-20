@@ -1,12 +1,12 @@
 ﻿using BookStore.API.Data;
+using BookStore.API.DTOs;
+using BookStore.API.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TestAPI.Models;
-using TestAPI.ViewModels;
 
-namespace TestAPI.Services.Implementations
+namespace BookStore.API.Services.Implementations
 {
     public class GenresService : IGenresService
     {
@@ -21,7 +21,7 @@ namespace TestAPI.Services.Implementations
 
         public async Task<Genre> GetGenreByIdAsync(int genreId) => await _context.Genres.Where(g => g.Id == genreId).FirstOrDefaultAsync();
 
-        public async Task<int> AddGenreAsync(GenreVM genre)
+        public async Task<int> AddGenreAsync(GenreDto genre)
         {
             var result = await _context.Genres.Where(g => g.Name == genre.Name).FirstOrDefaultAsync();
 
@@ -38,7 +38,7 @@ namespace TestAPI.Services.Implementations
             return 0;
         }
 
-        public async Task<Genre> UpdateGenreAsync(int genreId, GenreVM genre)
+        public async Task<Genre> UpdateGenreAsync(int genreId, GenreDto genre)
         {
             var _genre = await _context.Genres.FirstOrDefaultAsync(b => b.Id == genreId);
 

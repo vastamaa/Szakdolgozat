@@ -1,8 +1,8 @@
-﻿using BookStore.API.Models;
+﻿using BookStore.API.DTOs;
+using BookStore.API.Models;
+using BookStore.API.Services.Implementations;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using TestAPI.Services.Implementations;
-using TestAPI.ViewModels;
 
 namespace TestAPI.Controllers
 {
@@ -27,7 +27,7 @@ namespace TestAPI.Controllers
         public async Task<IActionResult> GetLanguageById(int id) { return Ok(await _languagesService.GetLanguageByIdAsync(id)); }
 
         [HttpPost("")]
-        public async Task<IActionResult> AddLanguage([FromBody] LanguageVM language)
+        public async Task<IActionResult> AddLanguage([FromBody] LanguageDto language)
         {
             var result = await _languagesService.AddLanguageAsync(language);
 
@@ -40,7 +40,7 @@ namespace TestAPI.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateLanguageById(int id, [FromBody] LanguageVM language)
+        public async Task<IActionResult> UpdateLanguageById(int id, [FromBody] LanguageDto language)
         {
             var result = await _languagesService.UpdateLanguageAsync(id, language);
 

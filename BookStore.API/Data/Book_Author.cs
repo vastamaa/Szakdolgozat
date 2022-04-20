@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace TestAPI.Models
+namespace BookStore.API.Models
 {
     public class Book_Author
     {
