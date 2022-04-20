@@ -68,7 +68,7 @@ export class ModalExample extends Component {
 
                         <p className='Price'><span className='PriceText'>Price:</span>  {this.props.price} Ft</p>
                         <button className='BuyButton' id='buybutton' onClick={()=>this.coockie()}>Buy</button>{' '}
-                        <Button className='CancelButton' onClick={this.toggle}>Cancel</Button>
+                        <Button className='Cancel' onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
 
                 </Modal>

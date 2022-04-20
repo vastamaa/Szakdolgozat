@@ -184,13 +184,21 @@
     transition: all 250ms ease-in-out;
     background-color: #66666E;
 }
+
 .BuyButton{
+    font-size: 18px;
+    padding: 5px 15px;
+    border: 0;
+    background-color: #af0808;
+    color: ghostwhite;
+    border-radius: 3px;
     transition: all 250ms ease-in-out;
-    background-color: #AF0808;
+    cursor: pointer;
 }
 .BuyButton:hover {
     background-color: rgb(197, 103, 103);
 }
+
 .CancelButton:hover {
     background-color: #7f7f8a;
 }

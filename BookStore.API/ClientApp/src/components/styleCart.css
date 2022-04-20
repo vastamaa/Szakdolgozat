@@ -112,5 +112,12 @@
     bottom: .5%;
 }
 .Cancel{
-    
+    font-size: 18px;
+    padding: 5px 15px;
+    border: 0;
+    background-color: #66666E;
+    color: ghostwhite;
+    border-radius: 3px;
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
 }
