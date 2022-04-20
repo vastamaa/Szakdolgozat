@@ -20,7 +20,7 @@ export class Register extends Component {
                     <div className='login-content'>
 
                         <div className='login-img-container'>
-                            <img className='login-img' src="https://pic.onlinewebfonts.com/svg/img_550783.png"></img>
+                            <img className='login-img' src="/Images/profile.png"></img>
                         </div>
                         <p className='none' id='SubmitValid'>Fill the boxes</p>
                         <form className='login-form' action='api/accounts/register' onSubmit={handleFormRegisterSubmit} id='form' >
