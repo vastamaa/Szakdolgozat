@@ -142,3 +142,13 @@
 .ForgorPassword:hover{
     color: #b15454;
 }
+#ForgotButton{
+    top: 15vh;
+    position:relative;
+}
+.ForgotBox{
+    position:absolute;
+}
+.forgot{
+    margin-bottom: 12px !important;
+}

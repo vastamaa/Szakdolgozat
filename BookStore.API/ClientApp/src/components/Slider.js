@@ -12,10 +12,10 @@ export class Slider extends Component {
         this.state = { slideIndex: 0, loading: true };
     }
     handleClick = (direction) => {
+         
         if (direction === "left") {
-            let counter = 0;
-            counter = this.state.slideIndex - 1;
-            if (this.state.slideIndex > 0) {
+             var counter = this.state.slideIndex - 1;
+            if (counter >= 0) {
                 this.setState({ slideIndex: counter, loading: false });
             }
             else {
@@ -23,8 +23,7 @@ export class Slider extends Component {
             }
         }
         else {
-            let counterr = 0;
-
+            var counterr = 0;
             if (this.state.slideIndex < 2) {
                 counterr = this.state.slideIndex + 1;
                 this.setState({ slideIndex: counterr, loading: false });
@@ -42,7 +41,7 @@ export class Slider extends Component {
         return (
 
             <div className='SliderContainer'>
-                <div className='SliderArrow' direction="left" style={{ left: "10px", zIndex: 5 }} onClick={this.handleClick}>
+                <div className='SliderArrow' style={{ left: "10px", zIndex: 5 }} onClick={()=>this.handleClick("left")}>
                     <AiOutlineLeft></AiOutlineLeft>
                 </div>
 
@@ -64,7 +63,7 @@ export class Slider extends Component {
                 ))}
 
 
-                <div className='SliderArrow' direction="right" style={{ right: "10px", zIndex: 5 }} onClick={this.handleClick}>
+                <div className='SliderArrow' style={{ right: "10px", zIndex: 5 }} onClick={this.handleClick}>
                     <AiOutlineRight></AiOutlineRight>
                 </div>
             </div>
