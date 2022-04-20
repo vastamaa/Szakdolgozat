@@ -125,10 +125,6 @@
     <Compile Include="RestClient.cs" />
     <Compile Include="ViewModel\CommandViewModel.cs" />
     <Compile Include="ViewModel\SideMenuViewModel.cs" />
-    <Page Include="Assets\IconDictionary.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="CustomControl\MenuWithSubMenuControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

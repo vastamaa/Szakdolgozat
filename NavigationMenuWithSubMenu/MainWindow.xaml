@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MenuWithSubMenu" xmlns:customcontrol="clr-namespace:MenuWithSubMenu.CustomControl"
         mc:Ignorable="d"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="Litera Admin" Height="495" Width="1095" Icon="Assets/favicon.ico">
 
@@ -16,10 +17,10 @@
         
         <!--Our side menu custom control-->
         <!--here-->
-        <customcontrol:MenuWithSubMenuControl HasIcon="True" SubMenuPadding="15,0,0,0"/>
+        <customcontrol:MenuWithSubMenuControl Background="#FFFF76" SubMenuPadding="15,0,0,0"/>
 
 
         <!--and frame for pages to navigate when a menu is selected-->
-        <Frame x:Name="MainWindowFrame" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+        <Frame Background="#66666E" x:Name="MainWindowFrame" Grid.Column="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

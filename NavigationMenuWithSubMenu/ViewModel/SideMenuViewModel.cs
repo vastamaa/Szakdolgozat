@@ -8,9 +8,6 @@ namespace MenuWithSubMenu
 {
     class SideMenuViewModel
     {
-        //to call resource dictionary in our code behind
-        ResourceDictionary dict = Application.LoadComponent(new Uri("/MenuWithSubMenu;component/Assets/IconDictionary.xaml", UriKind.RelativeOrAbsolute)) as ResourceDictionary;
-
 
         //Our Source List for Menu Items
         public List<MenuItemsData> MenuList
@@ -20,65 +17,65 @@ namespace MenuWithSubMenu
                 return new List<MenuItemsData>
                 {
                     //MainMenu without SubMenu Button 
-                    new MenuItemsData(){ PathData= (PathGeometry)dict["icon_dashboard"], MenuText="Dashboard", SubMenuList=null},
+                    new MenuItemsData(){ MenuText="Dashboard", SubMenuList=null},
                  
                     //MainMenu Button
-                    new MenuItemsData(){ PathData= (PathGeometry)dict["icon_users"], MenuText="User management"
+                    new MenuItemsData(){ MenuText="User management"
                     
                     //SubMenu Button
                     , SubMenuList=new List<SubMenuItemsData>{
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_alluser"], SubMenuText="Add user" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_alluser"], SubMenuText="Edit user" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_alluser"], SubMenuText="Delete user" }}
+                    new SubMenuItemsData(){ SubMenuText="Add user" },
+                    new SubMenuItemsData(){ SubMenuText="Edit user" },
+                    new SubMenuItemsData(){ SubMenuText="Delete user" }}
                     },
 
                     //MainMenu Button
-                    new MenuItemsData(){ PathData= (PathGeometry)dict["icon_mails"], MenuText="Book management"
+                    new MenuItemsData(){ MenuText="Book management"
 
                     //SubMenu Button
                     , SubMenuList=new List<SubMenuItemsData>{
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_inbox"], SubMenuText="Add book" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_outbox"], SubMenuText="Edit book" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_sentmail"], SubMenuText="Delete book" }}},
+                    new SubMenuItemsData(){ SubMenuText="Add book" },
+                    new SubMenuItemsData(){  SubMenuText="Edit book" },
+                    new SubMenuItemsData(){ SubMenuText="Delete book" }}},
 
                     //MainMenu Button
-                    new MenuItemsData(){ PathData= (PathGeometry)dict["icon_mails"], MenuText="Author management"
+                    new MenuItemsData(){ MenuText="Author management"
 
                     //SubMenu Button
                     , SubMenuList=new List<SubMenuItemsData>{
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_inbox"], SubMenuText="Add author" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_outbox"], SubMenuText="Edit author" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_sentmail"], SubMenuText="Delete author" }}},
+                    new SubMenuItemsData(){ SubMenuText="Add author" },
+                    new SubMenuItemsData(){ SubMenuText="Edit author" },
+                    new SubMenuItemsData(){ SubMenuText="Delete author" }}},
 
                     //MainMenu Button
-                    new MenuItemsData(){ PathData= (PathGeometry)dict["icon_mails"], MenuText="Language management"
+                    new MenuItemsData(){ MenuText="Language management"
 
                     //SubMenu Button
                     , SubMenuList=new List<SubMenuItemsData>{
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_inbox"], SubMenuText="Add language" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_outbox"], SubMenuText="Edit language" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_sentmail"], SubMenuText="Delete language" }}},
+                    new SubMenuItemsData(){ SubMenuText="Add language" },
+                    new SubMenuItemsData(){ SubMenuText="Edit language" },
+                    new SubMenuItemsData(){ SubMenuText="Delete language" }}},
 
                     //MainMenu Button
-                    new MenuItemsData(){ PathData= (PathGeometry)dict["icon_mails"], MenuText="Genre management"
+                    new MenuItemsData(){ MenuText="Genre management"
 
                     //SubMenu Button
                     , SubMenuList=new List<SubMenuItemsData>{
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_inbox"], SubMenuText="Add genre" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_outbox"], SubMenuText="Edit genre" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_sentmail"], SubMenuText="Delete genre" }}},
+                    new SubMenuItemsData(){ SubMenuText="Add genre" },
+                    new SubMenuItemsData(){ SubMenuText="Edit genre" },
+                    new SubMenuItemsData(){ SubMenuText="Delete genre" }}},
 
                     //MainMenu Button
-                    new MenuItemsData(){ PathData= (PathGeometry)dict["icon_mails"], MenuText="Publisher management"
+                    new MenuItemsData(){ MenuText="Publisher management"
 
                     //SubMenu Button
                     , SubMenuList=new List<SubMenuItemsData>{
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_inbox"], SubMenuText="Add publisher" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_outbox"], SubMenuText="Edit publisher" },
-                    new SubMenuItemsData(){ PathData=(PathGeometry)dict["icon_sentmail"], SubMenuText="Delete publisher" }}},
+                    new SubMenuItemsData(){ SubMenuText="Add publisher" },
+                    new SubMenuItemsData(){ SubMenuText="Edit publisher" },
+                    new SubMenuItemsData(){ SubMenuText="Delete publisher" }}},
 
                     //MainMenu without SubMenu Button
-                    new MenuItemsData(){ PathData= (PathGeometry)dict["icon_settings"], MenuText="Settings", SubMenuList=null}
+                    new MenuItemsData(){ MenuText="Settings", SubMenuList=null}
                 };
             }
         }
@@ -87,7 +84,6 @@ namespace MenuWithSubMenu
     public class MenuItemsData
     {
         //Icon Data
-        public PathGeometry PathData { get; set; }
         public string MenuText { get; set; }
         public List<SubMenuItemsData> SubMenuList { get; set; }
 
@@ -122,7 +118,6 @@ namespace MenuWithSubMenu
     }
     public class SubMenuItemsData
     {
-        public PathGeometry PathData { get; set; }
         public string SubMenuText { get; set; }
 
         //To Add click event to our Buttons we will use ICommand here to switch pages when specific button is clicked

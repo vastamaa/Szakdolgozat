@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MenuWithSubMenu"
         mc:Ignorable="d"
-        Background="#FFFF66"
+        Background="#FFFF76"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Title="Litera Login" Height="240" Width="260" Icon="Assets/favicon.ico">
