@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:MenuWithSubMenu" xmlns:customcontrol="clr-namespace:MenuWithSubMenu.CustomControl"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Litera Admin" Height="450" Width="800">
+        Title="Litera Admin" Height="495" Width="1095" Icon="Assets/favicon.ico">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         
         <!--Our side menu custom control-->

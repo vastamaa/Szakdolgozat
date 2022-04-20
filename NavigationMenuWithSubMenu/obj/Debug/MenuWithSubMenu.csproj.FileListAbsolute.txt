@@ -143,7 +143,6 @@ C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\bin\Debu
 C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\bin\Debug\MenuWithSubMenu.pdb
 C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.csproj.AssemblyReference.cache
 C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Assets\IconDictionary.baml
 C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\CustomControl\MenuWithSubMenuControl.g.cs
 C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\Login.g.cs
@@ -214,3 +213,4 @@ C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debu
 C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.csproj.CopyComplete
 C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.exe
 C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.pdb
+C:\Users\Tanulo\Documents\GitHub\Szakdolgozat\NavigationMenuWithSubMenu\obj\Debug\MenuWithSubMenu.csproj.AssemblyReference.cache

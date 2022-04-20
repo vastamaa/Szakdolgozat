@@ -5,16 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MenuWithSubMenu"
         mc:Ignorable="d"
+        Background="#FFFF66"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        Title="Litera Login" Height="220" Width="220">
+        Title="Litera Login" Height="240" Width="260" Icon="Assets/favicon.ico">
     <Grid>
-        <GroupBox Header="GroupBox Sample" Margin="10" Padding="10">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Header="Login" Margin="10" Padding="10" Background="GhostWhite" BorderBrush="Black" FontSize="14" FontWeight="Medium">
+
             <StackPanel>
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="Black" />
+                        <Setter Property="FontSize" Value="14" />
+                    </Style>
+                </StackPanel.Resources>
                 <TextBlock>Username:</TextBlock>
                 <TextBox x:Name="tbUsername" />
                 <TextBlock>Password:</TextBlock>
-                <TextBox x:Name="tbPassword" />
-                <Button x:Name="btnSignIn" Margin="0, 20, 100, 0" Click="btnSignIn_Click">Sign in!</Button>
+                <PasswordBox x:Name="tbPassword" HorizontalAlignment="Left" Margin="0,0,0,0" Width="194" Height="22" VerticalAlignment="Top"/>
+                <Button BorderThickness="0" x:Name="btnSignIn" Margin="55, 20, 55, 0" Click="btnSignIn_Click">Sign in!</Button>
             </StackPanel>
         </GroupBox>
     </Grid>

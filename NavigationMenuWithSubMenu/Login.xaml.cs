@@ -21,8 +21,8 @@ namespace MenuWithSubMenu
                 var result = await RestClient.MyPostAsync<TokenModel, LoginModel>("api/accounts/admin-login", new LoginModel
                 {
                     UserName = tbUsername.Text,
-                    Password = tbPassword.Text
-                });
+                    Password = tbPassword.Password
+                }); ;
 
                 Globals.Token = result.Token;
 
