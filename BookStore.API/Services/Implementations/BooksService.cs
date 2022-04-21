@@ -79,21 +79,25 @@ namespace BookStore.API.Services.Implementations
         public async Task<Book> UpdateBookAsync(int bookId, BookDto book)
         {
             var _book = await _context.Books.FirstOrDefaultAsync(b => b.Id == bookId);
+            var content = await _context.Books.FirstOrDefaultAsync(b => b.Title == book.Title);
 
-            if (_book is not null)
+            if (content is null)
             {
-                if (!string.IsNullOrEmpty(book.Title)) _book.Title = book.Title;
-                if (!string.IsNullOrEmpty(book.Description)) _book.Description = book.Description;
-                if (!string.IsNullOrEmpty(book.ISBN)) _book.ISBN = book.ISBN;
-                if (!string.IsNullOrEmpty(book.ImgLink)) _book.ImgLink = book.ImgLink;
-                if (!string.IsNullOrEmpty(book.PageNumber.ToString())) _book.PageNumber = book.PageNumber;
-                if (!string.IsNullOrEmpty(book.Price.ToString())) _book.Price = book.Price;
-                if (!string.IsNullOrEmpty(book.PublishingYear.ToString())) _book.PublishingYear = book.PublishingYear;
+                if (_book is not null)
+                {
+                    if (!string.IsNullOrEmpty(book.Title)) _book.Title = book.Title;
+                    if (!string.IsNullOrEmpty(book.Description)) _book.Description = book.Description;
+                    if (!string.IsNullOrEmpty(book.ISBN)) _book.ISBN = book.ISBN;
+                    if (!string.IsNullOrEmpty(book.ImgLink)) _book.ImgLink = book.ImgLink;
+                    if (book.PageNumber != 0) _book.PageNumber = book.PageNumber;
+                    if (book.Price != 0) _book.Price = book.Price;
+                    if (book.PublishingYear != 0) _book.PublishingYear = book.PublishingYear;
 
-                await _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
+                }
+                return _book;
             }
-
-            return _book;
+            return null;
         }
 
         public async Task<int> DeleteBookAsync(int bookId)

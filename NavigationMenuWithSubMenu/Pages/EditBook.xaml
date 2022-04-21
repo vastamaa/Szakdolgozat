@@ -9,6 +9,25 @@
       Title="Edit book">
 
     <Grid>
-        <TextBlock FontSize="30" Text="This is Edit book" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Content="Enter description: " HorizontalAlignment="Left" Margin="67,120,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbDescription" HorizontalAlignment="Left" Margin="193,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="193,375,0,0" Padding="2" VerticalAlignment="Top" Click="Button_Click"/>
+        <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Margin="71,404,0,0" VerticalAlignment="Top"/>
+        <Label Content="Enter ISBN: " HorizontalAlignment="Left" Margin="100,154,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbISBN" HorizontalAlignment="Left" Margin="193,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
+        <Label Content="Enter image link: " HorizontalAlignment="Left" Margin="71,184,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbImgLink" HorizontalAlignment="Left" Margin="193,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Enter book title: " HorizontalAlignment="Left" Margin="76,86,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbTitle" HorizontalAlignment="Left" Margin="193,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Enter price: " HorizontalAlignment="Left" Margin="98,249,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbPrice" HorizontalAlignment="Left" Margin="193,255,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
+        <Label Content="Enter publishing year: " HorizontalAlignment="Left" Margin="43,283,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbPublishingYear" HorizontalAlignment="Left" Margin="193,288,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
+        <Label Content="Enter publisher id: " HorizontalAlignment="Left" Margin="63,313,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbPublisherId" HorizontalAlignment="Left" Margin="193,318,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
+        <Label Content="Enter pagenumber: " HorizontalAlignment="Left" Margin="58,215,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbPageNumber" HorizontalAlignment="Left" Margin="193,221,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
+        <Label Content="Enter book id: " HorizontalAlignment="Left" Margin="76,58,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbBookId" HorizontalAlignment="Left" Margin="193,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
     </Grid>
 </Page>
