@@ -3,6 +3,7 @@ import { getData } from "./TokenDecode";
 import React, { Component } from 'react';
 import './styleCart.css';
 
+
 export class Cart extends Component {
     
     constructor(props) {
@@ -49,6 +50,10 @@ export class Cart extends Component {
                     localStorage.removeItem(isbn)
                     window.location.reload(false);
             }
+            function Final(){
+                alert("Order in progress we will notify you");
+                history.pushState({},{},"/");
+            }
             var final;
             if (this.state.sum==0) {
                 final=<div>No item here</div>
@@ -59,9 +64,11 @@ export class Cart extends Component {
                         <button onClick={this.toggle} className='SummaryButton'>Buy</button>
                         <Modal isOpen={this.state.modal} toggle={this.toggle} className="BookCardModal" size="lg">
                     <ModalHeader className='ModalTitle' toggle={this.toggle}>Shipping</ModalHeader>
+                    <form onSubmit={Final}> 
                     <ModalBody>
+                    
                         <div>
-                            <form> 
+                            
                             <label>Full Name</label><br/>
                             <input type="text" value={this.state.FirstName+" "+this.state.LastName} required></input><br/>
                             <label>Phone Number</label><br/>
@@ -74,13 +81,14 @@ export class Cart extends Component {
                             <input type="number" required></input><br/>
                             <label>Address</label><br/>
                             <input type="text" required></input><br/>
-                            </form>
+                            
                         </div>
                     </ModalBody>
                     <ModalFooter>
-                        <button type='submit' className='SummaryButton'>Pay</button>
+                            <button type='submit'  className='SummaryButton'>Pay</button>                
                         <Button className='CancelButton' onClick={this.toggle}>Cancel</Button>
                     </ModalFooter>
+                    </form>
 
                 </Modal>
                       </div>
