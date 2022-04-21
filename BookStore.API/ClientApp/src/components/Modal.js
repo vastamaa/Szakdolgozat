@@ -24,6 +24,7 @@ export class ModalExample extends Component {
             window.location.replace("https://localhost:5001/accounts/login");
         }
         else{
+
             localStorage.setItem(this.props.isbn, JSON.stringify({
                 title:this.props.title,
                 price:this.props.price,
@@ -35,7 +36,8 @@ export class ModalExample extends Component {
                 publisher:this.props.publisher,
                 year:this.props.publishingYear,
                 desc:this.props.desc
-            }))
+            }));
+            this.toggle();
         }
     }
 

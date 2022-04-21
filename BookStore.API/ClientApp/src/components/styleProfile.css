@@ -74,6 +74,22 @@
         width: 300px !important;
     }
 }
+@media screen and (max-width:600px) {
+
+    .PasswordChange{
+        padding: 3px 7px !important;
+        font-size: 17px !important;
+        margin-top: 39vh !important;
+        margin-right: 1% !important;
+    }
+    .ProfileBody {
+        margin-left: 10% !important;
+    }
+    .ProfileHead {
+        margin-left: 10% !important;
+    }
+    
+}
 .ProfileLeft {
     align-self: flex-start;
 }
@@ -162,41 +178,6 @@
         font-size: 16px;
         padding-left: 3px;
     }
-.UsernameChange{
-        border-radius: 30px;
-        background-color: #f3f6fb;
-        border: 1px transparent solid;
-        position: absolute;
-        padding: 6px 15px;
-        font-size: 20px;
-        cursor: pointer;
-        z-index: 0;
-        margin-top: 38.5vh;
-        margin-left: 25%;
-}
-.UsernameChangeForm{
-    margin-bottom: 10px;
-}
-#UsernameText {
-    margin-left: 29px;
-    z-index: 0;
-    position: absolute;
-    margin-top: 47vh;
-    font-size: 20px;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-}
-
-    #UsernameText.fade {
-        opacity: 1;
-        z-index: 1;
-    }
-#usernameerr{
-    position: absolute;
-    padding-top: 1%;
-    width: 100px;
-    padding-left: 1%;
-}
 #passwordmerr{
     position: absolute;
     padding-top: 1%;

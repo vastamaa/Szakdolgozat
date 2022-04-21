@@ -42,24 +42,26 @@
 }
 @media screen and (max-width:510px){
     .BookCardsContainerGrid {
-        grid-template-columns: minmax(75px, 200px) minmax(75px, 200px) minmax(75px, 200px) !important;
+        grid-template-columns: minmax(100%,80%)  !important;
     }
     .BookCard{
-        height: 215px !important;
+        height: 300px !important;
         width: 90px !important;
     }
     .BookCardTitle {
-        font-size: 9px !important;
+        font-size: 17px !important;
         padding-top: 0  !important;
+        margin-top: -10px;
     }
     .BookCardShow {
-        margin-top: -20px !important;
-        padding: 1.5px !important;
-        font-size: 9px !important;
+        margin-top: -5px !important;
+        padding: 5px !important;
+        font-size: 14px !important;
         z-index: 10;
     }
     .BookCardImg {
-        width: 80% !important;
+        
+        width: 40% !important;
     }
 }
 .BookCardsContainerGrid {

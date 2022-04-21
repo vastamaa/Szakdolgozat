@@ -106,7 +106,7 @@
 
 .Summary{
     margin-top: 50px;
-    width: 50vh;
+    width: 35%;
     margin-left: 60%;
     position: absolute;
     bottom: .5%;
@@ -120,4 +120,36 @@
     border-radius: 3px;
     transition: all 250ms ease-in-out;
     cursor: pointer;
+}
+@media screen and (max-width:550px){
+    .CartAuth{
+        display: none;
+    }
+    .CartGenre{
+        display: none;
+    }
+    .CartTitle{
+        margin-left:-30%;
+        font-size: 20px;
+    }
+    .CartPrice{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .CartImg{
+        display: none;
+    }
+}
+@media screen and (max-width:995px){
+    .CartAuth{
+        display: none;
+    }
+    .CartTitle{
+        margin-left:-30%;
+        font-size: 20px;
+    }
+    .CartPrice{
+        font-size: 20px;
+        font-weight: 600;
+    }
 }
