@@ -53,6 +53,7 @@ export class Cart extends Component {
             function Final(){
                 alert("Order in progress we will notify you");
                 history.pushState({},{},"/");
+                localStorage.clear();
             }
             var final;
             if (this.state.sum==0) {
