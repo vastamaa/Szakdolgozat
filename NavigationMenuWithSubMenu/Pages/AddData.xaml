@@ -10,14 +10,14 @@
 
     <Grid>
         <Label Content="Enter author id: " HorizontalAlignment="Left" Margin="75,120,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbAuthorId" HorizontalAlignment="Left" Margin="193,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbAuthorId" HorizontalAlignment="Left" Margin="193,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
         <Button Content="Submit" HorizontalAlignment="Left" Margin="193,274,0,0" Padding="2" VerticalAlignment="Top" Click="Button_Click" />
         <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Margin="75,225,0,0" VerticalAlignment="Top"/>
         <Label Content="Enter genre id: " HorizontalAlignment="Left" Margin="75,154,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbGenreId" HorizontalAlignment="Left" Margin="193,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbGenreId" HorizontalAlignment="Left" Margin="193,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
         <Label Content="Enter language id: " HorizontalAlignment="Left" Margin="75,184,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbLanguageId" HorizontalAlignment="Left" Margin="193,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbLanguageId" HorizontalAlignment="Left" Margin="193,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
         <Label Content="Enter book id: " HorizontalAlignment="Left" Margin="75,86,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tbBookId" HorizontalAlignment="Left" Margin="193,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbBookId" HorizontalAlignment="Left" Margin="193,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
     </Grid>
 </Page>

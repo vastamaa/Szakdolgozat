@@ -1,4 +1,5 @@
 ﻿using BookStore.API.DTOs;
+using BookStore.API.Models;
 using BookStore.API.Services.Implementations;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -44,10 +45,10 @@ namespace TestAPI.Controllers
 
             if (result == 0)
             {
-                return BadRequest();
+                return BadRequest(new ResponseModel { Status = "Error!", Message = "The database already contains a book with this name!" });
             }
 
-            return Ok();
+            return Ok(new ResponseModel { Status = "Success!", Message = "The book has been successfully added to the database!" });
         }
 
 
@@ -58,17 +59,23 @@ namespace TestAPI.Controllers
 
             if (result is null)
             {
-                return BadRequest();
+                return BadRequest(new ResponseModel { Status = "Error!", Message = "The book has not been updated!" });
             }
 
-            return Ok(result);
+            return Ok(new ResponseModel { Status = "Success!", Message = "The book has been successfully updated!" });
         }
 
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteBookById(int id)
         {
-            await _booksService.DeleteBookAsync(id);
-            return Ok();
+            var result = await _booksService.DeleteBookAsync(id);
+
+            if (result > 0)
+            {
+                return Ok(new ResponseModel { Status = "Success!", Message = "The data is successfully deleted!" });
+            }
+
+            return BadRequest(new ResponseModel { Status = "Error!", Message = "Could not delete the data!" });
         }
     }
 }

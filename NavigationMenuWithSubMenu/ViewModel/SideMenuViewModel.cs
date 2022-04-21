@@ -15,18 +15,9 @@ namespace MenuWithSubMenu
             {
                 return new List<MenuItemsData>
                 {
-                    //MainMenu without SubMenu Button 
-                    new MenuItemsData(){ MenuText="Dashboard", SubMenuList=null},
-                 
-                    //MainMenu Button
-                    new MenuItemsData(){ MenuText="User management"
-                    
-                    //SubMenu Button
-                    , SubMenuList=new List<SubMenuItemsData>{
-                    new SubMenuItemsData(){ SubMenuText="Edit user" },
-                    new SubMenuItemsData(){ SubMenuText="Delete user" }}
-                    },
-
+                    ////MainMenu without SubMenu Button 
+                    //new MenuItemsData(){ MenuText="Dashboard", SubMenuList=null},
+                
                     //MainMenu Button
                     new MenuItemsData(){ MenuText="Book management"
 

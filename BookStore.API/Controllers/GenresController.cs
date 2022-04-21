@@ -59,10 +59,10 @@ namespace TestAPI.Controllers
 
             if (result > 0)
             {
-                return Ok(new ResponseModel { Status = "Success!", Message = "The genre has been successfully deleted from the database!" });
+                return Ok(new ResponseModel { Status = "Success!", Message = "The data has been successfully deleted!" });
             }
 
-            return BadRequest(new ResponseModel { Status = "Error!", Message = "The genre has not been deleted from the database!" });
+            return BadRequest(new ResponseModel { Status = "Error!", Message = "Nothing has been deleted!" });
         }
     }
 }

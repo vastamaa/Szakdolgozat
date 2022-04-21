@@ -45,10 +45,10 @@ namespace BookStore.API.Services.Implementations
 
             if (_data is not null)
             {
-                _data.BookId = book_AuthorDto.BookId;
-                _data.AuthorId = book_AuthorDto.AuthorId;
-                _data.GenreId = book_AuthorDto.GenreId;
-                _data.LanguageId = book_AuthorDto.LanguageId;
+               if(string.IsNullOrEmpty(book_AuthorDto.BookId.ToString()))  _data.BookId = book_AuthorDto.BookId;
+               if (string.IsNullOrEmpty(book_AuthorDto.AuthorId.ToString())) _data.AuthorId = book_AuthorDto.AuthorId;
+               if (string.IsNullOrEmpty(book_AuthorDto.GenreId.ToString())) _data.GenreId = book_AuthorDto.GenreId;
+               if (string.IsNullOrEmpty(book_AuthorDto.LanguageId.ToString())) _data.LanguageId = book_AuthorDto.LanguageId;
             }
 
             return _data;

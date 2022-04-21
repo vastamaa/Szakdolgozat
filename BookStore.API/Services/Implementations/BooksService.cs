@@ -82,13 +82,13 @@ namespace BookStore.API.Services.Implementations
 
             if (_book is not null)
             {
-                _book.Title = book.Title;
-                _book.Description = book.Description;
-                _book.ISBN = book.ISBN;
-                _book.ImgLink = book.ImgLink;
-                _book.PageNumber = book.PageNumber;
-                _book.Price = book.Price;
-                _book.PublishingYear = book.PublishingYear;
+                if (!string.IsNullOrEmpty(book.Title)) _book.Title = book.Title;
+                if (!string.IsNullOrEmpty(book.Description)) _book.Description = book.Description;
+                if (!string.IsNullOrEmpty(book.ISBN)) _book.ISBN = book.ISBN;
+                if (!string.IsNullOrEmpty(book.ImgLink)) _book.ImgLink = book.ImgLink;
+                if (!string.IsNullOrEmpty(book.PageNumber.ToString())) _book.PageNumber = book.PageNumber;
+                if (!string.IsNullOrEmpty(book.Price.ToString())) _book.Price = book.Price;
+                if (!string.IsNullOrEmpty(book.PublishingYear.ToString())) _book.PublishingYear = book.PublishingYear;
 
                 await _context.SaveChangesAsync();
             }
@@ -96,7 +96,7 @@ namespace BookStore.API.Services.Implementations
             return _book;
         }
 
-        public async Task DeleteBookAsync(int bookId)
+        public async Task<int> DeleteBookAsync(int bookId)
         {
             var book = await _context.Books.FirstOrDefaultAsync(b => b.Id == bookId);
 
@@ -104,7 +104,9 @@ namespace BookStore.API.Services.Implementations
             {
                 _context.Books.Remove(book);
                 await _context.SaveChangesAsync();
+                return 1;
             }
+            return 0;
         }
     }
 }

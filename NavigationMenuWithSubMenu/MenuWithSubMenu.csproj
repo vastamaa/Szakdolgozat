@@ -108,9 +108,6 @@
     <Compile Include="Pages\DeletePublisher.xaml.cs">
       <DependentUpon>DeletePublisher.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DeleteUser.xaml.cs">
-      <DependentUpon>DeleteUser.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\EditAuthor.xaml.cs">
       <DependentUpon>EditAuthor.xaml</DependentUpon>
     </Compile>
@@ -185,10 +182,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Dashboard.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\DataManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -210,10 +203,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\DeletePublisher.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DeleteUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -245,10 +234,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\EditUser.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\EditBook.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -265,33 +250,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\UserManagement.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Pages\DeleteBook.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\Dashboard.xaml.cs">
-      <DependentUpon>Dashboard.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\AddBook.xaml.cs">
       <DependentUpon>AddBook.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\BookManagement.xaml.cs">
       <DependentUpon>BookManagement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EditUser.xaml.cs">
-      <DependentUpon>EditUser.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\EditBook.xaml.cs">
       <DependentUpon>EditBook.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UserManagement.xaml.cs">
-      <DependentUpon>UserManagement.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\DeleteBook.xaml.cs">
       <DependentUpon>DeleteBook.xaml</DependentUpon>

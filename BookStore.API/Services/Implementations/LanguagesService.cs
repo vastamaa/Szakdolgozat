@@ -37,22 +37,21 @@ namespace BookStore.API.Services.Implementations
 
         public async Task<Language> UpdateLanguageAsync(int languageId, LanguageDto language)
         {
-            var _language = await _context.Languages.FirstOrDefaultAsync(l => l.Id == languageId);
-            var contains = await _context.Publishers.FirstOrDefaultAsync(l => l.Name == language.Name);
+            var contains = await _context.Languages.FirstOrDefaultAsync(b => b.Name == language.Name);
 
             if (contains is null)
             {
+                var _language = await _context.Languages.FirstOrDefaultAsync(b => b.Id == languageId);
+
                 if (_language is not null)
                 {
                     _language.Name = language.Name;
 
                     await _context.SaveChangesAsync();
                 }
-
-                return null;
+                return _language;
             }
-
-            return _language;
+            return null;
         }
 
         public async Task<int> DeleteLanguageAsync(int languageId)

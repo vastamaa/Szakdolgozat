@@ -1,8 +1,10 @@
 ﻿using BookStore.API.DTOs;
 using MenuWithSubMenu.Models;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace MenuWithSubMenu.Pages
@@ -42,6 +44,12 @@ namespace MenuWithSubMenu.Pages
             catch (Exception)
             {
             }
+        }
+
+        private new void PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

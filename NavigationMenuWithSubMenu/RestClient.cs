@@ -23,15 +23,6 @@ namespace MenuWithSubMenu
                 // Do the actual request and await the response
                 var httpResponse = await client.PostAsync(url, httpContent);
 
-                //httpResponse.EnsureSuccessStatusCode();
-
-                //if (httpResponse.IsSuccessStatusCode)
-                //{
-                //    var responseContent = await httpResponse.Content.ReadAsStringAsync();
-                //    return JsonConvert.DeserializeObject<TReturn>(responseContent);
-                //}
-                //return default;
-
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();
                 return JsonConvert.DeserializeObject<TReturn>(responseContent);
             }

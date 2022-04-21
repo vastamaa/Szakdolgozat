@@ -37,16 +37,21 @@ namespace BookStore.API.Services.Implementations
 
         public async Task<Author> UpdateAuthorAsync(int authorId, AuthorDto author)
         {
-            var _author = await _context.Authors.FirstOrDefaultAsync(a => a.Id == authorId);
+            var contains = await _context.Authors.FirstOrDefaultAsync(b => b.Name == author.Name);
 
-            if (_author is not null)
+            if (contains is null)
             {
-                _author.Name = author.Name;
+                var _author = await _context.Authors.FirstOrDefaultAsync(b => b.Id == authorId);
 
-                await _context.SaveChangesAsync();
+                if (_author is not null)
+                {
+                    _author.Name = author.Name;
+
+                    await _context.SaveChangesAsync();
+                }
+                return _author;
             }
-
-            return _author;
+            return null;
         }
 
         public async Task<int> DeleteAuthorAsync(int authorId)

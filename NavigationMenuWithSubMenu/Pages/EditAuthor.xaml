@@ -13,7 +13,7 @@
         <TextBox x:Name="tbAuthorName" HorizontalAlignment="Left" Margin="193,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button Content="Submit" HorizontalAlignment="Left" Margin="193,165,0,0" Padding="2" VerticalAlignment="Top" Click="Button_Click"/>
         <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Margin="75,225,0,0" VerticalAlignment="Top" Foreground="#FF1E8C00"/>
-        <TextBox x:Name="tbAuthorId" HorizontalAlignment="Left" Margin="193,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbAuthorId" HorizontalAlignment="Left" Margin="193,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
         <Label Content="Enter author id: " HorizontalAlignment="Left" Margin="75,88,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

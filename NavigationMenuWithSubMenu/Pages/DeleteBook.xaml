@@ -10,7 +10,7 @@
 
     <Grid>
         <Label Content="Enter book id: " HorizontalAlignment="Left" Margin="75,120,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb" HorizontalAlignment="Left" Margin="193,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tb" HorizontalAlignment="Left" Margin="193,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" PreviewTextInput="PreviewTextInput"/>
         <Button Content="Submit" HorizontalAlignment="Left" Margin="193,165,0,0" Padding="2" VerticalAlignment="Top" Click="Button_Click"/>
         <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Margin="75,225,0,0" VerticalAlignment="Top"/>
     </Grid>

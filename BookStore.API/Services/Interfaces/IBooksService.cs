@@ -11,6 +11,6 @@ namespace BookStore.API.Services.Implementations
         Task<List<BookWithEverythingDto>> GetBooksByGenreAsync(string genreName);
         Task<int> AddBookWithAuthorsAsync(BookDto book);
         Task<Book> UpdateBookAsync(int bookId, BookDto book);
-        Task DeleteBookAsync(int bookId);
+        Task<int> DeleteBookAsync(int bookId);
     }
 }

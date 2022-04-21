@@ -37,11 +37,11 @@ namespace BookStore.API.Services.Implementations
 
         public async Task<Genre> UpdateGenreAsync(int genreId, GenreDto genre)
         {
-            var _genre = await _context.Genres.FirstOrDefaultAsync(b => b.Id == genreId);
-            var contains = await _context.Publishers.FirstOrDefaultAsync(b => b.Name == genre.Name);
+            var contains = await _context.Genres.FirstOrDefaultAsync(b => b.Name == genre.Name);
 
             if (contains is null)
             {
+                var _genre = await _context.Genres.FirstOrDefaultAsync(b => b.Id == genreId);
 
                 if (_genre is not null)
                 {
@@ -49,10 +49,9 @@ namespace BookStore.API.Services.Implementations
 
                     await _context.SaveChangesAsync();
                 }
-                return null;
+                return _genre;
             }
-
-            return _genre;
+            return null;
         }
 
         public async Task<int> DeleteGenreAsync(int genreId)

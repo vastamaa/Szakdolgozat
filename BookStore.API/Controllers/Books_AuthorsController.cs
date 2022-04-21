@@ -30,7 +30,7 @@ namespace BookStore.API.Controllers
                 return BadRequest(new ResponseModel { Status = "Error!", Message = "The database already contains this type of genre!" });
             }
 
-            return Ok(new ResponseModel { Status = "Success!", Message = "The genre has been successfully added to the database!" });
+            return Ok(new ResponseModel { Status = "Success!", Message = "The data has been successfully added to the database!" });
         }
 
         [HttpPut("{id:int}")]
@@ -40,10 +40,10 @@ namespace BookStore.API.Controllers
 
             if (result is null)
             {
-                return BadRequest(new ResponseModel { Status = "Error!", Message = "The genre has not been updated!" });
+                return BadRequest(new ResponseModel { Status = "Error!", Message = "The data has not been updated!" });
             }
 
-            return Ok(new ResponseModel { Status = "Success!", Message = "The genre has been successfully updated!" });
+            return Ok(new ResponseModel { Status = "Success!", Message = "The data has been successfully updated!" });
         }
 
         [HttpDelete("{id:int}")]
@@ -53,10 +53,10 @@ namespace BookStore.API.Controllers
 
             if (result > 0)
             {
-                return Ok(new ResponseModel { Status = "Success!", Message = "The genre has been successfully deleted from the database!" });
+                return Ok(new ResponseModel { Status = "Success!", Message = "The data has been successfully deleted!" });
             }
 
-            return BadRequest(new ResponseModel { Status = "Error!", Message = "The genre has not been deleted from the database!" });
+            return BadRequest(new ResponseModel { Status = "Error!", Message = "Nothing has been deleted!" });
         }
     }
 }
