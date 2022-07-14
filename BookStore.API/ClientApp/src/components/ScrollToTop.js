@@ -1,42 +1,42 @@
-import React, { Component } from 'react'
-import './styleLogin.css'
+import React, { Component } from "react";
+import "./styleLogin.css";
 
 export class ScrollToTop extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
     this.state = {
-      isVisible: false
-    }
+      isVisible: false,
+    };
   }
 
-  componentDidMount () {
-    const scrollComponent = this
-    document.addEventListener('scroll', (e) => {
-      scrollComponent.toggleVisibility()
-    })
+  componentDidMount() {
+    const scrollComponent = this;
+    document.addEventListener("scroll", (e) => {
+      scrollComponent.toggleVisibility();
+    });
   }
 
-  toggleVisibility () {
+  toggleVisibility() {
     if (window.pageYOffset > 300) {
       this.setState({
-        isVisible: true
-      })
+        isVisible: true,
+      });
     } else {
       this.setState({
-        isVisible: false
-      })
+        isVisible: false,
+      });
     }
   }
 
-  scrollToTop () {
+  scrollToTop() {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    })
+      behavior: "smooth",
+    });
   }
 
-  render () {
-    const { isVisible } = this.state
+  render() {
+    const { isVisible } = this.state;
     return (
       <div className="scroll-to-top">
         {isVisible && (
@@ -48,6 +48,6 @@ export class ScrollToTop extends Component {
           </div>
         )}
       </div>
-    )
+    );
   }
 }

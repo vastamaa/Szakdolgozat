@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
-import { Route, Routes } from 'react-router'
-import { Layout } from './components/Layout'
-import { Home } from './components/Home'
-import { Books } from './components/Books'
-import { Register } from './components/Register'
-import { Login } from './components/Login'
-import { Profile } from './components/Profile'
-import { ForgotPassword } from './components/ForgotPassword'
-import { Cart } from './components/Cart'
-import './custom.css'
+import React, { Component } from "react";
+import { Route, Routes } from "react-router";
+import { Layout } from "./components/Layout";
+import { Home } from "./components/Home";
+import { Books } from "./components/Books";
+import { Register } from "./components/Register";
+import { Login } from "./components/Login";
+import { Profile } from "./components/Profile";
+import { ForgotPassword } from "./components/ForgotPassword";
+import { Cart } from "./components/Cart";
+import "./custom.css";
 
 export default class App extends Component {
-  static displayName = App.name
+  static displayName = App.name;
 
-  render () {
+  render() {
     return (
       <div className="font-face-gm">
         <Layout className="stick-the-navbar">
@@ -31,6 +31,6 @@ export default class App extends Component {
           </Routes>
         </Layout>
       </div>
-    )
+    );
   }
 }

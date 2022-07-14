@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import { categories, categories2, showmore } from './Data'
-import './styleCate.css'
+import React, { Component } from "react";
+import { categories, categories2, showmore } from "./Data";
+import "./styleCate.css";
 
 export class Categories extends Component {
-  render () {
-    function ShowMore () {
-      const showmore = document.getElementById('showmorecategory')
-      const tiles = document.getElementById('secondLine')
-      showmore.classList.add('showmorebye')
-      tiles.classList.add('secondLineHello')
+  render() {
+    function ShowMore() {
+      const showmore = document.getElementById("showmorecategory");
+      const tiles = document.getElementById("secondLine");
+      showmore.classList.add("showmorebye");
+      tiles.classList.add("secondLineHello");
     }
     return (
       <div>
@@ -18,7 +18,7 @@ export class Categories extends Component {
               key={item.id}
               onClick={() =>
                 window.location.replace(
-                  'https://localhost:5001/books/' + item.title.toLowerCase()
+                  "https://localhost:5001/books/" + item.title.toLowerCase()
                 )
               }
               className="Container img-hover-zoom img-hover-zoom--quick-zoom"
@@ -38,7 +38,7 @@ export class Categories extends Component {
               key={item.id}
               onClick={() =>
                 window.location.replace(
-                  'https://localhost:5001/books/' + item.title.toLowerCase()
+                  "https://localhost:5001/books/" + item.title.toLowerCase()
                 )
               }
               className="Container img-hover-zoom img-hover-zoom--quick-zoom"
@@ -74,6 +74,6 @@ export class Categories extends Component {
           </div>
         ))}
       </div>
-    )
+    );
   }
 }
