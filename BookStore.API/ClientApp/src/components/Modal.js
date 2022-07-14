@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import { readCookie } from './CookieHandler'
@@ -117,4 +116,3 @@ export class ModalExample extends Component {
     )
   }
 }
-
