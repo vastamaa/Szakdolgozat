@@ -1,4 +1,4 @@
-import { createCookie, eraseCookie } from './CookieHandler'
+import { createCookie, eraseCookie } from "./CookieHandler";
 
 /**
  * Helper function for POSTing data as JSON with fetch.
@@ -8,27 +8,27 @@ import { createCookie, eraseCookie } from './CookieHandler'
  * param {FormData} options.formData - `FormData` instance
  * return {Object} - Response body from URL that was POSTed to
  */
-async function postFormDataAsJson ({ url, formData }) {
-  const plainFormData = Object.fromEntries(formData.entries())
-  const formDataJsonString = JSON.stringify(plainFormData)
+async function postFormDataAsJson({ url, formData }) {
+  const plainFormData = Object.fromEntries(formData.entries());
+  const formDataJsonString = JSON.stringify(plainFormData);
 
   const fetchOptions = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json'
+      "Content-Type": "application/json",
+      Accept: "application/json",
     },
-    body: formDataJsonString
-  }
+    body: formDataJsonString,
+  };
 
-  const response = await fetch(url, fetchOptions)
+  const response = await fetch(url, fetchOptions);
 
   if (!response.ok) {
-    const errorMessage = await response.text()
-    throw new Error(errorMessage)
+    const errorMessage = await response.text();
+    throw new Error(errorMessage);
   }
 
-  return await response.json()
+  return await response.json();
 }
 
 /**
@@ -38,55 +38,55 @@ async function postFormDataAsJson ({ url, formData }) {
  *
  * param {SubmitEvent} event
  */
-export async function handleFormLoginSubmit (event) {
-  event.preventDefault()
+export async function handleFormLoginSubmit(event) {
+  event.preventDefault();
 
-  const form = event.currentTarget
-  const url = form.action
-  const err = 'err'
+  const form = event.currentTarget;
+  const url = form.action;
+  const err = "err";
   try {
-    const formData = new FormData(form)
-    const responseData = await postFormDataAsJson({ url, formData })
+    const formData = new FormData(form);
+    const responseData = await postFormDataAsJson({ url, formData });
 
-    createCookie('token', responseData.token)
+    createCookie("token", responseData.token);
 
-    console.log('Sikeres!')
-    window.location.replace('https://localhost:5001/')
+    console.log("Sikeres!");
+    window.location.replace("https://localhost:5001/");
   } catch (error) {
     Array.from(
       document
-        .getElementById('loginfail')
+        .getElementById("loginfail")
         .classList.remove(
-          Array.from(document.getElementById('loginfail').classList)
+          Array.from(document.getElementById("loginfail").classList)
         )
-    )
-    Array.from(document.getElementById('loginfail').classList.add(err))
+    );
+    Array.from(document.getElementById("loginfail").classList.add(err));
 
-    console.error(error)
+    console.error(error);
   }
 }
 
-export async function handleFormRegisterSubmit (event) {
-  event.preventDefault()
+export async function handleFormRegisterSubmit(event) {
+  event.preventDefault();
 
-  const form = event.currentTarget
-  const url = form.action
+  const form = event.currentTarget;
+  const url = form.action;
 
   try {
-    const formData = new FormData(form)
-    const responseData = await postFormDataAsJson({ url, formData })
+    const formData = new FormData(form);
+    const responseData = await postFormDataAsJson({ url, formData });
 
-    console.log(responseData)
-    window.location.replace('https://localhost:5001/')
+    console.log(responseData);
+    window.location.replace("https://localhost:5001/");
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 }
 
-export function handleResetPasswordSubmit () {}
+export function handleResetPasswordSubmit() {}
 
-export function logOut () {
-  eraseCookie('token')
-  window.location.replace('/')
-  return false
+export function logOut() {
+  eraseCookie("token");
+  window.location.replace("/");
+  return false;
 }
