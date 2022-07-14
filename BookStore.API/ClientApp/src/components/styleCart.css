@@ -1,155 +1,158 @@
-.CartContainer{
-    margin-top: 2.5%;
-    width: 100%;
-    padding: 4px;
+.CartContainer {
+  margin-top: 2.5%;
+  width: 100%;
+  padding: 4px;
 }
-.Cart{
-    border: 1px grey solid;
-    background-color: #f3f6fb;
-    border-radius: 20px;
-    width: 100%;
-    min-height: 80vh;
-    align-items: center;
-    padding: 20px;
-    position: relative;
+.Cart {
+  border: 1px grey solid;
+  background-color: #f3f6fb;
+  border-radius: 20px;
+  width: 100%;
+  min-height: 80vh;
+  align-items: center;
+  padding: 20px;
+  position: relative;
 }
-.CartGrid{
-    display: grid;
-    grid-template-columns: 60% auto;
-    gap: 10px;
+.CartGrid {
+  display: grid;
+  grid-template-columns: 60% auto;
+  gap: 10px;
 }
-.CartItemsContainer{
-    display: flex;
-    margin-bottom: 40px;
-    background-image: linear-gradient(to right, rgba(255,250,130), rgba(254,220,112));
-    padding:5px;
-    border: 1px solid #66666E;
+.CartItemsContainer {
+  display: flex;
+  margin-bottom: 40px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 250, 130),
+    rgba(254, 220, 112)
+  );
+  padding: 5px;
+  border: 1px solid #66666e;
 }
-.grid-item{
-    text-align: center;
-    padding: 10px 0;
-    font-size: 25px;
+.grid-item {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 25px;
 }
-.CartImg{
-    text-align: center;
-    max-width: 90%;
+.CartImg {
+  text-align: center;
+  max-width: 90%;
+}
+.CartImgContainer {
+  margin-left: -0.5%;
+  height: 20vh;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CartInfo {
+  height: 20vh;
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.CartAuth {
+  margin-left: -20%;
+  font-size: 20px;
+}
+.CartGenre {
+  font-style: italic;
+  font-size: 22px;
+}
+.CartTitle {
+  margin-left: -30%;
+  font-size: 23px;
+}
+.CartPrice {
+  font-size: 23px;
+  font-weight: 600;
+}
+.DeleteButtonCart {
+  font-size: 18px;
+  padding: 5px 15px;
+  border: 0;
+  background-color: #af0808;
+  color: ghostwhite;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+  margin-top: -15px;
+}
+.DeleteButtonCart:hover {
+  background-color: rgb(197, 103, 103);
+}
 
+.DeleteButtonCart:focus {
+  outline: none;
 }
-.CartImgContainer{
-    margin-left: -0.5%;
-    height: 20vh;
-    width: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.SummaryButton {
+  font-size: 21px;
+  padding: 5px 20px;
+  margin-left: 3%;
+  border: 0;
+  background-color: #af0808;
+  color: ghostwhite;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
 }
-.CartInfo{
-    height: 20vh;
-    padding-top: 20px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.SummaryButton:hover {
+  background-color: rgb(197, 103, 103);
 }
-.CartAuth{
-    margin-left:-20%;
+
+.SummaryButton:focus {
+  outline: none;
+}
+
+.Summary {
+  margin-top: 50px;
+  width: 35%;
+  margin-left: 60%;
+  position: absolute;
+  bottom: 0.5%;
+}
+.Cancel {
+  font-size: 18px;
+  padding: 5px 15px;
+  border: 0;
+  background-color: #66666e;
+  color: ghostwhite;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+@media screen and (max-width: 550px) {
+  .CartAuth {
+    display: none;
+  }
+  .CartGenre {
+    display: none;
+  }
+  .CartTitle {
+    margin-left: -30%;
     font-size: 20px;
-}
-.CartGenre{
-    font-style:italic;
-    font-size: 22px;
-}
-.CartTitle{
-    margin-left:-30%;
-    font-size: 23px;
-}
-.CartPrice{
-    font-size: 23px;
+  }
+  .CartPrice {
+    font-size: 20px;
     font-weight: 600;
+  }
+  .CartImg {
+    display: none;
+  }
 }
-.DeleteButtonCart{
-    font-size: 18px;
-    padding: 5px 15px;
-    border: 0;
-    background-color: #af0808;
-    color: ghostwhite;
-    border-radius: 3px;
-    transition: all 250ms ease-in-out;
-    cursor: pointer;
-    margin-top:-15px;
-}
-    .DeleteButtonCart:hover {
-        background-color: rgb(197, 103, 103);
-    }
-
-    .DeleteButtonCart:focus {
-        outline: none;
-    }
-.SummaryButton{
-    font-size: 21px;
-    padding: 5px 20px;
-    margin-left: 3%;
-    border: 0;
-    background-color: #af0808;
-    color: ghostwhite;
-    border-radius: 3px;
-    transition: all 250ms ease-in-out;
-    cursor: pointer;
-}
-    .SummaryButton:hover {
-        background-color: rgb(197, 103, 103);
-    }
-
-    .SummaryButton:focus {
-        outline: none;
-    }
-
-.Summary{
-    margin-top: 50px;
-    width: 35%;
-    margin-left: 60%;
-    position: absolute;
-    bottom: .5%;
-}
-.Cancel{
-    font-size: 18px;
-    padding: 5px 15px;
-    border: 0;
-    background-color: #66666E;
-    color: ghostwhite;
-    border-radius: 3px;
-    transition: all 250ms ease-in-out;
-    cursor: pointer;
-}
-@media screen and (max-width:550px){
-    .CartAuth{
-        display: none;
-    }
-    .CartGenre{
-        display: none;
-    }
-    .CartTitle{
-        margin-left:-30%;
-        font-size: 20px;
-    }
-    .CartPrice{
-        font-size: 20px;
-        font-weight: 600;
-    }
-    .CartImg{
-        display: none;
-    }
-}
-@media screen and (max-width:995px){
-    .CartAuth{
-        display: none;
-    }
-    .CartTitle{
-        margin-left:-30%;
-        font-size: 20px;
-    }
-    .CartPrice{
-        font-size: 20px;
-        font-weight: 600;
-    }
+@media screen and (max-width: 995px) {
+  .CartAuth {
+    display: none;
+  }
+  .CartTitle {
+    margin-left: -30%;
+    font-size: 20px;
+  }
+  .CartPrice {
+    font-size: 20px;
+    font-weight: 600;
+  }
 }

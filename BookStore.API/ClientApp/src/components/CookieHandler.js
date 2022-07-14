@@ -1,26 +1,26 @@
-﻿function createCookie(name, value, days) {
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        var expires = "; expires=" + date.toGMTString();
-    }
-    else var expires = "";
-    document.cookie = name + "=" + value + expires + "; path=/; Secure;";
+function createCookie (name, value, days) {
+  let expires = ''
+  if (days) {
+    const date = new Date()
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
+    expires = '; expires=' + date.toGMTString()
+  } else expires = ''
+  document.cookie = name + '=' + value + expires + '; path=/; Secure;'
 }
 
-function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
+function readCookie (name) {
+  const nameEQ = name + '='
+  const ca = document.cookie.split(';')
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i]
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length)
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length)
+  }
+  return null
 }
 
-function eraseCookie(name) {
-    createCookie(name, "", -1);
+function eraseCookie (name) {
+  createCookie(name, '', -1)
 }
 
-export { createCookie, readCookie, eraseCookie };
+export { createCookie, readCookie, eraseCookie }

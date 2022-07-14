@@ -1,192 +1,195 @@
 .ProfileContainer {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.150);
-    border-radius: 0.25rem;
-    height: 70vh;
-    width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  height: 70vh;
+  width: 100%;
 }
 
 .Profile {
-    background-image: linear-gradient(to right, rgba(255,250,130), rgba(254,220,112),rgba(255,163,114));
-    padding: 20px;
-    height: 43vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 250, 130),
+    rgba(254, 220, 112),
+    rgba(255, 163, 114)
+  );
+  padding: 20px;
+  height: 43vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .ProfileRight {
-    align-self: flex-end;
-    margin-top: -17%;
-    width: 200px;
-    height: 200px;
-    margin-right: 7%;
+  align-self: flex-end;
+  margin-top: -17%;
+  width: 200px;
+  height: 200px;
+  margin-right: 7%;
 }
 
 .ProfileImg {
-    position: absolute;
-    width: 220px;
-    height: 220px;
+  position: absolute;
+  width: 220px;
+  height: 220px;
 }
-@media screen and (max-height:735px) {
-    #imagedel{
-        visibility: hidden;
-    }
-    .ProfileBody{
-        font-size: 15px !important;
-        margin-top: 5% !important;
-    }
-    .ProfileHead{
-        font-size: large;
-        margin-top: 5%;
-    }
+@media screen and (max-height: 735px) {
+  #imagedel {
+    visibility: hidden;
+  }
+  .ProfileBody {
+    font-size: 15px !important;
+    margin-top: 5% !important;
+  }
+  .ProfileHead {
+    font-size: large;
+    margin-top: 5%;
+  }
 }
 
-@media screen and (max-width:1200px) {
-    #imagedel {
-        visibility: hidden;
-    }
+@media screen and (max-width: 1200px) {
+  #imagedel {
+    visibility: hidden;
+  }
 }
-@media screen and (max-width:1000px) {
-    .UsernameChange{
-        padding: 3px 7px !important;
-        font-size: 17px !important;
-        margin-top: 39vh !important;
-        margin-left: 29% !important;
-    }
-    .PasswordChange{
-        padding: 3px 7px !important;
-        font-size: 17px !important;
-        margin-top: 39vh !important;
-        margin-right: 29% !important;
-    }
+@media screen and (max-width: 1000px) {
+  .UsernameChange {
+    padding: 3px 7px !important;
+    font-size: 17px !important;
+    margin-top: 39vh !important;
+    margin-left: 29% !important;
+  }
+  .PasswordChange {
+    padding: 3px 7px !important;
+    font-size: 17px !important;
+    margin-top: 39vh !important;
+    margin-right: 29% !important;
+  }
 }
-@media screen and (max-width:800px) {
-    .ProfileBody{
-        width: 300px !important;
-    }
+@media screen and (max-width: 800px) {
+  .ProfileBody {
+    width: 300px !important;
+  }
 }
-@media screen and (max-width:600px) {
-
-    .PasswordChange{
-        padding: 3px 7px !important;
-        font-size: 17px !important;
-        margin-top: 39vh !important;
-        margin-right: 1% !important;
-    }
-    .ProfileBody {
-        margin-left: 10% !important;
-    }
-    .ProfileHead {
-        margin-left: 10% !important;
-    }
-    
+@media screen and (max-width: 600px) {
+  .PasswordChange {
+    padding: 3px 7px !important;
+    font-size: 17px !important;
+    margin-top: 39vh !important;
+    margin-right: 1% !important;
+  }
+  .ProfileBody {
+    margin-left: 10% !important;
+  }
+  .ProfileHead {
+    margin-left: 10% !important;
+  }
 }
 .ProfileLeft {
-    align-self: flex-start;
+  align-self: flex-start;
 }
 
 .ProfileHead {
-    font-size: x-large;
-    margin-top: 10%;
-    margin-left: 40%;
-    width: 100%;
+  font-size: x-large;
+  margin-top: 10%;
+  margin-left: 40%;
+  width: 100%;
 }
 
-    .ProfileHead span {
-        padding-left: 10px;
-    }
+.ProfileHead span {
+  padding-left: 10px;
+}
 
 .ProfileBody {
-    font-size: 18px;
-    margin-top: 10%;
-    margin-left: 40%;
-    width: 100%;
+  font-size: 18px;
+  margin-top: 10%;
+  margin-left: 40%;
+  width: 100%;
 }
 
-    .ProfileBody span {
-        padding-left: 10px;
-    }
+.ProfileBody span {
+  padding-left: 10px;
+}
 
 .PasswordChange {
-    border-radius: 30px;
-    background-color: #f3f6fb;
-    border: 1px transparent solid;
-    position: absolute;
-    padding: 6px 15px;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 0;
-    margin-top: 38.5vh;
+  border-radius: 30px;
+  background-color: #f3f6fb;
+  border: 1px transparent solid;
+  position: absolute;
+  padding: 6px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 0;
+  margin-top: 38.5vh;
 }
 
 #PasswordText {
-    margin-left: 29px;
-    z-index: 0;
-    position: absolute;
-    margin-top: 47vh;
-    font-size: 20px;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+  margin-left: 29px;
+  z-index: 0;
+  position: absolute;
+  margin-top: 47vh;
+  font-size: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
 }
 
-    #PasswordText.fade {
-        opacity: 1;
-        z-index: 1;
-    }
+#PasswordText.fade {
+  opacity: 1;
+  z-index: 1;
+}
 
 .PassWordChangeForm {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #oldpw {
-    width: 52%;
-    margin-left: 10px
+  width: 52%;
+  margin-left: 10px;
 }
 
 #changepw {
-    width: 50%;
-    margin-left: 10px
+  width: 50%;
+  margin-left: 10px;
 }
 
 #pwchangesubmit {
-    margin-left: 25%;
+  margin-left: 25%;
 }
 .change-input {
-    min-width: 18em;
-    padding: 0px 10px;
-    font-size: 16px;
-    background-color: #f3f3f3;
-    border: 0;
-    border-radius: 4px;
-    transition: all 250ms ease-in-out;
+  min-width: 18em;
+  padding: 0px 10px;
+  font-size: 16px;
+  background-color: #f3f3f3;
+  border: 0;
+  border-radius: 4px;
+  transition: all 250ms ease-in-out;
 }
 
-    .change-input:focus {
-        outline: none;
-        box-shadow: 0px 0px 12px 0.8px rgb(170, 168, 172);
-    }
-.change-label {
-        font-size: 16px;
-        padding-left: 3px;
-    }
-#passwordmerr{
-    position: absolute;
-    padding-top: 1%;
-    width: 100px;
-    padding-left: 1%;
+.change-input:focus {
+  outline: none;
+  box-shadow: 0px 0px 12px 0.8px rgb(170, 168, 172);
 }
-#passworderr{
-    position: absolute;
-    padding-top: 1%;
-    width: 100px;
-    padding-left: 1%;
+.change-label {
+  font-size: 16px;
+  padding-left: 3px;
+}
+#passwordmerr {
+  position: absolute;
+  padding-top: 1%;
+  width: 100px;
+  padding-left: 1%;
+}
+#passworderr {
+  position: absolute;
+  padding-top: 1%;
+  width: 100px;
+  padding-left: 1%;
 }

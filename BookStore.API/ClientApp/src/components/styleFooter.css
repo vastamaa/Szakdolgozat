@@ -1,74 +1,73 @@
 .Footer-Box {
-    margin-top: 1%;
-    padding: 8px 4px;
-    bottom: 0;
-    position: relative;
-    width: 100%;
-    background-color: #ffff66;
-    font-size: 15px;
+  margin-top: 1%;
+  padding: 8px 4px;
+  bottom: 0;
+  position: relative;
+  width: 100%;
+  background-color: #ffff66;
+  font-size: 15px;
 }
 
 .Footer-Container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 50%;
-    margin: 0 auto;
-    width: 690px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  margin: 0 auto;
+  width: 690px;
 }
 
 .Footer-Row {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(185px, 1fr));
-    /*    grid-gap: 20px;*/
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  /*    grid-gap: 20px;*/
 }
 
+@media only screen and (max-width: 1000px) {
+  .Footer-Row {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 
-@media only screen and (max-width:1000px) {
-    .Footer-Row {
-        grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
-    }
-
-    .Footer-Box {
-        padding: 70px 30px;
-    }
+  .Footer-Box {
+    padding: 70px 30px;
+  }
 }
 
-@media screen and (max-width:960) {
-    .Footer-Row {
-        grid-template-columns: repeat(auto-fill,minmax(50px, 100px)) !important;
-    }
+@media screen and (max-width: 960) {
+  .Footer-Row {
+    grid-template-columns: repeat(auto-fill, minmax(50px, 100px)) !important;
+  }
 
-    .Footer-Link{
-        font-size: 12px !important;
-    }
-    .Footer-Heading{
-        font-size: 18px !important;
-    }
+  .Footer-Link {
+    font-size: 12px !important;
+  }
+  .Footer-Heading {
+    font-size: 18px !important;
+  }
 }
 
 .Footer-Column {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-left: 10vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 10vh;
 }
 
 .Footer-Link {
-    color: rgb(0, 0, 0);
-    margin-bottom: 20px;
-    font-size: 15px;
-    text-decoration: none;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+  font-size: 15px;
+  text-decoration: none;
 }
 
-    .Footer-Link:hover {
-        color: #66666E;
-        transition: 200ms ease-in;
-    }
+.Footer-Link:hover {
+  color: #66666e;
+  transition: 200ms ease-in;
+}
 
 .Footer-Heading {
-    font-size: 20px;
-    color: rgb(51, 51, 51);
-    margin-bottom: 40px;
-    font-weight: bold;
+  font-size: 20px;
+  color: rgb(51, 51, 51);
+  margin-bottom: 40px;
+  font-weight: bold;
 }

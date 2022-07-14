@@ -1,154 +1,154 @@
 .login-container {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 1.5em;
-    padding-bottom: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
 }
 
 .login-border {
-    border: 3px solid rgb(221, 219, 219);
-    border-radius: 5px;
-    padding: 20px 35px 20px 35px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 250ms ease-in-out;
+  border: 3px solid rgb(221, 219, 219);
+  border-radius: 5px;
+  padding: 20px 35px 20px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 250ms ease-in-out;
 }
 
 .login-header {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .login-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .login-img-container {
-    width: 11em;
-    margin: auto;
+  width: 11em;
+  margin: auto;
 }
 
 .login-img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .login-form {
-    margin-top: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .login-form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
 }
 
 .login-label {
-    font-size: 20px;
-    padding-left: 3px;
+  font-size: 20px;
+  padding-left: 3px;
 }
 
 .login-input {
-    margin-top: 6px;
-    min-width: 18em;
-    height: 37px;
-    padding: 0px 10px;
-    font-size: 16px;
-    background-color: #f3f3f3;
-    border: 0;
-    border-radius: 4px;
-    margin-bottom: 31px;
-    transition: all 250ms ease-in-out;
+  margin-top: 6px;
+  min-width: 18em;
+  height: 37px;
+  padding: 0px 10px;
+  font-size: 16px;
+  background-color: #f3f3f3;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 31px;
+  transition: all 250ms ease-in-out;
 }
 
-    .login-input:focus {
-        outline: none;
-        box-shadow: 0px 0px 12px 0.8px rgb(170, 168, 172);
-    }
+.login-input:focus {
+  outline: none;
+  box-shadow: 0px 0px 12px 0.8px rgb(170, 168, 172);
+}
 
 .login-footer {
-    margin-top: 1.5em;
+  margin-top: 1.5em;
 }
 
 .login-btn {
-    font-size: 21px;
-    padding: 5px 20px;
-    border: 0;
-    background-color: #af0808;
-    color: ghostwhite;
-    border-radius: 3px;
-    transition: all 250ms ease-in-out;
-    cursor: pointer;
+  font-size: 21px;
+  padding: 5px 20px;
+  border: 0;
+  background-color: #af0808;
+  color: ghostwhite;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
 }
 
-    .login-btn:hover {
-        background-color: rgb(197, 103, 103);
-    }
+.login-btn:hover {
+  background-color: rgb(197, 103, 103);
+}
 
-    .login-btn:focus {
-        outline: none;
-    }
+.login-btn:focus {
+  outline: none;
+}
 
 .login-border:hover {
-    box-shadow: 0px 0px 12px 0.8px rgb(212, 212, 212);
+  box-shadow: 0px 0px 12px 0.8px rgb(212, 212, 212);
 }
 
 .error {
-    display: visible;
-    color: rgb(255, 0, 0);
-    font-size: 12px;
-    text-align: center;
+  display: visible;
+  color: rgb(255, 0, 0);
+  font-size: 12px;
+  text-align: center;
 }
 
 .valid {
-    display: none;
+  display: none;
 }
 
 .none {
-    display: none;
+  display: none;
 }
-.ForgorPassword{
-    text-decoration: none;
-    color: #af0808;
-    font-size: 17px ;
-    display: inline-block;
-    position: relative;
+.ForgorPassword {
+  text-decoration: none;
+  color: #af0808;
+  font-size: 17px;
+  display: inline-block;
+  position: relative;
 }
-.ForgorPassword::after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color:#af0808;
-    transform-origin: bottom center;
-    transition: transform 0.25s ease-out;
+.ForgorPassword::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #af0808;
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
 }
-.ForgorPassword:hover::after{
-    transform: scaleX(1);
-    transform-origin: bottom center;
+.ForgorPassword:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
 }
-.ForgorPassword:hover{
-    color: #b15454;
+.ForgorPassword:hover {
+  color: #b15454;
 }
-#ForgotButton{
-    top: 15vh;
-    position:relative;
+#ForgotButton {
+  top: 15vh;
+  position: relative;
 }
-.ForgotBox{
-    position:absolute;
+.ForgotBox {
+  position: absolute;
 }
-.forgot{
-    margin-bottom: 12px !important;
+.forgot {
+  margin-bottom: 12px !important;
 }

@@ -1,212 +1,217 @@
-@media screen and (max-width:1400px){
-    .BookCard{
-        width: 300px !important;
-    }
+@media screen and (max-width: 1400px) {
+  .BookCard {
+    width: 300px !important;
+  }
 }
-@media screen and (max-width:980px){
-    .BookCard{
-        height: 400px !important;
-        width: 150px !important;
-    }
-    .BookCardTitle {
-        font-size: 15px !important;
-        padding-top: 10px !important;
-    }
-    .BookCardShow {
-        margin-top: 30px !important;
-        padding: 3px !important;
-        font-size: 12px !important;
-    }
-
+@media screen and (max-width: 980px) {
+  .BookCard {
+    height: 400px !important;
+    width: 150px !important;
+  }
+  .BookCardTitle {
+    font-size: 15px !important;
+    padding-top: 10px !important;
+  }
+  .BookCardShow {
+    margin-top: 30px !important;
+    padding: 3px !important;
+    font-size: 12px !important;
+  }
 }
-@media screen and (max-width:760px){
-    .BookCardsContainerGrid {
-        grid-template-columns: minmax(100px, 300px) minmax(100px, 300px) minmax(100px, 300px) !important;
-    }
-    .BookCard{
-        height: 250px !important;
-        width: 150px !important;
-    }
-    .BookCardTitle {
-        font-size: 10px !important;
-        padding-top: 5px !important;
-    }
-    .BookCardShow {
-        margin-top: -10px !important;
-        padding: 1.5px !important;
-        font-size: 10px !important;
-    }
-    .BookCardImg {
-        width: 75% !important;
-    }
+@media screen and (max-width: 760px) {
+  .BookCardsContainerGrid {
+    grid-template-columns: minmax(100px, 300px) minmax(100px, 300px) minmax(
+        100px,
+        300px
+      ) !important;
+  }
+  .BookCard {
+    height: 250px !important;
+    width: 150px !important;
+  }
+  .BookCardTitle {
+    font-size: 10px !important;
+    padding-top: 5px !important;
+  }
+  .BookCardShow {
+    margin-top: -10px !important;
+    padding: 1.5px !important;
+    font-size: 10px !important;
+  }
+  .BookCardImg {
+    width: 75% !important;
+  }
 }
-@media screen and (max-width:510px){
-    .BookCardsContainerGrid {
-        grid-template-columns: minmax(100%,80%)  !important;
-    }
-    .BookCard{
-        height: 300px !important;
-        width: 90px !important;
-    }
-    .BookCardTitle {
-        font-size: 17px !important;
-        padding-top: 0  !important;
-        margin-top: -10px;
-    }
-    .BookCardShow {
-        margin-top: -5px !important;
-        padding: 5px !important;
-        font-size: 14px !important;
-        z-index: 10;
-    }
-    .BookCardImg {
-        
-        width: 40% !important;
-    }
+@media screen and (max-width: 510px) {
+  .BookCardsContainerGrid {
+    grid-template-columns: minmax(100%, 80%) !important;
+  }
+  .BookCard {
+    height: 300px !important;
+    width: 90px !important;
+  }
+  .BookCardTitle {
+    font-size: 17px !important;
+    padding-top: 0 !important;
+    margin-top: -10px;
+  }
+  .BookCardShow {
+    margin-top: -5px !important;
+    padding: 5px !important;
+    font-size: 14px !important;
+    z-index: 10;
+  }
+  .BookCardImg {
+    width: 40% !important;
+  }
 }
 .BookCardsContainerGrid {
-    display: grid;
-    border-collapse: collapse;
-    min-width: 100%;
-    grid-template-columns: minmax(200px, 600px) minmax(200px, 600px) minmax(200px, 600px);
+  display: grid;
+  border-collapse: collapse;
+  min-width: 100%;
+  grid-template-columns: minmax(200px, 600px) minmax(200px, 600px) minmax(
+      200px,
+      600px
+    );
 }
 
 .BookCard {
-    width: 8vh;
-    flex: 1 0 30%;
-    display: flex;
-    margin: 2.5% 10px 10px 10px;
-    flex-direction: column;
-    background-clip: border-box;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: .25rem;
-    background-image: linear-gradient(to right, rgba(255,250,130), rgba(254,220,112));
-    clear: both;
-    justify-content: center;
+  width: 8vh;
+  flex: 1 0 30%;
+  display: flex;
+  margin: 2.5% 10px 10px 10px;
+  flex-direction: column;
+  background-clip: border-box;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 0.25rem;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 250, 130),
+    rgba(254, 220, 112)
+  );
+  clear: both;
+  justify-content: center;
 }
 
 .BookCardTitle {
-    height: 50px;
-    font-size: 25px;
-    padding-top: 20px;
-    text-align: center;
+  height: 50px;
+  font-size: 25px;
+  padding-top: 20px;
+  text-align: center;
 }
 
 .BookCardShow {
-    color: #F3F6FB;
-    position: absolute;
-    margin-top: 110px;
-    padding: 5px;
-    font-size: 17px;
-    background-color: transparent;
-    cursor: pointer;
-    z-index: 0;
-    background-color: #AF0808;
-    cursor: pointer;
-    transition: all 250ms ease-in-out
+  color: #f3f6fb;
+  position: absolute;
+  margin-top: 110px;
+  padding: 5px;
+  font-size: 17px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 0;
+  background-color: #af0808;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
 }
 
-    .BookCardShow:hover {
-        background-color:  rgb(197, 103, 103);
-    }
+.BookCardShow:hover {
+  background-color: rgb(197, 103, 103);
+}
 
-    .BookCardShow:focus {
-        color: #F3F6FB;
-        background-color: #AF0808;
-        outline: none !important;
-        outline-offset: none !important;
-        box-shadow: none;
-    }
+.BookCardShow:focus {
+  color: #f3f6fb;
+  background-color: #af0808;
+  outline: none !important;
+  outline-offset: none !important;
+  box-shadow: none;
+}
 
 .BookCardBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .BookCardImg {
-    padding-top: 10px;
-    align-self: center;
-    max-width: 100%;
-    height: 70%;
-    width: 80%;
+  padding-top: 10px;
+  align-self: center;
+  max-width: 100%;
+  height: 70%;
+  width: 80%;
 }
 
 .BookCardBody {
-    flex: auto;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 1rem;
-    position: relative;
-    align-items: center;
+  flex: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+  position: relative;
+  align-items: center;
 }
-.modal-header{
-    background-color: #ffff66 !important;
-    justify-content: center;
+.modal-header {
+  background-color: #ffff66 !important;
+  justify-content: center;
 }
 .modal-header .close {
-    display:none;
-
-  }
-.ModalCardImg{
+  display: none;
+}
+.ModalCardImg {
   width: 40%;
-
 }
-.ModalRight{
-    color: black;
-    float:right ; 
-    display:inline;
-    width: 420px;
-    
+.ModalRight {
+  color: black;
+  float: right;
+  display: inline;
+  width: 420px;
 }
 
-.ModalTextSpacing{
-    display: block;
-    margin-bottom: 1px;
-    font-size: 21px;
-    font-weight:350;
+.ModalTextSpacing {
+  display: block;
+  margin-bottom: 1px;
+  font-size: 21px;
+  font-weight: 350;
 }
-.ModalDesc{
-    text-align: center;
-    font-size: 21px;
-    font-weight:450;
+.ModalDesc {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 450;
 }
-.Desc{
-    font-weight:350;
-    color: black;
+.Desc {
+  font-weight: 350;
+  color: black;
 }
-.Price{
-    font-size: 24px;
-    font-weight: 480;
+.Price {
+  font-size: 24px;
+  font-weight: 480;
 }
-.PriceText{
-    font-weight: 500;
+.PriceText {
+  font-weight: 500;
 }
-.CancelButton{
-    transition: all 250ms ease-in-out;
-    background-color: #66666E;
+.CancelButton {
+  transition: all 250ms ease-in-out;
+  background-color: #66666e;
 }
 
-.BuyButton{
-    font-size: 18px;
-    padding: 5px 15px;
-    border: 0;
-    background-color: #af0808;
-    color: ghostwhite;
-    border-radius: 3px;
-    transition: all 250ms ease-in-out;
-    cursor: pointer;
+.BuyButton {
+  font-size: 18px;
+  padding: 5px 15px;
+  border: 0;
+  background-color: #af0808;
+  color: ghostwhite;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
 }
 .BuyButton:hover {
-    background-color: rgb(197, 103, 103);
+  background-color: rgb(197, 103, 103);
 }
 
 .CancelButton:hover {
-    background-color: #7f7f8a;
+  background-color: #7f7f8a;
 }
-.hr{
-    margin-bottom: -20px;
+.hr {
+  margin-bottom: -20px;
 }
-.BaseSize{
-    min-height: 500px;
+.BaseSize {
+  min-height: 500px;
 }

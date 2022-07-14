@@ -87,8 +87,6 @@ namespace BookStore.API
             services.Configure<JwtConfig>(Configuration.GetSection(JwtConfig.Name));
             services.Configure<MailSettingsModel>(Configuration.GetSection("MailSettings"));
 
-            services.AddAutoMapper(typeof(Startup));
-
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(builder =>
@@ -125,8 +123,6 @@ namespace BookStore.API
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-            //app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,35 +1,36 @@
 /* Provide sufficient contrast against white background */
 a {
-    color: #0366d6;
+  color: #0366d6;
 }
 
 code {
-    color: #E01A76;
+  color: #e01a76;
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
 }
 
 @font-face {
-    font-family: "UrbanistBold";
-    src: local("UrbanistBold"), url("./fonts/Urbanist/Urbanist-Bold.ttf") format("truetype");
-    font-weight: bold;
+  font-family: "UrbanistBold";
+  src: local("UrbanistBold"),
+    url("./fonts/Urbanist/Urbanist-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
 
 .font-face-gm {
-    font-family: "UrbanistBold";
-    height: auto;
-    max-width: 100%;
+  font-family: "UrbanistBold";
+  height: auto;
+  max-width: 100%;
 }
 
 .stick-the-navbar {
-    position: sticky;
-    top: 0;
+  position: sticky;
+  top: 0;
 }
 /*  */
 #root {
-    min-width: 100%;
+  min-width: 100%;
 }

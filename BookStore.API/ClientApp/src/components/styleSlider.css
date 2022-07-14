@@ -1,160 +1,158 @@
-@media screen and (max-width:1050px){
-    .SliderContainer{
-        height:60vh !important;
-    }
-    .SliderImageContainer {
-        width: 300px !important;
-    }
-    .SliderImage {
-        width: 350px !important;
-    }
-    .SliderInfoContainer {
-        margin-left: 55vh !important;
-        margin-bottom: 35vh !important;
-        font-size: 30px ;
-    }
+@media screen and (max-width: 1050px) {
+  .SliderContainer {
+    height: 60vh !important;
+  }
+  .SliderImageContainer {
+    width: 300px !important;
+  }
+  .SliderImage {
+    width: 350px !important;
+  }
+  .SliderInfoContainer {
+    margin-left: 55vh !important;
+    margin-bottom: 35vh !important;
+    font-size: 30px;
+  }
 }
-@media screen and (max-width:980px){
-    .SliderContainer{
-        height:40vh !important;
-    }
-    .SliderImageContainer {
-        width: 200px !important;
-    }
-    .SliderImage {
-        width: 250px !important;
-    }
-    .SliderInfoContainer {
-        margin-left: 30vh !important;
-        margin-bottom: 55vh !important;
-        width: 300px !important;
-    }
+@media screen and (max-width: 980px) {
+  .SliderContainer {
+    height: 40vh !important;
+  }
+  .SliderImageContainer {
+    width: 200px !important;
+  }
+  .SliderImage {
+    width: 250px !important;
+  }
+  .SliderInfoContainer {
+    margin-left: 30vh !important;
+    margin-bottom: 55vh !important;
+    width: 300px !important;
+  }
 }
-@media screen and (max-width:590px){
-    .SliderContainer{
-        height:35vh !important;
-    }
-    .SliderImageContainer {
-        width: 200px !important;
-    }
-    .SliderImage {
-        width: 250px !important;
-    }
-    .SliderInfoContainer {
-        margin-left: 30vh !important;
-        margin-bottom: 55vh !important;
-        width: 300px !important;
-    }
-    .SliderTitle{
-        font-size: 25px !important;
-    }
-    .SliderDesc{
-        font-size: 15px !important;
-    }
+@media screen and (max-width: 590px) {
+  .SliderContainer {
+    height: 35vh !important;
+  }
+  .SliderImageContainer {
+    width: 200px !important;
+  }
+  .SliderImage {
+    width: 250px !important;
+  }
+  .SliderInfoContainer {
+    margin-left: 30vh !important;
+    margin-bottom: 55vh !important;
+    width: 300px !important;
+  }
+  .SliderTitle {
+    font-size: 25px !important;
+  }
+  .SliderDesc {
+    font-size: 15px !important;
+  }
 }
-@media screen and (max-width:420px){
-    .SliderContainer{
-        height:40vh !important;
-    }
-    .SliderImageContainer {
-        width: 100px !important;
-    }
-    .SliderImage {
-        width: 170px !important;
-    }
-    .SliderInfoContainer {
-        margin-left: 22vh !important;
-        margin-bottom: 55vh !important;
-        width: 200px !important;
-    }
-    .SliderTitle{
-        font-size: 25px !important;
-    }
-    .SliderDesc{
-        font-size: 15px !important;
-    }
+@media screen and (max-width: 420px) {
+  .SliderContainer {
+    height: 40vh !important;
+  }
+  .SliderImageContainer {
+    width: 100px !important;
+  }
+  .SliderImage {
+    width: 170px !important;
+  }
+  .SliderInfoContainer {
+    margin-left: 22vh !important;
+    margin-bottom: 55vh !important;
+    width: 200px !important;
+  }
+  .SliderTitle {
+    font-size: 25px !important;
+  }
+  .SliderDesc {
+    font-size: 15px !important;
+  }
 }
-
-
 
 .SliderContainer {
-    margin-top: 0.5%;
-    width: 100%;
-    height: 80vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    padding: 4px;
+  margin-top: 0.5%;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  padding: 4px;
 }
 
 .SliderArrow {
-    width: 50px;
-    height: 50px;
-    background-color: #c4c1c1;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    cursor: pointer;
-    opacity: 0.5;
-    z-index: 50000;
+  width: 50px;
+  height: 50px;
+  background-color: #c4c1c1;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+  opacity: 0.5;
+  z-index: 50000;
 }
 
 .SliderWrapper {
-    height: 100%;
-    display: flex;
-    transition: all 1.2s ease;
+  height: 100%;
+  display: flex;
+  transition: all 1.2s ease;
 }
 
 .Slide {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .SliderImageContainer {
-    height: 100%;
-    width: 480px;
-    flex: 1;
+  height: 100%;
+  width: 480px;
+  flex: 1;
 }
 
 .SliderImage {
-    height: 80%;
-    width: 500px;
-    border-radius: 1px;
-    object-fit: cover;
+  height: 80%;
+  width: 500px;
+  border-radius: 1px;
+  object-fit: cover;
 }
 
 .SliderInfoContainer {
-    position: absolute;
-    margin-left: 520px;
-    margin-bottom: 50px;
-    flex: 1;
-    padding: 50px;
-    width: 60vh;
+  position: absolute;
+  margin-left: 520px;
+  margin-bottom: 50px;
+  flex: 1;
+  padding: 50px;
+  width: 60vh;
 }
 
 .SliderTitle {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .SliderDesc {
-    margin: 40px 0px;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    color: black;
+  margin: 40px 0px;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  color: black;
 }
 
 .SliderButton {
-    padding: 10px;
-    font-size: 20px;
-    background-color: transparent;
-    cursor: pointer;
-    z-index: 0;
+  padding: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 0;
 }

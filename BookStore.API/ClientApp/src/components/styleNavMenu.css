@@ -1,198 +1,197 @@
 ﻿a.navbar-brand {
-    white-space: normal;
-    text-align: center;
-    word-break: break-all;
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
 }
 
 html {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 @media (min-width: 790px) {
-    html {
-        font-size: 19px;
-    }
+  html {
+    font-size: 19px;
+  }
 }
 
-
 .box-shadow {
-    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
 }
 
 .NavContainer {
-    height: 60px;
-    background-color: #FFFF66;
-    width:100%;
+  height: 60px;
+  background-color: #ffff66;
+  width: 100%;
 }
 
 .NavWrapper {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .NavLeft {
-    flex: 1;
-    display: flex;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .Lang {
-    font-size: 16px;
-    cursor: pointer;
-    margin-left: 5px;
-    padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 10px;
 }
 
 .SearchContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    height: 30px;
-    margin-left: 6.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  height: 30px;
+  margin-left: 6.5%;
 }
 .NavCenter {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 
 .NavLogo {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .NavRight {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .NavMenuItem {
-    padding: 5px 17px 5px 17px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-left: 20px;
+  padding: 5px 17px 5px 17px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 20px;
 }
 
 .stick-the-navbar {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    box-shadow: 0 2px 1px -1px rgb(228, 228, 228);
-    z-index: 300;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  box-shadow: 0 2px 1px -1px rgb(228, 228, 228);
+  z-index: 300;
 }
 
 .bars {
+  display: none;
+  color: black;
+}
+
+@media screen and (min-width: 791px) {
+  .burgirMenu {
     display: none;
-    color: black;
+  }
 }
 
-@media screen and (min-width:791px) {
-    .burgirMenu {
-        display: none;
-    }
-}
+@media screen and (max-width: 790px) {
+  .bars {
+    display: block;
+    position: absolute;
+    bottom: 60%;
+    right: 0;
+    transform: translate(-100%, 75%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
 
-@media screen and (max-width:790px) {
-    .bars {
-        display: block;
-        position: absolute;
-        bottom: 60%;
-        right: 0;
-        transform: translate(-100%,75%);
-        font-size: 1.8rem;
-        cursor: pointer;
-    }
+  .NavLeft {
+    display: none;
+  }
 
-    .NavLeft {
-        display: none;
-    }
-
-    .NavRight {
-        display: none;
-    }
+  .NavRight {
+    display: none;
+  }
 }
 
 .burgerClose {
-    align-items: center;
-    margin: 10px;
-    width: 30px;
-    height: 30px;
-    z-index: 10;
-    cursor: pointer;
+  align-items: center;
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  z-index: 10;
+  cursor: pointer;
 }
 
 .burgirHead {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .burgirDiv {
-    margin-top: -15%;
-    margin-top: -23%;
-    margin-left: 3%;
+  margin-top: -15%;
+  margin-top: -23%;
+  margin-left: 3%;
 }
 
 .burgirMenu {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: #F3F6FB;
-    width: 250px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    text-align: start;
-    justify-content: flex-start;
-    list-style: none;
-    padding: 20px;
-    transition: all 1s ease;
-    border-style: none none none solid;
-    border-color: #66666E;
-    border-width: 5px;
-    border-spacing: 10px;
-    border-collapse: separate;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #f3f6fb;
+  width: 250px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 20px;
+  transition: all 1s ease;
+  border-style: none none none solid;
+  border-color: #66666e;
+  border-width: 5px;
+  border-spacing: 10px;
+  border-collapse: separate;
 }
-#dropmenuitem{
-    width: 150px;
+#dropmenuitem {
+  width: 150px;
 }
-.HoverUnderLine{
-    text-decoration: none;
-    color: black;
-    display: inline-block;
-    position: relative;
+.HoverUnderLine {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  position: relative;
 }
-.HoverUnderLine::after{
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color:black;
-    transform-origin: bottom center;
-    transition: transform 0.25s ease-out;
+.HoverUnderLine::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
 }
-.HoverUnderLine:hover::after{
-    transform: scaleX(1);
-    transform-origin: bottom center;
+.HoverUnderLine:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
 }
-.HoverUnderLine:hover{
-    color: black;
+.HoverUnderLine:hover {
+  color: black;
 }
-.HoverUnderLine:focus{
-    color: black;
+.HoverUnderLine:focus {
+  color: black;
 }
-.dropdownthingy{
-    margin-top: 13px!important;
-    margin-right: -20px !important;
-    z-index: -1;
-    width: 10% !important;
+.dropdownthingy {
+  margin-top: 13px !important;
+  margin-right: -20px !important;
+  z-index: -1;
+  width: 10% !important;
 }
-#cartbutton{
-    margin: 0 !important;
-    margin-right: -5% !important;
+#cartbutton {
+  margin: 0 !important;
+  margin-right: -5% !important;
 }

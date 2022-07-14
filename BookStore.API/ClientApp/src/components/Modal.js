@@ -1,80 +1,120 @@
-import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { Cart } from './Cart';
-import { createCookie, readCookie } from './CookieHandler';
-import "./styleBookCards.css";
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { readCookie } from './CookieHandler'
+import './styleBookCards.css'
 
 export class ModalExample extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            modal: false
-        };
-        this.toggle = this.toggle.bind(this);
+  constructor (props) {
+    super(props)
+    this.state = {
+      modal: false
     }
+    this.toggle = this.toggle.bind(this)
+  }
 
-    toggle() {
-        this.setState({
-            modal: !this.state.modal
-        });
+  toggle () {
+    this.setState({
+      modal: !this.state.modal
+    })
+  }
+
+  coockie () {
+    if (readCookie('token') == null) {
+      window.location.replace('https://localhost:5001/accounts/login')
+    } else {
+      localStorage.setItem(
+        this.props.isbn,
+        JSON.stringify({
+          title: this.props.title,
+          price: this.props.price,
+          img: this.props.imgLink,
+          isbn: this.props.isbn,
+          genre: this.props.genre,
+          author: this.props.authorName,
+          lang: this.props.lang,
+          publisher: this.props.publisher,
+          year: this.props.publishingYear,
+          desc: this.props.desc
+        })
+      )
+      this.toggle()
     }
-    coockie() {
-        if(readCookie("token")==null)
-        {
-            window.location.replace("https://localhost:5001/accounts/login");
-        }
-        else{
+  }
 
-            localStorage.setItem(this.props.isbn, JSON.stringify({
-                title:this.props.title,
-                price:this.props.price,
-                img: this.props.imgLink,
-                isbn: this.props.isbn,
-                genre: this.props.genre,
-                author:this.props.authorName,
-                lang:this.props.lang,
-                publisher:this.props.publisher,
-                year:this.props.publishingYear,
-                desc:this.props.desc
-            }));
-            this.toggle();
-        }
-    }
-
-    render() {
-        return (
-            
-            <div className='BookCardBtn'>
-
-                <Button className='BookCardShow' onClick={this.toggle}>SHOW MORE</Button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className="BookCardModal" size="lg">
-                    <ModalHeader className='ModalTitle' toggle={this.toggle}>{this.props.title}</ModalHeader>
-                    <ModalBody>
-                        <div>
-                            <img className='ModalCardImg' src={this.props.imgLink}></img>
-                            <p className='ModalRight '> <span className='ModalTextSpacing'>Author: {this.props.authorName}</span><br />
-                                <span className='ModalTextSpacing'>Genre: {this.props.genre}</span><br />
-                                <span className='ModalTextSpacing'>Language: {this.props.lang}</span><br />
-                                <span className='ModalTextSpacing'>Pages: {this.props.pages}</span><br />
-                                <span className='ModalTextSpacing'>ISBN: {this.props.isbn}</span><br />
-                                <span className='ModalTextSpacing'>Publisher: {this.props.publisher}</span><br />
-                                <span className='ModalTextSpacing'>Publishing Year: {this.props.publishingYear}</span></p>
-                        </div>
-                        <hr />
-                        <div>
-                            <p className='ModalDesc'>Description</p>
-                            <p className='Desc'>{this.props.desc}</p>
-                        </div>
-                    </ModalBody>
-                    <ModalFooter>
-
-                        <p className='Price'><span className='PriceText'>Price:</span>  {this.props.price} Ft</p>
-                        <button className='BuyButton' id='buybutton' onClick={()=>this.coockie()}>Buy</button>{' '}
-                        <Button className='Cancel' onClick={this.toggle}>Cancel</Button>
-                    </ModalFooter>
-
-                </Modal>
+  render () {
+    return (
+      <div className="BookCardBtn">
+        <Button className="BookCardShow" onClick={this.toggle}>
+          SHOW MORE
+        </Button>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle}
+          className="BookCardModal"
+          size="lg"
+        >
+          <ModalHeader className="ModalTitle" toggle={this.toggle}>
+            {this.props.title}
+          </ModalHeader>
+          <ModalBody>
+            <div>
+              <img className="ModalCardImg" src={this.props.imgLink}></img>
+              <p className="ModalRight ">
+                {' '}
+                <span className="ModalTextSpacing">
+                  Author: {this.props.authorName}
+                </span>
+                <br />
+                <span className="ModalTextSpacing">
+                  Genre: {this.props.genre}
+                </span>
+                <br />
+                <span className="ModalTextSpacing">
+                  Language: {this.props.lang}
+                </span>
+                <br />
+                <span className="ModalTextSpacing">
+                  Pages: {this.props.pages}
+                </span>
+                <br />
+                <span className="ModalTextSpacing">
+                  ISBN: {this.props.isbn}
+                </span>
+                <br />
+                <span className="ModalTextSpacing">
+                  Publisher: {this.props.publisher}
+                </span>
+                <br />
+                <span className="ModalTextSpacing">
+                  Publishing Year: {this.props.publishingYear}
+                </span>
+              </p>
             </div>
-        );
-    }
+            <hr />
+            <div>
+              <p className="ModalDesc">Description</p>
+              <p className="Desc">{this.props.desc}</p>
+            </div>
+          </ModalBody>
+          <ModalFooter>
+            <p className="Price">
+              <span className="PriceText">Price:</span> {this.props.price} Ft
+            </p>
+            <button
+              className="BuyButton"
+              id="buybutton"
+              onClick={() => this.coockie()}
+            >
+              Buy
+            </button>{' '}
+            <Button className="Cancel" onClick={this.toggle}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </Modal>
+      </div>
+    )
+  }
 }
+

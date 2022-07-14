@@ -1,10 +1,11 @@
-﻿import React, { Component } from 'react';
-import './styleLogin.css';
+import React from 'react'
+import './styleLogin.css'
 
-export class Name extends Component {
-    render() {
-        return (
-            <div>Site</div>
-        );
-    }
+export const Base = () => {
+  return (
+      <div>
+          Site
+      </div>
+  )
 }
+
