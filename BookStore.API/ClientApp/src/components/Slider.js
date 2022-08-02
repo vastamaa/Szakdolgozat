@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { sliderItems } from "./Data";
+import { sliderItems } from "./datas/DataRelatedToCategoriesAndTheSlider";
 import "./styleSlider.css";
 
 export class Slider extends Component {

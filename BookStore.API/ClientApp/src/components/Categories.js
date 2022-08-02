@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { categories, categories2, showmore } from "./Data";
+import { categories, categories2, showmore } from "./datas/DataRelatedToCategoriesAndTheSlider";
 import "./styleCate.css";
 
 export class Categories extends Component {
