@@ -1,6 +1,8 @@
 import React from "react";
 import { handleFormLoginSubmit } from "./Log";
 import "./styleLogin.css";
+import pfp from "../assets/profile.png";
+import { LoginForm } from "./forms/LoginForm";
 
 export const Login = () => {
   const LoginErrorAsync = async () => {
@@ -23,56 +25,9 @@ export const Login = () => {
         <div className="login-header">Login:</div>
         <div className="login-content">
           <div className="login-img-container">
-            <img className="login-img" src="/Images/profile.png"></img>
+            <img className="login-img" src={pfp}></img>
           </div>
-          <form
-            className="login-form"
-            action="api/accounts/login"
-            onSubmit={handleFormLoginSubmit}
-          >
-            <div className="login-form-group">
-              <label className="login-label" htmlFor="userName">
-                Username
-              </label>
-              <input
-                className="login-input"
-                type="text"
-                name="userName"
-                placeholder="Enter your username"
-                id="userName"
-                onInvalid={LoginErrorAsync}
-                required
-              ></input>
-            </div>
-            <div className="login-form-group">
-              <label className="login-label" htmlFor="password">
-                Password
-              </label>
-              <input
-                className="login-input"
-                type="Password"
-                name="password"
-                placeholder="Enter your password"
-                id="password"
-                onInvalid={LoginErrorAsync}
-                required
-              ></input>
-            </div>
-            <a className="ForgorPassword" href="/accounts/forgot-password">
-              Forgot password
-            </a>
-            <div className="login-footer">
-              <p className="none" id="loginsubmit">
-                Please fill the form
-              </p>
-              <button type="submit" className="login-btn">
-                Submit
-              </button>
-              <p className="none" id="loginfail">
-                Login Failed
-              </p>
-            </div>
-          </form>
+          <LoginForm />
         </div>
       </div>
     </div>
