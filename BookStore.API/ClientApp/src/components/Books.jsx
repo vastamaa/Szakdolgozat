@@ -37,7 +37,7 @@ export const Books = () => {
 
     return (
         <div className="BaseSize">
-            <h1 id="tabelLabel">All the books</h1>
+            <h1 id="tabelLabel">Buzi</h1>
             {loading ? <Spinner animation="border" variant="warning" /> : <BooksList books={books} /> }
         </div>
     );
