@@ -48,7 +48,7 @@ export const categories = [
   {
     id: 2,
     img: "https://images.pexels.com/photos/1853354/pexels-photo-1853354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    title: "CHILDREN'S FICTION",
+    title: "CHILDREN",
   },
   {
     id: 3,

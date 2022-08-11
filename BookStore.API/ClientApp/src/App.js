@@ -20,13 +20,16 @@ export default class App extends Component {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/books" element={<Books />} />
+            <Route path="/books/comics" element={<Books />} />
+            <Route path="/books/children" element={<Books />} />
+            <Route path="/books/literature" element={<Books />} />
+            <Route path="/books/lifestyle" element={<Books />} />
+            <Route path="/books/history" element={<Books />} />
+            <Route path="/books/gastronomy" element={<Books />} />
             <Route path="/accounts/register" element={<Register />} />
             <Route path="/accounts/login" element={<Login />} />
             <Route path="/accounts/profile-page" element={<Profile />} />
-            <Route
-              path="/accounts/forgot-password"
-              element={<ForgotPassword />}
-            />
+            <Route path="/accounts/forgot-password" element={<ForgotPassword />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </Layout>

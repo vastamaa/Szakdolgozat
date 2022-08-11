@@ -1,47 +1,32 @@
-import React from "react";
-import "./styleLogin.css";
+import React, { useState } from "react";
+import { NavItem, NavLink, Nav } from "reactstrap";
+import { useNavigate } from "react-router-dom";
+import "../styleLogin.css";
 
 export const AnonymusNavMenu = () => {
-    return (
-        <header className="stick-the-navbar">
-            <div className="NavContainer NavWrapper">
-                <div className="NavLeft">
-                    <span className="Lang">EN</span>
-                </div>
+    const [isCollapsed, setIsCollapsed] = useState(false);
+    const navigate = useNavigate();
 
-                <div className="NavCenter">
-                    <NavLink tag={Link} to="/">
-                        {" "}
-                        <h1 className="NavLogo HoverUnderLine">Litera</h1>
-                    </NavLink>
-                </div>
-                <div className="NavRight">
-                    <NavLink
-                        tag={Link}
-                        onClick={() =>
-                            window.location.replace("https://localhost:5001/books")
-                        }
-                        className="NavMenuItem HoverUnderLine"
-                        to="/books"
-                    >
-                        Books
-                    </NavLink>
-                    <NavLink
-                        tag={Link}
-                        className="NavMenuItem HoverUnderLine"
-                        to="/accounts/login"
-                    >
-                        Login
-                    </NavLink>
-                    <NavLink
-                        tag={Link}
-                        className="NavMenuItem HoverUnderLine"
-                        to="/accounts/register"
-                    >
-                        Register
-                    </NavLink>
-                </div>
-                )}
+    return (
+        <>
+            <div className="NavRight">
+                <Nav>
+                    <NavItem>
+                        <NavLink className="NavMenuItem HoverUnderLine" onClick={() => { navigate('/books') }}>
+                            Books
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="NavMenuItem HoverUnderLine" onClick={() => { navigate('/accounts/login') }}>
+                            Login
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink className="NavMenuItem HoverUnderLine" onClick={() => { navigate('/accounts/register') }}>
+                            Register
+                        </NavLink>
+                    </NavItem>
+                </Nav>
             </div>
             <div
                 className="burgirMenu"
@@ -56,30 +41,47 @@ export const AnonymusNavMenu = () => {
                     }}
                 ></div>
                 <div className="burgirDiv">
-                    <NavLink
-                        tag={Link}
-                        className="NavMenuItem HoverUnderLine burgirHead"
-                        to="/"
-                    >
-                        Home
-                    </NavLink>
-                    <NavLink
-                        tag={Link}
-                        className="NavMenuItem HoverUnderLine burgirList"
-                        to="/accounts/login"
-                    >
-                        Login
-                    </NavLink>
-                    <NavLink
-                        tag={Link}
-                        className="NavMenuItem HoverUnderLine burgirList"
-                        to="/accounts/register"
-                    >
-                        Register
-                    </NavLink>
+                    {/*<NavLink*/}
+                    {/*    tag={Link}*/}
+                    {/*    className="NavMenuItem HoverUnderLine burgirHead"*/}
+                    {/*    to="/"*/}
+                    {/*>*/}
+                    {/*    Home*/}
+                    {/*</NavLink>*/}
+                    {/*<NavLink*/}
+                    {/*    tag={Link}*/}
+                    {/*    className="NavMenuItem HoverUnderLine burgirList"*/}
+                    {/*    to="/accounts/login"*/}
+                    {/*>*/}
+                    {/*    Login*/}
+                    {/*</NavLink>*/}
+                    {/*<NavLink*/}
+                    {/*    tag={Link}*/}
+                    {/*    className="NavMenuItem HoverUnderLine burgirList"*/}
+                    {/*    to="/accounts/register"*/}
+                    {/*>*/}
+                    {/*    Register*/}
+                    {/*</NavLink>*/}
+                    /* Not working fully well. The burger menu icon has been removed, so its kinda off. */
+                    <Nav>
+                        <NavItem>
+                            <NavLink className="NavMenuItem HoverUnderLine burgirHead" onClick={() => { navigate('/') }}>
+                                Home
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink className="NavMenuItem HoverUnderLine burgirList" onClick={() => { navigate('/accounts/login') }}>
+                                Login
+                            </NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink className="NavMenuItem HoverUnderLine burgirList" onClick={() => { navigate('/accounts/register') }}>
+                                Register
+                            </NavLink>
+                        </NavItem>
+                    </Nav>
                 </div>
-                )}
             </div>
-        </header>
+        </>
     );
 };
