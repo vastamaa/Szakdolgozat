@@ -9,6 +9,7 @@ import { Profile } from "./components/Profile";
 import { ForgotPassword } from "./components/ForgotPassword";
 import { Cart } from "./components/Cart";
 import "./custom.css";
+import "./custom.css";
 
 export default class App extends Component {
   static displayName = App.name;
