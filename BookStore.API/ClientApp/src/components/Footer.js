@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import "./styleFooter.css";
+import React, { Component } from 'react'
+import './styleFooter.css'
 
 export class Footer extends Component {
-  render() {
+  render () {
     return (
       <div className="Footer-Box">
         <div className="Footer-Container">
@@ -38,6 +38,6 @@ export class Footer extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }

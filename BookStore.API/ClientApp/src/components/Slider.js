@@ -1,44 +1,44 @@
-import React, { Component } from "react";
-import { sliderItems } from "./datas/DataRelatedToCategoriesAndTheSlider";
-import "./styleSlider.css";
+import React, { Component } from 'react'
+import { sliderItems } from './datas/DataRelatedToCategoriesAndTheSlider'
+import './styleSlider.css'
 
 export class Slider extends Component {
-  static displayName = Slider.name;
+  static displayName = Slider.name
 
-  constructor(props) {
-    super(props);
-    this.state = { slideIndex: 0, loading: true };
+  constructor (props) {
+    super(props)
+    this.state = { slideIndex: 0, loading: true }
   }
 
   handleClick = (direction) => {
-    if (direction === "left") {
-      const counter = this.state.slideIndex - 1;
+    if (direction === 'left') {
+      const counter = this.state.slideIndex - 1
       if (counter >= 0) {
-        this.setState({ slideIndex: counter, loading: false });
+        this.setState({ slideIndex: counter, loading: false })
       } else {
-        this.setState({ slideIndex: 2, loading: false });
+        this.setState({ slideIndex: 2, loading: false })
       }
     } else {
-      let counterr = 0;
+      let counterr = 0
       if (this.state.slideIndex < 2) {
-        counterr = this.state.slideIndex + 1;
-        this.setState({ slideIndex: counterr, loading: false });
+        counterr = this.state.slideIndex + 1
+        this.setState({ slideIndex: counterr, loading: false })
       } else {
-        this.setState({ slideIndex: 0, loading: false });
+        this.setState({ slideIndex: 0, loading: false })
       }
     }
-  };
+  }
 
-  render() {
+  render () {
     const sliding = {
-      transform: `translateX(${this.state.slideIndex * -100}vw)`,
-    };
+      transform: `translateX(${this.state.slideIndex * -100}vw)`
+    }
     return (
       <div className="SliderContainer">
         <div
           className="SliderArrow"
-          style={{ left: "10px", zIndex: 5 }}
-          onClick={() => this.handleClick("left")}
+          style={{ left: '10px', zIndex: 5 }}
+          onClick={() => this.handleClick('left')}
         ></div>
 
         {sliderItems.map((item) => (
@@ -58,10 +58,10 @@ export class Slider extends Component {
 
         <div
           className="SliderArrow"
-          style={{ right: "10px", zIndex: 5 }}
+          style={{ right: '10px', zIndex: 5 }}
           onClick={this.handleClick}
         ></div>
       </div>
-    );
+    )
   }
 }

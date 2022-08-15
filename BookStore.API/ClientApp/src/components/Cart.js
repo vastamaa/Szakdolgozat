@@ -1,70 +1,70 @@
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { getData } from "./TokenDecode";
-import React, { Component } from "react";
-import "./styleCart.css";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { getData } from './TokenDecode'
+import React, { Component } from 'react'
+import './styleCart.css'
 
 export class Cart extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       sum: 0,
       modal: false,
-      FirstName: "",
-      LastName: "",
-    };
-    this.toggle = this.toggle.bind(this);
+      FirstName: '',
+      LastName: ''
+    }
+    this.toggle = this.toggle.bind(this)
   }
 
-  toggle() {
+  toggle () {
     this.setState({
-      modal: !this.state.modal,
-    });
+      modal: !this.state.modal
+    })
   }
 
-  componentDidMount() {
-    this.loadcart();
-    const values = [];
-    const keys = Object.keys(localStorage);
-    let i = keys.length;
+  componentDidMount () {
+    this.loadcart()
+    const values = []
+    const keys = Object.keys(localStorage)
+    let i = keys.length
     while (i--) {
-      values.push(localStorage.getItem(keys[i]));
+      values.push(localStorage.getItem(keys[i]))
     }
     const sumall = values
       .map((item) => JSON.parse(item).price)
-      .reduce((prev, curr) => prev + curr, 0);
-    this.setState({ sum: sumall });
-    const data = getData();
+      .reduce((prev, curr) => prev + curr, 0)
+    this.setState({ sum: sumall })
+    const data = getData()
     if (data !== undefined) {
       this.setState({
         FirstName:
           data[
-            "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"
+            'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'
           ],
         LastName:
-          data["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"],
-      });
+          data['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname']
+      })
     }
   }
 
-  loadcart() {
-    const values = [];
-    const keys = Object.keys(localStorage);
-    let i = keys.length;
+  loadcart () {
+    const values = []
+    const keys = Object.keys(localStorage)
+    let i = keys.length
     while (i--) {
-      values.push(localStorage.getItem(keys[i]));
+      values.push(localStorage.getItem(keys[i]))
     }
-    function MinusAmount(isbn) {
-      localStorage.removeItem(isbn);
-      window.location.reload(false);
+    function MinusAmount (isbn) {
+      localStorage.removeItem(isbn)
+      window.location.reload(false)
     }
-    function Final() {
-      alert("Order in progress we will notify you");
-      history.pushState({}, {}, "/");
-      localStorage.clear();
+    function Final () {
+      alert('Order in progress we will notify you')
+      history.pushState({}, {}, '/')
+      localStorage.clear()
     }
-    let final;
+    let final
     if (this.state.sum === 0) {
-      final = <div>No item here</div>;
+      final = <div>No item here</div>
     } else {
       final = (
         <div className="grid-item Summary">
@@ -88,7 +88,7 @@ export class Cart extends Component {
                   <br />
                   <input
                     type="text"
-                    value={this.state.FirstName + " " + this.state.LastName}
+                    value={this.state.FirstName + ' ' + this.state.LastName}
                     required
                   ></input>
                   <br />
@@ -125,7 +125,7 @@ export class Cart extends Component {
             </form>
           </Modal>
         </div>
-      );
+      )
     }
     return (
       <div>
@@ -162,10 +162,10 @@ export class Cart extends Component {
         ))}
         {final}
       </div>
-    );
+    )
   }
 
-  render() {
+  render () {
     return (
       <div className="BaseSize">
         <div className="CartContainer">
@@ -174,6 +174,6 @@ export class Cart extends Component {
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
