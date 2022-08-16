@@ -1,15 +1,4 @@
-@media screen and (max-width: 1400px) {
-  card-wrapper {
-    width: 300px !important;
-  }
-}
-
 @media screen and (max-width: 980px) {
-  .card-wrapper {
-    height: 400px !important;
-    width: 150px !important;
-  }
-
   .book-title {
     font-size: 15px !important;
     padding-top: 10px !important;
@@ -30,11 +19,6 @@
       ) !important;
   }
 
-  .card-wrapper {
-    height: 250px !important;
-    width: 150px !important;
-  }
-
   .book-title {
     font-size: 10px !important;
     padding-top: 5px !important;
@@ -45,20 +29,11 @@
     padding: 1.5px !important;
     font-size: 10px !important;
   }
-
-  .book-cover-image {
-    width: 75% !important;
-  }
 }
 
 @media screen and (max-width: 510px) {
   .book-cards-wrapper {
     grid-template-columns: minmax(100%, 80%) !important;
-  }
-
-  .card-wrapper {
-    height: 300px !important;
-    width: 90px !important;
   }
 
   .book-title {
@@ -73,10 +48,6 @@
     font-size: 14px !important;
     z-index: 10;
   }
-
-  .book-cover-image {
-    width: 40% !important;
-  }
 }
 
 .book-cards-wrapper {
@@ -87,33 +58,6 @@
       200px,
       600px
     );
-}
-
-.card-wrapper {
-  width: 8vh;
-  flex: 1 0 30%;
-  display: flex;
-  margin: 2.5% 10px 10px 10px;
-  flex-direction: column;
-  background-clip: border-box;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 0.25rem;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 250, 130),
-    rgba(254, 220, 112)
-  );
-  clear: both;
-  justify-content: center;
-  min-width: 95%;
-  height: 600px;
-}
-
-.card-title {
-  height: 50px;
-  font-size: 25px;
-  padding-top: 20px;
-  text-align: center;
 }
 
 .BookCardShow {
@@ -145,31 +89,6 @@
 .BookCardBtn {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.book-cover-image {
-  max-width: 100%;
-  width: auto;
-  height: 100%;
-  display: block;
-  border: 2px solid black;
-}
-
-.image-wrapper {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70%;
-}
-
-.card-body {
-  flex: auto;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 1rem;
-  position: relative;
   align-items: center;
 }
 

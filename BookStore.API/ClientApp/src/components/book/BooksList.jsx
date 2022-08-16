@@ -1,7 +1,9 @@
-import { Wrapper } from "../ui/Wrapper";
-import { Book } from "./Book";
+import React from 'react'
 
-import "./styleBookCards.css";
+import { Wrapper } from '../ui/Wrapper'
+import { Book } from './Book'
+
+import './BooksList.css'
 
 export const BooksList = ({ books }) => {
   return (
@@ -10,5 +12,5 @@ export const BooksList = ({ books }) => {
         <Book key={book.isbn} book={book} />
       ))}
     </Wrapper>
-  );
-};
+  )
+}

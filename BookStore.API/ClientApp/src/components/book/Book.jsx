@@ -1,9 +1,9 @@
-import { Wrapper } from "../ui/Wrapper";
-import { BookModal } from "../Modal";
-import { BookCoverImage } from "./BookCoverImage";
-import { BookTitle } from "./BookTitle";
+import { Wrapper } from '../ui/Wrapper';
+import { BookModal } from '../Modal';
+import { BookCoverImage } from './BookCoverImage';
+import { BookTitle } from './BookTitle';
 
-import "../book/styleBookCards.css";
+import './Book.css';
 
 export const Book = ({ book }) => {
   return (
