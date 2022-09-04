@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { NavItem, NavLink, Nav } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-import "../styleLogin.css";
+
+import "./styleNavMenu.css";
 
 export const AnonymusNavMenu = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const navigate = useNavigate();
 
   return (
-    <>
-      <div className="NavRight">
+    <React.Fragment>
+      <div className="d-flex flex-grow-1 align-items-center justify-content-end">
         <Nav>
-          <NavItem>
+          <NavItem className="navigation-menu-item">
             <NavLink
-              className="NavMenuItem HoverUnderLine"
+              className="navigation-menu-item-link"
               onClick={() => {
                 navigate("/books");
               }}
@@ -21,9 +22,9 @@ export const AnonymusNavMenu = () => {
               Books
             </NavLink>
           </NavItem>
-          <NavItem>
+          <NavItem className="navigation-menu-item">
             <NavLink
-              className="NavMenuItem HoverUnderLine"
+              className="navigation-menu-item-link"
               onClick={() => {
                 navigate("/accounts/login");
               }}
@@ -31,9 +32,9 @@ export const AnonymusNavMenu = () => {
               Login
             </NavLink>
           </NavItem>
-          <NavItem>
+          <NavItem className="navigation-menu-item">
             <NavLink
-              className="NavMenuItem HoverUnderLine"
+              className="navigation-menu-item-link"
               onClick={() => {
                 navigate("/accounts/register");
               }}
@@ -80,9 +81,9 @@ export const AnonymusNavMenu = () => {
           /* Not working fully well. The burger menu icon has been removed, so
           its kinda off. */
           <Nav>
-            <NavItem>
+            <NavItem className="navigation-menu-item">
               <NavLink
-                className="NavMenuItem HoverUnderLine burgirHead"
+                className="navigation-menu-item-link burgirHead"
                 onClick={() => {
                   navigate("/");
                 }}
@@ -90,9 +91,9 @@ export const AnonymusNavMenu = () => {
                 Home
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="navigation-menu-item">
               <NavLink
-                className="NavMenuItem HoverUnderLine burgirList"
+                className="navigation-menu-item-link burgirList"
                 onClick={() => {
                   navigate("/accounts/login");
                 }}
@@ -100,9 +101,9 @@ export const AnonymusNavMenu = () => {
                 Login
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="navigation-menu-item">
               <NavLink
-                className="NavMenuItem HoverUnderLine burgirList"
+                className="navigation-menu-item-link burgirList"
                 onClick={() => {
                   navigate("/accounts/register");
                 }}
@@ -113,6 +114,6 @@ export const AnonymusNavMenu = () => {
           </Nav>
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 };

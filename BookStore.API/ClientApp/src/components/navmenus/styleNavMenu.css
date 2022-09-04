@@ -19,13 +19,12 @@ html {
 }
 
 .NavContainer {
-  height: 60px;
+  height: 7vh;
   background-color: #ffff66;
   width: 100%;
 }
 
 .NavWrapper {
-  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,21 +36,13 @@ html {
   align-items: center;
 }
 
-.Lang {
+.language {
   font-size: 16px;
   cursor: pointer;
   margin-left: 5px;
   padding: 10px;
 }
 
-.SearchContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
-  height: 30px;
-  margin-left: 6.5%;
-}
 .NavCenter {
   flex: 1;
   text-align: center;
@@ -61,18 +52,9 @@ html {
   font-weight: bold;
 }
 
-.NavRight {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.NavMenuItem {
-  padding: 5px 17px 5px 17px;
+.navigation-menu-item {
   font-size: 16px;
   cursor: pointer;
-  margin-left: 20px;
 }
 
 .stick-the-navbar {
@@ -154,37 +136,39 @@ html {
   border-spacing: 10px;
   border-collapse: separate;
 }
+
 #dropmenuitem {
   width: 150px;
 }
-.HoverUnderLine {
-  text-decoration: none;
-  color: black;
-  display: inline-block;
-  position: relative;
+
+.navigation-menu-item-link {
+    position: relative;
+    text-decoration: none;
+    color: black;
 }
-.HoverUnderLine::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 1px;
-  bottom: 0;
-  left: 0;
-  background-color: black;
-  transform-origin: bottom center;
-  transition: transform 0.25s ease-out;
+
+.navigation-menu-item-link:hover {
+    color: black;
 }
-.HoverUnderLine:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom center;
+
+.navigation-menu-item-link::after {
+    position: absolute;
+    content: "";
+    width: 80%;
+    height: 2px;
+    top: 80%;
+    left: 10%;
+    background: black;
+    transition: transform 0.25s;
+    transform: scaleX(0);
+    transform-origin: left;
+    color:black;
 }
-.HoverUnderLine:hover {
-  color: black;
+
+.navigation-menu-item-link:hover::after {
+    transform: scaleX(1);
 }
-.HoverUnderLine:focus {
-  color: black;
-}
+
 .dropdownthingy {
   margin-top: 13px !important;
   margin-right: -20px !important;

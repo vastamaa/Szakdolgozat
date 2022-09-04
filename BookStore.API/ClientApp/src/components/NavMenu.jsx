@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, NavItem } from "reactstrap";
-import "./styleNavMenu.css";
-import { getData } from "./TokenDecode";
-import { SignedInNavMenu } from "./navmenus/SignedInNavMenu";
-import { AnonymusNavMenu } from "./navmenus/AnonymusNavMenu";
+import React, { useState, useEffect } from 'react';
+import { NavLink, NavItem } from 'reactstrap';
+
+import './navmenus/styleNavMenu.css';
+
+import { getData } from './TokenDecode';
+import { SignedInNavMenu } from './navmenus/SignedInNavMenu';
+import { AnonymusNavMenu } from './navmenus/AnonymusNavMenu';
 
 export const NavMenu = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,13 +24,13 @@ export const NavMenu = () => {
 
   return (
     <header className="stick-the-navbar">
-      <div className="NavContainer NavWrapper">
+      <div className="NavContainer d-flex flex-grow-1 align-items-center">
         <div className="NavLeft">
-          <span className="Lang">EN</span>
+          <span className="language">EN</span>
         </div>
 
-        <div className="NavCenter">
-          <NavItem>
+        <div>
+          <NavItem className="d-flex flex-grow-1 align-self-center">
             <NavLink href="/">
               <h1 style={{ color: "black" }}>Litera</h1>
             </NavLink>

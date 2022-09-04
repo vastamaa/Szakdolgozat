@@ -1,7 +1,9 @@
 import React from "react";
+
 import { HiddenCategoriesList } from "./lists/HiddenCategoriesList";
 import { ShowMoreList } from "./lists/ShowMoreList";
 import { VisibleCategoriesList } from "./lists/VisibleCategoriesList";
+
 import "./styleCate.css";
 
 export const Categories = () => {

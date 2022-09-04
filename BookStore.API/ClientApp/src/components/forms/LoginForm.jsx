@@ -8,6 +8,20 @@ export const LoginForm = () => {
     password: "",
   });
 
+    const usernameChangeHandle = (event) => {
+        setUserCredentials((prevState) => ({
+            ...prevState,
+            username: event.target.value,
+        }))
+    }
+
+    const passwordChangeHandle = (event) => {
+        setUserCredentials((prevState) => ({
+            ...prevState,
+            password: event.target.value,
+        }))
+    }
+
   return (
     <Form
       className="mt-3"
@@ -21,12 +35,7 @@ export const LoginForm = () => {
           name="text"
           placeholder="Username"
           type="text"
-          onChange={(event) =>
-            setUserCredentials((prevState) => ({
-              ...prevState,
-              username: event.target.value,
-            }))
-          }
+          onChange={usernameChangeHandle}
         />
       </FormGroup>
       <FormGroup>
@@ -36,12 +45,7 @@ export const LoginForm = () => {
           name="password"
           placeholder="Password"
           type="password"
-          onChange={(event) =>
-            setUserCredentials((prevState) => ({
-              ...prevState,
-              password: event.target.value,
-            }))
-          }
+          onChange={passwordChangeHandle}
         />
       </FormGroup>
       <Button type="submit" color="danger">

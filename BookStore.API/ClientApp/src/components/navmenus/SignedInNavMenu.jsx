@@ -2,7 +2,8 @@ import React from "react";
 import { NavLink } from "reactstrap";
 import { Link } from "react-router-dom";
 import { logOut } from "../Log";
-import "../styleLogin.css";
+
+import "./styleNavMenu.css";
 
 export const SignedInNavMenu = ({ username }) => {
   return (
