@@ -1,29 +1,23 @@
 using BookStore.API.Data;
 using BookStore.API.Helpers;
 using BookStore.API.Models;
-using BookStore.API.Repository;
-using BookStore.API.Repository.Implementations;
-using BookStore.API.Repository.Interfaces;
-using BookStore.API.Services.Implementations;
-using BookStore.API.Services.Interfaces;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Text;
+using BookStore.API.Extensions;
 
 namespace BookStore.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration) => Configuration = configuration;
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        } 
 
         public IConfiguration Configuration { get; }
 
@@ -31,69 +25,17 @@ namespace BookStore.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("BookStoreDatabase")));
-
-            JwtConfig jwtConfig = new();
-            Configuration.GetSection(JwtConfig.Name).Bind(jwtConfig);
-
-            services.AddIdentity<ApplicationUserModel, IdentityRole>(opt =>
-            {
-                opt.Password.RequiredLength = 6;
-                opt.Password.RequireDigit = true;
-                opt.Password.RequireLowercase = true;
-                opt.Password.RequireUppercase = true;
-
-                opt.User.RequireUniqueEmail = true;
-
-                opt.SignIn.RequireConfirmedEmail = true;
-            })
-                .AddEntityFrameworkStores<AppDbContext>()
-                .AddDefaultTokenProviders();
-
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-
-            }).AddJwtBearer(o =>
-            {
-                o.SaveToken = true;
-                o.RequireHttpsMetadata = false;
-                o.TokenValidationParameters = new TokenValidationParameters()
-                {
-                    ValidateIssuerSigningKey = true,
-                    ValidateLifetime = true,
-                    ValidateAudience = true,
-                    ValidateIssuer = true,
-                    ValidAudience = jwtConfig.ValidAudience,
-                    ValidIssuer = jwtConfig.ValidIssuer,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig.Secret)),
-                    ClockSkew = TimeSpan.Zero
-                };
-            });
+            services.IdentityConfiguration();
+            services.AuthenticationConfiguration(Configuration);
 
             services.AddControllersWithViews().AddNewtonsoftJson();
-
-            services.AddTransient<IBooksService, BooksService>();
-            services.AddTransient<IPublishersService, PublishersService>();
-            services.AddTransient<IAuthorsService, AuthorsService>();
-            services.AddTransient<IGenresService, GenresService>();
-            services.AddTransient<ILanguagesService, LanguagesService>();
-            services.AddTransient<IAccountService, AccountService>();
-            services.AddTransient<IBook_AuthorService, Book_AuthorService>();
-            services.AddTransient<ITokenService, TokenService>();
-            services.AddTransient<IMailService, MailService>();
+            services.CustomServicesConfiguration();
+            
 
             services.Configure<JwtConfig>(Configuration.GetSection(JwtConfig.Name));
             services.Configure<MailSettingsModel>(Configuration.GetSection("MailSettings"));
 
-            services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(builder =>
-                {
-                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-                });
-            });
+            services.CorsConfiguration();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
