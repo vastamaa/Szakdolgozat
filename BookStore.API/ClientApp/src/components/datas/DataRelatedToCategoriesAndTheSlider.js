@@ -1,25 +1,9 @@
-export const sliderItems = [
-  {
-    id: 1,
-    img: 'https://images.pexels.com/photos/4865746/pexels-photo-4865746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'OPENING SALE',
-    desc: 'EVERYTHING 10% OFF',
-    bg: '#f5faf5'
-  },
-  {
-    id: 2,
-    img: 'https://images.pexels.com/photos/3772630/pexels-photo-3772630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'LEARN ABOUT EGYPT',
-    desc: 'BUY TWO GET ANOTHER ONE FREE',
-    bg: '#fcf1ed'
-  },
-  {
-    id: 3,
-    img: 'https://images.pexels.com/photos/256450/pexels-photo-256450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    title: 'BOOK OF THE WEEK',
-    desc: 'ABOUT PASSION AND MOTIVATION',
-    bg: '#fbf0f4'
-  }
+import { Slider } from '../models/Slider'
+
+export const sliders = [
+  new Slider(1, 'https://images.pexels.com/photos/4865746/pexels-photo-4865746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'OPENING SALE', 'EVERYTHING 10% OFF', '#f5faf5'),
+  new Slider(2, 'https://images.pexels.com/photos/3772630/pexels-photo-3772630.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'LEARN ABOUT EGYPT', 'BUY TWO GET ANOTHER ONE FREE', '#fcf1ed'),
+  new Slider(3, 'https://images.pexels.com/photos/256450/pexels-photo-256450.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'BOOK OF THE WEEK', 'ABOUT PASSION AND MOTIVATION', '#fbf0f4')
 ]
 
 export const categories2 = [
