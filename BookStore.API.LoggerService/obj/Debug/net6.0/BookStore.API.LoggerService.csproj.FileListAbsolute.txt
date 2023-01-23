@@ -1,0 +1,17 @@
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\bin\Debug\net6.0\BookStore.API.LoggerService.deps.json
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\bin\Debug\net6.0\BookStore.API.LoggerService.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\bin\Debug\net6.0\BookStore.API.LoggerService.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\bin\Debug\net6.0\BookStore.API.Contracts.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\bin\Debug\net6.0\BookStore.API.Entities.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\bin\Debug\net6.0\BookStore.API.Contracts.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\bin\Debug\net6.0\BookStore.API.Entities.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\obj\Debug\net6.0\BookStore.API.LoggerService.csproj.AssemblyReference.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\obj\Debug\net6.0\BookStore.API.LoggerService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\obj\Debug\net6.0\BookStore.API.LoggerService.AssemblyInfoInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\obj\Debug\net6.0\BookStore.API.LoggerService.AssemblyInfo.cs
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\obj\Debug\net6.0\BookStore.API.LoggerService.csproj.CoreCompileInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\obj\Debug\net6.0\BookStore.API.LoggerService.csproj.CopyComplete
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\obj\Debug\net6.0\BookStore.API.LoggerService.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\obj\Debug\net6.0\refint\BookStore.API.LoggerService.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\obj\Debug\net6.0\BookStore.API.LoggerService.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.LoggerService\obj\Debug\net6.0\ref\BookStore.API.LoggerService.dll

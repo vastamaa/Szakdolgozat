@@ -1,0 +1,12 @@
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\bin\Debug\net6.0\BookStore.API.Entities.deps.json
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\bin\Debug\net6.0\BookStore.API.Entities.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\bin\Debug\net6.0\BookStore.API.Entities.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\obj\Debug\net6.0\BookStore.API.Entities.csproj.AssemblyReference.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\obj\Debug\net6.0\BookStore.API.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\obj\Debug\net6.0\BookStore.API.Entities.AssemblyInfoInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\obj\Debug\net6.0\BookStore.API.Entities.AssemblyInfo.cs
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\obj\Debug\net6.0\BookStore.API.Entities.csproj.CoreCompileInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\obj\Debug\net6.0\BookStore.API.Entities.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\obj\Debug\net6.0\refint\BookStore.API.Entities.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\obj\Debug\net6.0\BookStore.API.Entities.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Entities\obj\Debug\net6.0\ref\BookStore.API.Entities.dll

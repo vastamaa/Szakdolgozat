@@ -1,0 +1,17 @@
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\bin\Debug\net6.0\BookStore.API.Service.Contracts.deps.json
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\bin\Debug\net6.0\BookStore.API.Service.Contracts.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\bin\Debug\net6.0\BookStore.API.Service.Contracts.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\bin\Debug\net6.0\BookStore.API.Entities.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\bin\Debug\net6.0\BookStore.API.Shared.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\bin\Debug\net6.0\BookStore.API.Entities.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\bin\Debug\net6.0\BookStore.API.Shared.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\obj\Debug\net6.0\BookStore.API.Service.Contracts.csproj.AssemblyReference.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\obj\Debug\net6.0\BookStore.API.Service.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\obj\Debug\net6.0\BookStore.API.Service.Contracts.AssemblyInfoInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\obj\Debug\net6.0\BookStore.API.Service.Contracts.AssemblyInfo.cs
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\obj\Debug\net6.0\BookStore.API.Service.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\obj\Debug\net6.0\BookStore.API.Service.Contracts.csproj.CopyComplete
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\obj\Debug\net6.0\BookStore.API.Service.Contracts.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\obj\Debug\net6.0\refint\BookStore.API.Service.Contracts.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\obj\Debug\net6.0\BookStore.API.Service.Contracts.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Service.Contracts\obj\Debug\net6.0\ref\BookStore.API.Service.Contracts.dll

@@ -1,41 +1,74 @@
-using BookStore.API.Data;
-using BookStore.API.Helpers;
+using BookStore.API.Extensions;
 using BookStore.API.Models;
+using BookStore.API.Presentation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using BookStore.API.Extensions;
+using Microsoft.Extensions.Options;
+using NLog;
+using System.Diagnostics.CodeAnalysis;
+using System.IO;
+using System.Linq;
 
 namespace BookStore.API
 {
+    [ExcludeFromCodeCoverage]
     public class Startup
     {
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-        } 
+        }
 
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options => options.UseMySQL(Configuration.GetConnectionString("BookStoreDatabase")));
-            services.IdentityConfiguration();
-            services.AuthenticationConfiguration(Configuration);
+            LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
-            services.AddControllersWithViews().AddNewtonsoftJson();
+#pragma warning disable ASP0000 // Do not call 'IServiceCollection.BuildServiceProvider' in 'ConfigureServices'
+            NewtonsoftJsonPatchInputFormatter GetJsonPatchInputFormatter() =>
+                new ServiceCollection().AddLogging().AddMvc().AddNewtonsoftJson()
+                .Services.BuildServiceProvider()
+                .GetRequiredService<IOptions<MvcOptions>>().Value.InputFormatters
+                .OfType<NewtonsoftJsonPatchInputFormatter>().First();
+#pragma warning restore ASP0000 // Do not call 'IServiceCollection.BuildServiceProvider' in 'ConfigureServices'
+
+
+            services.ConfigureSqlContext(Configuration);
+            services.ConfigureIISIntegration();
+            services.ConfigureLoggerService();
+            services.ConfigureRepositoryManager();
+            services.ConfigureServiceManager();
+            services.AddAutoMapper(typeof(Program));
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
+
+            services.AddAuthentication();
+            services.ConfigureIdentity();
+            services.ConfigureJWT(Configuration);
+            services.AddJwtConfiguration(Configuration);
+
+            services.AddControllers(config =>
+            {
+                config.RespectBrowserAcceptHeader = true;
+                config.ReturnHttpNotAcceptable = true;
+                config.InputFormatters.Insert(0, GetJsonPatchInputFormatter());
+            }).AddXmlDataContractSerializerFormatters()
+            .AddApplicationPart(typeof(AssemblyReference).Assembly);
+
             services.CustomServicesConfiguration();
-            
-
-            services.Configure<JwtConfig>(Configuration.GetSection(JwtConfig.Name));
             services.Configure<MailSettingsModel>(Configuration.GetSection("MailSettings"));
 
-            services.CorsConfiguration();
+            services.ConfigureCors();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -47,8 +80,10 @@ namespace BookStore.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
-
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
             else
             {
                 app.UseExceptionHandler("/Error");
@@ -77,7 +112,10 @@ namespace BookStore.API
             {
                 spa.Options.SourcePath = "ClientApp";
 
-                if (env.IsDevelopment()) spa.UseReactDevelopmentServer(npmScript: "start");
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
             });
         }
     }

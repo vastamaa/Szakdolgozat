@@ -1,0 +1,12 @@
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\bin\Debug\net6.0\BookStore.API.Shared.deps.json
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\bin\Debug\net6.0\BookStore.API.Shared.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\bin\Debug\net6.0\BookStore.API.Shared.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\obj\Debug\net6.0\BookStore.API.Shared.csproj.AssemblyReference.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\obj\Debug\net6.0\BookStore.API.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\obj\Debug\net6.0\BookStore.API.Shared.AssemblyInfoInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\obj\Debug\net6.0\BookStore.API.Shared.AssemblyInfo.cs
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\obj\Debug\net6.0\BookStore.API.Shared.csproj.CoreCompileInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\obj\Debug\net6.0\BookStore.API.Shared.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\obj\Debug\net6.0\refint\BookStore.API.Shared.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\obj\Debug\net6.0\BookStore.API.Shared.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Shared\obj\Debug\net6.0\ref\BookStore.API.Shared.dll

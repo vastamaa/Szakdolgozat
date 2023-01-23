@@ -1,0 +1,15 @@
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\bin\Debug\net6.0\BookStore.API.Contracts.deps.json
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\bin\Debug\net6.0\BookStore.API.Contracts.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\bin\Debug\net6.0\BookStore.API.Contracts.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\bin\Debug\net6.0\BookStore.API.Entities.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\bin\Debug\net6.0\BookStore.API.Entities.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\obj\Debug\net6.0\BookStore.API.Contracts.csproj.AssemblyReference.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\obj\Debug\net6.0\BookStore.API.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\obj\Debug\net6.0\BookStore.API.Contracts.AssemblyInfoInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\obj\Debug\net6.0\BookStore.API.Contracts.AssemblyInfo.cs
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\obj\Debug\net6.0\BookStore.API.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\obj\Debug\net6.0\BookStore.API.Contracts.csproj.CopyComplete
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\obj\Debug\net6.0\BookStore.API.Contracts.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\obj\Debug\net6.0\refint\BookStore.API.Contracts.dll
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\obj\Debug\net6.0\BookStore.API.Contracts.pdb
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Contracts\obj\Debug\net6.0\ref\BookStore.API.Contracts.dll

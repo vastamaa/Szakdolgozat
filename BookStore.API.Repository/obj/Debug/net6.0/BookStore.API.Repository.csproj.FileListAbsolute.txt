@@ -1,0 +1,5 @@
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Repository\obj\Debug\net6.0\BookStore.API.Repository.csproj.AssemblyReference.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Repository\obj\Debug\net6.0\BookStore.API.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Repository\obj\Debug\net6.0\BookStore.API.Repository.AssemblyInfoInputs.cache
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Repository\obj\Debug\net6.0\BookStore.API.Repository.AssemblyInfo.cs
+C:\Users\vszto\source\repos\vastamaa\Szakdolgozat\BookStore.API.Repository\obj\Debug\net6.0\BookStore.API.Repository.csproj.CoreCompileInputs.cache

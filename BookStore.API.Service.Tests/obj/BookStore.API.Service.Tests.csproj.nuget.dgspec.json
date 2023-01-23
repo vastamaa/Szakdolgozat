@@ -1,0 +1,413 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Tests\\BookStore.API.Service.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Contracts\\BookStore.API.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Contracts\\BookStore.API.Contracts.csproj",
+        "projectName": "BookStore.API.Contracts",
+        "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Contracts\\BookStore.API.Contracts.csproj",
+        "packagesPath": "C:\\Users\\vszto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vszto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Entities\\BookStore.API.Entities.csproj": {
+                "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Entities\\BookStore.API.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Entities\\BookStore.API.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Entities\\BookStore.API.Entities.csproj",
+        "projectName": "BookStore.API.Entities",
+        "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Entities\\BookStore.API.Entities.csproj",
+        "packagesPath": "C:\\Users\\vszto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vszto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Contracts\\BookStore.API.Service.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Contracts\\BookStore.API.Service.Contracts.csproj",
+        "projectName": "BookStore.API.Service.Contracts",
+        "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Contracts\\BookStore.API.Service.Contracts.csproj",
+        "packagesPath": "C:\\Users\\vszto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vszto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Entities\\BookStore.API.Entities.csproj": {
+                "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Entities\\BookStore.API.Entities.csproj"
+              },
+              "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Shared\\BookStore.API.Shared.csproj": {
+                "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Shared\\BookStore.API.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Tests\\BookStore.API.Service.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Tests\\BookStore.API.Service.Tests.csproj",
+        "projectName": "BookStore.API.Service.Tests",
+        "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Tests\\BookStore.API.Service.Tests.csproj",
+        "packagesPath": "C:\\Users\\vszto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vszto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Contracts\\BookStore.API.Contracts.csproj": {
+                "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Contracts\\BookStore.API.Contracts.csproj"
+              },
+              "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service\\BookStore.API.Service.csproj": {
+                "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service\\BookStore.API.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.8.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.2, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service\\BookStore.API.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service\\BookStore.API.Service.csproj",
+        "projectName": "BookStore.API.Service",
+        "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service\\BookStore.API.Service.csproj",
+        "packagesPath": "C:\\Users\\vszto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vszto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Contracts\\BookStore.API.Contracts.csproj": {
+                "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Contracts\\BookStore.API.Contracts.csproj"
+              },
+              "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Contracts\\BookStore.API.Service.Contracts.csproj": {
+                "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Service.Contracts\\BookStore.API.Service.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.25.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Shared\\BookStore.API.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Shared\\BookStore.API.Shared.csproj",
+        "projectName": "BookStore.API.Shared",
+        "projectPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Shared\\BookStore.API.Shared.csproj",
+        "packagesPath": "C:\\Users\\vszto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vszto\\source\\repos\\vastamaa\\Szakdolgozat\\BookStore.API.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\vszto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
