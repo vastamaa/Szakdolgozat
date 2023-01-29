@@ -1,0 +1,67 @@
+4f1e6891-f257-4edc-912a-79482c207fb1|Matthew K.|Manning
+48fa48c5-bbda-497c-b4f1-559156c21f45|Santiago|García
+d0494afe-ce30-480d-96f0-a8f050328b58|Scott|Snyder
+13ec1207-4c8f-40bc-a975-1c8218ac317c|Art|Spiegelman
+4f3fdba6-1871-41c5-85ee-e0699982d779|Randall|Munroe
+e72f2f7b-b9b2-4796-afcf-e7665ca85990|Robert E.|Howard
+73b674ea-850c-408c-bbf8-9d4e3f1389be|Marjorie|Liu
+454a42a8-a39c-4594-a3bd-6b2968ca0793|Rick|Remender
+b1e48dad-3950-499a-a838-40d744974009|Jeff|Smith
+70e40db2-5d53-45b8-a7ce-f2871b1eb7c0|Ed|Brubaker
+28700a61-7525-444f-818b-7bc958456fdb|Bartosz|Sztybor
+92fd2a42-a3ca-48e9-8633-7cd8e1ad93f0|Charles|Soule
+eaf8e457-52f5-4c31-9609-87d36b977082|Howard Phillips|Lovecraft
+0d56be16-5d18-476e-8ab9-91c19e0cca45|Walter|Simonson
+b40d97b3-1044-4228-9d3c-50c0371a7e68|Andrew|Uffindell
+c11f5cff-40fd-4b8e-a83e-3f9fdce4c1bb|Gombos|László
+6fc29921-948c-4c25-8877-415d37d71c37|Tuvja|Raviv
+9c731610-a68f-406d-9a0b-b4a84771afa9|Zsoldos|Attila
+9e31265b-a884-4afb-ba59-151394c0f5b3|Somos|Zsuzsanna
+2cf72d8c-fc5e-49cb-b5b7-693eb3b02db0|Ben|Machell
+8e3ecc36-c52a-4dcd-b950-a680227cca9d|Wilbur|Smith
+ad175984-3dba-46cd-9984-14f73bfbb112|Manon|Fargetton
+d386c5ae-fdda-4867-82ed-2414d18ec8fe|Jeffrey|Archer
+83c08ef4-1f7b-46c3-a7d2-f08997cc302f|Kenéz|Péter
+81db7bdc-319a-474a-b60f-d8b71ad81144|Bihary|Péter
+d4348f75-6bb1-4a38-b439-1b9865c2591f|Kőműves|Tamás
+f55f273d-f0ac-4d60-a0d9-1435245efa69|Algernon|Blackwood
+1c92b5e9-9eb0-43cc-9100-1e05f7f4b89a|Rejtő|Jenő
+2cf6efb1-71aa-4a64-8e8c-c11270ffbce7|Bokor|Pál
+ef68c7b6-1d73-4d93-a616-df2ab70d284e|Oliver|Bowden
+de6f8b68-f958-493c-b72f-c311de6e5b20|Jennifer Lynn|Barnes
+569c466f-8f68-453e-ba89-0a2acec0253c|Bartos|Erika
+0291d86d-6617-4023-977d-98e4ea209589|Adam|Silvera
+c47db2d0-db6f-48d3-a896-9ad202dd726f|J. K.|Rowling
+ae8a0198-ebde-443d-908c-4ae9398cd3e3|Fazekas|Anna
+2d3094ab-d78c-420e-b2fd-e9a3f326e498|Julia|Donaldson
+15296abf-31e2-490b-94d2-cf2a0581737d|Louisa May|Alcott
+bd663fa8-e549-4295-b064-0817efc88db5|Richard|Scarry
+007a256d-c66b-4d1d-9a27-a701c07ee80f|Beth|Kempton
+b4c6dcad-dbdd-4dd3-ad5b-f8a9b202ff2d|Yutaka|Yazawa
+ed4449dc-3828-4590-b8ad-e4a65d763cc4|Dr. Paul|Conti MD
+77776f22-73bb-4075-8104-1f50fb3f343b|Eckhart|Tolle
+f56cde38-df21-493a-a3d8-9a67e804d23a|Kovács|József
+6df610ba-f9b4-49e1-aa09-16424f27532d|Stéphane|Garnier
+a009335b-c0b1-464d-9150-2e6489f5e1a9|Shunmyo|Masuno
+acfdae77-ac5c-4f93-9bc4-c60cbc0c0bf5|Dr. Julie|Smith
+3cd32c37-0b0b-477d-b676-2ce5a7d6023e|Dr. Mike|Dow
+c2f8e92e-f9e0-45ee-ad6e-872be24e9f76|Jan|Andersen
+86f81a3e-06c9-465b-ab53-7aae038ea3cd|Andrea|Owen
+3cac3fee-727f-4698-b757-70b1e02c96e3|Sol|Rayond
+7c35b3a7-092f-416f-9585-051202524f7c|Grandpierre K.|Endre
+0431f413-16fb-4def-9c39-9f4e4350bc8b|Nógrádi|György
+fbb764fd-9924-4610-aaaf-de818a9b2af3|Arthur|Brand
+ea15f5f1-aaf5-4065-9630-206ccad0871c|Kollai|István
+a4824a30-8ab0-476c-8080-74afa5357bb6|Samin|Nosrat
+45fa8b5b-01ee-49cc-bdac-817bafa3b252|Tóthné Libor|Mária
+068cf0e6-cad2-4fdc-a921-c8c7ed0e2a11|Wichmann|Anna
+54598183-df78-495f-a3df-58f1e1a29de7|Rézi|néni
+b2fe0490-a7b6-4ad0-9d0a-308b83c36d3b|Tanja|Dusy
+7a2be0a4-756a-4430-a8d0-8f5955abf840|Radvánszky|Béla
+b3a0aae4-4fa3-4c2e-8ee6-28856cd60502|Gaál|Bence
+21b66fcf-23f6-4ab4-8125-44c602eed907|Karen|Edwards
+b3a0aae4-4fa3-4c2e-8ee6-28856cd60502|Dirk|Wallenburg
+844d7c88-0619-4888-bcf5-7e8176e5548d|Bud|Spencer
+d7c1cec5-602e-4855-99fa-aa071532b94a|Gáspár|Bea
+940501b7-89e8-41d6-ac1d-e575b6e5e961|Vida|József
+009311da-8c5c-4a1c-92fd-a53337528d3d|Jody|Houser

@@ -1,28 +1,31 @@
 ﻿using BookStore.API.Contracts;
-using BookStore.API.Entities.Models;
+using BookStore.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.API.Repository
 {
-    public class BookRepository : IBookRepository
+    public class BookRepository : RepositoryBase<Book>, IBookRepository
     {
-        public void CreateBook(Book author)
+        public BookRepository(RepositoryContext repositoryContext) : base(repositoryContext) { }
+
+        public void CreateBook(Book book)
         {
-            throw new NotImplementedException();
+            Create(book);
         }
 
-        public void DeleteBook(Book author)
+        public void DeleteBook(Book book)
         {
-            throw new NotImplementedException();
+            Delete(book);
         }
 
-        public Task<IEnumerable<Book>> GetAllBooksAsync(bool trackChanges)
+        public async Task<IEnumerable<Book>> GetAllBooksAsync(bool trackChanges)
         {
-            throw new NotImplementedException();
+            return await FindAll(trackChanges).OrderBy(b => b.Title).ToListAsync();
         }
 
-        public Task<Book> GetBookAsync(Guid bookId, bool trackChanges)
+        public async Task<Book> GetBookAsync(Guid bookId, bool trackChanges)
         {
-            throw new NotImplementedException();
+            return await FindByCondition(b => b.BookId.Equals(bookId), trackChanges).SingleOrDefaultAsync();
         }
     }
 }

@@ -1,13 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
-
-namespace BookStore.API.Entities.Models
+﻿namespace BookStore.API.Models
 {
-    [ExcludeFromCodeCoverage]
-    [Table("publisher")]
-    public class Publisher : BaseEntity
+    public class Publisher
     {
-        //Navigation Properties
-        public ICollection<Product>? Products { get; set; }
+        public Guid PublisherId { get; set; }
+        public string? Name { get; set; }
+
+        //Navigation
+        public List<Book>? Books { get; set; }
     }
 }

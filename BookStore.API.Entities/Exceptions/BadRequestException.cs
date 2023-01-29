@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Serialization;
 
 namespace BookStore.API.Entities.Exceptions
 {
@@ -8,6 +9,6 @@ namespace BookStore.API.Entities.Exceptions
     {
         protected BadRequestException(string message) : base(message) { }
 
-        protected BadRequestException(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext) : base(serializationInfo, streamingContext) { }
+        protected BadRequestException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext) { }
     }
 }

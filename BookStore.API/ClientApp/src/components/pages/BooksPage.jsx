@@ -32,8 +32,11 @@ export const Books = () => {
   return (
     <div className="mt-3">
       <h1>All the books</h1>
-      {loading && <Spinner animation="border" variant="warning" />}
-      {!loading && <BooksList books={books} />}
+      {loading ? (
+        <Spinner animation="border" variant="warning" />
+      ) : (
+        <BooksList books={books} />
+      )}
     </div>
   );
 };

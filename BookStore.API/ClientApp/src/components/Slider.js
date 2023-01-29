@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { sliderItems } from "./datas/DataRelatedToCategoriesAndTheSlider";
+import { sliders as sliderItems } from "./datas/DataRelatedToCategoriesAndTheSlider";
 import "./styleSlider.css";
 
 export class Slider extends Component {
@@ -33,24 +33,34 @@ export class Slider extends Component {
     const sliding = {
       transform: `translateX(${this.state.slideIndex * -100}vw)`,
     };
+
     return (
       <div className="SliderContainer">
         <div
           className="SliderArrow"
-          style={{ left: "10px", zIndex: 5 }}
+          style={{ left: "10px", zIndex: 5, alignItems: "center" }}
           onClick={() => this.handleClick("left")}
-        ></div>
+        >
+          <img
+            style={{ height: "20px" }}
+            src="/assets/img/left-arrow.png"
+            alt="arrow-button"
+          />
+        </div>
 
         {sliderItems.map((item) => (
           <div className="SliderWrapper" key={item.id} style={sliding}>
-            <div className="Slide" style={{ backgroundColor: item.bg }}>
-              <div className="SliderImageContainer" src={item.img}>
-                <img className="SliderImage" src={item.img}></img>
+            <div
+              className="Slide"
+              style={{ backgroundColor: item.backgroundColor }}
+            >
+              <div className="SliderImageContainer">
+                <img className="SliderImage" src={item.image}></img>
               </div>
 
               <div className="SliderInfoContainer">
                 <h1 className="SliderTitle">{item.title}</h1>
-                <p className="SliderDesc">{item.desc}</p>
+                <p className="SliderDesc">{item.description}</p>
               </div>
             </div>
           </div>
@@ -58,9 +68,19 @@ export class Slider extends Component {
 
         <div
           className="SliderArrow"
-          style={{ right: "10px", zIndex: 5 }}
+          style={{
+            right: "10px",
+            zIndex: 5,
+            alignItems: "center",
+          }}
           onClick={this.handleClick}
-        ></div>
+        >
+          <img
+            style={{ height: "20px" }}
+            src="/assets/img/right-arrow.png"
+            alt="arrow-button"
+          />
+        </div>
       </div>
     );
   }

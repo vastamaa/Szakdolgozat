@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookStore.API.Entities.Models;
+using BookStore.API.Models;
 using BookStore.API.Shared.DataTransferObjects;
 using System.Diagnostics.CodeAnalysis;
 

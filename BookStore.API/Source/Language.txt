@@ -1,0 +1,3 @@
+3f4db026-2a03-4562-a35a-ec65bd3d3400|hu|Hungarian
+95d61492-fcf1-442b-8f9b-23cb24276686|de|Deutsch
+0e2aab48-cf85-413b-b28e-5190373ed2ea|en|English

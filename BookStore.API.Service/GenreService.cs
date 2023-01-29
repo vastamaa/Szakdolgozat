@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using BookStore.API.Contracts;
 using BookStore.API.Entities.Exceptions;
-using BookStore.API.Entities.Models;
+using BookStore.API.Models;
 using BookStore.API.Service.Contracts;
 using BookStore.API.Shared.DataTransferObjects;
 

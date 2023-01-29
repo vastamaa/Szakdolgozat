@@ -7,7 +7,6 @@
         IGenreRepository Genre { get; }
         ILanguageRepository Language { get; }
         IPublisherRepository Publisher { get; }
-        IProductRepository Product { get; }
 
         Task SaveAsync();
     }

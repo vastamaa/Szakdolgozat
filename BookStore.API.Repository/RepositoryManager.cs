@@ -10,7 +10,6 @@ namespace BookStore.API.Repository
         private readonly Lazy<IGenreRepository> _genreRepository;
         private readonly Lazy<ILanguageRepository> _languageRepository;
         private readonly Lazy<IPublisherRepository> _publisherRepository;
-        private readonly Lazy<IProductRepository> _productRepository;
 
         public RepositoryManager(RepositoryContext repositoryContext)
         {
@@ -20,7 +19,6 @@ namespace BookStore.API.Repository
             _genreRepository = new Lazy<IGenreRepository>(() => new GenreRepository(repositoryContext));
             _languageRepository = new Lazy<ILanguageRepository>(() => new LanguageRepository(repositoryContext));
             _publisherRepository = new Lazy<IPublisherRepository>(() => new PublisherRepository(repositoryContext));
-            _productRepository = new Lazy<IProductRepository>(() => new ProductRepository(repositoryContext));
         }
 
         IAuthorRepository IRepositoryManager.Author => _authorRepository.Value;
@@ -28,7 +26,6 @@ namespace BookStore.API.Repository
         IGenreRepository IRepositoryManager.Genre => _genreRepository.Value;
         ILanguageRepository IRepositoryManager.Language => _languageRepository.Value;
         IPublisherRepository IRepositoryManager.Publisher => _publisherRepository.Value;
-        IProductRepository IRepositoryManager.Product => _productRepository.Value;
 
         public async Task SaveAsync()
         {

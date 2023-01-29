@@ -1,4 +1,4 @@
-﻿using BookStore.API.Entities.Models;
+﻿using BookStore.API.Models;
 
 namespace BookStore.API.Contracts
 {
@@ -6,7 +6,7 @@ namespace BookStore.API.Contracts
     {
         Task<IEnumerable<Book>> GetAllBooksAsync(bool trackChanges);
         Task<Book> GetBookAsync(Guid bookId, bool trackChanges);
-        void CreateBook(Book author);
-        void DeleteBook(Book author);
+        void CreateBook(Book book);
+        void DeleteBook(Book book);
     }
 }

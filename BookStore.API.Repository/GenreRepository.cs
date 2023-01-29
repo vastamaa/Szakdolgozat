@@ -1,28 +1,32 @@
 ﻿using BookStore.API.Contracts;
-using BookStore.API.Entities.Models;
+using BookStore.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.API.Repository
 {
-    public class GenreRepository : IGenreRepository
+    public class GenreRepository : RepositoryBase<Genre>, IGenreRepository
     {
+        public GenreRepository(RepositoryContext repositoryContext) : base(repositoryContext) { }
+
         public void CreateGenre(Genre genre)
         {
-            throw new NotImplementedException();
+            Create(genre);
         }
 
         public void DeleteGenre(Genre genre)
         {
-            throw new NotImplementedException();
+            Delete(genre);
         }
 
-        public Task<IEnumerable<Genre>> GetAllGenresAsync(bool trackChanges)
+        public async Task<IEnumerable<Genre>> GetAllGenresAsync(bool trackChanges)
         {
-            throw new NotImplementedException();
+            return await FindAll(trackChanges).OrderBy(c => c.Name).ToListAsync();
         }
 
-        public Task<Genre> GetGenreAsync(Guid genreId, bool trackChanges)
+        public async Task<Genre> GetGenreAsync(Guid genreId, bool trackChanges)
         {
-            throw new NotImplementedException();
+            return await FindByCondition(c => c.GenreId.Equals(genreId), trackChanges).SingleOrDefaultAsync();
+
         }
     }
 }

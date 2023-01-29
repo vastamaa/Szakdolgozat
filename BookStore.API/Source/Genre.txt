@@ -1,0 +1,6 @@
+65628f08-df4d-479a-afe0-8e9163c35aae|Comics
+cb98dc9b-db08-4b61-b12e-934e747a9bd9|History
+4a4536ee-56b7-46dc-b365-c7eba2fdb696|Literature
+cf9d50f8-349a-4acb-a4d3-0ae5af58c219|Gastronomy
+1514243d-3065-4522-b8c3-b7b33642a5d5|Lifestyle
+a098f63d-f5ee-4d47-a2d1-976abb302507|Childrens fiction

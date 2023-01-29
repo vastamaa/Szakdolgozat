@@ -1,6 +1,5 @@
 import React from "react";
 import { handleFormRegisterSubmit } from "./Log";
-import pfp from "../assets/profile.png";
 import {
   PasswordChange,
   PasswordMatchChange,
@@ -18,7 +17,7 @@ export const Register = () => {
         <div className="login-header">Register:</div>
         <div className="login-content">
           <div className="login-img-container">
-            <img className="login-img" src={pfp}></img>
+            <img className="login-img" src="/assets/profile.png"></img>
           </div>
           <p className="none" id="SubmitValid">
             Fill the boxes

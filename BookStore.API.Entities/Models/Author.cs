@@ -1,13 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
+﻿using BookStore.API.Entities.Models;
 
-namespace BookStore.API.Entities.Models
+namespace BookStore.API.Models
 {
-    [ExcludeFromCodeCoverage]
-    [Table("author")]
-    public class Author : BaseEntity
+    public class Author
     {
-        //Navigation Properties
-        public ICollection<Product>? Products { get; set; }
+        public Guid AuthorId { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+
+        //Navigation
+        public List<BookAuthor>? BookAuthors { get; set; }
     }
 }

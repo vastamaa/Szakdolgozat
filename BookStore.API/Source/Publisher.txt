@@ -1,0 +1,48 @@
+20be4af4-af7b-4fd8-9375-8ede6a58a62b|Szukits Könvykiadó és Könyvker
+4af46943-d713-4be5-a180-6ce8ec19e620|Vad Virágok Kiadó Kft.
+6ac6c486-2d5d-49ad-a1fa-739743f1df0d|Fumax Kft
+5d1ceb9f-ebcb-4212-8e05-55c334ff5471|Libri Könyvkiadó Kft.
+9be1b7db-0bd4-42e3-88b1-b2c032df032c|Penguin Books LTD
+654ad1a2-6ae5-4399-9185-c455a4f6018f|Athenaeum Kiadó Kft.
+fd5eaf89-8729-4622-aab3-35df18557c9b|Libub Group Kft.
+bd8d76ba-aa28-404d-888e-abb15cd2accd|GOLDMANN
+60be566f-cc4e-4e44-8cec-90847e806c02|Peko Kiadó
+3e30ba13-c413-42db-bf4b-0bda3061abc6|Smaragd Kiadó
+f9dbfa0d-089d-4a51-840f-fcb3345f9b8a|Bölcsészettudományi Kutatóközp.
+2afc9f72-3601-4b2f-b478-3355577d3e5e|Kossuth Kiadó Zrt.
+0658cee3-8fc1-45ee-bb2c-49464eaeb85b|Püski Kiadó Kft.
+d32056ca-0131-4481-a167-9c21639e47cb|Alexandra Könyvesház Kft.
+cd000845-c8e8-4c1a-a409-4c666e8cbad8|DELEJ
+34c99982-2c33-41e7-a2df-e0ab8a233ac4|Könyvmolyképző Kiadó Kft.
+08a69569-77f3-4f31-a30b-cea12739173e|General Press Kiadó
+826f5563-f2f7-4bd6-af12-1e882c7461b0|Könyv Guru
+90ec81e2-8203-48d8-90c5-b48dd3dbf19d|Álomgyár Kiadó
+d502bd4d-9e09-46a7-83e5-428c06f9137b|Magánkiadás
+8b0ea704-4ac2-4c2a-9ad6-03d761bbdca4|Attraktor Könyvkiadó Kft.
+ac47aa7b-35b9-4964-97a0-57127b7de0ee|Csengőkert Kiadó
+4bdff01d-6705-45e1-8a22-7f3fb1295839|Atlantic Press
+7155c8c1-a012-46b5-91ee-b298ea5dffae|Lampion Könyvek
+9e2d267d-a151-4290-a54f-79ad597446cc|Citera Kft.
+2ddcc0df-be3b-4e80-b05a-a3da8b9139db|Menő Könyvek
+c9e8f438-af82-4f26-b742-6aeb1a5d4db7|Animus Kiadó
+6ec61235-6ff5-40d1-891d-6cf1a1e5112e|Móra Ferenc Ifjúsági Könyvkiadó Zrt.
+80af39db-4b60-49f9-9883-0f758d44c743|Pozsonyi Pagony Kft
+4517b57c-42e8-4227-bd6e-03319e8e86f1|Manó Könyvek
+a202620c-dbf5-4be7-b759-a6fa7fe05795|Scolar Kiadó Kft.
+c0d5c92d-9599-4e8d-a466-65a0dcc25c8a|Édesvíz Kiadó
+48f696b5-5e14-4411-abe7-2eb71a7c291e|Reménygyógyulás Kft.
+bf0eb7b3-fc53-43e4-bf94-aea90e411cbe|21. Század Kiadó
+e4e07f27-de34-47ed-a36d-f428fd327d80|Magnólia
+6635e9ee-e40c-46e6-b3db-9a3c84de4f51|Marysol könyvkiadó
+4ef100ee-8a49-486f-ba57-a6e9ed47bbed|Titokfejtő Könyvkiadó
+04a6c8a3-947e-423e-aa5a-0e2bf1cd6d69|Európa Könyvkiadó Kft.
+cbdf6185-c85d-4fe4-ae17-7906f2887cf6|Akadémiai Kiadó Zrt.
+5bd5b75a-d557-4df5-bd36-cd7b6b00afeb|Park Könyvkiadó Kft.
+da9ead25-629e-4d86-bf60-dfd3cb63850f|Csipet kiadó
+dbf43b54-fe6d-4028-b5c6-0d1b521e4e83|Harmat Kiadói Alapítvány
+0637531f-6f93-44ab-a7de-a42c062de5df|Nemzeti Örökség
+e5425690-2aea-4b47-a467-7f719335fdb7|Business Publishing Services Kft.
+224ea606-381b-4670-bfee-c57a20c7eaa8|Lingea Kft.
+3d9001f0-a3c0-4b16-a1d5-e26ed5c924c3|Optart AG
+1d19b4cb-2543-4c20-afe6-e17eb0e7454d|Open Books
+6225f62b-1be2-4e1f-b9ed-fb1c1ed59981|Boook Kiadó Kft.

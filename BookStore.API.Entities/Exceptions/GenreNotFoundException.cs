@@ -7,12 +7,8 @@ namespace BookStore.API.Entities.Exceptions
     [Serializable]
     public class GenreNotFoundException : NotFoundException
     {
-        public GenreNotFoundException(Guid genreId) : base($"The genre with id: {genreId} doesn't exist in the database.")
-        {
-        }
+        public GenreNotFoundException(Guid genreId) : base($"The genre with id: {genreId} doesn't exist in the database.") { }
 
-        protected GenreNotFoundException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext)
-        {
-        }
+        protected GenreNotFoundException(SerializationInfo serializationInfo, StreamingContext streamingContext) : base(serializationInfo, streamingContext) { }
     }
 }

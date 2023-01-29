@@ -1,4 +1,4 @@
-﻿using BookStore.API.Entities.Models;
+﻿using BookStore.API.Models;
 
 namespace BookStore.API.Contracts
 {

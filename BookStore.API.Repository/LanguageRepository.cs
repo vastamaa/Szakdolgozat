@@ -1,28 +1,32 @@
 ﻿using BookStore.API.Contracts;
-using BookStore.API.Entities.Models;
+using BookStore.API.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.API.Repository
 {
-    public class LanguageRepository : ILanguageRepository
+    public class LanguageRepository : RepositoryBase<Language>, ILanguageRepository
     {
+        public LanguageRepository(RepositoryContext repositoryContext) : base(repositoryContext) { }
+
         public void CreateLanguage(Language language)
         {
-            throw new NotImplementedException();
+            Create(language);
         }
 
         public void DeleteLanguage(Language language)
         {
-            throw new NotImplementedException();
+            Delete(language);
         }
 
-        public Task<IEnumerable<Language>> GetAllLanguagesAsync(bool trackChanges)
+        public async Task<IEnumerable<Language>> GetAllLanguagesAsync(bool trackChanges)
         {
-            throw new NotImplementedException();
+            return await FindAll(trackChanges).OrderBy(c => c.Name).ToListAsync();
         }
 
-        public Task<Author> GetLanguageAsync(Guid languageId, bool trackChanges)
+        public async Task<Language> GetLanguageAsync(Guid languageId, bool trackChanges)
         {
-            throw new NotImplementedException();
+            return await FindByCondition(c => c.LanguageId.Equals(languageId), trackChanges).SingleOrDefaultAsync();
+
         }
     }
 }

@@ -1,7 +1,7 @@
 using AutoMapper;
 using BookStore.API.Contracts;
 using BookStore.API.Entities.Exceptions;
-using BookStore.API.Entities.Models;
+using BookStore.API.Models;
 using BookStore.API.Shared.DataTransferObjects;
 using FluentAssertions;
 using FluentAssertions.Execution;
@@ -20,7 +20,7 @@ namespace BookStore.API.Service.Tests
 
         private readonly AuthorService _authorService;
         private const string authorId = "49addfd8-33d4-4f00-9149-72163ab2983d";
-        private readonly Author getAuthorAsyncResult = new Author() { Id = Guid.Parse(authorId), Name = "Tomtom" };
+        private readonly Author getAuthorAsyncResult = new Author() { AuthorId = Guid.NewGuid(), FirstName = "Tomtom", LastName = "Bobom" };
 
         public AuthorServiceTest()
         {
@@ -67,7 +67,7 @@ namespace BookStore.API.Service.Tests
             {
                 result.Should().NotBeNull();
                 result.Should().BeOfType<Func<Task>>();
-                await result.Should().ThrowAsync<AuthorNotFounException>().WithMessage($"The author with id: {authorId} doesn't exist in the database.");
+                await result.Should().ThrowAsync<AuthorNotFoundException>().WithMessage($"The author with id: {authorId} doesn't exist in the database.");
                 _repositoryManager.Verify();
             }
         }
@@ -117,7 +117,7 @@ namespace BookStore.API.Service.Tests
                 Name = "Chin Chin"
             };
 
-            _mapper.Setup(x => x.Map<Author>(It.IsAny<AuthorForCreationDto>())).Returns(new Author { Name = "Chin Chin" }).Verifiable();
+            _mapper.Setup(x => x.Map<Author>(It.IsAny<AuthorForCreationDto>())).Returns(new Author { FirstName = "Chin Chin" }).Verifiable();
             _mapper.Setup(x => x.Map<AuthorDto>(It.IsAny<Author>())).Returns(new AuthorDto { Id = Guid.Parse(authorId), Name = "Chin Chin" }).Verifiable();
             _repositoryManager.Setup(x => x.Author.CreateAuthor(It.IsAny<Author>())).Verifiable();
             _repositoryManager.Setup(x => x.SaveAsync()).Verifiable();
@@ -140,7 +140,7 @@ namespace BookStore.API.Service.Tests
         {
             // Arrange
             var authorFoUpdateDto = new AuthorForUpdateDto() { Name = "TomTom" };
-            var author = new Author() { Id = Guid.Parse(authorId), Name = "BomBom" };
+            var author = new Author() { AuthorId = Guid.NewGuid(), FirstName = "BomBom", LastName = "Komkom" };
             _mapper.Setup(x => x.Map(It.IsAny<AuthorForUpdateDto>(), It.IsAny<Author>())).Verifiable();
             _repositoryManager.Setup(x => x.SaveAsync()).Verifiable();
 
@@ -190,7 +190,7 @@ namespace BookStore.API.Service.Tests
             {
                 result.Should().NotBeNull();
                 result.Should().BeOfType<Func<Task>>();
-                await result.Should().ThrowAsync<AuthorNotFounException>().WithMessage($"The author with id: {authorId} doesn't exist in the database.");
+                await result.Should().ThrowAsync<AuthorNotFoundException>().WithMessage($"The author with id: {authorId} doesn't exist in the database.");
                 _repositoryManager.Verify();
             }
         }

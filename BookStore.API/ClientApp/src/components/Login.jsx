@@ -1,6 +1,5 @@
 import React from "react";
 import "./styleLogin.css";
-import pfp from "../assets/profile.png";
 import { LoginForm } from "./forms/LoginForm";
 
 export const Login = () => {
@@ -10,7 +9,7 @@ export const Login = () => {
         <div className="login-header">Login:</div>
         <div className="login-content">
           <div className="login-img-container">
-            <img className="login-img" src={pfp}></img>
+            <img className="login-img" src="/assets/profile.png"></img>
           </div>
           <LoginForm />
         </div>

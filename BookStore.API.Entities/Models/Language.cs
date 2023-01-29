@@ -1,13 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
-
-namespace BookStore.API.Entities.Models
+﻿namespace BookStore.API.Models
 {
-    [ExcludeFromCodeCoverage]
-    [Table("language")]
-    public class Language : BaseEntity
+    public class Language
     {
-        //Navigation Properties
-        public ICollection<Product>? Products { get; set; }
+        public Guid LanguageId { get; set; }
+        public string? Code { get; set; }
+        public string? Name { get; set; }
+
+        //Navigation
+        public List<Book>? Books { get; set; }
     }
 }

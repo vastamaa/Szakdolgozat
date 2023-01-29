@@ -22,7 +22,6 @@ namespace BookStore.API.Service
         private readonly ILoggerManager _logger;
         private readonly IMapper _mapper;
         private readonly UserManager<User> _userManager;
-        private readonly IOptions<JwtSettings> _configuration;
         private readonly JwtSettings _jwtSettings;
 
         public AuthenticationService(ILoggerManager logger, IMapper mapper, UserManager<User> userManager, IOptions<JwtSettings> configuration)
@@ -30,8 +29,7 @@ namespace BookStore.API.Service
             _logger = logger;
             _mapper = mapper;
             _userManager = userManager;
-            _configuration = configuration;
-            _jwtSettings = _configuration.Value;
+            _jwtSettings = configuration.Value;
         }
 
         public async Task<TokenDto> CreateToken(bool populateExpiration)

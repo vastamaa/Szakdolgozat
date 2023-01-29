@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using BookStore.API.Contracts;
 using BookStore.API.Entities.Exceptions;
-using BookStore.API.Entities.Models;
+using BookStore.API.Models;
 using BookStore.API.Service.Contracts;
 using BookStore.API.Shared.DataTransferObjects;
 
@@ -85,7 +85,7 @@ namespace BookStore.API.Service
 
             if (author is null)
             {
-                throw new AuthorNotFounException(authorId);
+                throw new AuthorNotFoundException(authorId);
             }
 
 #pragma warning disable CS8603 // Possible null reference return.
@@ -99,7 +99,7 @@ namespace BookStore.API.Service
 
             if (author is null)
             {
-                throw new AuthorNotFounException(authorId);
+                throw new AuthorNotFoundException(authorId);
             }
         }
     }
