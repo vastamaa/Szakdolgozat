@@ -16,11 +16,7 @@ namespace BookStore.API.Repository
                     if (context.Database.EnsureCreated())
                     {
                         context.Database.Migrate();
-
-                        new AuthorSeeder(context).Seed();
-                        new PublisherSeeder(context).Seed();
-                        new GenreSeeder(context).Seed();
-                        new LanguageSeeder(context).Seed();
+                        new RoleSeeder(context).Seed();
                     }
                 }
             }

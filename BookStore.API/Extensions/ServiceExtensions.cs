@@ -82,7 +82,9 @@ namespace BookStore.API.Extensions
 
         public static void ConfigureJWT(this IServiceCollection services, IConfiguration configuration)
         {
-            var jwtSettings = configuration.GetSection("JwtSettings");
+            var settings = new JwtSettings();
+            configuration.GetSection(nameof(JwtSettings)).Bind(settings);
+
             var secretKey = Environment.GetEnvironmentVariable("BookStoreAPISecretKey");
 
             services.AddAuthentication(opt =>
@@ -103,8 +105,8 @@ namespace BookStore.API.Extensions
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = jwtSettings["ValidIssuer"],
-                    ValidAudience = jwtSettings["ValidAudience"],
+                    ValidIssuer = settings.ValidIssuer,
+                    ValidAudience = settings.ValidAudience,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
                 };
             });

@@ -8,7 +8,7 @@ namespace BookStore.API.Entities.Models
         public Guid BookId { get; set; }
 
         // Navigation
-        public Book? Book { get; set; }
-        public Author? Author { get; set; }
+        public Book Book { get; set; }
+        public Author Author { get; set; }
     }
 }

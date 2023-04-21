@@ -88,9 +88,7 @@ namespace BookStore.API.Service
                 throw new AuthorNotFoundException(authorId);
             }
 
-#pragma warning disable CS8603 // Possible null reference return.
             return author;
-#pragma warning restore CS8603 // Possible null reference return.
         }
 
         private async Task CheckIfAuthorExists(Guid authorId, bool trackChanges)
