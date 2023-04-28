@@ -235,7 +235,7 @@
             },
             "FluentAssertions": {
               "target": "Package",
-              "version": "[6.10.0, )"
+              "version": "[6.11.0, )"
             },
             "Microsoft.AspNetCore.SpaServices.Extensions": {
               "target": "Package",

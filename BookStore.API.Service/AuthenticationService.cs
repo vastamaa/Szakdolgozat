@@ -86,7 +86,6 @@ namespace BookStore.API.Service
             if (user == null || user.RefreshToken != tokenDto.RefreshToken || user.RefreshTokenExpiryTime <= DateTime.Now)
             {
                 throw new RefreshTokenBadRequestException();
-
             }
             _user = user;
             return await CreateToken(populateExpiration: false);
@@ -94,6 +93,7 @@ namespace BookStore.API.Service
 
         private SigningCredentials GetSigningCredentials()
         {
+            var key1 = Environment.GetEnvironmentVariable("BookStoreAPISecretKey");
             var key = Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("BookStoreAPISecretKey"));
             var secret = new SymmetricSecurityKey(key);
             return new SigningCredentials(secret, SecurityAlgorithms.HmacSha256);
@@ -117,7 +117,7 @@ namespace BookStore.API.Service
 
         private JwtSecurityToken GenerateTokenOptions(SigningCredentials signingCredentials, List<Claim> claims)
         {
-            var tokenOptions = new JwtSecurityToken
+            return new JwtSecurityToken
             (
                 issuer: _jwtSettings.ValidIssuer,
                 audience: _jwtSettings.ValidIssuer,
@@ -125,7 +125,6 @@ namespace BookStore.API.Service
                 expires: DateTime.Now.AddMinutes(Convert.ToDouble(_jwtSettings.Expires)),
                 signingCredentials: signingCredentials
             );
-            return tokenOptions;
         }
 
         private string GenerateRefreshToken()
@@ -144,6 +143,9 @@ namespace BookStore.API.Service
                 ValidateAudience = true,
                 ValidateIssuer = true,
                 ValidateIssuerSigningKey = true,
+
+                // System.ArgumentOutOfRangeException: IDX10653: The encryption algorithm 'HS256' requires a key size of at least '128' bits.
+                // Source: https://stackoverflow.com/questions/47279947/idx10603-the-algorithm-hs256-requires-the-securitykey-keysize-to-be-greater
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("BookStoreAPISecretKey"))),
                 ValidateLifetime = true,
                 ValidIssuer = _jwtSettings.ValidIssuer,

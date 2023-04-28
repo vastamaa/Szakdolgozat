@@ -2,6 +2,7 @@
 using BookStore.API.Entities.ConfigurationModels;
 using BookStore.API.Entities.Models;
 using BookStore.API.LoggerService;
+using BookStore.API.Presentation.ActionFilters;
 using BookStore.API.Repository;
 using BookStore.API.Service;
 using BookStore.API.Service.Contracts;
@@ -23,7 +24,18 @@ namespace BookStore.API.Extensions
     {
         public static void CustomServicesConfiguration(this IServiceCollection services)
         {
-            //Hello
+            services.AddScoped<IAuthorService, AuthorService>();
+            services.AddScoped<IPublisherService, PublisherService>();
+            services.AddScoped<IGenreService, GenreService>();
+            services.AddScoped<ILanguageService, LanguageService>();
+        }
+
+        public static void CustomRepositoryConfiguration(this IServiceCollection services)
+        {
+            services.AddScoped<IAuthorRepository, AuthorRepository>();
+            services.AddScoped<IPublisherRepository, PublisherRepository>();
+            services.AddScoped<IGenreRepository, GenreRepository>();
+            services.AddScoped<ILanguageRepository, LanguageRepository>();
         }
 
         public static void ConfigureLoggerService(this IServiceCollection services)
@@ -45,6 +57,11 @@ namespace BookStore.API.Extensions
         {
             services.AddDbContext<RepositoryContext>(opts =>
             opts.UseSqlServer(configuration.GetConnectionString("SqlConnection")));
+        }
+
+        public static void ConfigureCustomFilters(this IServiceCollection services)
+        {
+            services.AddScoped<ValidationFilterAttribute>();
         }
 
         public static void ConfigureIISIntegration(this IServiceCollection services)

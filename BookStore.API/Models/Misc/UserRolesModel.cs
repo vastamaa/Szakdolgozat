@@ -5,6 +5,6 @@
         public const string Admin = "Admin";
         public const string User = "User";
 
-        protected UserRolesModel() {}
+        protected UserRolesModel() { }
     }
 }

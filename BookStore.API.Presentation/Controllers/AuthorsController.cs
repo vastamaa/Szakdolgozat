@@ -1,4 +1,4 @@
-﻿using BookStore.API.Presentation.ActionFIlters;
+﻿using BookStore.API.Presentation.ActionFilters;
 using BookStore.API.Service.Contracts;
 using BookStore.API.Shared.DataTransferObjects;
 using Microsoft.AspNetCore.Authorization;
@@ -19,37 +19,52 @@ namespace BookStore.API.Presentation.Controllers
             _service = service;
         }
 
-        //GET ALL
+        /// <summary>
+        /// Endpoint to get all the authors from the database.
+        /// </summary>
+        /// <returns>Authors wrapped in an action result.</returns>
         [HttpGet]
-        public async Task<IActionResult> GetLanguages()
+        public async Task<IActionResult> GetAuthors()
         {
-            return Ok(await _service.LanguageService.GetAllLanguagesAsync(trackChanges: false));
+            return Ok(await _service.AuthorService.GetAllAuthorsAsync(trackChanges: false));
         }
 
-        //GET BY ID
-        [HttpGet("{id:guid}", Name = "GetLanguage")]
-        public async Task<IActionResult> GetLanguage(Guid languageId)
+        /// <summary>
+        /// Endpoint to get a certain author from the database.
+        /// </summary>
+        /// <param name="authorId">The author's identifier.</param>
+        /// <returns>Author wrapped in an action result.</returns>
+        [HttpGet("{id:guid}", Name = "GetAuthor")]
+        public async Task<IActionResult> GetAuthor(Guid authorId)
         {
-            return Ok(await _service.LanguageService.GetLanguageAsync(languageId, trackChanges: false));
+            return Ok(await _service.AuthorService.GetAuthorAsync(authorId, trackChanges: false));
         }
 
-        //POST
+        /// <summary>
+        /// Endpoint to create a new author in the database.
+        /// </summary>
+        /// <param name="author">Information regarding the author creation.</param>
+        /// <returns>201 -- Successfully created response.</returns>
         [HttpPost]
         [Authorize(Roles = "Administrator")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
-        public async Task<IActionResult> CreateLanguage([FromBody] LanguageForCreationDto language)
+        public async Task<IActionResult> CreateAuthor([FromBody] AuthorForCreationDto author)
         {
-            var languageToReturn = await _service.LanguageService.CreateLanguageAsync(language);
+            var authorToReturn = await _service.AuthorService.CreateAuthorAsync(author);
 
-            return CreatedAtRoute(nameof(GetLanguage), new { id = languageToReturn.Id }, languageToReturn);
+            return CreatedAtRoute(nameof(GetAuthor), new { id = authorToReturn.Id }, authorToReturn);
         }
 
-        //DELETE
+        /// <summary>
+        /// Endpoint to delete a certain resource from the database.
+        /// </summary>
+        /// <param name="id">The resource's identifier.</param>
+        /// <returns>204 -- No content response.</returns>
         [HttpDelete]
         [Authorize(Roles = "Administrator")]
-        public async Task<IActionResult> DeleteLanguage(Guid id)
+        public async Task<IActionResult> DeleteAuthor(Guid id)
         {
-            await _service.LanguageService.DeleteLanguageAsync(id, trackChanges: false);
+            await _service.AuthorService.DeleteAuthorAsync(id, trackChanges: false);
 
             return NoContent();
         }
@@ -58,9 +73,9 @@ namespace BookStore.API.Presentation.Controllers
         [HttpPut("{id:guid}")]
         [Authorize(Roles = "Administrator")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
-        public async Task<IActionResult> UpdateLanguage(Guid id, [FromBody] LanguageForUpdateDto language)
+        public async Task<IActionResult> UpdateAuthor(Guid id, [FromBody] AuthorForUpdateDto author)
         {
-            await _service.LanguageService.UpdateLanguageAsync(id, language, trackChanges: false);
+            await _service.AuthorService.UpdateAuthorAsync(id, author, trackChanges: false);
 
             return NoContent();
         }

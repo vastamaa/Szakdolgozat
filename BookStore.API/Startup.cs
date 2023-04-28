@@ -32,13 +32,11 @@ namespace BookStore.API
         {
             LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
-#pragma warning disable ASP0000 // Do not call 'IServiceCollection.BuildServiceProvider' in 'ConfigureServices'
             NewtonsoftJsonPatchInputFormatter GetJsonPatchInputFormatter() =>
                 new ServiceCollection().AddLogging().AddMvc().AddNewtonsoftJson()
                 .Services.BuildServiceProvider()
                 .GetRequiredService<IOptions<MvcOptions>>().Value.InputFormatters
                 .OfType<NewtonsoftJsonPatchInputFormatter>().First();
-#pragma warning restore ASP0000 // Do not call 'IServiceCollection.BuildServiceProvider' in 'ConfigureServices'
 
 
             services.ConfigureSqlContext(Configuration);
@@ -46,6 +44,9 @@ namespace BookStore.API
             services.ConfigureLoggerService();
             services.ConfigureRepositoryManager();
             services.ConfigureServiceManager();
+            services.CustomServicesConfiguration();
+            services.CustomRepositoryConfiguration();
+            services.ConfigureCustomFilters();
             services.AddAutoMapper(typeof(Program));
             services.Configure<ApiBehaviorOptions>(options =>
             {
@@ -90,7 +91,8 @@ namespace BookStore.API
                 app.UseSwagger();
                 app.UseSwaggerUI(options =>
                 {
-                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                    // Swagger URL: https://localhost:5001/swagger/index.html
+                    options.SwaggerEndpoint("/swagger/v1/swagger.json", "BookStore API v1");
                 });
             }
             else

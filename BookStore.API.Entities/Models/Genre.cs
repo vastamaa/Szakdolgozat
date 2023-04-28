@@ -1,8 +1,9 @@
-﻿namespace BookStore.API.Models
+﻿using BookStore.API.Entities.Models;
+
+namespace BookStore.API.Models
 {
-    public class Genre
+    public class Genre : Entity
     {
-        public Guid GenreId { get; set; }
         public string Name { get; set; }
 
         //Navigation

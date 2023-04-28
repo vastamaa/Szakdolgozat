@@ -8,6 +8,10 @@ namespace BookStore.API.Shared.DataTransferObjects
     {
         [Required(ErrorMessage = "Name is a required field.")]
         [MaxLength(30, ErrorMessage = "Maximum length for the name is 30 characters.")]
-        public string? Name { get; set; }
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "Code is a required field.")]
+        [MaxLength(10, ErrorMessage = "Maximum length for the code is 10 characters.")]
+        public string Code { get; set; }
     }
 }

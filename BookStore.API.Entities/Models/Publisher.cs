@@ -1,8 +1,9 @@
-﻿namespace BookStore.API.Models
+﻿using BookStore.API.Entities.Models;
+
+namespace BookStore.API.Models
 {
-    public class Publisher
+    public class Publisher : Entity
     {
-        public Guid PublisherId { get; set; }
         public string Name { get; set; }
 
         //Navigation

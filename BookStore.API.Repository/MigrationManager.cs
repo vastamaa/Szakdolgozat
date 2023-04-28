@@ -1,5 +1,4 @@
-﻿using BookStore.API.Repository.Seeder;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -16,7 +15,6 @@ namespace BookStore.API.Repository
                     if (context.Database.EnsureCreated())
                     {
                         context.Database.Migrate();
-                        new RoleSeeder(context).Seed();
                     }
                 }
             }

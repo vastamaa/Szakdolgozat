@@ -1,8 +1,9 @@
-﻿namespace BookStore.API.Models
+﻿using BookStore.API.Entities.Models;
+
+namespace BookStore.API.Models
 {
-    public class Language
+    public class Language : Entity
     {
-        public Guid LanguageId { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
 

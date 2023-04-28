@@ -1,19 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace BookStore.API.Presentation.ActionFIlters
+namespace BookStore.API.Presentation.ActionFilters
 {
-    public class ValidationFilterAttribute
+    public class ValidationFilterAttribute : IActionFilter
     {
+        public ValidationFilterAttribute() { }
+
         public void OnActionExecuting(ActionExecutingContext context)
         {
             var action = context.RouteData.Values["action"];
             var controller = context.RouteData.Values["controller"];
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
             var param = context.ActionArguments
                 .SingleOrDefault(x => x.Value.ToString().Contains("Dto")).Value;
-#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
             if (param is null)
             {

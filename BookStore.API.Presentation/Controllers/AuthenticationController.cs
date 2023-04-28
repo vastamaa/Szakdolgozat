@@ -1,4 +1,4 @@
-﻿using BookStore.API.Presentation.ActionFIlters;
+﻿using BookStore.API.Presentation.ActionFilters;
 using BookStore.API.Service.Contracts;
 using BookStore.API.Shared.DataTransferObjects;
 using Microsoft.AspNetCore.Mvc;
@@ -43,7 +43,9 @@ namespace BookStore.API.Presentation.Controllers
                 return Unauthorized();
             }
 
-            return Ok(await _serviceManager.AuthenticationService.CreateToken(populateExpiration: true));
+            var tokenDto = await _serviceManager.AuthenticationService.CreateToken(populateExpiration: true);
+
+            return Ok(tokenDto);
         }
     }
 }

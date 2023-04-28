@@ -23,9 +23,9 @@ namespace BookStore.API.Repository
             return await FindAll(trackChanges).OrderBy(c => c.Name).ToListAsync();
         }
 
-        public async Task<Language> GetLanguageAsync(Guid languageId, bool trackChanges)
+        public async Task<Language> GetLanguageAsync(Guid id, bool trackChanges)
         {
-            return await FindByCondition(c => c.LanguageId.Equals(languageId), trackChanges).SingleOrDefaultAsync();
+            return await FindByCondition(c => c.Id.Equals(id), trackChanges).SingleOrDefaultAsync();
 
         }
     }

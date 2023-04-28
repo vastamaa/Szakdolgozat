@@ -20,7 +20,7 @@ namespace BookStore.API.Service.Tests
 
         private readonly GenreService _genreService;
         private const string genreId = "49addfd8-33d4-4f00-9149-72163ab2983d";
-        private readonly Genre getGenreAsyncResult = new Genre() { GenreId = Guid.NewGuid(), Name = "Sports" };
+        private readonly Genre getGenreAsyncResult = new Genre() { Id = Guid.NewGuid(), Name = "Sports" };
 
         public GenreServiceTests()
         {
@@ -138,7 +138,7 @@ namespace BookStore.API.Service.Tests
         {
             // Arrange
             var genreForUpdateDto = new GenreForUpdateDto() { Name = "Sports" };
-            var genre = new Genre() { GenreId = Guid.NewGuid(), Name = "Sex" };
+            var genre = new Genre() { Id = Guid.NewGuid(), Name = "Sex" };
             _mapper.Setup(x => x.Map(It.IsAny<GenreForUpdateDto>(), It.IsAny<Genre>())).Verifiable();
             _repositoryManager.Setup(x => x.SaveAsync()).Verifiable();
 

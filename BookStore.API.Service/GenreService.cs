@@ -24,18 +24,20 @@ namespace BookStore.API.Service
         {
             var genreEntity = _mapper.Map<Genre>(genre);
 
+            _logger.LogInfo($"Creating genre (ID: {genreEntity.Id}).");
             _repository.Genre.CreateGenre(genreEntity);
-            await _repository.SaveAsync();
+            await SaveChangesAsync();
 
             return _mapper.Map<GenreDto>(genreEntity);
         }
 
         public async Task DeleteGenreAsync(Guid genreId, bool trackChanges)
         {
-            var genreForCompany = await GetGenreAndCheckIfItExists(genreId, trackChanges);
+            var genreForBook = await GetGenreAndCheckIfItExists(genreId, trackChanges);
 
-            _repository.Genre.DeleteGenre(genreForCompany);
-            await _repository.SaveAsync();
+            _logger.LogInfo($"Deleting genre (ID: {genreId}).");
+            _repository.Genre.DeleteGenre(genreForBook);
+            await SaveChangesAsync();
         }
 
         public async Task<IEnumerable<GenreDto>> GetAllGenresAsync(bool trackChanges)
@@ -59,7 +61,7 @@ namespace BookStore.API.Service
             var genreEntity = await GetGenreAndCheckIfItExists(genreId, trackChanges);
 
             _mapper.Map(genreForUpdate, genreEntity);
-            await _repository.SaveAsync();
+            await SaveChangesAsync();
         }
 
         public async Task<(GenreForUpdateDto genreToPatch, Genre genreEntity)> GetGenreForPatchAsync(Guid genreId, bool trackChanges)
@@ -76,31 +78,39 @@ namespace BookStore.API.Service
         public async Task SaveChangesForPatchAsync(GenreForUpdateDto genreToPatch, Genre genreEntity)
         {
             _mapper.Map(genreToPatch, genreEntity);
-            await _repository.SaveAsync();
+            await SaveChangesAsync();
         }
 
         private async Task<Genre> GetGenreAndCheckIfItExists(Guid genreId, bool trackChanges)
         {
+            _logger.LogInfo($"Getting genre with ID: {genreId}.");
             var genre = await _repository.Genre.GetGenreAsync(genreId, trackChanges);
 
             if (genre is null)
             {
+                _logger.LogError($"Error: Genre with ID: {genreId} NOT FOUND!");
                 throw new GenreNotFoundException(genreId);
             }
 
-#pragma warning disable CS8603 // Possible null reference return.
             return genre;
-#pragma warning restore CS8603 // Possible null reference return.
         }
 
         private async Task CheckIfGenreExists(Guid genreId, bool trackChanges)
         {
+            _logger.LogInfo($"Checking if genre with ID: {genreId} exists.");
             var genre = await _repository.Genre.GetGenreAsync(genreId, trackChanges);
 
             if (genre is null)
             {
+                _logger.LogError($"Error: Genre with ID: {genreId} NOT FOUND!");
                 throw new GenreNotFoundException(genreId);
             }
+        }
+
+        private async Task SaveChangesAsync()
+        {
+            _logger.LogInfo($"{this} is under saving!");
+            await _repository.SaveAsync();
         }
     }
 }

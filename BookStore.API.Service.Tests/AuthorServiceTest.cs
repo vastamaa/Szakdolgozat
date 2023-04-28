@@ -20,7 +20,7 @@ namespace BookStore.API.Service.Tests
 
         private readonly AuthorService _authorService;
         private const string authorId = "49addfd8-33d4-4f00-9149-72163ab2983d";
-        private readonly Author getAuthorAsyncResult = new Author() { AuthorId = Guid.NewGuid(), FirstName = "Tomtom", LastName = "Bobom" };
+        private readonly Author getAuthorAsyncResult = new Author() { FirstName = "Tomtom", LastName = "Bobom" };
 
         public AuthorServiceTest()
         {
@@ -140,7 +140,7 @@ namespace BookStore.API.Service.Tests
         {
             // Arrange
             var authorFoUpdateDto = new AuthorForUpdateDto() { Name = "TomTom" };
-            var author = new Author() { AuthorId = Guid.NewGuid(), FirstName = "BomBom", LastName = "Komkom" };
+            var author = new Author() { FirstName = "BomBom", LastName = "Komkom" };
             _mapper.Setup(x => x.Map(It.IsAny<AuthorForUpdateDto>(), It.IsAny<Author>())).Verifiable();
             _repositoryManager.Setup(x => x.SaveAsync()).Verifiable();
 

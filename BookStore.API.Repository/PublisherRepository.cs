@@ -23,9 +23,9 @@ namespace BookStore.API.Repository
             return await FindAll(trackChanges).OrderBy(c => c.Name).ToListAsync();
         }
 
-        public async Task<Publisher> GetPublisherAsync(Guid publisherId, bool trackChanges)
+        public async Task<Publisher> GetPublisherAsync(Guid id, bool trackChanges)
         {
-            return await FindByCondition(c => c.PublisherId.Equals(publisherId), trackChanges).SingleOrDefaultAsync();
+            return await FindByCondition(c => c.Id.Equals(id), trackChanges).SingleOrDefaultAsync();
         }
     }
 }
